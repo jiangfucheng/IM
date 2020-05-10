@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package com.jiangfucheng.im.protobuf;
+
+
+message Message {
+    MessageType msg_type = 1;
+    MessageStatus message_status = 2;
+    DataType data_type = 3; //data的实际类型
+    int64 id = 4;
+
+    oneof Data {
+
+    }
+}
+// 消息的类型，请求或者ACK
+enum MessageType {
+    REQ = 0;
+    ACK = 1;
+}
+// 同一条消息的不同状态 REQ,ACK,NOTIFY
+enum MessageStatus {
+    REQ = 0;
+    ACK = 1;
+    NOTIFY = 2;
+}
+
+//请求的类型
+enum DataType {
+    EMPTY = 0;
+    HEART_BEAT = 1;
+    KICK_OUT = 2;
+    LOGOUT = 3;
+}

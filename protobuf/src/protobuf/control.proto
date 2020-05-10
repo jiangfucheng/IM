@@ -1,0 +1,374 @@
+syntax = "proto3";
+
+package com.jiangfucheng.im.protobuf;
+
+//控制类消息，比如通知有好友下线，通知退出登陆，通知账号被顶下去了等等。
+
+//1.请求类
+
+//添加好友
+message AddFriendRequest {
+    string token = 1;
+    int64 target_id = 2; //目标好友id
+    string auth_message = 3; //验证消息
+}
+
+message AddFriendAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+
+//删除好友
+message DeleteFriendRequest {
+    string token = 1;
+
+}
+
+message DeleteFriendAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+
+//申请加入群聊
+message AddGroupRequest {
+    string token = 1;
+    int64 group_id = 2;
+}
+
+message AddGroupAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+
+//创建群
+message CreateGroupRequest {
+    string token = 1;
+    string group_name = 2;
+    repeated int64 invite_user_id = 3; //邀请进群的好友id
+    string introduction = 4; //群简介(可选)
+}
+
+message CreateGroupAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+    int64 group_id = 5;
+}
+
+//退出群
+message ExitGroupRequest {
+    string token = 1;
+    int64 group_id = 2;
+}
+
+message ExitGroupAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+
+//转让群(群主)
+message ChangeGroupOwnerRequest {
+    string token = 1;
+    int64 user_id = 2; //要转让的目标用户id
+    int64 group_id = 3;
+}
+
+message ChangeGroupOwnerAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+
+//删除群(群主)
+message DeleteGroupRequest {
+    string token = 1;
+    int64 group_id = 2;
+}
+
+message DeleteGroupAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+
+//修改管理员(群主)
+message ChangeManagerAuthRequest {
+    string token = 1;
+    message ChangeManagerData {
+        int64 user_id = 2;
+        int32 type = 3; //操作类型，0:赋予管理员权限，1:撤销管理员权限
+    }
+    repeated ChangeManagerData datas = 4;
+    int64 group_id = 5;
+}
+
+message ChangeManagerAuthAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+    message RespData {
+        int64 user_id = 5;
+        int32 success = 6; //0:成功，-1:失败
+    }
+    repeated RespData resp_datas = 7;
+}
+
+//邀请好友入群(管理员)
+message InviteMemberToGroupRequest {
+    string token = 1;
+    repeated int64 user_id = 2; //要邀请的好友id
+    int64 group_id = 3;
+}
+
+message InviteMemberToGroupAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+
+//踢出群成员(管理员)
+message KickOutMemberRequest {
+    string token = 1;
+    int64 user_id = 2; //要被踢出的成员id
+    int64 group_id = 3;
+}
+
+message KickOutMemberAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+
+//添加群公告(管理员)
+message AddGroupAnnounmentRequest {
+    string token = 1;
+    string title = 2; //标题
+    string content = 3; //内容
+    int64 group_id = 4;
+}
+
+message AddGroupAnnounmentAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+
+//删除群公告(管理员)
+message DeleteAnnounmentRequest {
+    string token = 1;
+    int64 anno_id = 2;
+    int64 group_id = 4;
+}
+
+message DeleteAnnounmentAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+
+//编辑群公告(管理员)
+message EditAnnounmentRequest {
+    string token = 1;
+    int64 anno_id = 2;
+    string title = 3;
+    string content = 4;
+    int64 group_id = 5;
+}
+
+message EditAnnounmentAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+
+//修改在群里的备注
+message EditGroupRemarksRequest {
+    string token = 1;
+    int64 group_id = 2;
+    string remarks = 3; //备注
+}
+
+message EditGroupRemarksAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+
+//修改群头像(群主)
+message EditGroupProfilePhotoRequest {
+    string token = 1;
+    int64 group_id = 2;
+    string profile_photo = 3; //base64编码后的头像图片
+}
+
+message EditGroupProfilePhotoAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+    string profile_photo_url = 5; //群头像的url
+}
+
+message LogoutRequest {
+    string token = 1;
+    int64 timestamp = 2;
+}
+
+message LogoutAck {
+    int32 code = 1;
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+
+//2.通知类
+
+// 请求添加好友通知
+message NotifyAddFriendRequest {
+    int64 user_id = 1; //好友的id
+    string auth_message = 2; //验证消息
+    int64 timestamp = 3;
+}
+
+message NotifyAddFriendAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+
+// 被好友删除通知
+message NotifyDeleteFriendRequest {
+    string token = 1;
+    int64 user_id = 2;
+    int64 timestamp = 3; //被删除的时间
+}
+
+message NotifyDeleteFriendAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+
+// 好友上线通知
+message NotifyFriendOnlineRequest {
+    string token = 1;
+    int64 user_id = 2;
+    int64 timestamp = 3;
+}
+
+message NotifyFriendOnlineAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+
+// 好友下线通知
+message NotifyFriendOfflineRequest {
+    string token = 1;
+    int64 user_id = 2;
+    int64 timestamp = 3;
+}
+
+message NotifyFriendOfflineAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+
+//被邀请加入群聊通知
+message NotifyInviteMemberToGroupRequest {
+    string token = 1;
+    int64 group_id = 2;
+    int64 invited_user_id = 3; //邀请人id
+    int64 timestamp = 4;
+}
+
+message NotifyInviteMemberToGroupAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+
+//群被解散通知
+message NotifyDeleteGroupRequest {
+    string token = 1;
+    int64 group_id = 2;
+    int64 group_owner_id = 3; //群主id
+    int64 timestamp = 4;
+}
+
+message NotifyDeleteGroupAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+
+//管理员权限被修改通知(1.被修改的是本人，2.本人是管理员，其他人权限被修改了)
+message NotifyChangeGroupManagerAuthRequest {
+    string token = 1;
+    int64 group_id = 2;
+    int64 user_id = 3; //被操作的用户id(自己或者其他人)
+    int32 type = 4; //0:被赋予管理员权限，-1:被撤销管理员权限
+    int64 timestamp = 5;
+}
+
+message NotifyChangeGroupManagerAuthAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+
+// 异地登陆被踢出通知
+message NotifyKickOutGroupRequest {
+    string token = 1;
+    string ip = 2; //异地登陆的用户IP
+    string address = 3; //异地登陆的地址(有余力可以根据IP查询一下生成地址)
+    string timestamp = 4;
+}
+
+message NotifyKickOutGroupAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+//管理员添加了群公告通知
+message NotifyAddGroupAnnounmentRequest {
+    string token = 1;
+    int64 group_id = 2;
+    string title = 3;
+    string content = 4;
+    string timestamp = 5;
+}
+
+message NotifyAddGroupAnnounmentAck {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
