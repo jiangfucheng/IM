@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -16,6 +16,14 @@
         <version>2.1.13.RELEASE</version>
         <relativePath/>
     </parent>
+
+    <modules>
+        <module>client</module>
+        <module>common</module>
+        <module>auth</module>
+        <module>http-server</module>
+        <module>chat-server</module>
+    </modules>
 
     <dependencyManagement>
         <dependencies>
@@ -42,6 +50,12 @@
                 <groupId>com.auth0</groupId>
                 <artifactId>java-jwt</artifactId>
                 <version>3.4.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>5.3.1.Final</version>
             </dependency>
 
         </dependencies>

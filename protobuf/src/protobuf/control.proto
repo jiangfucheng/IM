@@ -13,7 +13,7 @@ message AddFriendRequest {
     string auth_message = 3; //验证消息
 }
 
-message AddFriendAck {
+message AddFriendResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -26,7 +26,7 @@ message DeleteFriendRequest {
 
 }
 
-message DeleteFriendAck {
+message DeleteFriendResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -39,7 +39,7 @@ message AddGroupRequest {
     int64 group_id = 2;
 }
 
-message AddGroupAck {
+message AddGroupResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -54,7 +54,7 @@ message CreateGroupRequest {
     string introduction = 4; //群简介(可选)
 }
 
-message CreateGroupAck {
+message CreateGroupResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -68,7 +68,7 @@ message ExitGroupRequest {
     int64 group_id = 2;
 }
 
-message ExitGroupAck {
+message ExitGroupResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -82,7 +82,7 @@ message ChangeGroupOwnerRequest {
     int64 group_id = 3;
 }
 
-message ChangeGroupOwnerAck {
+message ChangeGroupOwnerResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -95,7 +95,7 @@ message DeleteGroupRequest {
     int64 group_id = 2;
 }
 
-message DeleteGroupAck {
+message DeleteGroupResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -113,7 +113,7 @@ message ChangeManagerAuthRequest {
     int64 group_id = 5;
 }
 
-message ChangeManagerAuthAck {
+message ChangeManagerAuthResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -132,7 +132,7 @@ message InviteMemberToGroupRequest {
     int64 group_id = 3;
 }
 
-message InviteMemberToGroupAck {
+message InviteMemberToGroupResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -146,7 +146,7 @@ message KickOutMemberRequest {
     int64 group_id = 3;
 }
 
-message KickOutMemberAck {
+message KickOutMemberResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -161,7 +161,7 @@ message AddGroupAnnounmentRequest {
     int64 group_id = 4;
 }
 
-message AddGroupAnnounmentAck {
+message AddGroupAnnounmentResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -175,7 +175,7 @@ message DeleteAnnounmentRequest {
     int64 group_id = 4;
 }
 
-message DeleteAnnounmentAck {
+message DeleteAnnounmentResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -191,7 +191,7 @@ message EditAnnounmentRequest {
     int64 group_id = 5;
 }
 
-message EditAnnounmentAck {
+message EditAnnounmentResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -205,7 +205,7 @@ message EditGroupRemarksRequest {
     string remarks = 3; //备注
 }
 
-message EditGroupRemarksAck {
+message EditGroupRemarksResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -219,7 +219,7 @@ message EditGroupProfilePhotoRequest {
     string profile_photo = 3; //base64编码后的头像图片
 }
 
-message EditGroupProfilePhotoAck {
+message EditGroupProfilePhotoResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -232,7 +232,7 @@ message LogoutRequest {
     int64 timestamp = 2;
 }
 
-message LogoutAck {
+message LogoutResponse {
     int32 code = 1;
     string msg = 2;
     string err_msg = 3;
@@ -248,7 +248,7 @@ message NotifyAddFriendRequest {
     int64 timestamp = 3;
 }
 
-message NotifyAddFriendAck {
+message NotifyAddFriendResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -262,7 +262,7 @@ message NotifyDeleteFriendRequest {
     int64 timestamp = 3; //被删除的时间
 }
 
-message NotifyDeleteFriendAck {
+message NotifyDeleteFriendResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -276,7 +276,7 @@ message NotifyFriendOnlineRequest {
     int64 timestamp = 3;
 }
 
-message NotifyFriendOnlineAck {
+message NotifyFriendOnlineResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -290,7 +290,7 @@ message NotifyFriendOfflineRequest {
     int64 timestamp = 3;
 }
 
-message NotifyFriendOfflineAck {
+message NotifyFriendOfflineResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -305,7 +305,7 @@ message NotifyInviteMemberToGroupRequest {
     int64 timestamp = 4;
 }
 
-message NotifyInviteMemberToGroupAck {
+message NotifyInviteMemberToGroupResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -320,7 +320,7 @@ message NotifyDeleteGroupRequest {
     int64 timestamp = 4;
 }
 
-message NotifyDeleteGroupAck {
+message NotifyDeleteGroupResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -336,7 +336,7 @@ message NotifyChangeGroupManagerAuthRequest {
     int64 timestamp = 5;
 }
 
-message NotifyChangeGroupManagerAuthAck {
+message NotifyChangeGroupManagerAuthResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -351,7 +351,7 @@ message NotifyKickOutGroupRequest {
     string timestamp = 4;
 }
 
-message NotifyKickOutGroupAck {
+message NotifyKickOutGroupResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -366,7 +366,7 @@ message NotifyAddGroupAnnounmentRequest {
     string timestamp = 5;
 }
 
-message NotifyAddGroupAnnounmentAck {
+message NotifyAddGroupAnnounmentResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;

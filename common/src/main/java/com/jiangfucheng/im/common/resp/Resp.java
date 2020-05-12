@@ -53,7 +53,7 @@ public class Resp<T> {
 	}
 
 	public static <T> Resp<T> error() {
-		return error(ResponseCode.UNKNOWN_ERROR, ResponseCode.UNKNOWN_MSG, ResponseCode.UNKNOWN_MSG, null);
+		return error(ResponseCode.UNKNOWN_ERROR, ResponseCode.UNKNOWN_DEFAULT_MSG, ResponseCode.UNKNOWN_DEFAULT_MSG, null);
 	}
 
 

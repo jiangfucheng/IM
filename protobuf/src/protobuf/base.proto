@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package com.jiangfucheng.im.protobuf;
 
-
+// 群聊、单聊、通知
 message Message {
     MessageType msg_type = 1;
     MessageStatus message_status = 2;
@@ -13,11 +13,13 @@ message Message {
 
     }
 }
+
 // 消息的类型，请求或者ACK
 enum MessageType {
-    REQ = 0;
-    ACK = 1;
+    REQUEST = 0;
+    RESPONSE = 1;
 }
+
 // 同一条消息的不同状态 REQ,ACK,NOTIFY
 enum MessageStatus {
     REQ = 0;

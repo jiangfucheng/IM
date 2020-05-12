@@ -3,6 +3,9 @@ package com.jiangfucheng.im.auth.vo;
 import com.jiangfucheng.im.auth.bo.PermissionResourceBo;
 import lombok.Data;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 /**
  * Created by IntelliJ IDEA.
  * Date: 2020/5/10
@@ -12,7 +15,9 @@ import lombok.Data;
  */
 @Data
 public class PermissionResourceVo {
+	@NotNull(message = "资源id不能为空")
 	private Long resourceId;
+	@NotBlank(message = "资源名不能为空")
 	private String resourceName;
 
 	public PermissionResourceBo convertToPermissionResourceBo(Long userId) {

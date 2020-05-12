@@ -8,12 +8,13 @@ package com.jiangfucheng.im.common.constants;
  * @author jiangfucheng
  */
 public final class ResponseCode {
-	private ResponseCode() {
-	}
-
 	public static final Integer OK = 0;
 	public static final String OK_MSG = "ok";
-
 	public static final Integer UNKNOWN_ERROR = -1;
-	public static final String UNKNOWN_MSG = "未知异常";
+	public static final String UNKNOWN_DEFAULT_MSG = "未知异常";
+	public static final Integer PARAMTER_ERROR = -2;
+	public static final String PARAMTER_ERROR_DEFAULT_MSG = "参数错误";
+
+	private ResponseCode() {
+	}
 }

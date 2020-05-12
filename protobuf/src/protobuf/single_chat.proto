@@ -1,3 +1,16 @@
 syntax = "proto3";
 
 package com.jiangfucheng.im.protobuf;
+
+message SingleChatRequest {
+    int64 from_id = 1;
+    int64 to_id = 2;
+    int32 type = 3;
+    string content = 4;
+    string token = 5;
+}
+
+message SingleChatResponse {
+    int64 msg_id = 1; //消息id  区分每个会话中的消息
+    int64 timestamp = 2; //服务器收到消息的时间
+}
