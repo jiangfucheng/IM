@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author jiangfucheng
  */
 @SpringBootApplication
+//@MapperScan("com.jiangfucheng.im.httpserver.mapper")
 public class HttpServerApplication {
 
 	public static void main(String[] args) {

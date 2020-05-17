@@ -1,0 +1,98 @@
+version: '2.3'
+services:
+  namesrv-m:
+    image: foxiswho/rocketmq:server-4.4.0
+    container_name: im_rocketmq_namesrv_master
+    restart: always
+    ports:
+      - 9876:9876
+    volumes:
+      - "/im/rocketmq/namesrv/master/logs:/opt/logs"
+      - "/im/rocketmq/namesrv/master/store:/opt/store"
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      JAVA_OPT_EXT: "-server -Xms300m -Xmx300m -Xmn150m"
+  namesrv-s:
+    image: foxiswho/rocketmq:server-4.4.0
+    container_name: im_rocketmq_namesrv_slave
+    restart: always
+    ports:
+      - 9877:9876
+    volumes:
+      - "/im/rocketmq/namesrv/slave/logs:/opt/logs"
+      - "/im/rocketmq/namesrv/slave/store:/opt/store"
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      JAVA_OPT_EXT: "-server -Xms300m -Xmx300m -Xmn150m"
+  broker-a-m:
+    image: foxiswho/rocketmq:broker-4.4.0
+    container_name: im_rocketmq_broker
+    restart: always
+    ports:
+      - 10909:10909
+      - 10911:10911
+    volumes:
+      - "/im/rocketmq/broker/a-m/logs:/opt/logs"
+      - "/im/rocketmq/broker/a-m/store:/opt/store"
+      #- "/rocketmq/broker/a-m/conf/broker-a.conf:/etc/rocketmq/broker.conf"
+      - /etc/localtime:/etc/localtime:ro
+    #command: mqbroker -c /etc/rocketmq/broker.conf
+    links:
+      - namesrv-m:namesrv-m
+      - namesrv-s:namesrv-s
+    environment:
+      JAVA_OPTS: " -Duser.home=/opt"
+      #见rocketmq jvm内存默认配置 (jvm重复参数：后面生效，会覆盖)
+      JAVA_OPT_EXT: "-server -Xms300m -Xmx300m -Xmn150m"
+  console:
+    image: styletang/rocketmq-console-ng:latest
+    container_name: im_rocketmq_console
+    restart: always
+    ports:
+      - 9990:8080
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    links:
+      - namesrv-m:namesrv-m
+      - namesrv-s:namesrv-s
+    environment:
+      JAVA_OPTS: -Drocketmq.config.namesrvAddr=namesrv-m:9876;namesrv-s:9877 -Dcom.rocketmq.sendMessageWithVIPChannel=false
+  db:
+    image: mysql:5.7
+    container_name: im_db
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports: 
+      - 3306:3306
+    volumes:
+      - ./mysql/init:/docker-entrypoint-initdb.d
+      - /im/mysql/data:/var/lib/mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: im
+  redis:
+    image: redis:5.0.9
+    container_name: im_redis
+    ports: 
+      - 6379:6379
+    volumes: 
+      - /im/redis/data:/data
+      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+  zookeeper: 
+    image: zookeeper:3.5
+    container_name: im_zookeeper
+    restart: always
+    hostname: zookeeper
+    ports: 
+      - 2181:2181
+      - 2888:2888
+      - 3888:3888
+      - 8080:8080
+    volumes: 
+      - /im/zookeeper/data:/data
+      - /im/zookeeper/datalog:/datalog
+      - /im/zookeeper/logs:/logs
+    environment: 
+      ZOO_MY_ID: 1
+      ZOO_LOG4J_PROP: "INFO,ROLLINGFILE"
+

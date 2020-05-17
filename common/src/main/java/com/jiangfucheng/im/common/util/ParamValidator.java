@@ -1,6 +1,6 @@
 package com.jiangfucheng.im.common.util;
 
-import com.jiangfucheng.im.common.constants.ResponseCode;
+import com.jiangfucheng.im.common.constants.ErrorCode;
 import com.jiangfucheng.im.common.exception.IllegalParamException;
 
 /**
@@ -17,13 +17,13 @@ public class ParamValidator {
 
 	public static void notNull(Object obj, String errMsg) {
 		if (null == obj) {
-			throw new IllegalParamException(ResponseCode.PARAMTER_ERROR, errMsg);
+			throw new IllegalParamException(ErrorCode.PARAM_ERROR, errMsg);
 		}
 	}
 
 	public static void notBlank(String str, String errMsg) {
 		if (null == str || "".equals(str)) {
-			throw new IllegalParamException(ResponseCode.PARAMTER_ERROR, errMsg);
+			throw new IllegalParamException(ErrorCode.PARAM_ERROR, errMsg);
 		}
 	}
 

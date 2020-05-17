@@ -1,5 +1,6 @@
 package com.jiangfucheng.im.auth.po;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**
@@ -10,6 +11,7 @@ import lombok.Data;
  * @author jiangfucheng
  */
 @Data
+@TableName("im_permission")
 public class PermissionPo {
 	private Long id;
 	private Long resourceId;
