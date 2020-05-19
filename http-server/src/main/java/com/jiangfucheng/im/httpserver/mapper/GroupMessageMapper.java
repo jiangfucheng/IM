@@ -3,6 +3,8 @@ package com.jiangfucheng.im.httpserver.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.jiangfucheng.im.httpserver.po.GroupMessagePo;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,4 +15,10 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface GroupMessageMapper extends BaseMapper<GroupMessagePo> {
+
+	@Select("select id, group_id, from_id, msg_type, content, create_time " +
+			"from im_group_msg " +
+			"where group_id = #{groupId} " +
+			"order by create_time desc limit 1")
+	GroupMessagePo selectLastMessage(@Param("groupId")Long groupId);
 }

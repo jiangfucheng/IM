@@ -3,6 +3,8 @@ package com.jiangfucheng.im.httpserver.po;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+import java.util.Date;
+
 /**
  * Created by IntelliJ IDEA.
  * Date: 2020/5/13
@@ -17,5 +19,6 @@ public class OfflineMessagePo {
 	private Long fromId;
 	private Long toId;
 	private Integer msgType;
-	private Long createTime;
+	private String content;
+	private Date createTime;
 }

@@ -6,9 +6,7 @@ import com.jiangfucheng.im.httpserver.bo.FriendRemarksBo;
 import com.jiangfucheng.im.httpserver.bo.UserTokenPayloadBo;
 import com.jiangfucheng.im.httpserver.service.FriendRelationService;
 import com.jiangfucheng.im.httpserver.utils.PinyinUtil;
-import com.jiangfucheng.im.httpserver.vo.FriendVo;
-import com.jiangfucheng.im.httpserver.vo.FriendWithIndexVo;
-import com.jiangfucheng.im.httpserver.vo.UpdateFriendRemarksVo;
+import com.jiangfucheng.im.httpserver.vo.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -65,23 +63,26 @@ public class FriendController {
 		}).collect(Collectors.toList());
 
 		List<FriendWithIndexVo> indexVos = new ArrayList<>();
-		List<FriendVo> temp = new ArrayList<>();
 		char initLetter = '#';
+		for (int i = 0; i < 27; i++) {
+			FriendWithIndexVo indexVo = new FriendWithIndexVo();
+			indexVo.setIndex(initLetter);
+			indexVo.setFriends(new ArrayList<>());
+			if (initLetter == '#') {
+				initLetter = 'A';
+			} else {
+				initLetter = (char) (initLetter + 1);
+			}
+			indexVos.add(indexVo);
+		}
 		for (FriendVo vo : friendVos) {
 			char firstLetter = PinyinUtil.getFirstLetterByFirstChar(vo.getRemarks());
-			if (firstLetter == initLetter) {
-				temp.add(vo);
+			if (firstLetter == '#') {
+				indexVos.get(0).getFriends().add(vo);
 			} else {
-				indexVos.add(new FriendWithIndexVo(initLetter, temp));
-				temp = new ArrayList<>();
-				if (initLetter == '#') {
-					initLetter = 'A';
-				} else {
-					initLetter = 'A' + 1;
-				}
+				indexVos.get(firstLetter - 'A' + 1).getFriends().add(vo);
 			}
 		}
-
 		return Response.ok(indexVos);
 	}
 

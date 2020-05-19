@@ -1,10 +1,13 @@
 package com.jiangfucheng.im.httpserver.po;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.jiangfucheng.im.httpserver.bo.GroupAnnouncementBo;
 import com.jiangfucheng.im.httpserver.bo.UserBo;
 import com.jiangfucheng.im.httpserver.utils.BeanUtil;
 import lombok.Data;
+
+import java.util.Date;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,14 +23,16 @@ public class GroupAnnouncementPo {
 	private Long groupId;
 	private String title;
 	private String content;
-	private Long createUser;
-	private Long createTime;
+	@TableField("create_user")
+	private Long createUserId;
+	private Date createTime;
 
 	public GroupAnnouncementBo convertToGroupAnnouncementBo() {
 		GroupAnnouncementBo bo = new GroupAnnouncementBo();
 		BeanUtil.copyProperties(bo, this);
 		UserBo userBo = new UserBo();
-		userBo.setId(this.getCreateUser());
+		userBo.setId(this.getCreateUserId());
+		bo.setCreateUser(userBo);
 		return bo;
 	}
 }

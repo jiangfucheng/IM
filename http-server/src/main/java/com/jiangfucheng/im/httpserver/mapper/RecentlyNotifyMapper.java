@@ -12,5 +12,5 @@ import org.apache.ibatis.annotations.Mapper;
  * @author jiangfucheng
  */
 @Mapper
-public interface RecnetlyNotifyMapper extends BaseMapper<RecentlyNotifyPo> {
+public interface RecentlyNotifyMapper extends BaseMapper<RecentlyNotifyPo> {
 }

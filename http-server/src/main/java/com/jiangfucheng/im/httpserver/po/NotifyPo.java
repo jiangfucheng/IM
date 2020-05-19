@@ -1,7 +1,11 @@
 package com.jiangfucheng.im.httpserver.po;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.jiangfucheng.im.httpserver.bo.NotifyBo;
+import com.jiangfucheng.im.httpserver.utils.BeanUtil;
 import lombok.Data;
+
+import java.util.Date;
 
 /**
  * Created by IntelliJ IDEA.
@@ -18,5 +22,12 @@ public class NotifyPo {
 	private Long fromId;
 	private Long toId;
 	private String content;
-	private Long createTime;
+	private Date createTime;
+
+	public NotifyBo convertToNotifyBo(){
+		NotifyBo bo = new NotifyBo();
+		BeanUtil.copyProperties(bo,this);
+		bo.setCreateTime(this.createTime.getTime());
+		return bo;
+	}
 }

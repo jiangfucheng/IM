@@ -20,6 +20,7 @@ public final class ErrorCode {
 	public static final String UNAUTHORIZED_MSG = "没有权限";
 	public static final Integer RUNTIME_ERROR = -4;
 	public static final Integer RPC_ERROR = -5;
+	public static final Integer USER_EXISTED = -6;
 
 	private ErrorCode() {
 	}

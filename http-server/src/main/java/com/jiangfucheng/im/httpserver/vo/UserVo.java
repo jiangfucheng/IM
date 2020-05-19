@@ -37,6 +37,7 @@ public class UserVo {
 	private String school;
 	private String country;
 	private String city;
+	private String password;
 
 	public UserBo convertToUserBo(){
 		UserBo userBo = new UserBo();

@@ -18,5 +18,5 @@ public class MessageListElementVo {
 	private Integer fromName;
 	private String profilePhoto;
 	private Long lastMsgTime;
-	private Integer unreadMsgCont;
+	private Integer unreadMsgCount;
 }

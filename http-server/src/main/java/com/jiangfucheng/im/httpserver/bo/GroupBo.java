@@ -27,6 +27,8 @@ public class GroupBo {
 	public GroupListElementVo convertToGroupListElementVo() {
 		GroupListElementVo groupListElementVo = new GroupListElementVo();
 		BeanUtil.copyProperties(groupListElementVo, this);
+		groupListElementVo.setGroupName(this.getName());
+		groupListElementVo.setAccount(String.valueOf(this.getId()));
 		return groupListElementVo;
 	}
 

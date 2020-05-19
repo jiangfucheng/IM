@@ -11,4 +11,6 @@ public final class GlobalConstants {
 	private GlobalConstants(){}
 
 	public static final String DEFAULT_USER_PROFILES_PHOTO = "";
+
+	public static final String DEFAULT_DOWNLOAD_PATH = "G:/im/download/";
 }

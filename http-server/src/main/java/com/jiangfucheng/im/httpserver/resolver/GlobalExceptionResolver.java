@@ -1,5 +1,8 @@
 package com.jiangfucheng.im.httpserver.resolver;
 
+import com.jiangfucheng.im.common.resp.Response;
+import com.jiangfucheng.im.httpserver.exceptions.IMException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
@@ -11,4 +14,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  */
 @RestControllerAdvice
 public class GlobalExceptionResolver {
+
+	@ExceptionHandler(IMException.class)
+	public Response handleImException(IMException ex) {
+		return Response.error(ex.getCode(), ex.getMessage());
+	}
 }

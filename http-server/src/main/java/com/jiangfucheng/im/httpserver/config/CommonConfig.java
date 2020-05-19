@@ -2,10 +2,15 @@ package com.jiangfucheng.im.httpserver.config;
 
 import com.jiangfucheng.im.common.util.SnowFlakeIdGenerator;
 import com.jiangfucheng.im.httpserver.http.PermissionClient;
+import com.jiangfucheng.im.httpserver.resolver.TokenResolver;
 import okhttp3.OkHttpClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.method.support.HandlerMethodArgumentResolver;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -15,11 +20,17 @@ import org.springframework.context.annotation.Configuration;
  * @author jiangfucheng
  */
 @Configuration
-public class CommonConfig {
+public class CommonConfig implements WebMvcConfigurer {
 	@Value("${id.worker}")
 	private long workerId;
 	@Value("${id.data-center}")
 	private long dataCenterId;
+
+	private TokenResolver tokenResolver;
+
+	public CommonConfig(TokenResolver tokenResolver) {
+		this.tokenResolver = tokenResolver;
+	}
 
 	/**
 	 * 雪花id生成器
@@ -34,4 +45,9 @@ public class CommonConfig {
 		return new PermissionClient(okHttpClient);
 	}
 
+
+	@Override
+	public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
+		argumentResolvers.add(tokenResolver);
+	}
 }

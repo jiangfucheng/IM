@@ -44,6 +44,7 @@ public class UserController {
 		userVo.setId(userTokenPayload.getUserId());
 		userVo.setAccount(userTokenPayload.getAccount());
 		UserBo userBo = userService.updateUser(userVo.convertToUserBo());
+		userBo.setPassword("");
 		return Response.ok(userBo.convertToUserVo());
 	}
 

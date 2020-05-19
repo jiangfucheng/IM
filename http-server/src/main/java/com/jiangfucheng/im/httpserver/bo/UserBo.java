@@ -24,6 +24,7 @@ public class UserBo {
 	private String profilePhoto;
 	private String signature;
 	private String phone;
+	private String password;
 	private String email;
 	private String school;
 	private String country;
@@ -42,7 +43,7 @@ public class UserBo {
 		return userVo;
 	}
 
-	public AccountVo convertToAccountVo(){
+	public AccountVo convertToAccountVo() {
 		AccountVo accountVo = new AccountVo();
 		accountVo.setId(this.id);
 		accountVo.setName(this.getNickName());

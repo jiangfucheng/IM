@@ -127,7 +127,7 @@ CREATE TABLE `im_permission` (
   `id` bigint(20) NOT NULL,
   `resource_id` bigint(20) NOT NULL COMMENT '资源id',
   `operation` varchar(30) NOT NULL COMMENT '操作类型:*、create、update、delete、view',
-  `reousrce_name` varchar(100) NOT NULL COMMENT '资源名称',
+  `resource_name` varchar(100) NOT NULL COMMENT '资源名称',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '通知创建时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='权限表';
@@ -139,7 +139,8 @@ DROP TABLE IF EXISTS `im_recently_chat_friends`;
 CREATE TABLE `im_recently_chat_friends` (
   `id` bigint(20) NOT NULL,
   `user_id` bigint(20) NOT NULL COMMENT '自己id',
-  `friend_id` bigint(20) NOT NULL COMMENT '好友id',
+  `type` tinyint NOT NULL DEFAULT 0 COMMENT '来源,0:好友，1:群',
+  `from_id` bigint(20) NOT NULL COMMENT '好友/群id',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '好友添加时间',
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`,`create_time`)

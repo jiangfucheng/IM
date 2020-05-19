@@ -71,20 +71,24 @@ public class GroupController {
 			char o2FirstLetter = PinyinUtil.getFirstLetterByFirstChar(o2.getRemarks());
 			return PinyinUtil.compareCharFirstLetter(o1FirstLetter, o2FirstLetter);
 		});
-		List<GroupMemberVo> temp = new ArrayList<>();
 		char initLetter = '#';
+		for (int i = 0; i < 27; i++) {
+			GroupMemberWithIndexVo indexVo = new GroupMemberWithIndexVo();
+			indexVo.setIndex(initLetter);
+			indexVo.setGroupMembers(new ArrayList<>());
+			if (initLetter == '#') {
+				initLetter = 'A';
+			} else {
+				initLetter = (char) (initLetter + 1);
+			}
+			indexVos.add(indexVo);
+		}
 		for (GroupMemberVo vo : groupMemberVos) {
 			char firstLetter = PinyinUtil.getFirstLetterByFirstChar(vo.getRemarks());
-			if (firstLetter == initLetter) {
-				temp.add(vo);
+			if (firstLetter == '#') {
+				indexVos.get(0).getGroupMembers().add(vo);
 			} else {
-				indexVos.add(new GroupMemberWithIndexVo(initLetter, temp));
-				temp = new ArrayList<>();
-				if (initLetter == '#') {
-					initLetter = 'A';
-				} else {
-					initLetter = 'A' + 1;
-				}
+				indexVos.get(firstLetter - 'A' + 1).getGroupMembers().add(vo);
 			}
 		}
 		return Response.ok(indexVos);

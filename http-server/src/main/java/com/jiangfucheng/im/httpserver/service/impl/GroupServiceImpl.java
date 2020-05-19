@@ -3,7 +3,10 @@ package com.jiangfucheng.im.httpserver.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.jiangfucheng.im.httpserver.bo.*;
 import com.jiangfucheng.im.httpserver.mapper.*;
-import com.jiangfucheng.im.httpserver.po.*;
+import com.jiangfucheng.im.httpserver.po.GroupAnnouncementPo;
+import com.jiangfucheng.im.httpserver.po.GroupInfoPo;
+import com.jiangfucheng.im.httpserver.po.GroupUserPo;
+import com.jiangfucheng.im.httpserver.po.RelationPo;
 import com.jiangfucheng.im.httpserver.service.GroupService;
 import org.springframework.stereotype.Service;
 
@@ -39,15 +42,16 @@ public class GroupServiceImpl implements GroupService {
 
 	@Override
 	public List<GroupBo> queryGroupsWithUser(Long userId) {
-		List<GroupInfoPo> groupInfos = groupMapper.selectList(new QueryWrapper<GroupInfoPo>()
-				.eq("create_user", userId));
-		return groupInfos.stream().map(po -> {
-			GroupBo bo = po.convertToGroupBo();
-			UserPo userPo = userMapper.selectById(bo.getCreateUser().getId());
-			UserBo userBo = userPo.convertToUserBo();
-			bo.setCreateUser(userBo);
-			setRemarksToGroupBo(bo, userId);
-			return bo;
+
+		List<GroupUserPo> groupUserPos = groupUserMapper.selectList(new QueryWrapper<GroupUserPo>()
+				.eq("user_id", userId));
+		return groupUserPos.stream().map(po -> {
+			GroupInfoPo groupInfoPo = groupMapper.selectById(po.getGroupId());
+			GroupBo groupBo = groupInfoPo.convertToGroupBo();
+			UserBo createUser = new UserBo();
+			createUser.setId(po.getUserId());
+			groupBo.setCreateUser(createUser);
+			return groupBo;
 		}).collect(Collectors.toList());
 	}
 
@@ -57,7 +61,7 @@ public class GroupServiceImpl implements GroupService {
 				.eq("id", account));
 		GroupBo groupBo = groupPo.convertToGroupBo();
 		UserBo userBo = new UserBo();
-		userBo.setId(groupPo.getCreateUser());
+		userBo.setId(groupPo.getCreateUserId());
 		groupBo.setCreateUser(userBo);
 		return groupBo;
 	}
@@ -84,7 +88,7 @@ public class GroupServiceImpl implements GroupService {
 	public GroupBo queryGroupDetail(Long queryUserId, Long groupId) {
 		GroupInfoPo groupInfoPo = groupMapper.selectById(groupId);
 		GroupBo groupBo = groupInfoPo.convertToGroupBo();
-		UserBo userBo = userMapper.selectById(groupInfoPo.getCreateUser()).convertToUserBo();
+		UserBo userBo = userMapper.selectById(groupInfoPo.getCreateUserId()).convertToUserBo();
 		groupBo.setCreateUser(userBo);
 		setRemarksToGroupBo(groupBo, queryUserId);
 		return groupBo;
@@ -96,7 +100,7 @@ public class GroupServiceImpl implements GroupService {
 				.eq("group_id", groupId));
 		return groupUserPos.stream().map(po -> {
 			GroupMemberBo groupMemberBo = po.convertToGroupMemberBo();
-			RelationPo relationPo = relationMapper.getRelationByUserIdAndFriendid(userId, groupMemberBo.getId());
+			RelationPo relationPo = relationMapper.getRelationByUserIdAndFriendId(userId, groupMemberBo.getId());
 			if (relationPo != null) {
 				groupMemberBo.setIsFriend(1);
 				groupMemberBo.setRemarks(relationPo.getRemarks());
@@ -108,7 +112,7 @@ public class GroupServiceImpl implements GroupService {
 	}
 
 	private void setRemarksToGroupBo(GroupBo groupBo, Long queryUserId) {
-		RelationPo relationPo = relationMapper.getRelationByUserIdAndFriendid(queryUserId, groupBo.getCreateUser().getId());
+		RelationPo relationPo = relationMapper.getRelationByUserIdAndFriendId(queryUserId, groupBo.getCreateUser().getId());
 		if (relationPo != null)
 			groupBo.setCreateUserRemarks(relationPo.getRemarks());
 	}

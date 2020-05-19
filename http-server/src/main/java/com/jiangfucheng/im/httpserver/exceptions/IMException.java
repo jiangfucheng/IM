@@ -14,4 +14,8 @@ public class IMException extends RuntimeException {
 		super(msg);
 		this.code = code;
 	}
+
+	public int getCode(){
+		return this.code;
+	}
 }

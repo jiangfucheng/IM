@@ -16,11 +16,12 @@ public class OneMessageListBo {
 	private Integer type;
 	private Long lastMsgId;
 	private String lastMsg;
-	private Integer fromId;
-	private Integer fromName;
+	private Integer lastMsgType;
+	private Long fromId;
+	private String fromName;
 	private String profilePhoto;
 	private Long lastMsgTime;
-	private Integer UnreadMsgCont;
+	private Integer unreadMsgCount;
 
 	public MessageListElementVo convertToMessageListElementVo() {
 		MessageListElementVo vo = new MessageListElementVo();

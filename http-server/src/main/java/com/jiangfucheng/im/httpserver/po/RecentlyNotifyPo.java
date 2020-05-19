@@ -3,6 +3,8 @@ package com.jiangfucheng.im.httpserver.po;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+import java.util.Date;
+
 /**
  * Created by IntelliJ IDEA.
  * Date: 2020/5/13
@@ -16,5 +18,5 @@ public class RecentlyNotifyPo {
 	private Long id;
 	private Long userId;
 	private Long notifyId;
-	private Long createTime;
+	private Date createTime;
 }

@@ -1,8 +1,9 @@
 package com.jiangfucheng.im.httpserver.po;
 
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+
+import java.util.Date;
 
 /**
  * Created by IntelliJ IDEA.
@@ -14,10 +15,9 @@ import lombok.Data;
 @Data
 @TableName("im_relation")
 public class RelationPo {
-	@TableId
+	private Long id;
 	private Long userId;
-	@TableId
 	private Long friendId;
 	private String remarks;
-	private Long createTime;
+	private Date createTime;
 }

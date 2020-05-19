@@ -47,6 +47,9 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public Long createUser(UserBo userBo) {
+		if (userMapper.getUserInfoByAccount(userBo.getAccount()) != null) {
+			throw new IMException(ErrorCode.USER_EXISTED, "该账号已经被注册");
+		}
 		UserPo userPo = userBo.convertToUserPo();
 		Long userId = idGenerator.nextId();
 		userPo.setId(userId);

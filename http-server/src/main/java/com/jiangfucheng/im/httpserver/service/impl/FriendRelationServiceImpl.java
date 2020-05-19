@@ -3,8 +3,6 @@ package com.jiangfucheng.im.httpserver.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.jiangfucheng.im.httpserver.bo.FriendBo;
 import com.jiangfucheng.im.httpserver.bo.FriendRemarksBo;
-import com.jiangfucheng.im.httpserver.bo.UserStatusBo;
-import com.jiangfucheng.im.httpserver.constants.RedisConstants;
 import com.jiangfucheng.im.httpserver.mapper.RelationMapper;
 import com.jiangfucheng.im.httpserver.mapper.UserMapper;
 import com.jiangfucheng.im.httpserver.po.RelationPo;
@@ -38,8 +36,7 @@ public class FriendRelationServiceImpl implements FriendRelationService {
 
 	@Override
 	public void updateFriendRemarks(FriendRemarksBo friendRemarksBo) {
-		RelationPo relationPo = friendRemarksBo.convertToRelationPo();
-		relationMapper.updateById(relationPo);
+		relationMapper.updateFriendRemarks(friendRemarksBo);
 	}
 
 	@Override
@@ -55,12 +52,13 @@ public class FriendRelationServiceImpl implements FriendRelationService {
 			friendBo.setRemarks(po.getRemarks());
 			friendBo.setProfilePhoto(friend.getProfilePhoto());
 			friendBo.setSignature(friend.getSignature());
-			UserStatusBo userStatusBo = (UserStatusBo) redis.opsForValue().get(String.format(RedisConstants.USER_STATUS_KEY, friend.getId()));
+			/*UserStatusBo userStatusBo = (UserStatusBo) redis.opsForValue().get(String.format(RedisConstants.USER_STATUS_KEY, friend.getId()));
 			if (userStatusBo != null) {
 				friendBo.setStatus(1);
 			} else {
 				friendBo.setStatus(0);
-			}
+			}*/
+			friendBo.setStatus(1);
 			return friendBo;
 		}).collect(Collectors.toList());
 	}
