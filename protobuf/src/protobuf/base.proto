@@ -2,6 +2,13 @@ syntax = "proto3";
 
 package com.jiangfucheng.im.protobuf;
 
+option java_package = "com.jiangfucheng.im.protobuf";
+option java_outer_classname = "Base";
+
+import "single_chat.proto";
+import "group_chat.proto";
+import "control.proto";
+
 // 群聊、单聊、通知
 message Message {
     MessageType msg_type = 1;
@@ -10,6 +17,64 @@ message Message {
     int64 id = 4;
 
     oneof Data {
+        //请求类
+        SingleChatRequest single_chat_request = 5;
+        SingleChatResponse single_chat_response = 6;
+        GroupChatRequest group_chat_request = 7;
+        GroupChatResponse group_chat_response = 8;
+        AddFriendRequest add_friend_request = 9;
+        AddFriendResponse add_friend_response = 10;
+        DeleteFriendRequest delete_friend_request = 11;
+        DeleteFriendResponse delete_friend_response = 12;
+        AddGroupRequest add_group_request = 13;
+        AddGroupResponse add_group_response = 14;
+        CreateGroupRequest create_group_request = 15;
+        CreateGroupResponse create_group_response = 16;
+        ExitGroupRequest exit_group_request = 17;
+        ExitGroupResponse exit_group_response = 18;
+        ChangeGroupOwnerRequest change_group_owner_request = 19;
+        ChangeGroupOwnerResponse change_group_owner_response = 20;
+        DeleteGroupRequest delete_group_request = 21;
+        DeleteGroupResponse delete_group_response = 22;
+        ChangeGroupManagerAuthRequest change_group_manager_auth_request = 23;
+        ChangeGroupManagerAuthResponse change_group_manager_auth_response = 24;
+        InviteMemberToGroupRequest invite_member_to_group_request = 25;
+        InviteMemberToGroupResponse invite_member_to_group_response = 26;
+        KickOutMemberRequest kick_out_member_request = 27;
+        KickOutMemberResponse kick_out_member_response = 28;
+        AddGroupAnnouncementRequest add_group_announcement_request = 29;
+        AddGroupAnnouncementResponse add_group_announcement_response = 30;
+        DeleteAnnouncementRequest delete_announcement_request = 31;
+        DeleteAnnouncementResponse delete_announcement_response = 32;
+        EditAnnouncementRequest edit_announcement_request = 33;
+        EditAnnouncementResponse edit_announcement_response = 34;
+        EditGroupRemarksRequest edit_group_remarks_request = 35;
+        EditGroupRemarksResponse edit_group_remarks_response = 36;
+        EditGroupProfilePhotoRequest edit_group_profile_photo_request = 37;
+        EditGroupProfilePhotoResponse edit_group_profile_photo_response = 38;
+        LogoutRequest logout_request = 39;
+        LogoutResponse logout_response = 40;
+        //通知类
+        NotifyAddFriendRequest notify_add_friend_request = 41;
+        NotifyAddFriendResponse notify_add_friend_response = 42;
+        NotifyDeleteFriendRequest notify_delete_friend_request = 43;
+        NotifyDeleteFriendResponse notify_delete_friend_response = 44;
+        NotifyFriendOnlineRequest notify_friend_online_request = 45;
+        NotifyFriendOnlineResponse notify_friend_online_response = 46;
+        NotifyFriendOfflineRequest notify_friend_offline_request = 47;
+        NotifyFriendOfflineResponse notify_friend_offline_response = 48;
+        NotifyInviteMemberToGroupRequest notify_invite_member_to_group_request = 49;
+        NotifyInviteMemberToGroupResponse notify_invite_member_to_group_response = 50;
+        NotifyDeletedGroupRequest notify_delete_group_request = 51;
+        NotifyDeletedGroupResponse notify_delete_group_response = 52;
+        NotifyChangeGroupManagerAuthRequest notify_change_group_manager_auth_request = 53;
+        NotifyChangeGroupManagerAuthResponse notify_change_group_manager_auth_response = 54;
+        NotifyKickOutGroupRequest notify_kick_out_group_request = 55;
+        NotifyKickOutGroupResponse notify_kick_out_group_response = 56;
+        NotifyKickOutRequest notify_kick_out_request = 57;
+        NotifyKickOutResponse notify_kick_out_response = 58;
+        NotifyAddGroupAnnouncementRequest notify_add_group_announcement_request = 59;
+        NotifyAddGroupAnnouncementResponse notify_add_group_announcement_response = 60;
 
     }
 }
@@ -30,7 +95,64 @@ enum MessageStatus {
 //请求的类型
 enum DataType {
     EMPTY = 0;
-    HEART_BEAT = 1;
-    KICK_OUT = 2;
-    LOGOUT = 3;
+    HEART_BEAT_REQUEST = 1;
+    HEART_BEAT_RESPONSE = 2;
+    SINGLE_CHAT_REQUEST = 3;
+    SINGLE_CHAT_RESPONSE = 4;
+    GROUP_CHAT_REQUEST = 5;
+    GROUP_CHAT_RESPONSE = 6;
+    ADD_FRIEND_REQUEST = 7;
+    ADD_FRIEND_RESPONSE = 8;
+    DELETE_FRIEND_REQUEST = 9;
+    DELETE_FRIEND_RESPONSE = 10;
+    ADD_GROUP_REQUEST = 11;
+    ADD_GROUP_RESPONSE = 12;
+    CREATE_GROUP_REQUEST = 13;
+    CREATE_GROUP_RESPONSE = 14;
+    EXIT_GROUP_REQUEST = 15;
+    EXIT_GROUP_RESPONSE = 16;
+    CHANGE_GROUP_OWNER_REQUEST = 17;
+    CHANGE_GROUP_OWNER_RESPONSE = 18;
+    DELETE_GROUP_REQUEST = 19;
+    DELETE_GROUP_RESPONSE = 20;
+    CHANGE_GROUP_MANAGER_AUTH_REQUEST = 21;
+    CHANGE_GROUP_MANAGER_AUTH_RESPONSE = 22;
+    INVITE_MEMBER_TO_GROUP_REQUEST = 23;
+    INVITE_MEMBER_TO_GROUP_RESPONSE = 24;
+    KICK_OUT_MEMBER_REQUEST = 25;
+    KICK_OUT_MEMBER_RESPONSE = 26;
+    ADD_GROUP_ANNOUNCEMENT_REQUEST = 27;
+    ADD_GROUP_ANNOUNCEMENT_RESPONSE = 28;
+    DELETE_ANNOUNCEMENT_REQUEST = 29;
+    DELETE_ANNOUNCEMENT_RESPONSE = 30;
+    EDIT_ANNOUNCEMENT_REQUEST = 31;
+    EDIT_ANNOUNCEMENT_RESPONSE = 32;
+    EDIT_GROUP_REMARKS_REQUEST = 33;
+    EDIT_GROUP_REMARKS_RESPONSE = 34;
+    EDIT_GROUP_PROFILE_PHOTO_REQUEST = 35;
+    EDIT_GROUP_PROFILE_PHOTO_RESPONSE = 36;
+    LOGOUT_REQUEST = 37;
+    LOGOUT_RESPONSE = 38;
+    NOTIFY_ADD_FRIEND_REQUEST = 40;
+    NOTIFY_ADD_FRIEND_RESPONSE = 41;
+    NOTIFY_DELETE_FRIEND_REQUEST = 42;
+    NOTIFY_DELETE_FRIEND_RESPONSE = 43;
+    NOTIFY_FRIEND_ONLINE_REQUEST = 44;
+    NOTIFY_FRIEND_ONLINE_RESPONSE = 45;
+    NOTIFY_FRIEND_OFFLINE_REQUEST = 46;
+    NOTIFY_FRIEND_OFFLINE_RESPONSE = 47;
+    NOTIFY_INVITE_MEMBER_TO_GROUP_REQUEST = 48;
+    NOTIFY_INVITE_MEMBER_TO_GROUP_RESPONSE = 49;
+    NOTIFY_DELETED_GROUP_REQUEST = 50;
+    NOTIFY_DELETED_GROUP_RESPONSE = 51;
+    NOTIFY_CHANGE_GROUP_MANAGER_AUTH_REQUEST = 52;
+    NOTIFY_CHANGE_GROUP_MANAGER_AUTH_RESPONSE = 53;
+    NOTIFY_KICK_OUT_GROUP_REQUEST = 54;
+    NOTIFY_KICK_OUT_GROUP_RESPONSE = 55;
+    NOTIFY_KICK_OUT_REQUEST = 56;
+    NOTIFY_KICK_OUT_RESPONSE = 57;
+    NOTIFY_ADD_GROUP_ANNOUNCEMENT_REQUEST = 58;
+    NOTIFY_ADD_GROUP_ANNOUNCEMENT_RESPONSE = 59;
+
+
 }

@@ -2,6 +2,9 @@ syntax = "proto3";
 
 package com.jiangfucheng.im.protobuf;
 
+option java_package = "com.jiangfucheng.im.protobuf";
+option java_outer_classname = "Control";
+
 //控制类消息，比如通知有好友下线，通知退出登陆，通知账号被顶下去了等等。
 
 //1.请求类
@@ -103,7 +106,7 @@ message DeleteGroupResponse {
 }
 
 //修改管理员(群主)
-message ChangeManagerAuthRequest {
+message ChangeGroupManagerAuthRequest {
     string token = 1;
     message ChangeManagerData {
         int64 user_id = 2;
@@ -113,7 +116,7 @@ message ChangeManagerAuthRequest {
     int64 group_id = 5;
 }
 
-message ChangeManagerAuthResponse {
+message ChangeGroupManagerAuthResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -154,14 +157,14 @@ message KickOutMemberResponse {
 }
 
 //添加群公告(管理员)
-message AddGroupAnnounmentRequest {
+message AddGroupAnnouncementRequest {
     string token = 1;
     string title = 2; //标题
     string content = 3; //内容
     int64 group_id = 4;
 }
 
-message AddGroupAnnounmentResponse {
+message AddGroupAnnouncementResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -169,13 +172,13 @@ message AddGroupAnnounmentResponse {
 }
 
 //删除群公告(管理员)
-message DeleteAnnounmentRequest {
+message DeleteAnnouncementRequest {
     string token = 1;
-    int64 anno_id = 2;
+    int64 announcement_id = 2;
     int64 group_id = 4;
 }
 
-message DeleteAnnounmentResponse {
+message DeleteAnnouncementResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -183,15 +186,15 @@ message DeleteAnnounmentResponse {
 }
 
 //编辑群公告(管理员)
-message EditAnnounmentRequest {
+message EditAnnouncementRequest {
     string token = 1;
-    int64 anno_id = 2;
+    int64 announcement_id = 2;
     string title = 3;
     string content = 4;
     int64 group_id = 5;
 }
 
-message EditAnnounmentResponse {
+message EditAnnouncementResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -313,14 +316,14 @@ message NotifyInviteMemberToGroupResponse {
 }
 
 //群被解散通知
-message NotifyDeleteGroupRequest {
+message NotifyDeletedGroupRequest {
     string token = 1;
     int64 group_id = 2;
     int64 group_owner_id = 3; //群主id
     int64 timestamp = 4;
 }
 
-message NotifyDeleteGroupResponse {
+message NotifyDeletedGroupResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
@@ -343,11 +346,10 @@ message NotifyChangeGroupManagerAuthResponse {
     int64 timestamp = 4;
 }
 
-// 异地登陆被踢出通知
+// 被踢出群组通知
 message NotifyKickOutGroupRequest {
     string token = 1;
-    string ip = 2; //异地登陆的用户IP
-    string address = 3; //异地登陆的地址(有余力可以根据IP查询一下生成地址)
+    int64 group_id = 2; //群id
     string timestamp = 4;
 }
 
@@ -357,8 +359,24 @@ message NotifyKickOutGroupResponse {
     string err_msg = 3;
     int64 timestamp = 4;
 }
+
+//异地登陆被踢出通知
+message NotifyKickOutRequest {
+    string token = 1;
+    string ip = 2; //异地登陆的用户IP
+    string address = 3; //异地登陆的地址(有余力可以根据IP查询一下生成地址)
+    string timestamp = 4;
+}
+
+message NotifyKickOutResponse {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+}
+
 //管理员添加了群公告通知
-message NotifyAddGroupAnnounmentRequest {
+message NotifyAddGroupAnnouncementRequest {
     string token = 1;
     int64 group_id = 2;
     string title = 3;
@@ -366,7 +384,7 @@ message NotifyAddGroupAnnounmentRequest {
     string timestamp = 5;
 }
 
-message NotifyAddGroupAnnounmentResponse {
+message NotifyAddGroupAnnouncementResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;
