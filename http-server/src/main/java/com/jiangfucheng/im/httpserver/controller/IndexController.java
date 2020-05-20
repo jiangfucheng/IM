@@ -43,6 +43,6 @@ public class IndexController {
 		loginVo.setId(userInfo.getId());
 		//loginVo.setChatServer(chatServerUrl);
 		loginVo.setToken(token);
-		return Response.ok(token);
+		return Response.ok(loginVo);
 	}
 }

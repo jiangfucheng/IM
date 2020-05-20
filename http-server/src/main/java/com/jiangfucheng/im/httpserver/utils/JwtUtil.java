@@ -19,7 +19,7 @@ import java.util.Map;
 public class JwtUtil {
 
 	private static final String SECRET = "774664136ADE456880F267C9C9875146";
-	private static final long TOKEN_EXPIRED_MILLION_SECOND = 60 * 60 * 24 * 1000;
+	private static final long TOKEN_EXPIRED_MILLION_SECOND = 60 * 60 * 24 * 1000 * 10;
 
 	/**
 	 * jwt公式: base64UrlEncode(header) + "." + base64UrlEncode(payload) + "." + HMACSHA256(base64UrlEncode(header) + "." + base64UrlEncode(payload),secret)

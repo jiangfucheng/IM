@@ -40,6 +40,7 @@ public class UserBo {
 	public UserVo convertToUserVo() {
 		UserVo userVo = new UserVo();
 		BeanUtil.copyProperties(userVo, this);
+		userVo.setPassword(null);
 		return userVo;
 	}
 
