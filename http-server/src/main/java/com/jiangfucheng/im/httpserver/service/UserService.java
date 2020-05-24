@@ -1,10 +1,9 @@
 package com.jiangfucheng.im.httpserver.service;
 
-import com.jiangfucheng.im.httpserver.bo.LoginRequestBo;
-import com.jiangfucheng.im.httpserver.bo.UserBo;
-import com.jiangfucheng.im.httpserver.bo.UserInfoBo;
-import com.jiangfucheng.im.httpserver.bo.UserPasswordBo;
-import com.jiangfucheng.im.httpserver.vo.LoginResponseVo;
+import com.jiangfucheng.im.model.bo.LoginRequestBo;
+import com.jiangfucheng.im.model.bo.UserBo;
+import com.jiangfucheng.im.model.bo.UserInfoBo;
+import com.jiangfucheng.im.model.bo.UserPasswordBo;
 
 /**
  * Created by IntelliJ IDEA.

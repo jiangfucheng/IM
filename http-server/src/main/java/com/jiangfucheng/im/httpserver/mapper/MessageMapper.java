@@ -1,7 +1,7 @@
 package com.jiangfucheng.im.httpserver.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.jiangfucheng.im.httpserver.po.MessagePo;
+import com.jiangfucheng.im.model.po.MessagePo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;

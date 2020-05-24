@@ -1,12 +1,12 @@
 package com.jiangfucheng.im.httpserver.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.jiangfucheng.im.httpserver.bo.*;
+import com.jiangfucheng.im.model.bo.*;
 import com.jiangfucheng.im.httpserver.mapper.*;
-import com.jiangfucheng.im.httpserver.po.GroupAnnouncementPo;
-import com.jiangfucheng.im.httpserver.po.GroupInfoPo;
-import com.jiangfucheng.im.httpserver.po.GroupUserPo;
-import com.jiangfucheng.im.httpserver.po.RelationPo;
+import com.jiangfucheng.im.model.po.GroupAnnouncementPo;
+import com.jiangfucheng.im.model.po.GroupInfoPo;
+import com.jiangfucheng.im.model.po.GroupUserPo;
+import com.jiangfucheng.im.model.po.RelationPo;
 import com.jiangfucheng.im.httpserver.service.GroupService;
 import org.springframework.stereotype.Service;
 

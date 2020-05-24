@@ -4,7 +4,7 @@ import com.jiangfucheng.im.auth.bo.PermissionResourceBo;
 import com.jiangfucheng.im.auth.service.PermissionService;
 import com.jiangfucheng.im.auth.vo.PermissionResourceVo;
 import com.jiangfucheng.im.common.resp.Response;
-import com.jiangfucheng.im.common.util.ParamValidator;
+import com.jiangfucheng.im.common.utils.ParamValidator;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

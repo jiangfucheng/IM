@@ -11,5 +11,5 @@ public class ZookeeperConstants {
 	private ZookeeperConstants() {
 	}
 
-	public static final String CHAT_SERVER_HOST_PATH = "/im/chat_server_hosts";
+
 }

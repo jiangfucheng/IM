@@ -1,12 +1,12 @@
 package com.jiangfucheng.im.httpserver.controller;
 
 import com.jiangfucheng.im.common.resp.Response;
-import com.jiangfucheng.im.httpserver.bo.FriendBo;
-import com.jiangfucheng.im.httpserver.bo.FriendRemarksBo;
-import com.jiangfucheng.im.httpserver.bo.UserTokenPayloadBo;
+import com.jiangfucheng.im.model.bo.FriendBo;
+import com.jiangfucheng.im.model.bo.FriendRemarksBo;
+import com.jiangfucheng.im.model.bo.UserTokenPayloadBo;
 import com.jiangfucheng.im.httpserver.service.FriendRelationService;
-import com.jiangfucheng.im.httpserver.utils.PinyinUtil;
-import com.jiangfucheng.im.httpserver.vo.*;
+import com.jiangfucheng.im.common.utils.PinyinUtil;
+import com.jiangfucheng.im.model.vo.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
 package com.jiangfucheng.im.httpserver.service.impl;
 
-import com.jiangfucheng.im.httpserver.bo.AccountIntroductionBo;
+import com.jiangfucheng.im.model.bo.AccountIntroductionBo;
 import com.jiangfucheng.im.httpserver.mapper.GroupInfoMapper;
 import com.jiangfucheng.im.httpserver.mapper.UserMapper;
 import com.jiangfucheng.im.httpserver.service.AccountService;

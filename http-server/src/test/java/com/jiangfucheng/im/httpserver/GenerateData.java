@@ -1,11 +1,11 @@
 package com.jiangfucheng.im.httpserver;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.jiangfucheng.im.common.util.SnowFlakeIdGenerator;
-import com.jiangfucheng.im.httpserver.bo.FriendBo;
-import com.jiangfucheng.im.httpserver.bo.GroupMemberBo;
+import com.jiangfucheng.im.common.utils.SnowFlakeIdGenerator;
+import com.jiangfucheng.im.model.bo.FriendBo;
+import com.jiangfucheng.im.model.bo.GroupMemberBo;
 import com.jiangfucheng.im.httpserver.mapper.*;
-import com.jiangfucheng.im.httpserver.po.*;
+import com.jiangfucheng.im.model.po.*;
 import com.jiangfucheng.im.httpserver.service.FriendRelationService;
 import com.jiangfucheng.im.httpserver.service.GroupService;
 import com.jiangfucheng.im.httpserver.service.UserService;

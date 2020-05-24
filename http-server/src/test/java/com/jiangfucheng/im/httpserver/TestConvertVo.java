@@ -1,7 +1,7 @@
 package com.jiangfucheng.im.httpserver;
 
-import com.jiangfucheng.im.httpserver.bo.UserBo;
-import com.jiangfucheng.im.httpserver.vo.UserVo;
+import com.jiangfucheng.im.model.bo.UserBo;
+import com.jiangfucheng.im.model.vo.UserVo;
 import org.junit.Test;
 
 import java.util.UUID;

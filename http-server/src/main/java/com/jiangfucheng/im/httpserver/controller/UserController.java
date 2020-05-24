@@ -1,12 +1,12 @@
 package com.jiangfucheng.im.httpserver.controller;
 
 import com.jiangfucheng.im.common.resp.Response;
-import com.jiangfucheng.im.common.util.ParamValidator;
-import com.jiangfucheng.im.httpserver.bo.UserBo;
-import com.jiangfucheng.im.httpserver.bo.UserTokenPayloadBo;
+import com.jiangfucheng.im.common.utils.ParamValidator;
+import com.jiangfucheng.im.model.bo.UserBo;
+import com.jiangfucheng.im.model.bo.UserTokenPayloadBo;
 import com.jiangfucheng.im.httpserver.service.UserService;
-import com.jiangfucheng.im.httpserver.vo.PasswordVo;
-import com.jiangfucheng.im.httpserver.vo.UserVo;
+import com.jiangfucheng.im.model.vo.PasswordVo;
+import com.jiangfucheng.im.model.vo.UserVo;
 import org.springframework.web.bind.annotation.*;
 
 /**

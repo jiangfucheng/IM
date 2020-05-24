@@ -1,12 +1,12 @@
 package com.jiangfucheng.im.httpserver.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.jiangfucheng.im.httpserver.bo.MessageBo;
-import com.jiangfucheng.im.httpserver.bo.NotifyBo;
-import com.jiangfucheng.im.httpserver.bo.OneMessageListBo;
-import com.jiangfucheng.im.httpserver.bo.QueryHistoryMsgBo;
+import com.jiangfucheng.im.model.bo.MessageBo;
+import com.jiangfucheng.im.model.bo.NotifyBo;
+import com.jiangfucheng.im.model.bo.OneMessageListBo;
+import com.jiangfucheng.im.model.bo.QueryHistoryMsgBo;
 import com.jiangfucheng.im.httpserver.mapper.*;
-import com.jiangfucheng.im.httpserver.po.*;
+import com.jiangfucheng.im.model.po.*;
 import com.jiangfucheng.im.httpserver.service.MessageService;
 import org.springframework.stereotype.Service;
 

@@ -1,9 +1,9 @@
 package com.jiangfucheng.im.httpserver.service;
 
-import com.jiangfucheng.im.httpserver.bo.MessageBo;
-import com.jiangfucheng.im.httpserver.bo.NotifyBo;
-import com.jiangfucheng.im.httpserver.bo.OneMessageListBo;
-import com.jiangfucheng.im.httpserver.bo.QueryHistoryMsgBo;
+import com.jiangfucheng.im.model.bo.MessageBo;
+import com.jiangfucheng.im.model.bo.NotifyBo;
+import com.jiangfucheng.im.model.bo.OneMessageListBo;
+import com.jiangfucheng.im.model.bo.QueryHistoryMsgBo;
 
 import java.util.List;
 

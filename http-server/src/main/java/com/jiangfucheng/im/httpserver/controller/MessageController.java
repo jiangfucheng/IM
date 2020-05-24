@@ -1,11 +1,12 @@
 package com.jiangfucheng.im.httpserver.controller;
 
+import com.jiangfucheng.im.model.bo.UserTokenPayloadBo;
 import com.jiangfucheng.im.common.resp.Response;
-import com.jiangfucheng.im.httpserver.bo.*;
+import com.jiangfucheng.im.model.bo.*;
 import com.jiangfucheng.im.httpserver.service.MessageService;
-import com.jiangfucheng.im.httpserver.vo.MessageListElementVo;
-import com.jiangfucheng.im.httpserver.vo.MessageVo;
-import com.jiangfucheng.im.httpserver.vo.NotifyVo;
+import com.jiangfucheng.im.model.vo.MessageListElementVo;
+import com.jiangfucheng.im.model.vo.MessageVo;
+import com.jiangfucheng.im.model.vo.NotifyVo;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;

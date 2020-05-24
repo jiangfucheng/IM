@@ -1,7 +1,7 @@
 package com.jiangfucheng.im.httpserver;
 
-import com.jiangfucheng.im.httpserver.bo.UserTokenPayloadBo;
-import com.jiangfucheng.im.httpserver.utils.JwtUtil;
+import com.jiangfucheng.im.model.bo.UserTokenPayloadBo;
+import com.jiangfucheng.im.common.utils.JwtUtil;
 import org.junit.Assert;
 import org.junit.Test;
 

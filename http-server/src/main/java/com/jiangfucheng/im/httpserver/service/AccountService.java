@@ -1,6 +1,6 @@
 package com.jiangfucheng.im.httpserver.service;
 
-import com.jiangfucheng.im.httpserver.bo.AccountIntroductionBo;
+import com.jiangfucheng.im.model.bo.AccountIntroductionBo;
 
 import java.util.List;
 

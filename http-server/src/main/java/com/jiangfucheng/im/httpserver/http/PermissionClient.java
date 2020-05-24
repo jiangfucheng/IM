@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.jiangfucheng.im.common.constants.ErrorCode;
 import com.jiangfucheng.im.httpserver.exceptions.IMException;
 import com.jiangfucheng.im.httpserver.utils.BeanUtil;
-import com.jiangfucheng.im.httpserver.vo.PermissionResourceVo;
+import com.jiangfucheng.im.model.vo.PermissionResourceVo;
 import okhttp3.*;
 
 import java.io.IOException;

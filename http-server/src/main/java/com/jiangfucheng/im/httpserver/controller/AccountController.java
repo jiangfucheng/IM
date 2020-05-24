@@ -1,11 +1,11 @@
 package com.jiangfucheng.im.httpserver.controller;
 
 import com.jiangfucheng.im.common.resp.Response;
-import com.jiangfucheng.im.httpserver.bo.GroupBo;
-import com.jiangfucheng.im.httpserver.bo.UserBo;
+import com.jiangfucheng.im.model.bo.GroupBo;
+import com.jiangfucheng.im.model.bo.UserBo;
 import com.jiangfucheng.im.httpserver.service.GroupService;
 import com.jiangfucheng.im.httpserver.service.UserService;
-import com.jiangfucheng.im.httpserver.vo.AccountVo;
+import com.jiangfucheng.im.model.vo.AccountVo;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,6 +1,6 @@
 package com.jiangfucheng.im.httpserver;
 
-import com.jiangfucheng.im.httpserver.utils.PinyinUtil;
+import com.jiangfucheng.im.common.utils.PinyinUtil;
 import org.junit.Test;
 
 /**

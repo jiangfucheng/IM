@@ -1,8 +1,8 @@
 package com.jiangfucheng.im.httpserver.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.jiangfucheng.im.httpserver.bo.FriendRemarksBo;
-import com.jiangfucheng.im.httpserver.po.RelationPo;
+import com.jiangfucheng.im.model.bo.FriendRemarksBo;
+import com.jiangfucheng.im.model.po.RelationPo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;

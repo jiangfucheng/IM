@@ -2,13 +2,13 @@ package com.jiangfucheng.im.httpserver.controller;
 
 import com.jiangfucheng.im.common.constants.ErrorCode;
 import com.jiangfucheng.im.common.resp.Response;
-import com.jiangfucheng.im.httpserver.bo.UserInfoBo;
-import com.jiangfucheng.im.httpserver.bo.UserTokenPayloadBo;
+import com.jiangfucheng.im.model.bo.UserInfoBo;
+import com.jiangfucheng.im.model.bo.UserTokenPayloadBo;
 import com.jiangfucheng.im.httpserver.service.ChatServerService;
 import com.jiangfucheng.im.httpserver.service.UserService;
-import com.jiangfucheng.im.httpserver.utils.JwtUtil;
-import com.jiangfucheng.im.httpserver.vo.LoginRequestVo;
-import com.jiangfucheng.im.httpserver.vo.LoginResponseVo;
+import com.jiangfucheng.im.common.utils.JwtUtil;
+import com.jiangfucheng.im.model.vo.LoginRequestVo;
+import com.jiangfucheng.im.model.vo.LoginResponseVo;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;

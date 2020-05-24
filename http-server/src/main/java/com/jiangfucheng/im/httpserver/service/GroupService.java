@@ -1,8 +1,8 @@
 package com.jiangfucheng.im.httpserver.service;
 
-import com.jiangfucheng.im.httpserver.bo.GroupAnnouncementBo;
-import com.jiangfucheng.im.httpserver.bo.GroupBo;
-import com.jiangfucheng.im.httpserver.bo.GroupMemberBo;
+import com.jiangfucheng.im.model.bo.GroupAnnouncementBo;
+import com.jiangfucheng.im.model.bo.GroupBo;
+import com.jiangfucheng.im.model.bo.GroupMemberBo;
 
 import java.util.List;
 

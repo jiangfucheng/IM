@@ -1,6 +1,6 @@
 package com.jiangfucheng.im.httpserver.config;
 
-import com.jiangfucheng.im.common.util.SnowFlakeIdGenerator;
+import com.jiangfucheng.im.common.utils.SnowFlakeIdGenerator;
 import com.jiangfucheng.im.httpserver.http.PermissionClient;
 import com.jiangfucheng.im.httpserver.resolver.TokenResolver;
 import okhttp3.OkHttpClient;

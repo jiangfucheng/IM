@@ -1,7 +1,7 @@
 package com.jiangfucheng.im.httpserver.service;
 
-import com.jiangfucheng.im.httpserver.bo.FriendBo;
-import com.jiangfucheng.im.httpserver.bo.FriendRemarksBo;
+import com.jiangfucheng.im.model.bo.FriendBo;
+import com.jiangfucheng.im.model.bo.FriendRemarksBo;
 
 import java.util.List;
 

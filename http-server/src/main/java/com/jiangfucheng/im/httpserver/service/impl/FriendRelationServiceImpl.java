@@ -1,12 +1,12 @@
 package com.jiangfucheng.im.httpserver.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.jiangfucheng.im.httpserver.bo.FriendBo;
-import com.jiangfucheng.im.httpserver.bo.FriendRemarksBo;
+import com.jiangfucheng.im.model.bo.FriendBo;
+import com.jiangfucheng.im.model.bo.FriendRemarksBo;
 import com.jiangfucheng.im.httpserver.mapper.RelationMapper;
 import com.jiangfucheng.im.httpserver.mapper.UserMapper;
-import com.jiangfucheng.im.httpserver.po.RelationPo;
-import com.jiangfucheng.im.httpserver.po.UserPo;
+import com.jiangfucheng.im.model.po.RelationPo;
+import com.jiangfucheng.im.model.po.UserPo;
 import com.jiangfucheng.im.httpserver.service.FriendRelationService;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
