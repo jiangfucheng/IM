@@ -942,16 +942,14 @@ public final class Control {
     long getTimestamp();
 
     /**
-     * <code>int64 from_id = 5;</code>
-     * @return The fromId.
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
      */
-    long getFromId();
-
-    /**
-     * <code>int64 to_id = 6;</code>
-     * @return The toId.
-     */
-    long getToId();
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.AddFriendResponse}
@@ -1024,12 +1022,7 @@ public final class Control {
             }
             case 40: {
 
-              fromId_ = input.readInt64();
-              break;
-            }
-            case 48: {
-
-              toId_ = input.readInt64();
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -1160,24 +1153,18 @@ public final class Control {
       return timestamp_;
     }
 
-    public static final int FROM_ID_FIELD_NUMBER = 5;
-    private long fromId_;
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
     /**
-     * <code>int64 from_id = 5;</code>
-     * @return The fromId.
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
      */
-    public long getFromId() {
-      return fromId_;
-    }
-
-    public static final int TO_ID_FIELD_NUMBER = 6;
-    private long toId_;
-    /**
-     * <code>int64 to_id = 6;</code>
-     * @return The toId.
-     */
-    public long getToId() {
-      return toId_;
+    public long getTargetId() {
+      return targetId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1206,11 +1193,8 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
-      if (fromId_ != 0L) {
-        output.writeInt64(5, fromId_);
-      }
-      if (toId_ != 0L) {
-        output.writeInt64(6, toId_);
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
       }
       unknownFields.writeTo(output);
     }
@@ -1235,13 +1219,9 @@ public final class Control {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
       }
-      if (fromId_ != 0L) {
+      if (targetId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, fromId_);
-      }
-      if (toId_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, toId_);
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1266,10 +1246,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
-      if (getFromId()
-          != other.getFromId()) return false;
-      if (getToId()
-          != other.getToId()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1290,12 +1268,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
-      hash = (37 * hash) + FROM_ID_FIELD_NUMBER;
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getFromId());
-      hash = (37 * hash) + TO_ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getToId());
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1437,9 +1412,7 @@ public final class Control {
 
         timestamp_ = 0L;
 
-        fromId_ = 0L;
-
-        toId_ = 0L;
+        targetId_ = 0L;
 
         return this;
       }
@@ -1471,8 +1444,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
-        result.fromId_ = fromId_;
-        result.toId_ = toId_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -1535,11 +1507,8 @@ public final class Control {
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
         }
-        if (other.getFromId() != 0L) {
-          setFromId(other.getFromId());
-        }
-        if (other.getToId() != 0L) {
-          setToId(other.getToId());
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1794,62 +1763,44 @@ public final class Control {
         return this;
       }
 
-      private long fromId_ ;
+      private long targetId_ ;
       /**
-       * <code>int64 from_id = 5;</code>
-       * @return The fromId.
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
        */
-      public long getFromId() {
-        return fromId_;
+      public long getTargetId() {
+        return targetId_;
       }
       /**
-       * <code>int64 from_id = 5;</code>
-       * @param value The fromId to set.
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
        * @return This builder for chaining.
        */
-      public Builder setFromId(long value) {
+      public Builder setTargetId(long value) {
         
-        fromId_ = value;
+        targetId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 from_id = 5;</code>
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearFromId() {
+      public Builder clearTargetId() {
         
-        fromId_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long toId_ ;
-      /**
-       * <code>int64 to_id = 6;</code>
-       * @return The toId.
-       */
-      public long getToId() {
-        return toId_;
-      }
-      /**
-       * <code>int64 to_id = 6;</code>
-       * @param value The toId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setToId(long value) {
-        
-        toId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 to_id = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearToId() {
-        
-        toId_ = 0L;
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -1921,6 +1872,12 @@ public final class Control {
      */
     com.google.protobuf.ByteString
         getTokenBytes();
+
+    /**
+     * <code>int64 friend_id = 2;</code>
+     * @return The friendId.
+     */
+    long getFriendId();
   }
   /**
    * <pre>
@@ -1976,6 +1933,11 @@ public final class Control {
               java.lang.String s = input.readStringRequireUtf8();
 
               token_ = s;
+              break;
+            }
+            case 16: {
+
+              friendId_ = input.readInt64();
               break;
             }
             default: {
@@ -2046,6 +2008,16 @@ public final class Control {
       }
     }
 
+    public static final int FRIEND_ID_FIELD_NUMBER = 2;
+    private long friendId_;
+    /**
+     * <code>int64 friend_id = 2;</code>
+     * @return The friendId.
+     */
+    public long getFriendId() {
+      return friendId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2063,6 +2035,9 @@ public final class Control {
       if (!getTokenBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
       }
+      if (friendId_ != 0L) {
+        output.writeInt64(2, friendId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2074,6 +2049,10 @@ public final class Control {
       size = 0;
       if (!getTokenBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      }
+      if (friendId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, friendId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2092,6 +2071,8 @@ public final class Control {
 
       if (!getToken()
           .equals(other.getToken())) return false;
+      if (getFriendId()
+          != other.getFriendId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2105,6 +2086,9 @@ public final class Control {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + FRIEND_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFriendId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2244,6 +2228,8 @@ public final class Control {
         super.clear();
         token_ = "";
 
+        friendId_ = 0L;
+
         return this;
       }
 
@@ -2271,6 +2257,7 @@ public final class Control {
       public com.jiangfucheng.im.protobuf.Control.DeleteFriendRequest buildPartial() {
         com.jiangfucheng.im.protobuf.Control.DeleteFriendRequest result = new com.jiangfucheng.im.protobuf.Control.DeleteFriendRequest(this);
         result.token_ = token_;
+        result.friendId_ = friendId_;
         onBuilt();
         return result;
       }
@@ -2322,6 +2309,9 @@ public final class Control {
         if (!other.getToken().isEmpty()) {
           token_ = other.token_;
           onChanged();
+        }
+        if (other.getFriendId() != 0L) {
+          setFriendId(other.getFriendId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -2427,6 +2417,36 @@ public final class Control {
         onChanged();
         return this;
       }
+
+      private long friendId_ ;
+      /**
+       * <code>int64 friend_id = 2;</code>
+       * @return The friendId.
+       */
+      public long getFriendId() {
+        return friendId_;
+      }
+      /**
+       * <code>int64 friend_id = 2;</code>
+       * @param value The friendId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFriendId(long value) {
+        
+        friendId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 friend_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFriendId() {
+        
+        friendId_ = 0L;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2523,6 +2543,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.DeleteFriendResponse}
@@ -2591,6 +2621,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -2721,6 +2756,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2747,6 +2796,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2769,6 +2821,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2793,6 +2849,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2813,6 +2871,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2954,6 +3015,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -2984,6 +3047,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -3045,6 +3109,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3295,6 +3362,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -4037,6 +4146,12 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.AddGroupResponse}
@@ -4105,6 +4220,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -4235,6 +4355,16 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4261,6 +4391,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4283,6 +4416,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4307,6 +4444,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4327,6 +4466,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4468,6 +4610,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -4498,6 +4642,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -4559,6 +4704,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4809,6 +4957,36 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -6068,6 +6246,16 @@ public final class Control {
      * @return The groupId.
      */
     long getGroupId();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 6;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.CreateGroupResponse}
@@ -6141,6 +6329,11 @@ public final class Control {
             case 40: {
 
               groupId_ = input.readInt64();
+              break;
+            }
+            case 48: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -6281,6 +6474,20 @@ public final class Control {
       return groupId_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 6;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 6;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -6310,6 +6517,9 @@ public final class Control {
       if (groupId_ != 0L) {
         output.writeInt64(5, groupId_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(6, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -6337,6 +6547,10 @@ public final class Control {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(5, groupId_);
       }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, targetId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6362,6 +6576,8 @@ public final class Control {
           != other.getTimestamp()) return false;
       if (getGroupId()
           != other.getGroupId()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -6385,6 +6601,9 @@ public final class Control {
       hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getGroupId());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6528,6 +6747,8 @@ public final class Control {
 
         groupId_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -6559,6 +6780,7 @@ public final class Control {
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
         result.groupId_ = groupId_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -6623,6 +6845,9 @@ public final class Control {
         }
         if (other.getGroupId() != 0L) {
           setGroupId(other.getGroupId());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6903,6 +7128,48 @@ public final class Control {
       public Builder clearGroupId() {
         
         groupId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 6;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 6;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -7645,6 +7912,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.ExitGroupResponse}
@@ -7713,6 +7990,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -7843,6 +8125,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7869,6 +8165,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -7891,6 +8190,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7915,6 +8218,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -7935,6 +8240,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8076,6 +8384,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -8106,6 +8416,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -8167,6 +8478,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8417,6 +8731,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -9248,6 +9604,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.ChangeGroupOwnerResponse}
@@ -9316,6 +9682,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -9446,6 +9817,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9472,6 +9857,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -9494,6 +9882,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9518,6 +9910,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -9538,6 +9932,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9679,6 +10076,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -9709,6 +10108,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -9770,6 +10170,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -10020,6 +10423,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -10762,6 +11207,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.DeleteGroupResponse}
@@ -10830,6 +11285,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -10960,6 +11420,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -10986,6 +11460,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -11008,6 +11485,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -11032,6 +11513,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11052,6 +11535,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11193,6 +11679,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -11223,6 +11711,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -11284,6 +11773,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -11534,6 +12026,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -13245,6 +13779,16 @@ public final class Control {
      */
     com.jiangfucheng.im.protobuf.Control.ChangeGroupManagerAuthResponse.RespDataOrBuilder getRespDatasOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 8;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.ChangeGroupManagerAuthResponse}
@@ -13324,6 +13868,11 @@ public final class Control {
               }
               respDatas_.add(
                   input.readMessage(com.jiangfucheng.im.protobuf.Control.ChangeGroupManagerAuthResponse.RespData.parser(), extensionRegistry));
+              break;
+            }
+            case 64: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -14067,6 +14616,20 @@ public final class Control {
       return respDatas_.get(index);
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 8;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 8;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -14096,6 +14659,9 @@ public final class Control {
       for (int i = 0; i < respDatas_.size(); i++) {
         output.writeMessage(7, respDatas_.get(i));
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(8, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -14123,6 +14689,10 @@ public final class Control {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, respDatas_.get(i));
       }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(8, targetId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -14148,6 +14718,8 @@ public final class Control {
           != other.getTimestamp()) return false;
       if (!getRespDatasList()
           .equals(other.getRespDatasList())) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -14172,6 +14744,9 @@ public final class Control {
         hash = (37 * hash) + RESP_DATAS_FIELD_NUMBER;
         hash = (53 * hash) + getRespDatasList().hashCode();
       }
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -14320,6 +14895,8 @@ public final class Control {
         } else {
           respDatasBuilder_.clear();
         }
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -14360,6 +14937,7 @@ public final class Control {
         } else {
           result.respDatas_ = respDatasBuilder_.build();
         }
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -14447,6 +15025,9 @@ public final class Control {
               respDatasBuilder_.addAllMessages(other.respDatas_);
             }
           }
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -14940,6 +15521,48 @@ public final class Control {
           respDatas_ = null;
         }
         return respDatasBuilder_;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 8;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 8;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -15928,6 +16551,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.InviteMemberToGroupResponse}
@@ -15996,6 +16629,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -16126,6 +16764,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -16152,6 +16804,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -16174,6 +16829,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -16198,6 +16857,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -16218,6 +16879,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -16359,6 +17023,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -16389,6 +17055,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -16450,6 +17117,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -16700,6 +17370,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -17531,6 +18243,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.KickOutMemberResponse}
@@ -17599,6 +18321,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -17729,6 +18456,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -17755,6 +18496,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -17777,6 +18521,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -17801,6 +18549,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -17821,6 +18571,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -17962,6 +18715,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -17992,6 +18747,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -18053,6 +18809,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -18303,6 +19062,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -19413,6 +20214,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.AddGroupAnnouncementResponse}
@@ -19481,6 +20292,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -19611,6 +20427,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -19637,6 +20467,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -19659,6 +20492,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -19683,6 +20520,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -19703,6 +20542,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -19844,6 +20686,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -19874,6 +20718,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -19935,6 +20780,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -20185,6 +21033,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -20996,6 +21886,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.DeleteAnnouncementResponse}
@@ -21064,6 +21964,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -21194,6 +22099,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -21220,6 +22139,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -21242,6 +22164,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -21266,6 +22192,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -21286,6 +22214,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -21427,6 +22358,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -21457,6 +22390,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -21518,6 +22452,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -21768,6 +22705,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -22875,6 +23854,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.EditAnnouncementResponse}
@@ -22943,6 +23932,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -23073,6 +24067,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -23099,6 +24107,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -23121,6 +24132,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -23145,6 +24160,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -23165,6 +24182,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -23306,6 +24326,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -23336,6 +24358,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -23397,6 +24420,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -23647,6 +24673,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -24573,6 +25641,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.EditGroupRemarksResponse}
@@ -24641,6 +25719,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -24771,6 +25854,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -24797,6 +25894,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -24819,6 +25919,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -24843,6 +25947,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -24863,6 +25969,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -25004,6 +26113,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -25034,6 +26145,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -25095,6 +26207,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -25345,6 +26460,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -26291,6 +27448,16 @@ public final class Control {
      */
     com.google.protobuf.ByteString
         getProfilePhotoUrlBytes();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 6;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.EditGroupProfilePhotoResponse}
@@ -26366,6 +27533,11 @@ public final class Control {
               java.lang.String s = input.readStringRequireUtf8();
 
               profilePhotoUrl_ = s;
+              break;
+            }
+            case 48: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -26540,6 +27712,20 @@ public final class Control {
       }
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 6;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 6;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -26569,6 +27755,9 @@ public final class Control {
       if (!getProfilePhotoUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, profilePhotoUrl_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(6, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -26595,6 +27784,10 @@ public final class Control {
       if (!getProfilePhotoUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, profilePhotoUrl_);
       }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, targetId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -26620,6 +27813,8 @@ public final class Control {
           != other.getTimestamp()) return false;
       if (!getProfilePhotoUrl()
           .equals(other.getProfilePhotoUrl())) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -26642,6 +27837,9 @@ public final class Control {
           getTimestamp());
       hash = (37 * hash) + PROFILE_PHOTO_URL_FIELD_NUMBER;
       hash = (53 * hash) + getProfilePhotoUrl().hashCode();
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -26785,6 +27983,8 @@ public final class Control {
 
         profilePhotoUrl_ = "";
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -26816,6 +28016,7 @@ public final class Control {
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
         result.profilePhotoUrl_ = profilePhotoUrl_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -26881,6 +28082,9 @@ public final class Control {
         if (!other.getProfilePhotoUrl().isEmpty()) {
           profilePhotoUrl_ = other.profilePhotoUrl_;
           onChanged();
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -27227,6 +28431,48 @@ public final class Control {
   checkByteStringIsUtf8(value);
         
         profilePhotoUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 6;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 6;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -27957,6 +29203,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.LoginResponse}
@@ -28025,6 +29281,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -28151,6 +29412,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -28177,6 +29452,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -28199,6 +29477,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -28223,6 +29505,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -28243,6 +29527,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -28384,6 +29671,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -28414,6 +29703,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -28475,6 +29765,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -28713,6 +30006,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -29443,6 +30778,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.LogoutResponse}
@@ -29511,6 +30856,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -29637,6 +30987,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -29663,6 +31027,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -29685,6 +31052,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -29709,6 +31080,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -29729,6 +31102,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -29870,6 +31246,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -29900,6 +31278,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -29961,6 +31340,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -30199,6 +31581,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -31066,6 +32490,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.NotifyAddFriendResponse}
@@ -31134,6 +32568,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -31264,6 +32703,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -31290,6 +32743,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -31312,6 +32768,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -31336,6 +32796,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -31356,6 +32818,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -31497,6 +32962,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -31527,6 +32994,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -31588,6 +33056,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -31838,6 +33309,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -32669,6 +34182,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.NotifyDeleteFriendResponse}
@@ -32737,6 +34260,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -32867,6 +34395,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -32893,6 +34435,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -32915,6 +34460,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -32939,6 +34488,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -32959,6 +34510,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -33100,6 +34654,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -33130,6 +34686,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -33191,6 +34748,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -33441,6 +35001,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -34252,6 +35854,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.NotifyFriendOnlineResponse}
@@ -34320,6 +35932,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -34450,6 +36067,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -34476,6 +36107,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -34498,6 +36132,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -34522,6 +36160,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -34542,6 +36182,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -34683,6 +36326,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -34713,6 +36358,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -34774,6 +36420,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -35024,6 +36673,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -35835,6 +37526,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.NotifyFriendOfflineResponse}
@@ -35903,6 +37604,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -36033,6 +37739,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -36059,6 +37779,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -36081,6 +37804,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -36105,6 +37832,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -36125,6 +37854,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -36266,6 +37998,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -36296,6 +38030,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -36357,6 +38092,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -36607,6 +38345,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -37507,6 +39287,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.NotifyInviteMemberToGroupResponse}
@@ -37575,6 +39365,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -37705,6 +39500,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -37731,6 +39540,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -37753,6 +39565,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -37777,6 +39593,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -37797,6 +39615,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -37938,6 +39759,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -37968,6 +39791,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -38029,6 +39853,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -38279,6 +40106,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -39179,6 +41048,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.NotifyDeletedGroupResponse}
@@ -39247,6 +41126,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -39377,6 +41261,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -39403,6 +41301,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -39425,6 +41326,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -39449,6 +41354,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -39469,6 +41376,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -39610,6 +41520,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -39640,6 +41552,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -39701,6 +41614,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -39951,6 +41867,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -40939,6 +42897,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.NotifyChangeGroupManagerAuthResponse}
@@ -41007,6 +42975,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -41137,6 +43110,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -41163,6 +43150,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -41185,6 +43175,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -41209,6 +43203,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -41229,6 +43225,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -41370,6 +43369,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -41400,6 +43401,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -41461,6 +43463,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -41711,6 +43716,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -42621,6 +44668,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.NotifyKickOutGroupResponse}
@@ -42689,6 +44746,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -42819,6 +44881,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -42845,6 +44921,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -42867,6 +44946,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -42891,6 +44974,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -42911,6 +44996,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -43052,6 +45140,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -43082,6 +45172,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -43143,6 +45234,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -43393,6 +45487,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -44582,6 +46718,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.NotifyKickOutResponse}
@@ -44650,6 +46796,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -44780,6 +46931,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -44806,6 +46971,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -44828,6 +46996,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -44852,6 +47024,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -44872,6 +47046,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -45013,6 +47190,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -45043,6 +47222,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -45104,6 +47284,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -45354,6 +47537,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -46540,6 +48765,16 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.NotifyAddGroupAnnouncementResponse}
@@ -46608,6 +48843,11 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
               break;
             }
             default: {
@@ -46738,6 +48978,20 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -46764,6 +49018,9 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -46786,6 +49043,10 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -46810,6 +49071,8 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -46830,6 +49093,9 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -46971,6 +49237,8 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        targetId_ = 0L;
+
         return this;
       }
 
@@ -47001,6 +49269,7 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
         onBuilt();
         return result;
       }
@@ -47062,6 +49331,9 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -47312,6 +49584,48 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
         onChanged();
         return this;
       }
@@ -47660,131 +49974,144 @@ public final class Control {
       "\n\rcontrol.proto\022\034com.jiangfucheng.im.pro" +
       "tobuf\"J\n\020AddFriendRequest\022\r\n\005token\030\001 \001(\t" +
       "\022\021\n\ttarget_id\030\002 \001(\003\022\024\n\014auth_message\030\003 \001(" +
-      "\t\"r\n\021AddFriendResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003" +
+      "\t\"e\n\021AddFriendResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003" +
       "msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030" +
-      "\004 \001(\003\022\017\n\007from_id\030\005 \001(\003\022\r\n\005to_id\030\006 \001(\003\"$\n" +
-      "\023DeleteFriendRequest\022\r\n\005token\030\001 \001(\t\"U\n\024D" +
-      "eleteFriendResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg" +
+      "\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"7\n\023DeleteFriend" +
+      "Request\022\r\n\005token\030\001 \001(\t\022\021\n\tfriend_id\030\002 \001(" +
+      "\003\"h\n\024DeleteFriendResponse\022\014\n\004code\030\001 \001(\005\022" +
+      "\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimesta" +
+      "mp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"2\n\017AddGroupR" +
+      "equest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\"" +
+      "d\n\020AddGroupResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg" +
       "\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001" +
-      "(\003\"2\n\017AddGroupRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010" +
-      "group_id\030\002 \001(\003\"Q\n\020AddGroupResponse\022\014\n\004co" +
-      "de\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021" +
-      "\n\ttimestamp\030\004 \001(\003\"e\n\022CreateGroupRequest\022" +
-      "\r\n\005token\030\001 \001(\t\022\022\n\ngroup_name\030\002 \001(\t\022\026\n\016in" +
-      "vite_user_id\030\003 \003(\003\022\024\n\014introduction\030\004 \001(\t" +
-      "\"f\n\023CreateGroupResponse\022\014\n\004code\030\001 \001(\005\022\013\n" +
-      "\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp" +
-      "\030\004 \001(\003\022\020\n\010group_id\030\005 \001(\003\"3\n\020ExitGroupReq" +
-      "uest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\"R\n" +
-      "\021ExitGroupResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030" +
-      "\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(" +
-      "\003\"K\n\027ChangeGroupOwnerRequest\022\r\n\005token\030\001 " +
-      "\001(\t\022\017\n\007user_id\030\002 \001(\003\022\020\n\010group_id\030\003 \001(\003\"Y" +
-      "\n\030ChangeGroupOwnerResponse\022\014\n\004code\030\001 \001(\005" +
-      "\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimest" +
-      "amp\030\004 \001(\003\"5\n\022DeleteGroupRequest\022\r\n\005token" +
-      "\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\"T\n\023DeleteGroupR" +
-      "esponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007er" +
-      "r_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\"\322\001\n\035Chang" +
+      "(\003\022\021\n\ttarget_id\030\005 \001(\003\"e\n\022CreateGroupRequ" +
+      "est\022\r\n\005token\030\001 \001(\t\022\022\n\ngroup_name\030\002 \001(\t\022\026" +
+      "\n\016invite_user_id\030\003 \003(\003\022\024\n\014introduction\030\004" +
+      " \001(\t\"y\n\023CreateGroupResponse\022\014\n\004code\030\001 \001(" +
+      "\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimes" +
+      "tamp\030\004 \001(\003\022\020\n\010group_id\030\005 \001(\003\022\021\n\ttarget_i" +
+      "d\030\006 \001(\003\"3\n\020ExitGroupRequest\022\r\n\005token\030\001 \001" +
+      "(\t\022\020\n\010group_id\030\002 \001(\003\"e\n\021ExitGroupRespons" +
+      "e\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030" +
+      "\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 " +
+      "\001(\003\"K\n\027ChangeGroupOwnerRequest\022\r\n\005token\030" +
+      "\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022\020\n\010group_id\030\003 \001(\003" +
+      "\"l\n\030ChangeGroupOwnerResponse\022\014\n\004code\030\001 \001" +
+      "(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttime" +
+      "stamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"5\n\022Delete" +
+      "GroupRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030" +
+      "\002 \001(\003\"g\n\023DeleteGroupResponse\022\014\n\004code\030\001 \001" +
+      "(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttime" +
+      "stamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"\322\001\n\035Chang" +
       "eGroupManagerAuthRequest\022\r\n\005token\030\001 \001(\t\022" +
       "\\\n\005datas\030\004 \003(\0132M.com.jiangfucheng.im.pro" +
       "tobuf.ChangeGroupManagerAuthRequest.Chan" +
       "geManagerData\022\020\n\010group_id\030\005 \001(\003\0322\n\021Chang" +
       "eManagerData\022\017\n\007user_id\030\002 \001(\003\022\014\n\004type\030\003 " +
-      "\001(\005\"\350\001\n\036ChangeGroupManagerAuthResponse\022\014" +
+      "\001(\005\"\373\001\n\036ChangeGroupManagerAuthResponse\022\014" +
       "\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001" +
       "(\t\022\021\n\ttimestamp\030\004 \001(\003\022Y\n\nresp_datas\030\007 \003(" +
       "\0132E.com.jiangfucheng.im.protobuf.ChangeG" +
-      "roupManagerAuthResponse.RespData\032,\n\010Resp" +
-      "Data\022\017\n\007user_id\030\005 \001(\003\022\017\n\007success\030\006 \001(\005\"N" +
-      "\n\032InviteMemberToGroupRequest\022\r\n\005token\030\001 " +
-      "\001(\t\022\017\n\007user_id\030\002 \003(\003\022\020\n\010group_id\030\003 \001(\003\"\\" +
-      "\n\033InviteMemberToGroupResponse\022\014\n\004code\030\001 " +
+      "roupManagerAuthResponse.RespData\022\021\n\ttarg" +
+      "et_id\030\010 \001(\003\032,\n\010RespData\022\017\n\007user_id\030\005 \001(\003" +
+      "\022\017\n\007success\030\006 \001(\005\"N\n\032InviteMemberToGroup" +
+      "Request\022\r\n\005token\030\001 \001(\t\022\017\n\007user_id\030\002 \003(\003\022" +
+      "\020\n\010group_id\030\003 \001(\003\"o\n\033InviteMemberToGroup" +
+      "Response\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007e" +
+      "rr_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarge" +
+      "t_id\030\005 \001(\003\"H\n\024KickOutMemberRequest\022\r\n\005to" +
+      "ken\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022\020\n\010group_id\030\003" +
+      " \001(\003\"i\n\025KickOutMemberResponse\022\014\n\004code\030\001 " +
       "\001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttim" +
-      "estamp\030\004 \001(\003\"H\n\024KickOutMemberRequest\022\r\n\005" +
-      "token\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022\020\n\010group_id" +
-      "\030\003 \001(\003\"V\n\025KickOutMemberResponse\022\014\n\004code\030" +
-      "\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\tt" +
-      "imestamp\030\004 \001(\003\"^\n\033AddGroupAnnouncementRe" +
-      "quest\022\r\n\005token\030\001 \001(\t\022\r\n\005title\030\002 \001(\t\022\017\n\007c" +
-      "ontent\030\003 \001(\t\022\020\n\010group_id\030\004 \001(\003\"]\n\034AddGro" +
-      "upAnnouncementResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003" +
-      "msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030" +
-      "\004 \001(\003\"U\n\031DeleteAnnouncementRequest\022\r\n\005to" +
-      "ken\030\001 \001(\t\022\027\n\017announcement_id\030\002 \001(\003\022\020\n\010gr" +
-      "oup_id\030\004 \001(\003\"[\n\032DeleteAnnouncementRespon" +
-      "se\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg" +
-      "\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\"s\n\027EditAnnounc" +
-      "ementRequest\022\r\n\005token\030\001 \001(\t\022\027\n\017announcem" +
-      "ent_id\030\002 \001(\003\022\r\n\005title\030\003 \001(\t\022\017\n\007content\030\004" +
-      " \001(\t\022\020\n\010group_id\030\005 \001(\003\"Y\n\030EditAnnounceme" +
-      "ntResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n" +
-      "\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\"K\n\027Edi" +
-      "tGroupRemarksRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010g" +
-      "roup_id\030\002 \001(\003\022\017\n\007remarks\030\003 \001(\t\"Y\n\030EditGr" +
-      "oupRemarksResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030" +
-      "\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(" +
-      "\003\"V\n\034EditGroupProfilePhotoRequest\022\r\n\005tok" +
-      "en\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022\025\n\rprofile_ph" +
-      "oto\030\003 \001(\t\"y\n\035EditGroupProfilePhotoRespon" +
-      "se\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg" +
-      "\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\031\n\021profile_pho" +
-      "to_url\030\005 \001(\t\"0\n\014LoginRequest\022\r\n\005token\030\001 " +
-      "\001(\t\022\021\n\ttimestamp\030\002 \001(\003\"N\n\rLoginResponse\022" +
+      "estamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"^\n\033AddGr" +
+      "oupAnnouncementRequest\022\r\n\005token\030\001 \001(\t\022\r\n" +
+      "\005title\030\002 \001(\t\022\017\n\007content\030\003 \001(\t\022\020\n\010group_i" +
+      "d\030\004 \001(\003\"p\n\034AddGroupAnnouncementResponse\022" +
       "\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 " +
-      "\001(\t\022\021\n\ttimestamp\030\004 \001(\003\"1\n\rLogoutRequest\022" +
-      "\r\n\005token\030\001 \001(\t\022\021\n\ttimestamp\030\002 \001(\003\"O\n\016Log" +
-      "outResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017" +
-      "\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\"R\n\026No" +
-      "tifyAddFriendRequest\022\017\n\007user_id\030\001 \001(\003\022\024\n" +
-      "\014auth_message\030\002 \001(\t\022\021\n\ttimestamp\030\003 \001(\003\"X" +
-      "\n\027NotifyAddFriendResponse\022\014\n\004code\030\001 \001(\005\022" +
-      "\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimesta" +
-      "mp\030\004 \001(\003\"N\n\031NotifyDeleteFriendRequest\022\r\n" +
-      "\005token\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022\021\n\ttimesta" +
-      "mp\030\003 \001(\003\"[\n\032NotifyDeleteFriendResponse\022\014" +
+      "\001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(" +
+      "\003\"U\n\031DeleteAnnouncementRequest\022\r\n\005token\030" +
+      "\001 \001(\t\022\027\n\017announcement_id\030\002 \001(\003\022\020\n\010group_" +
+      "id\030\004 \001(\003\"n\n\032DeleteAnnouncementResponse\022\014" +
       "\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001" +
-      "(\t\022\021\n\ttimestamp\030\004 \001(\003\"N\n\031NotifyFriendOnl" +
-      "ineRequest\022\r\n\005token\030\001 \001(\t\022\017\n\007user_id\030\002 \001" +
-      "(\003\022\021\n\ttimestamp\030\003 \001(\003\"[\n\032NotifyFriendOnl" +
-      "ineResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017" +
-      "\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\"O\n\032No" +
-      "tifyFriendOfflineRequest\022\r\n\005token\030\001 \001(\t\022" +
-      "\017\n\007user_id\030\002 \001(\003\022\021\n\ttimestamp\030\003 \001(\003\"\\\n\033N" +
-      "otifyFriendOfflineResponse\022\014\n\004code\030\001 \001(\005" +
+      "(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003" +
+      "\"s\n\027EditAnnouncementRequest\022\r\n\005token\030\001 \001" +
+      "(\t\022\027\n\017announcement_id\030\002 \001(\003\022\r\n\005title\030\003 \001" +
+      "(\t\022\017\n\007content\030\004 \001(\t\022\020\n\010group_id\030\005 \001(\003\"l\n" +
+      "\030EditAnnouncementResponse\022\014\n\004code\030\001 \001(\005\022" +
+      "\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimesta" +
+      "mp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"K\n\027EditGroup" +
+      "RemarksRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_i" +
+      "d\030\002 \001(\003\022\017\n\007remarks\030\003 \001(\t\"l\n\030EditGroupRem" +
+      "arksResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022" +
+      "\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\tt" +
+      "arget_id\030\005 \001(\003\"V\n\034EditGroupProfilePhotoR" +
+      "equest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022" +
+      "\025\n\rprofile_photo\030\003 \001(\t\"\214\001\n\035EditGroupProf" +
+      "ilePhotoResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 " +
+      "\001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022" +
+      "\031\n\021profile_photo_url\030\005 \001(\t\022\021\n\ttarget_id\030" +
+      "\006 \001(\003\"0\n\014LoginRequest\022\r\n\005token\030\001 \001(\t\022\021\n\t" +
+      "timestamp\030\002 \001(\003\"a\n\rLoginResponse\022\014\n\004code" +
+      "\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\t" +
+      "timestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"1\n\rLo" +
+      "goutRequest\022\r\n\005token\030\001 \001(\t\022\021\n\ttimestamp\030" +
+      "\002 \001(\003\"b\n\016LogoutResponse\022\014\n\004code\030\001 \001(\005\022\013\n" +
+      "\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp" +
+      "\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"R\n\026NotifyAddFr" +
+      "iendRequest\022\017\n\007user_id\030\001 \001(\003\022\024\n\014auth_mes" +
+      "sage\030\002 \001(\t\022\021\n\ttimestamp\030\003 \001(\003\"k\n\027NotifyA" +
+      "ddFriendResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 " +
+      "\001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022" +
+      "\021\n\ttarget_id\030\005 \001(\003\"N\n\031NotifyDeleteFriend" +
+      "Request\022\r\n\005token\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022" +
+      "\021\n\ttimestamp\030\003 \001(\003\"n\n\032NotifyDeleteFriend" +
+      "Response\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007e" +
+      "rr_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarge" +
+      "t_id\030\005 \001(\003\"N\n\031NotifyFriendOnlineRequest\022" +
+      "\r\n\005token\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022\021\n\ttimes" +
+      "tamp\030\003 \001(\003\"n\n\032NotifyFriendOnlineResponse" +
+      "\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003" +
+      " \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001" +
+      "(\003\"O\n\032NotifyFriendOfflineRequest\022\r\n\005toke" +
+      "n\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022\021\n\ttimestamp\030\003 " +
+      "\001(\003\"o\n\033NotifyFriendOfflineResponse\022\014\n\004co" +
+      "de\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021" +
+      "\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"o\n " +
+      "NotifyInviteMemberToGroupRequest\022\r\n\005toke" +
+      "n\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022\027\n\017invited_use" +
+      "r_id\030\003 \001(\003\022\021\n\ttimestamp\030\004 \001(\003\"u\n!NotifyI" +
+      "nviteMemberToGroupResponse\022\014\n\004code\030\001 \001(\005" +
       "\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimest" +
-      "amp\030\004 \001(\003\"o\n NotifyInviteMemberToGroupRe" +
-      "quest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022\027" +
-      "\n\017invited_user_id\030\003 \001(\003\022\021\n\ttimestamp\030\004 \001" +
-      "(\003\"b\n!NotifyInviteMemberToGroupResponse\022" +
-      "\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 " +
-      "\001(\t\022\021\n\ttimestamp\030\004 \001(\003\"g\n\031NotifyDeletedG" +
-      "roupRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002" +
-      " \001(\003\022\026\n\016group_owner_id\030\003 \001(\003\022\021\n\ttimestam" +
-      "p\030\004 \001(\003\"[\n\032NotifyDeletedGroupResponse\022\014\n" +
-      "\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(" +
-      "\t\022\021\n\ttimestamp\030\004 \001(\003\"x\n#NotifyChangeGrou" +
-      "pManagerAuthRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010gr" +
-      "oup_id\030\002 \001(\003\022\017\n\007user_id\030\003 \001(\003\022\014\n\004type\030\004 " +
-      "\001(\005\022\021\n\ttimestamp\030\005 \001(\003\"e\n$NotifyChangeGr" +
-      "oupManagerAuthResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003" +
-      "msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030" +
-      "\004 \001(\003\"O\n\031NotifyKickOutGroupRequest\022\r\n\005to" +
-      "ken\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022\021\n\ttimestamp" +
-      "\030\004 \001(\t\"[\n\032NotifyKickOutGroupResponse\022\014\n\004" +
-      "code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t" +
-      "\022\021\n\ttimestamp\030\004 \001(\003\"U\n\024NotifyKickOutRequ" +
-      "est\022\r\n\005token\030\001 \001(\t\022\n\n\002ip\030\002 \001(\t\022\017\n\007addres" +
-      "s\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\t\"V\n\025NotifyKick" +
-      "OutResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017" +
-      "\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\"w\n!No" +
-      "tifyAddGroupAnnouncementRequest\022\r\n\005token" +
-      "\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022\r\n\005title\030\003 \001(\t\022" +
-      "\017\n\007content\030\004 \001(\t\022\021\n\ttimestamp\030\005 \001(\t\"c\n\"N" +
-      "otifyAddGroupAnnouncementResponse\022\014\n\004cod" +
-      "e\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n" +
-      "\ttimestamp\030\004 \001(\003B\'\n\034com.jiangfucheng.im." +
-      "protobufB\007Controlb\006proto3"
+      "amp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"g\n\031NotifyDe" +
+      "letedGroupRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010grou" +
+      "p_id\030\002 \001(\003\022\026\n\016group_owner_id\030\003 \001(\003\022\021\n\tti" +
+      "mestamp\030\004 \001(\003\"n\n\032NotifyDeletedGroupRespo" +
+      "nse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_ms" +
+      "g\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030" +
+      "\005 \001(\003\"x\n#NotifyChangeGroupManagerAuthReq" +
+      "uest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022\017\n" +
+      "\007user_id\030\003 \001(\003\022\014\n\004type\030\004 \001(\005\022\021\n\ttimestam" +
+      "p\030\005 \001(\003\"x\n$NotifyChangeGroupManagerAuthR" +
+      "esponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007er" +
+      "r_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget" +
+      "_id\030\005 \001(\003\"O\n\031NotifyKickOutGroupRequest\022\r" +
+      "\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022\021\n\ttimes" +
+      "tamp\030\004 \001(\t\"n\n\032NotifyKickOutGroupResponse" +
+      "\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003" +
+      " \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001" +
+      "(\003\"U\n\024NotifyKickOutRequest\022\r\n\005token\030\001 \001(" +
+      "\t\022\n\n\002ip\030\002 \001(\t\022\017\n\007address\030\003 \001(\t\022\021\n\ttimest" +
+      "amp\030\004 \001(\t\"i\n\025NotifyKickOutResponse\022\014\n\004co" +
+      "de\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021" +
+      "\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"w\n!" +
+      "NotifyAddGroupAnnouncementRequest\022\r\n\005tok" +
+      "en\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022\r\n\005title\030\003 \001(" +
+      "\t\022\017\n\007content\030\004 \001(\t\022\021\n\ttimestamp\030\005 \001(\t\"v\n" +
+      "\"NotifyAddGroupAnnouncementResponse\022\014\n\004c" +
+      "ode\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022" +
+      "\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003B\'\n" +
+      "\034com.jiangfucheng.im.protobufB\007Controlb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -47801,19 +50128,19 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_AddFriendResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_AddFriendResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "FromId", "ToId", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_DeleteFriendRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_jiangfucheng_im_protobuf_DeleteFriendRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_DeleteFriendRequest_descriptor,
-        new java.lang.String[] { "Token", });
+        new java.lang.String[] { "Token", "FriendId", });
     internal_static_com_jiangfucheng_im_protobuf_DeleteFriendResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_jiangfucheng_im_protobuf_DeleteFriendResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_DeleteFriendResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_AddGroupRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_com_jiangfucheng_im_protobuf_AddGroupRequest_fieldAccessorTable = new
@@ -47825,7 +50152,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_AddGroupResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_AddGroupResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_CreateGroupRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_com_jiangfucheng_im_protobuf_CreateGroupRequest_fieldAccessorTable = new
@@ -47837,7 +50164,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_CreateGroupResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_CreateGroupResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "GroupId", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "GroupId", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_ExitGroupRequest_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_com_jiangfucheng_im_protobuf_ExitGroupRequest_fieldAccessorTable = new
@@ -47849,7 +50176,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_ExitGroupResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_ExitGroupResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_ChangeGroupOwnerRequest_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_com_jiangfucheng_im_protobuf_ChangeGroupOwnerRequest_fieldAccessorTable = new
@@ -47861,7 +50188,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_ChangeGroupOwnerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_ChangeGroupOwnerResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_DeleteGroupRequest_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_com_jiangfucheng_im_protobuf_DeleteGroupRequest_fieldAccessorTable = new
@@ -47873,7 +50200,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_DeleteGroupResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_DeleteGroupResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_ChangeGroupManagerAuthRequest_descriptor =
       getDescriptor().getMessageTypes().get(14);
     internal_static_com_jiangfucheng_im_protobuf_ChangeGroupManagerAuthRequest_fieldAccessorTable = new
@@ -47891,7 +50218,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_ChangeGroupManagerAuthResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_ChangeGroupManagerAuthResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "RespDatas", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "RespDatas", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_ChangeGroupManagerAuthResponse_RespData_descriptor =
       internal_static_com_jiangfucheng_im_protobuf_ChangeGroupManagerAuthResponse_descriptor.getNestedTypes().get(0);
     internal_static_com_jiangfucheng_im_protobuf_ChangeGroupManagerAuthResponse_RespData_fieldAccessorTable = new
@@ -47909,7 +50236,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_InviteMemberToGroupResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_InviteMemberToGroupResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_KickOutMemberRequest_descriptor =
       getDescriptor().getMessageTypes().get(18);
     internal_static_com_jiangfucheng_im_protobuf_KickOutMemberRequest_fieldAccessorTable = new
@@ -47921,7 +50248,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_KickOutMemberResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_KickOutMemberResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_AddGroupAnnouncementRequest_descriptor =
       getDescriptor().getMessageTypes().get(20);
     internal_static_com_jiangfucheng_im_protobuf_AddGroupAnnouncementRequest_fieldAccessorTable = new
@@ -47933,7 +50260,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_AddGroupAnnouncementResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_AddGroupAnnouncementResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_DeleteAnnouncementRequest_descriptor =
       getDescriptor().getMessageTypes().get(22);
     internal_static_com_jiangfucheng_im_protobuf_DeleteAnnouncementRequest_fieldAccessorTable = new
@@ -47945,7 +50272,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_DeleteAnnouncementResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_DeleteAnnouncementResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_EditAnnouncementRequest_descriptor =
       getDescriptor().getMessageTypes().get(24);
     internal_static_com_jiangfucheng_im_protobuf_EditAnnouncementRequest_fieldAccessorTable = new
@@ -47957,7 +50284,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_EditAnnouncementResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_EditAnnouncementResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_EditGroupRemarksRequest_descriptor =
       getDescriptor().getMessageTypes().get(26);
     internal_static_com_jiangfucheng_im_protobuf_EditGroupRemarksRequest_fieldAccessorTable = new
@@ -47969,7 +50296,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_EditGroupRemarksResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_EditGroupRemarksResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_EditGroupProfilePhotoRequest_descriptor =
       getDescriptor().getMessageTypes().get(28);
     internal_static_com_jiangfucheng_im_protobuf_EditGroupProfilePhotoRequest_fieldAccessorTable = new
@@ -47981,7 +50308,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_EditGroupProfilePhotoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_EditGroupProfilePhotoResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "ProfilePhotoUrl", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "ProfilePhotoUrl", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_LoginRequest_descriptor =
       getDescriptor().getMessageTypes().get(30);
     internal_static_com_jiangfucheng_im_protobuf_LoginRequest_fieldAccessorTable = new
@@ -47993,7 +50320,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_LoginResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_LoginResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_LogoutRequest_descriptor =
       getDescriptor().getMessageTypes().get(32);
     internal_static_com_jiangfucheng_im_protobuf_LogoutRequest_fieldAccessorTable = new
@@ -48005,7 +50332,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_LogoutResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_LogoutResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddFriendRequest_descriptor =
       getDescriptor().getMessageTypes().get(34);
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddFriendRequest_fieldAccessorTable = new
@@ -48017,7 +50344,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddFriendResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyAddFriendResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeleteFriendRequest_descriptor =
       getDescriptor().getMessageTypes().get(36);
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeleteFriendRequest_fieldAccessorTable = new
@@ -48029,7 +50356,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeleteFriendResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyDeleteFriendResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOnlineRequest_descriptor =
       getDescriptor().getMessageTypes().get(38);
     internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOnlineRequest_fieldAccessorTable = new
@@ -48041,7 +50368,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOnlineResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOnlineResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOfflineRequest_descriptor =
       getDescriptor().getMessageTypes().get(40);
     internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOfflineRequest_fieldAccessorTable = new
@@ -48053,7 +50380,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOfflineResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOfflineResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupRequest_descriptor =
       getDescriptor().getMessageTypes().get(42);
     internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupRequest_fieldAccessorTable = new
@@ -48065,7 +50392,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeletedGroupRequest_descriptor =
       getDescriptor().getMessageTypes().get(44);
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeletedGroupRequest_fieldAccessorTable = new
@@ -48077,7 +50404,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeletedGroupResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyDeletedGroupResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyChangeGroupManagerAuthRequest_descriptor =
       getDescriptor().getMessageTypes().get(46);
     internal_static_com_jiangfucheng_im_protobuf_NotifyChangeGroupManagerAuthRequest_fieldAccessorTable = new
@@ -48089,7 +50416,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_NotifyChangeGroupManagerAuthResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyChangeGroupManagerAuthResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutGroupRequest_descriptor =
       getDescriptor().getMessageTypes().get(48);
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutGroupRequest_fieldAccessorTable = new
@@ -48101,7 +50428,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutGroupResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutGroupResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutRequest_descriptor =
       getDescriptor().getMessageTypes().get(50);
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutRequest_fieldAccessorTable = new
@@ -48113,7 +50440,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupAnnouncementRequest_descriptor =
       getDescriptor().getMessageTypes().get(52);
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupAnnouncementRequest_fieldAccessorTable = new
@@ -48125,7 +50452,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupAnnouncementResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupAnnouncementResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -21,14 +21,13 @@ message AddFriendResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
-    int64 from_id = 5;
-    int64 to_id = 6;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 //删除好友
 message DeleteFriendRequest {
     string token = 1;
-
+    int64 friend_id = 2;
 }
 
 message DeleteFriendResponse {
@@ -36,6 +35,7 @@ message DeleteFriendResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 //申请加入群聊
@@ -49,6 +49,7 @@ message AddGroupResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5;
 }
 
 //创建群
@@ -65,6 +66,7 @@ message CreateGroupResponse {
     string err_msg = 3;
     int64 timestamp = 4;
     int64 group_id = 5;
+    int64 target_id = 6; //目标用户id(要把消息发给谁)
 }
 
 //退出群
@@ -78,6 +80,7 @@ message ExitGroupResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 //转让群(群主)
@@ -92,6 +95,7 @@ message ChangeGroupOwnerResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 //删除群(群主)
@@ -105,6 +109,7 @@ message DeleteGroupResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 //修改管理员(群主)
@@ -128,6 +133,7 @@ message ChangeGroupManagerAuthResponse {
         int32 success = 6; //0:成功，-1:失败
     }
     repeated RespData resp_datas = 7;
+    int64 target_id = 8; //目标用户id(要把消息发给谁)
 }
 
 //邀请好友入群(管理员)
@@ -142,6 +148,7 @@ message InviteMemberToGroupResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 //踢出群成员(管理员)
@@ -156,6 +163,7 @@ message KickOutMemberResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 //添加群公告(管理员)
@@ -171,6 +179,7 @@ message AddGroupAnnouncementResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 //删除群公告(管理员)
@@ -185,6 +194,7 @@ message DeleteAnnouncementResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 //编辑群公告(管理员)
@@ -201,6 +211,7 @@ message EditAnnouncementResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 //修改在群里的备注
@@ -215,6 +226,7 @@ message EditGroupRemarksResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 //修改群头像(群主)
@@ -230,6 +242,7 @@ message EditGroupProfilePhotoResponse {
     string err_msg = 3;
     int64 timestamp = 4;
     string profile_photo_url = 5; //群头像的url
+    int64 target_id = 6; //目标用户id(要把消息发给谁)
 }
 
 message LoginRequest {
@@ -242,6 +255,7 @@ message LoginResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 message LogoutRequest {
@@ -254,6 +268,7 @@ message LogoutResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 //2.通知类
@@ -270,6 +285,7 @@ message NotifyAddFriendResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 // 被好友删除通知
@@ -284,6 +300,7 @@ message NotifyDeleteFriendResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 // 好友上线通知
@@ -298,6 +315,7 @@ message NotifyFriendOnlineResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 // 好友下线通知
@@ -312,6 +330,7 @@ message NotifyFriendOfflineResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 //被邀请加入群聊通知
@@ -327,6 +346,7 @@ message NotifyInviteMemberToGroupResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 //群被解散通知
@@ -342,6 +362,7 @@ message NotifyDeletedGroupResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 //管理员权限被修改通知(1.被修改的是本人，2.本人是管理员，其他人权限被修改了)
@@ -358,6 +379,7 @@ message NotifyChangeGroupManagerAuthResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 // 被踢出群组通知
@@ -372,6 +394,7 @@ message NotifyKickOutGroupResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 //异地登陆被踢出通知
@@ -387,6 +410,7 @@ message NotifyKickOutResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
 //管理员添加了群公告通知
@@ -403,4 +427,5 @@ message NotifyAddGroupAnnouncementResponse {
     string msg = 2;
     string err_msg = 3;
     int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
 }

@@ -6,11 +6,12 @@ option java_package = "com.jiangfucheng.im.protobuf";
 option java_outer_classname = "SingleChat";
 
 message SingleChatRequest {
-    int64 from_id = 1;
-    int64 to_id = 2;
-    int32 type = 3;
-    string content = 4;
-    string token = 5;
+    int64 msg_id = 1;
+    int64 from_id = 2;
+    int64 to_id = 3;
+    int32 type = 4;
+    string content = 5;
+    string token = 6;
 }
 
 message SingleChatResponse {
