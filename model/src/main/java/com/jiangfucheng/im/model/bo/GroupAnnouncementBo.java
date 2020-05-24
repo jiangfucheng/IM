@@ -1,6 +1,6 @@
 package com.jiangfucheng.im.model.bo;
 
-import com.jiangfucheng.im.common.utils.BeanUtil;
+import com.jiangfucheng.im.model.utils.BeanUtil;
 import com.jiangfucheng.im.model.vo.GroupAnnouncementVo;
 import com.jiangfucheng.im.model.vo.GroupInfoVo;
 import lombok.Data;

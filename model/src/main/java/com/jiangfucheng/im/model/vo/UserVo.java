@@ -1,7 +1,6 @@
 package com.jiangfucheng.im.model.vo;
 
 import com.jiangfucheng.im.model.bo.UserBo;
-import com.jiangfucheng.im.common.constants.GlobalConstants;
 import lombok.Data;
 import org.apache.commons.beanutils.BeanUtils;
 
@@ -30,7 +29,7 @@ public class UserVo {
 	@Min(0)
 	private Integer sex;
 	private Long birthday;
-	private String profilePhoto = GlobalConstants.DEFAULT_USER_PROFILES_PHOTO;
+	private String profilePhoto;
 	private String signature;
 	private String phone;
 	private String email;
@@ -39,10 +38,10 @@ public class UserVo {
 	private String city;
 	private String password;
 
-	public UserBo convertToUserBo(){
+	public UserBo convertToUserBo() {
 		UserBo userBo = new UserBo();
 		try {
-			BeanUtils.copyProperties(userBo,this);
+			BeanUtils.copyProperties(userBo, this);
 		} catch (IllegalAccessException | InvocationTargetException e) {
 			e.printStackTrace();
 		}

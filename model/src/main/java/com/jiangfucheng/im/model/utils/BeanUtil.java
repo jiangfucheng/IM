@@ -1,4 +1,4 @@
-package com.jiangfucheng.im.common.utils;
+package com.jiangfucheng.im.model.utils;
 
 import org.apache.commons.beanutils.BeanUtils;
 

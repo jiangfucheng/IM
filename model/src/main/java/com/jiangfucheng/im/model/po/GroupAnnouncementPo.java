@@ -2,9 +2,9 @@ package com.jiangfucheng.im.model.po;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.jiangfucheng.im.model.utils.BeanUtil;
 import com.jiangfucheng.im.model.bo.GroupAnnouncementBo;
 import com.jiangfucheng.im.model.bo.UserBo;
-import com.jiangfucheng.im.httpserver.utils.BeanUtil;
 import lombok.Data;
 
 import java.util.Date;

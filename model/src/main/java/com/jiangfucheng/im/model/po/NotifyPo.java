@@ -1,8 +1,8 @@
 package com.jiangfucheng.im.model.po;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.jiangfucheng.im.model.utils.BeanUtil;
 import com.jiangfucheng.im.model.bo.NotifyBo;
-import com.jiangfucheng.im.httpserver.utils.BeanUtil;
 import lombok.Data;
 
 import java.util.Date;

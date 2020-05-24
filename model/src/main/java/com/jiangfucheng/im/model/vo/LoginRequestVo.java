@@ -1,7 +1,7 @@
 package com.jiangfucheng.im.model.vo;
 
 import com.jiangfucheng.im.model.bo.LoginRequestBo;
-import com.jiangfucheng.im.common.utils.BeanUtil;
+import com.jiangfucheng.im.model.utils.BeanUtil;
 import lombok.Data;
 
 /**

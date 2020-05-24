@@ -1,6 +1,6 @@
 package com.jiangfucheng.im.model.bo;
 
-import com.jiangfucheng.im.httpserver.utils.BeanUtil;
+import com.jiangfucheng.im.model.utils.BeanUtil;
 import com.jiangfucheng.im.model.vo.MessageListElementVo;
 import lombok.Data;
 

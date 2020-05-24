@@ -1,7 +1,7 @@
 package com.jiangfucheng.im.httpserver.service.impl;
 
-import com.jiangfucheng.im.httpserver.constants.RedisConstants;
-import com.jiangfucheng.im.httpserver.constants.ZookeeperConstants;
+import com.jiangfucheng.im.common.constants.RedisConstants;
+import com.jiangfucheng.im.common.constants.ZookeeperConstants;
 import com.jiangfucheng.im.httpserver.service.ChatServerService;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooKeeper;

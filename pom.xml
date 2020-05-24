@@ -23,6 +23,8 @@
         <module>auth</module>
         <module>http-server</module>
         <module>chat-server</module>
+        <module>message-resolver</module>
+        <module>model</module>
     </modules>
 
     <dependencyManagement>
