@@ -19,11 +19,19 @@ public final class Control {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     *包含了from_id
+     * </pre>
+     *
      * <code>string token = 1;</code>
      * @return The token.
      */
     java.lang.String getToken();
     /**
+     * <pre>
+     *包含了from_id
+     * </pre>
+     *
      * <code>string token = 1;</code>
      * @return The bytes for token.
      */
@@ -163,6 +171,10 @@ public final class Control {
     public static final int TOKEN_FIELD_NUMBER = 1;
     private volatile java.lang.Object token_;
     /**
+     * <pre>
+     *包含了from_id
+     * </pre>
+     *
      * <code>string token = 1;</code>
      * @return The token.
      */
@@ -179,6 +191,10 @@ public final class Control {
       }
     }
     /**
+     * <pre>
+     *包含了from_id
+     * </pre>
+     *
      * <code>string token = 1;</code>
      * @return The bytes for token.
      */
@@ -597,6 +613,10 @@ public final class Control {
 
       private java.lang.Object token_ = "";
       /**
+       * <pre>
+       *包含了from_id
+       * </pre>
+       *
        * <code>string token = 1;</code>
        * @return The token.
        */
@@ -613,6 +633,10 @@ public final class Control {
         }
       }
       /**
+       * <pre>
+       *包含了from_id
+       * </pre>
+       *
        * <code>string token = 1;</code>
        * @return The bytes for token.
        */
@@ -630,6 +654,10 @@ public final class Control {
         }
       }
       /**
+       * <pre>
+       *包含了from_id
+       * </pre>
+       *
        * <code>string token = 1;</code>
        * @param value The token to set.
        * @return This builder for chaining.
@@ -645,6 +673,10 @@ public final class Control {
         return this;
       }
       /**
+       * <pre>
+       *包含了from_id
+       * </pre>
+       *
        * <code>string token = 1;</code>
        * @return This builder for chaining.
        */
@@ -655,6 +687,10 @@ public final class Control {
         return this;
       }
       /**
+       * <pre>
+       *包含了from_id
+       * </pre>
+       *
        * <code>string token = 1;</code>
        * @param value The bytes for token to set.
        * @return This builder for chaining.
@@ -904,6 +940,18 @@ public final class Control {
      * @return The timestamp.
      */
     long getTimestamp();
+
+    /**
+     * <code>int64 from_id = 5;</code>
+     * @return The fromId.
+     */
+    long getFromId();
+
+    /**
+     * <code>int64 to_id = 6;</code>
+     * @return The toId.
+     */
+    long getToId();
   }
   /**
    * Protobuf type {@code com.jiangfucheng.im.protobuf.AddFriendResponse}
@@ -972,6 +1020,16 @@ public final class Control {
             case 32: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              fromId_ = input.readInt64();
+              break;
+            }
+            case 48: {
+
+              toId_ = input.readInt64();
               break;
             }
             default: {
@@ -1102,6 +1160,26 @@ public final class Control {
       return timestamp_;
     }
 
+    public static final int FROM_ID_FIELD_NUMBER = 5;
+    private long fromId_;
+    /**
+     * <code>int64 from_id = 5;</code>
+     * @return The fromId.
+     */
+    public long getFromId() {
+      return fromId_;
+    }
+
+    public static final int TO_ID_FIELD_NUMBER = 6;
+    private long toId_;
+    /**
+     * <code>int64 to_id = 6;</code>
+     * @return The toId.
+     */
+    public long getToId() {
+      return toId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1128,6 +1206,12 @@ public final class Control {
       if (timestamp_ != 0L) {
         output.writeInt64(4, timestamp_);
       }
+      if (fromId_ != 0L) {
+        output.writeInt64(5, fromId_);
+      }
+      if (toId_ != 0L) {
+        output.writeInt64(6, toId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1150,6 +1234,14 @@ public final class Control {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, timestamp_);
+      }
+      if (fromId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, fromId_);
+      }
+      if (toId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, toId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1174,6 +1266,10 @@ public final class Control {
           .equals(other.getErrMsg())) return false;
       if (getTimestamp()
           != other.getTimestamp()) return false;
+      if (getFromId()
+          != other.getFromId()) return false;
+      if (getToId()
+          != other.getToId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1194,6 +1290,12 @@ public final class Control {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + FROM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFromId());
+      hash = (37 * hash) + TO_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getToId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1335,6 +1437,10 @@ public final class Control {
 
         timestamp_ = 0L;
 
+        fromId_ = 0L;
+
+        toId_ = 0L;
+
         return this;
       }
 
@@ -1365,6 +1471,8 @@ public final class Control {
         result.msg_ = msg_;
         result.errMsg_ = errMsg_;
         result.timestamp_ = timestamp_;
+        result.fromId_ = fromId_;
+        result.toId_ = toId_;
         onBuilt();
         return result;
       }
@@ -1426,6 +1534,12 @@ public final class Control {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getFromId() != 0L) {
+          setFromId(other.getFromId());
+        }
+        if (other.getToId() != 0L) {
+          setToId(other.getToId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1676,6 +1790,66 @@ public final class Control {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long fromId_ ;
+      /**
+       * <code>int64 from_id = 5;</code>
+       * @return The fromId.
+       */
+      public long getFromId() {
+        return fromId_;
+      }
+      /**
+       * <code>int64 from_id = 5;</code>
+       * @param value The fromId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFromId(long value) {
+        
+        fromId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 from_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFromId() {
+        
+        fromId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long toId_ ;
+      /**
+       * <code>int64 to_id = 6;</code>
+       * @return The toId.
+       */
+      public long getToId() {
+        return toId_;
+      }
+      /**
+       * <code>int64 to_id = 6;</code>
+       * @param value The toId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setToId(long value) {
+        
+        toId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 to_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearToId() {
+        
+        toId_ = 0L;
         onChanged();
         return this;
       }
@@ -47486,130 +47660,131 @@ public final class Control {
       "\n\rcontrol.proto\022\034com.jiangfucheng.im.pro" +
       "tobuf\"J\n\020AddFriendRequest\022\r\n\005token\030\001 \001(\t" +
       "\022\021\n\ttarget_id\030\002 \001(\003\022\024\n\014auth_message\030\003 \001(" +
-      "\t\"R\n\021AddFriendResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003" +
+      "\t\"r\n\021AddFriendResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003" +
       "msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030" +
-      "\004 \001(\003\"$\n\023DeleteFriendRequest\022\r\n\005token\030\001 " +
-      "\001(\t\"U\n\024DeleteFriendResponse\022\014\n\004code\030\001 \001(" +
-      "\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimes" +
-      "tamp\030\004 \001(\003\"2\n\017AddGroupRequest\022\r\n\005token\030\001" +
-      " \001(\t\022\020\n\010group_id\030\002 \001(\003\"Q\n\020AddGroupRespon" +
-      "se\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg" +
-      "\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\"e\n\022CreateGroup" +
-      "Request\022\r\n\005token\030\001 \001(\t\022\022\n\ngroup_name\030\002 \001" +
-      "(\t\022\026\n\016invite_user_id\030\003 \003(\003\022\024\n\014introducti" +
-      "on\030\004 \001(\t\"f\n\023CreateGroupResponse\022\014\n\004code\030" +
-      "\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\tt" +
-      "imestamp\030\004 \001(\003\022\020\n\010group_id\030\005 \001(\003\"3\n\020Exit" +
-      "GroupRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030" +
-      "\002 \001(\003\"R\n\021ExitGroupResponse\022\014\n\004code\030\001 \001(\005" +
-      "\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimest" +
-      "amp\030\004 \001(\003\"K\n\027ChangeGroupOwnerRequest\022\r\n\005" +
-      "token\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022\020\n\010group_id" +
-      "\030\003 \001(\003\"Y\n\030ChangeGroupOwnerResponse\022\014\n\004co" +
+      "\004 \001(\003\022\017\n\007from_id\030\005 \001(\003\022\r\n\005to_id\030\006 \001(\003\"$\n" +
+      "\023DeleteFriendRequest\022\r\n\005token\030\001 \001(\t\"U\n\024D" +
+      "eleteFriendResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg" +
+      "\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001" +
+      "(\003\"2\n\017AddGroupRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010" +
+      "group_id\030\002 \001(\003\"Q\n\020AddGroupResponse\022\014\n\004co" +
       "de\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021" +
-      "\n\ttimestamp\030\004 \001(\003\"5\n\022DeleteGroupRequest\022" +
-      "\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\"T\n\023Dele" +
-      "teGroupResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001" +
-      "(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\"\322" +
-      "\001\n\035ChangeGroupManagerAuthRequest\022\r\n\005toke" +
-      "n\030\001 \001(\t\022\\\n\005datas\030\004 \003(\0132M.com.jiangfuchen" +
-      "g.im.protobuf.ChangeGroupManagerAuthRequ" +
-      "est.ChangeManagerData\022\020\n\010group_id\030\005 \001(\003\032" +
-      "2\n\021ChangeManagerData\022\017\n\007user_id\030\002 \001(\003\022\014\n" +
-      "\004type\030\003 \001(\005\"\350\001\n\036ChangeGroupManagerAuthRe" +
-      "sponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err" +
-      "_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022Y\n\nresp_da" +
-      "tas\030\007 \003(\0132E.com.jiangfucheng.im.protobuf" +
-      ".ChangeGroupManagerAuthResponse.RespData" +
-      "\032,\n\010RespData\022\017\n\007user_id\030\005 \001(\003\022\017\n\007success" +
-      "\030\006 \001(\005\"N\n\032InviteMemberToGroupRequest\022\r\n\005" +
-      "token\030\001 \001(\t\022\017\n\007user_id\030\002 \003(\003\022\020\n\010group_id" +
-      "\030\003 \001(\003\"\\\n\033InviteMemberToGroupResponse\022\014\n" +
-      "\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(" +
-      "\t\022\021\n\ttimestamp\030\004 \001(\003\"H\n\024KickOutMemberReq" +
-      "uest\022\r\n\005token\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022\020\n\010" +
-      "group_id\030\003 \001(\003\"V\n\025KickOutMemberResponse\022" +
-      "\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 " +
-      "\001(\t\022\021\n\ttimestamp\030\004 \001(\003\"^\n\033AddGroupAnnoun" +
-      "cementRequest\022\r\n\005token\030\001 \001(\t\022\r\n\005title\030\002 " +
-      "\001(\t\022\017\n\007content\030\003 \001(\t\022\020\n\010group_id\030\004 \001(\003\"]" +
-      "\n\034AddGroupAnnouncementResponse\022\014\n\004code\030\001" +
-      " \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\tti" +
-      "mestamp\030\004 \001(\003\"U\n\031DeleteAnnouncementReque" +
-      "st\022\r\n\005token\030\001 \001(\t\022\027\n\017announcement_id\030\002 \001" +
-      "(\003\022\020\n\010group_id\030\004 \001(\003\"[\n\032DeleteAnnounceme" +
-      "ntResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n" +
-      "\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\"s\n\027Edi" +
-      "tAnnouncementRequest\022\r\n\005token\030\001 \001(\t\022\027\n\017a" +
-      "nnouncement_id\030\002 \001(\003\022\r\n\005title\030\003 \001(\t\022\017\n\007c" +
-      "ontent\030\004 \001(\t\022\020\n\010group_id\030\005 \001(\003\"Y\n\030EditAn" +
-      "nouncementResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030" +
+      "\n\ttimestamp\030\004 \001(\003\"e\n\022CreateGroupRequest\022" +
+      "\r\n\005token\030\001 \001(\t\022\022\n\ngroup_name\030\002 \001(\t\022\026\n\016in" +
+      "vite_user_id\030\003 \003(\003\022\024\n\014introduction\030\004 \001(\t" +
+      "\"f\n\023CreateGroupResponse\022\014\n\004code\030\001 \001(\005\022\013\n" +
+      "\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp" +
+      "\030\004 \001(\003\022\020\n\010group_id\030\005 \001(\003\"3\n\020ExitGroupReq" +
+      "uest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\"R\n" +
+      "\021ExitGroupResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030" +
       "\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(" +
-      "\003\"K\n\027EditGroupRemarksRequest\022\r\n\005token\030\001 " +
-      "\001(\t\022\020\n\010group_id\030\002 \001(\003\022\017\n\007remarks\030\003 \001(\t\"Y" +
-      "\n\030EditGroupRemarksResponse\022\014\n\004code\030\001 \001(\005" +
+      "\003\"K\n\027ChangeGroupOwnerRequest\022\r\n\005token\030\001 " +
+      "\001(\t\022\017\n\007user_id\030\002 \001(\003\022\020\n\010group_id\030\003 \001(\003\"Y" +
+      "\n\030ChangeGroupOwnerResponse\022\014\n\004code\030\001 \001(\005" +
       "\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimest" +
-      "amp\030\004 \001(\003\"V\n\034EditGroupProfilePhotoReques" +
-      "t\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022\025\n\rpr" +
-      "ofile_photo\030\003 \001(\t\"y\n\035EditGroupProfilePho" +
-      "toResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n" +
-      "\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\031\n\021pro" +
-      "file_photo_url\030\005 \001(\t\"0\n\014LoginRequest\022\r\n\005" +
-      "token\030\001 \001(\t\022\021\n\ttimestamp\030\002 \001(\003\"N\n\rLoginR" +
+      "amp\030\004 \001(\003\"5\n\022DeleteGroupRequest\022\r\n\005token" +
+      "\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\"T\n\023DeleteGroupR" +
       "esponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007er" +
-      "r_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\"1\n\rLogout" +
-      "Request\022\r\n\005token\030\001 \001(\t\022\021\n\ttimestamp\030\002 \001(" +
-      "\003\"O\n\016LogoutResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg" +
-      "\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001" +
-      "(\003\"R\n\026NotifyAddFriendRequest\022\017\n\007user_id\030" +
-      "\001 \001(\003\022\024\n\014auth_message\030\002 \001(\t\022\021\n\ttimestamp" +
-      "\030\003 \001(\003\"X\n\027NotifyAddFriendResponse\022\014\n\004cod" +
+      "r_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\"\322\001\n\035Chang" +
+      "eGroupManagerAuthRequest\022\r\n\005token\030\001 \001(\t\022" +
+      "\\\n\005datas\030\004 \003(\0132M.com.jiangfucheng.im.pro" +
+      "tobuf.ChangeGroupManagerAuthRequest.Chan" +
+      "geManagerData\022\020\n\010group_id\030\005 \001(\003\0322\n\021Chang" +
+      "eManagerData\022\017\n\007user_id\030\002 \001(\003\022\014\n\004type\030\003 " +
+      "\001(\005\"\350\001\n\036ChangeGroupManagerAuthResponse\022\014" +
+      "\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001" +
+      "(\t\022\021\n\ttimestamp\030\004 \001(\003\022Y\n\nresp_datas\030\007 \003(" +
+      "\0132E.com.jiangfucheng.im.protobuf.ChangeG" +
+      "roupManagerAuthResponse.RespData\032,\n\010Resp" +
+      "Data\022\017\n\007user_id\030\005 \001(\003\022\017\n\007success\030\006 \001(\005\"N" +
+      "\n\032InviteMemberToGroupRequest\022\r\n\005token\030\001 " +
+      "\001(\t\022\017\n\007user_id\030\002 \003(\003\022\020\n\010group_id\030\003 \001(\003\"\\" +
+      "\n\033InviteMemberToGroupResponse\022\014\n\004code\030\001 " +
+      "\001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttim" +
+      "estamp\030\004 \001(\003\"H\n\024KickOutMemberRequest\022\r\n\005" +
+      "token\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022\020\n\010group_id" +
+      "\030\003 \001(\003\"V\n\025KickOutMemberResponse\022\014\n\004code\030" +
+      "\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\tt" +
+      "imestamp\030\004 \001(\003\"^\n\033AddGroupAnnouncementRe" +
+      "quest\022\r\n\005token\030\001 \001(\t\022\r\n\005title\030\002 \001(\t\022\017\n\007c" +
+      "ontent\030\003 \001(\t\022\020\n\010group_id\030\004 \001(\003\"]\n\034AddGro" +
+      "upAnnouncementResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003" +
+      "msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030" +
+      "\004 \001(\003\"U\n\031DeleteAnnouncementRequest\022\r\n\005to" +
+      "ken\030\001 \001(\t\022\027\n\017announcement_id\030\002 \001(\003\022\020\n\010gr" +
+      "oup_id\030\004 \001(\003\"[\n\032DeleteAnnouncementRespon" +
+      "se\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg" +
+      "\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\"s\n\027EditAnnounc" +
+      "ementRequest\022\r\n\005token\030\001 \001(\t\022\027\n\017announcem" +
+      "ent_id\030\002 \001(\003\022\r\n\005title\030\003 \001(\t\022\017\n\007content\030\004" +
+      " \001(\t\022\020\n\010group_id\030\005 \001(\003\"Y\n\030EditAnnounceme" +
+      "ntResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n" +
+      "\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\"K\n\027Edi" +
+      "tGroupRemarksRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010g" +
+      "roup_id\030\002 \001(\003\022\017\n\007remarks\030\003 \001(\t\"Y\n\030EditGr" +
+      "oupRemarksResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030" +
+      "\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(" +
+      "\003\"V\n\034EditGroupProfilePhotoRequest\022\r\n\005tok" +
+      "en\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022\025\n\rprofile_ph" +
+      "oto\030\003 \001(\t\"y\n\035EditGroupProfilePhotoRespon" +
+      "se\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg" +
+      "\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\031\n\021profile_pho" +
+      "to_url\030\005 \001(\t\"0\n\014LoginRequest\022\r\n\005token\030\001 " +
+      "\001(\t\022\021\n\ttimestamp\030\002 \001(\003\"N\n\rLoginResponse\022" +
+      "\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 " +
+      "\001(\t\022\021\n\ttimestamp\030\004 \001(\003\"1\n\rLogoutRequest\022" +
+      "\r\n\005token\030\001 \001(\t\022\021\n\ttimestamp\030\002 \001(\003\"O\n\016Log" +
+      "outResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017" +
+      "\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\"R\n\026No" +
+      "tifyAddFriendRequest\022\017\n\007user_id\030\001 \001(\003\022\024\n" +
+      "\014auth_message\030\002 \001(\t\022\021\n\ttimestamp\030\003 \001(\003\"X" +
+      "\n\027NotifyAddFriendResponse\022\014\n\004code\030\001 \001(\005\022" +
+      "\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimesta" +
+      "mp\030\004 \001(\003\"N\n\031NotifyDeleteFriendRequest\022\r\n" +
+      "\005token\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022\021\n\ttimesta" +
+      "mp\030\003 \001(\003\"[\n\032NotifyDeleteFriendResponse\022\014" +
+      "\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001" +
+      "(\t\022\021\n\ttimestamp\030\004 \001(\003\"N\n\031NotifyFriendOnl" +
+      "ineRequest\022\r\n\005token\030\001 \001(\t\022\017\n\007user_id\030\002 \001" +
+      "(\003\022\021\n\ttimestamp\030\003 \001(\003\"[\n\032NotifyFriendOnl" +
+      "ineResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017" +
+      "\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\"O\n\032No" +
+      "tifyFriendOfflineRequest\022\r\n\005token\030\001 \001(\t\022" +
+      "\017\n\007user_id\030\002 \001(\003\022\021\n\ttimestamp\030\003 \001(\003\"\\\n\033N" +
+      "otifyFriendOfflineResponse\022\014\n\004code\030\001 \001(\005" +
+      "\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimest" +
+      "amp\030\004 \001(\003\"o\n NotifyInviteMemberToGroupRe" +
+      "quest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022\027" +
+      "\n\017invited_user_id\030\003 \001(\003\022\021\n\ttimestamp\030\004 \001" +
+      "(\003\"b\n!NotifyInviteMemberToGroupResponse\022" +
+      "\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 " +
+      "\001(\t\022\021\n\ttimestamp\030\004 \001(\003\"g\n\031NotifyDeletedG" +
+      "roupRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002" +
+      " \001(\003\022\026\n\016group_owner_id\030\003 \001(\003\022\021\n\ttimestam" +
+      "p\030\004 \001(\003\"[\n\032NotifyDeletedGroupResponse\022\014\n" +
+      "\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(" +
+      "\t\022\021\n\ttimestamp\030\004 \001(\003\"x\n#NotifyChangeGrou" +
+      "pManagerAuthRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010gr" +
+      "oup_id\030\002 \001(\003\022\017\n\007user_id\030\003 \001(\003\022\014\n\004type\030\004 " +
+      "\001(\005\022\021\n\ttimestamp\030\005 \001(\003\"e\n$NotifyChangeGr" +
+      "oupManagerAuthResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003" +
+      "msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030" +
+      "\004 \001(\003\"O\n\031NotifyKickOutGroupRequest\022\r\n\005to" +
+      "ken\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022\021\n\ttimestamp" +
+      "\030\004 \001(\t\"[\n\032NotifyKickOutGroupResponse\022\014\n\004" +
+      "code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t" +
+      "\022\021\n\ttimestamp\030\004 \001(\003\"U\n\024NotifyKickOutRequ" +
+      "est\022\r\n\005token\030\001 \001(\t\022\n\n\002ip\030\002 \001(\t\022\017\n\007addres" +
+      "s\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\t\"V\n\025NotifyKick" +
+      "OutResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017" +
+      "\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\"w\n!No" +
+      "tifyAddGroupAnnouncementRequest\022\r\n\005token" +
+      "\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022\r\n\005title\030\003 \001(\t\022" +
+      "\017\n\007content\030\004 \001(\t\022\021\n\ttimestamp\030\005 \001(\t\"c\n\"N" +
+      "otifyAddGroupAnnouncementResponse\022\014\n\004cod" +
       "e\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n" +
-      "\ttimestamp\030\004 \001(\003\"N\n\031NotifyDeleteFriendRe" +
-      "quest\022\r\n\005token\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022\021\n" +
-      "\ttimestamp\030\003 \001(\003\"[\n\032NotifyDeleteFriendRe" +
-      "sponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err" +
-      "_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\"N\n\031NotifyF" +
-      "riendOnlineRequest\022\r\n\005token\030\001 \001(\t\022\017\n\007use" +
-      "r_id\030\002 \001(\003\022\021\n\ttimestamp\030\003 \001(\003\"[\n\032NotifyF" +
-      "riendOnlineResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg" +
-      "\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001" +
-      "(\003\"O\n\032NotifyFriendOfflineRequest\022\r\n\005toke" +
-      "n\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022\021\n\ttimestamp\030\003 " +
-      "\001(\003\"\\\n\033NotifyFriendOfflineResponse\022\014\n\004co" +
-      "de\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021" +
-      "\n\ttimestamp\030\004 \001(\003\"o\n NotifyInviteMemberT" +
-      "oGroupRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id" +
-      "\030\002 \001(\003\022\027\n\017invited_user_id\030\003 \001(\003\022\021\n\ttimes" +
-      "tamp\030\004 \001(\003\"b\n!NotifyInviteMemberToGroupR" +
-      "esponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007er" +
-      "r_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\"g\n\031Notify" +
-      "DeletedGroupRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010gr" +
-      "oup_id\030\002 \001(\003\022\026\n\016group_owner_id\030\003 \001(\003\022\021\n\t" +
-      "timestamp\030\004 \001(\003\"[\n\032NotifyDeletedGroupRes" +
-      "ponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_" +
-      "msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\"x\n#NotifyCh" +
-      "angeGroupManagerAuthRequest\022\r\n\005token\030\001 \001" +
-      "(\t\022\020\n\010group_id\030\002 \001(\003\022\017\n\007user_id\030\003 \001(\003\022\014\n" +
-      "\004type\030\004 \001(\005\022\021\n\ttimestamp\030\005 \001(\003\"e\n$Notify" +
-      "ChangeGroupManagerAuthResponse\022\014\n\004code\030\001" +
-      " \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\tti" +
-      "mestamp\030\004 \001(\003\"O\n\031NotifyKickOutGroupReque" +
-      "st\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022\021\n\tt" +
-      "imestamp\030\004 \001(\t\"[\n\032NotifyKickOutGroupResp" +
-      "onse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_m" +
-      "sg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\"U\n\024NotifyKic" +
-      "kOutRequest\022\r\n\005token\030\001 \001(\t\022\n\n\002ip\030\002 \001(\t\022\017" +
-      "\n\007address\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\t\"V\n\025No" +
-      "tifyKickOutResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg" +
-      "\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001" +
-      "(\003\"w\n!NotifyAddGroupAnnouncementRequest\022" +
-      "\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022\r\n\005titl" +
-      "e\030\003 \001(\t\022\017\n\007content\030\004 \001(\t\022\021\n\ttimestamp\030\005 " +
-      "\001(\t\"c\n\"NotifyAddGroupAnnouncementRespons" +
-      "e\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030" +
-      "\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003B\'\n\034com.jiangfuc" +
-      "heng.im.protobufB\007Controlb\006proto3"
+      "\ttimestamp\030\004 \001(\003B\'\n\034com.jiangfucheng.im." +
+      "protobufB\007Controlb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -47626,7 +47801,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_AddFriendResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_AddFriendResponse_descriptor,
-        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", });
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "FromId", "ToId", });
     internal_static_com_jiangfucheng_im_protobuf_DeleteFriendRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_jiangfucheng_im_protobuf_DeleteFriendRequest_fieldAccessorTable = new

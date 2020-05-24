@@ -16,4 +16,6 @@ message SingleChatRequest {
 message SingleChatResponse {
     int64 msg_id = 1; //消息id  区分每个会话中的消息
     int64 timestamp = 2; //服务器收到消息的时间
+    int64 from_id = 3;
+    int64 to_id = 4;
 }
