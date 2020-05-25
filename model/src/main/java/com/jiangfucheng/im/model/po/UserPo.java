@@ -36,6 +36,7 @@ public class UserPo {
 		UserBo userBo = new UserBo();
 		BeanUtil.copyProperties(userBo, this);
 		userBo.setBirthday(this.getBirthday().getTime());
+		userBo.setBirthday(this.getBirthday().getTime());
 		return userBo;
 	}
 }

@@ -2,9 +2,9 @@ package com.jiangfucheng.im.httpserver.controller;
 
 import com.jiangfucheng.im.common.resp.Response;
 import com.jiangfucheng.im.common.utils.ParamValidator;
+import com.jiangfucheng.im.httpserver.service.UserService;
 import com.jiangfucheng.im.model.bo.UserBo;
 import com.jiangfucheng.im.model.bo.UserTokenPayloadBo;
-import com.jiangfucheng.im.httpserver.service.UserService;
 import com.jiangfucheng.im.model.vo.PasswordVo;
 import com.jiangfucheng.im.model.vo.UserVo;
 import org.springframework.web.bind.annotation.*;
@@ -26,9 +26,9 @@ public class UserController {
 	}
 
 	@GetMapping("/user/{id}")
-	public Response queryUserDetail(@PathVariable("id") Long id) {
+	public Response queryUserDetail(UserTokenPayloadBo userInfo, @PathVariable("id") Long id) {
 		ParamValidator.notNull(id, "id不能为空");
-		UserBo userbo = userService.getUserById(id);
+		UserBo userbo = userService.getUserById(userInfo.getUserId(), id);
 		return Response.ok(userbo.convertToUserVo());
 	}
 

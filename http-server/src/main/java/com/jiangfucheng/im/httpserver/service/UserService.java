@@ -15,10 +15,10 @@ import com.jiangfucheng.im.model.bo.UserPasswordBo;
 public interface UserService {
 	/**
 	 * 获取用户详情
-	 *
+	 * @param curId 当前登陆用户的id
 	 * @param userId 用户id
 	 */
-	UserBo getUserById(Long userId);
+	UserBo getUserById(Long curId, Long userId);
 
 
 	UserBo getUserByAccount(String account);

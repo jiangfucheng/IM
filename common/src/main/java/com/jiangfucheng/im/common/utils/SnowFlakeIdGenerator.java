@@ -43,7 +43,7 @@ public class SnowFlakeIdGenerator {
 	private long lastTimestamp = -1L;
 	private long dataCenterIdShiftBits = sequenceIdBits;
 	private long workerIdShiftBits = sequenceIdBits + dataCenterIdBits;
-	private long timestampShiftBits = sequenceIdBits + workerIdShiftBits + dataCenterIdBits;
+	private long timestampShiftBits = sequenceIdBits + workerIdBits + dataCenterIdBits;
 
 	public Long nextId() {
 		long timestamp = timeGenerate();

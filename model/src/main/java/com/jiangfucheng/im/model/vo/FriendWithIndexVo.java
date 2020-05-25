@@ -18,5 +18,7 @@ import java.util.List;
 @NoArgsConstructor
 public class FriendWithIndexVo {
 	private Character index;
+	//无实际含义，给前端使用
+	private Character remarks;
 	private List<FriendVo> friends;
 }

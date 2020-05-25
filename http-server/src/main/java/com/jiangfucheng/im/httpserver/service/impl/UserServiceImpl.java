@@ -3,14 +3,16 @@ package com.jiangfucheng.im.httpserver.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.jiangfucheng.im.common.constants.ErrorCode;
 import com.jiangfucheng.im.common.utils.SnowFlakeIdGenerator;
+import com.jiangfucheng.im.httpserver.exceptions.IMException;
+import com.jiangfucheng.im.httpserver.mapper.RelationMapper;
+import com.jiangfucheng.im.httpserver.mapper.UserMapper;
+import com.jiangfucheng.im.httpserver.service.UserService;
 import com.jiangfucheng.im.model.bo.LoginRequestBo;
 import com.jiangfucheng.im.model.bo.UserBo;
 import com.jiangfucheng.im.model.bo.UserInfoBo;
 import com.jiangfucheng.im.model.bo.UserPasswordBo;
-import com.jiangfucheng.im.httpserver.exceptions.IMException;
-import com.jiangfucheng.im.httpserver.mapper.UserMapper;
+import com.jiangfucheng.im.model.po.RelationPo;
 import com.jiangfucheng.im.model.po.UserPo;
-import com.jiangfucheng.im.httpserver.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,17 +27,22 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 	private final UserMapper userMapper;
 	private final SnowFlakeIdGenerator idGenerator;
+	private final RelationMapper relationMapper;
 
 	@Autowired
-	public UserServiceImpl(UserMapper userMapper, SnowFlakeIdGenerator idGenerator) {
+	public UserServiceImpl(UserMapper userMapper, SnowFlakeIdGenerator idGenerator, RelationMapper relationMapper) {
 		this.userMapper = userMapper;
 		this.idGenerator = idGenerator;
+		this.relationMapper = relationMapper;
 	}
 
 
 	@Override
-	public UserBo getUserById(Long userId) {
-		return userMapper.selectById(userId).convertToUserBo();
+	public UserBo getUserById(Long curId, Long userId) {
+		UserBo userBo = userMapper.selectById(userId).convertToUserBo();
+		RelationPo relationPo = relationMapper.getRelationByUserIdAndFriendId(curId, userId);
+		userBo.setIsFriend(relationPo == null ? 0 : 1);
+		return userBo;
 	}
 
 	@Override

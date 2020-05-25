@@ -29,7 +29,7 @@ public class UserVo {
 	@Min(0)
 	private Integer sex;
 	private Long birthday;
-	private String profilePhoto;
+	private String profilePhoto = "/static/default_profile_photo.jpg";
 	private String signature;
 	private String phone;
 	private String email;
@@ -37,6 +37,7 @@ public class UserVo {
 	private String country;
 	private String city;
 	private String password;
+	private Integer isFriend;
 
 	public UserBo convertToUserBo() {
 		UserBo userBo = new UserBo();

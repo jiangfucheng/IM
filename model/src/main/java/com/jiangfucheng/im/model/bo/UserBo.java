@@ -7,6 +7,8 @@ import com.jiangfucheng.im.model.vo.AccountVo;
 import com.jiangfucheng.im.model.vo.UserVo;
 import lombok.Data;
 
+import java.util.Date;
+
 /**
  * Created by IntelliJ IDEA.
  * Date: 2020/5/13
@@ -29,11 +31,13 @@ public class UserBo {
 	private String school;
 	private String country;
 	private String city;
+	private Integer isFriend;
 
 
 	public UserPo convertToUserPo() {
 		UserPo userPo = new UserPo();
 		BeanUtil.copyProperties(userPo, this);
+		userPo.setBirthday(new Date(this.getBirthday()));
 		return userPo;
 	}
 

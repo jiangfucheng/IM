@@ -91,6 +91,7 @@ public class GroupController {
 				indexVos.get(firstLetter - 'A' + 1).getGroupMembers().add(vo);
 			}
 		}
+		indexVos = indexVos.stream().filter(indexVo -> indexVo.getGroupMembers().size() > 0).collect(Collectors.toList());
 		return Response.ok(indexVos);
 	}
 

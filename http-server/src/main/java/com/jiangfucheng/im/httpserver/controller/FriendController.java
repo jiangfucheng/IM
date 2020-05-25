@@ -1,12 +1,14 @@
 package com.jiangfucheng.im.httpserver.controller;
 
 import com.jiangfucheng.im.common.resp.Response;
+import com.jiangfucheng.im.common.utils.PinyinUtil;
+import com.jiangfucheng.im.httpserver.service.FriendRelationService;
 import com.jiangfucheng.im.model.bo.FriendBo;
 import com.jiangfucheng.im.model.bo.FriendRemarksBo;
 import com.jiangfucheng.im.model.bo.UserTokenPayloadBo;
-import com.jiangfucheng.im.httpserver.service.FriendRelationService;
-import com.jiangfucheng.im.common.utils.PinyinUtil;
-import com.jiangfucheng.im.model.vo.*;
+import com.jiangfucheng.im.model.vo.FriendVo;
+import com.jiangfucheng.im.model.vo.FriendWithIndexVo;
+import com.jiangfucheng.im.model.vo.UpdateFriendRemarksVo;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -67,6 +69,7 @@ public class FriendController {
 		for (int i = 0; i < 27; i++) {
 			FriendWithIndexVo indexVo = new FriendWithIndexVo();
 			indexVo.setIndex(initLetter);
+			indexVo.setRemarks(initLetter);
 			indexVo.setFriends(new ArrayList<>());
 			if (initLetter == '#') {
 				initLetter = 'A';
@@ -83,6 +86,7 @@ public class FriendController {
 				indexVos.get(firstLetter - 'A' + 1).getFriends().add(vo);
 			}
 		}
+		indexVos = indexVos.stream().filter(indexVo -> indexVo.getFriends().size() > 0).collect(Collectors.toList());
 		return Response.ok(indexVos);
 	}
 
