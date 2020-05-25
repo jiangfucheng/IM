@@ -1,13 +1,13 @@
 package com.jiangfucheng.im.httpserver.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.jiangfucheng.im.model.bo.*;
 import com.jiangfucheng.im.httpserver.mapper.*;
+import com.jiangfucheng.im.httpserver.service.GroupService;
+import com.jiangfucheng.im.model.bo.*;
 import com.jiangfucheng.im.model.po.GroupAnnouncementPo;
 import com.jiangfucheng.im.model.po.GroupInfoPo;
 import com.jiangfucheng.im.model.po.GroupUserPo;
 import com.jiangfucheng.im.model.po.RelationPo;
-import com.jiangfucheng.im.httpserver.service.GroupService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -59,6 +59,7 @@ public class GroupServiceImpl implements GroupService {
 	public GroupBo getGroupByAccount(Long account) {
 		GroupInfoPo groupPo = groupMapper.selectOne(new QueryWrapper<GroupInfoPo>()
 				.eq("id", account));
+		if (groupPo == null) return null;
 		GroupBo groupBo = groupPo.convertToGroupBo();
 		UserBo userBo = new UserBo();
 		userBo.setId(groupPo.getCreateUserId());

@@ -49,7 +49,8 @@ public class UserServiceImpl implements UserService {
 	public UserBo getUserByAccount(String account) {
 		UserPo userPo = userMapper.selectOne(new QueryWrapper<UserPo>()
 				.eq("account", account));
-		return userPo.convertToUserBo();
+
+		return userPo == null ? null : userPo.convertToUserBo();
 	}
 
 	@Override

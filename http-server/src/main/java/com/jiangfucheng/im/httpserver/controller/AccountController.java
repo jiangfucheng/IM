@@ -1,10 +1,10 @@
 package com.jiangfucheng.im.httpserver.controller;
 
 import com.jiangfucheng.im.common.resp.Response;
-import com.jiangfucheng.im.model.bo.GroupBo;
-import com.jiangfucheng.im.model.bo.UserBo;
 import com.jiangfucheng.im.httpserver.service.GroupService;
 import com.jiangfucheng.im.httpserver.service.UserService;
+import com.jiangfucheng.im.model.bo.GroupBo;
+import com.jiangfucheng.im.model.bo.UserBo;
 import com.jiangfucheng.im.model.vo.AccountVo;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,14 +37,16 @@ public class AccountController {
 		if (userBo != null) {
 			accounts.add(userBo.convertToAccountVo());
 		}
-		for(int i = 0;i < account.length();i++){
+		for (int i = 0; i < account.length(); i++) {
 			char c = account.charAt(i);
-			if(c < '0' || c > '9'){
+			if (c < '0' || c > '9') {
 				return Response.ok(accounts);
 			}
 		}
 		GroupBo groupBo = groupService.getGroupByAccount(Long.parseLong(account));
-		accounts.add(groupBo.convertToAccountVo());
+		if (groupBo != null) {
+			accounts.add(groupBo.convertToAccountVo());
+		}
 		return Response.ok(accounts);
 	}
 }
