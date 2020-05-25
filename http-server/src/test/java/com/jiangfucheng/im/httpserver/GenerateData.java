@@ -2,15 +2,17 @@ package com.jiangfucheng.im.httpserver;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.jiangfucheng.im.common.utils.SnowFlakeIdGenerator;
-import com.jiangfucheng.im.model.bo.FriendBo;
-import com.jiangfucheng.im.model.bo.GroupMemberBo;
 import com.jiangfucheng.im.httpserver.mapper.*;
-import com.jiangfucheng.im.model.po.*;
 import com.jiangfucheng.im.httpserver.service.FriendRelationService;
 import com.jiangfucheng.im.httpserver.service.GroupService;
 import com.jiangfucheng.im.httpserver.service.UserService;
+import com.jiangfucheng.im.model.bo.FriendBo;
+import com.jiangfucheng.im.model.bo.GroupMemberBo;
+import com.jiangfucheng.im.model.po.*;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -29,6 +31,7 @@ import java.util.Random;
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @RunWith(SpringRunner.class)
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class GenerateData {
 	@Autowired
 	private MessageMapper messageMapper;
@@ -61,9 +64,26 @@ public class GenerateData {
 	@Autowired
 	private NotifyMapper notifyMapper;
 
+	public static long mainUserId;
 
 	@Test
-	public void generateUser() {
+	public void generate0MainUser() {
+		UserPo userPo = new UserPo();
+		mainUserId = idGenerator.nextId();
+		userPo.setId(mainUserId);
+		userPo.setNickName("姜福城");
+		userPo.setPassword("123456");
+		userPo.setAccount("jiangfucheng");
+		userPo.setBirthday(new Date());
+		userPo.setSignature("咸鱼本鱼");
+		userPo.setSex(1);
+		userPo.setProfilePhoto("/static/default_profile_photo.jpg");
+		userMapper.insert(userPo);
+		System.out.println("==================主用户数据构造完成==================");
+	}
+
+	@Test
+	public void generate1User() {
 		for (int i = 0; i < 100; i++) {
 			UserPo userPo = new UserPo();
 			userPo.setId(idGenerator.nextId());
@@ -76,14 +96,14 @@ public class GenerateData {
 			userPo.setProfilePhoto("/static/default_profile_photo.jpg");
 			userMapper.insert(userPo);
 		}
-		System.out.println("创建完成");
+		System.out.println("==================用户数据构造完成==================");
 	}
 
 	@Test
-	public void generateGroups() {
+	public void generate2Groups() {
 		List<UserPo> users = userMapper.selectList(new QueryWrapper<>());
 		Random random = new Random();
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 50; i++) {
 			GroupInfoPo groupInfoPo = new GroupInfoPo();
 			Long groupId = idGenerator.nextId();
 			UserPo createUser = users.get(random.nextInt(users.size()));
@@ -118,11 +138,13 @@ public class GenerateData {
 				groupUserMapper.insert(groupUserPo1);
 			}
 		}
+		System.out.println("==================群数据构造完成==================");
+
 	}
 
 	@Test
-	public void generateFriends() {
-		UserPo userPo = userMapper.selectById(3336855835673497600L);
+	public void generate3Friends() {
+		UserPo userPo = userMapper.selectById(mainUserId);
 		List<UserPo> users = userMapper.selectList(new QueryWrapper<>());
 		users.forEach(friend -> {
 			if (!userPo.getId().equals(friend.getId())) {
@@ -142,16 +164,17 @@ public class GenerateData {
 				relationMapper.insert(relationPo1);
 			}
 		});
+		System.out.println("==================好友数据构造完成==================");
 
 	}
 
 	@Test
-	public void generateFriendMessage() {
-		UserPo userPo = userMapper.selectById(3336855835673497600L);
+	public void generate4FriendMessage() {
+		UserPo userPo = userMapper.selectById(mainUserId);
 		List<RelationPo> friends = relationMapper.selectList(new QueryWrapper<RelationPo>().eq("user_id", userPo.getId()));
 		Random random = new Random();
 		friends.forEach(friend -> {
-			int end = random.nextInt(20) + 80;
+			int end = random.nextInt(20) + 30;
 			for (int i = 0; i < end; i++) {
 				MessagePo messagePo = new MessagePo();
 				messagePo.setId(idGenerator.nextId());
@@ -171,13 +194,14 @@ public class GenerateData {
 				}
 				messageMapper.insert(messagePo);
 			}
+			System.out.println("==================好友消息数据构造完成==================");
 
 		});
 	}
 
 	@Test
-	public void generateGroupMessage() {
-		UserPo userPo = userMapper.selectById(3336855835673497600L);
+	public void generate5GroupMessage() {
+		UserPo userPo = userMapper.selectById(mainUserId);
 		List<GroupUserPo> groups = groupUserMapper.selectList(new QueryWrapper<GroupUserPo>().eq("user_id", userPo.getId()));
 		Random random = new Random();
 		groups.forEach(group -> {
@@ -202,16 +226,16 @@ public class GenerateData {
 			syncGroupMessagePo.setId(idGenerator.nextId());
 			syncGroupMessagePo.setGroupId(group.getGroupId());
 			syncGroupMessagePo.setUserId(userPo.getId());
-			syncGroupMessagePo.setLastMsgId(msgIds.get(random.nextInt(20) + 80));
+			syncGroupMessagePo.setLastMsgId(msgIds.get(random.nextInt(20) + 20));
 			syncGroupMessageMapper.insert(syncGroupMessagePo);
 
 		});
-		System.out.println("消息生成完毕");
+		System.out.println("==================群消息数据构造完成==================");
 	}
 
 	@Test
-	public void generateRecentlyMessage() {
-		UserPo userPo = userMapper.selectById(3336855835673497600L);
+	public void generate6RecentlyMessage() {
+		UserPo userPo = userMapper.selectById(mainUserId);
 		List<FriendBo> friends = relationService.getFriendsWithUser(userPo.getId());
 		List<GroupUserPo> groupUserPos = groupUserMapper.selectList(new QueryWrapper<GroupUserPo>().eq("user_id", userPo.getId()));
 		friends.forEach(friend -> {
@@ -231,28 +255,44 @@ public class GenerateData {
 			recentlyChatFriendsPo.setType(1);
 			recentlyChatFriendsMapper.insert(recentlyChatFriendsPo);
 		});
+		System.out.println("==================最近聊天好友数据构造完成==================");
 
 	}
 
 	@Test
-	public void generateNotifies(){
-		Long userId = 3336855835673497600L;
-		NotifyPo notifyPo = new NotifyPo();
-		notifyPo.setId(idGenerator.nextId());
-		notifyPo.setContent("通知测试---1");
-		notifyPo.setFromId(4716144880106213376L);
-		notifyPo.setToId(userId);
-		notifyPo.setType(0);
+	public void generate7Notifies() {
+		Long userId = mainUserId;
+		List<RelationPo> friends = relationMapper.selectList(new QueryWrapper<RelationPo>()
+				.eq("user_id", userId));
+		Random random = new Random();
+		for (int i = 0; i < 20; i++) {
+			NotifyPo notifyPo = new NotifyPo();
+			notifyPo.setId(idGenerator.nextId());
+			notifyPo.setContent("通知测试---1");
+			notifyPo.setFromId(friends.get(random.nextInt(friends.size())).getFriendId());
+			notifyPo.setToId(userId);
+			notifyPo.setType(0);
+			notifyMapper.insert(notifyPo);
+		}
 
-		NotifyPo notifyPo1 = new NotifyPo();
-		notifyPo1.setId(idGenerator.nextId());
-		notifyPo1.setContent("通知测试---2");
-		notifyPo1.setFromId(4730125685849460736L);
-		notifyPo1.setToId(userId);
-		notifyPo1.setType(1);
 
-		notifyMapper.insert(notifyPo);
-		notifyMapper.insert(notifyPo1);
+		System.out.println("==================通知数据构造完成==================");
+
+	}
+
+	@Test
+	public void generate8RecentlyNotifies() {
+		List<NotifyPo> notifyPoList = notifyMapper.selectList(new QueryWrapper<>());
+		for (int i = 0; i < 20; i++) {
+			NotifyPo notifyPo = notifyPoList.get(i);
+			RecentlyNotifyPo recentlyNotifyPo = new RecentlyNotifyPo();
+			recentlyNotifyPo.setId(idGenerator.nextId());
+			recentlyNotifyPo.setUserId(mainUserId);
+			recentlyNotifyPo.setNotifyId(notifyPo.getId());
+			recentlyNotifyMapper.insert(recentlyNotifyPo);
+		}
+		System.out.println("==================最近通知数据构造完成==================");
+
 	}
 
 }
