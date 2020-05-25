@@ -31684,11 +31684,17 @@ public final class Control {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
+     */
+    long getFromId();
+
+    /**
      * <pre>
      *好友的id
      * </pre>
      *
-     * <code>int64 user_id = 1;</code>
+     * <code>int64 user_id = 2;</code>
      * @return The userId.
      */
     long getUserId();
@@ -31698,7 +31704,7 @@ public final class Control {
      *验证消息
      * </pre>
      *
-     * <code>string auth_message = 2;</code>
+     * <code>string auth_message = 3;</code>
      * @return The authMessage.
      */
     java.lang.String getAuthMessage();
@@ -31707,14 +31713,14 @@ public final class Control {
      *验证消息
      * </pre>
      *
-     * <code>string auth_message = 2;</code>
+     * <code>string auth_message = 3;</code>
      * @return The bytes for authMessage.
      */
     com.google.protobuf.ByteString
         getAuthMessageBytes();
 
     /**
-     * <code>int64 timestamp = 3;</code>
+     * <code>int64 timestamp = 4;</code>
      * @return The timestamp.
      */
     long getTimestamp();
@@ -31771,16 +31777,21 @@ public final class Control {
               break;
             case 8: {
 
+              fromId_ = input.readInt64();
+              break;
+            }
+            case 16: {
+
               userId_ = input.readInt64();
               break;
             }
-            case 18: {
+            case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
               authMessage_ = s;
               break;
             }
-            case 24: {
+            case 32: {
 
               timestamp_ = input.readInt64();
               break;
@@ -31817,28 +31828,38 @@ public final class Control {
               com.jiangfucheng.im.protobuf.Control.NotifyAddFriendRequest.class, com.jiangfucheng.im.protobuf.Control.NotifyAddFriendRequest.Builder.class);
     }
 
-    public static final int USER_ID_FIELD_NUMBER = 1;
+    public static final int FROM_ID_FIELD_NUMBER = 1;
+    private long fromId_;
+    /**
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
+     */
+    public long getFromId() {
+      return fromId_;
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 2;
     private long userId_;
     /**
      * <pre>
      *好友的id
      * </pre>
      *
-     * <code>int64 user_id = 1;</code>
+     * <code>int64 user_id = 2;</code>
      * @return The userId.
      */
     public long getUserId() {
       return userId_;
     }
 
-    public static final int AUTH_MESSAGE_FIELD_NUMBER = 2;
+    public static final int AUTH_MESSAGE_FIELD_NUMBER = 3;
     private volatile java.lang.Object authMessage_;
     /**
      * <pre>
      *验证消息
      * </pre>
      *
-     * <code>string auth_message = 2;</code>
+     * <code>string auth_message = 3;</code>
      * @return The authMessage.
      */
     public java.lang.String getAuthMessage() {
@@ -31858,7 +31879,7 @@ public final class Control {
      *验证消息
      * </pre>
      *
-     * <code>string auth_message = 2;</code>
+     * <code>string auth_message = 3;</code>
      * @return The bytes for authMessage.
      */
     public com.google.protobuf.ByteString
@@ -31875,10 +31896,10 @@ public final class Control {
       }
     }
 
-    public static final int TIMESTAMP_FIELD_NUMBER = 3;
+    public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 3;</code>
+     * <code>int64 timestamp = 4;</code>
      * @return The timestamp.
      */
     public long getTimestamp() {
@@ -31899,14 +31920,17 @@ public final class Control {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (fromId_ != 0L) {
+        output.writeInt64(1, fromId_);
+      }
       if (userId_ != 0L) {
-        output.writeInt64(1, userId_);
+        output.writeInt64(2, userId_);
       }
       if (!getAuthMessageBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, authMessage_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, authMessage_);
       }
       if (timestamp_ != 0L) {
-        output.writeInt64(3, timestamp_);
+        output.writeInt64(4, timestamp_);
       }
       unknownFields.writeTo(output);
     }
@@ -31917,16 +31941,20 @@ public final class Control {
       if (size != -1) return size;
 
       size = 0;
+      if (fromId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, fromId_);
+      }
       if (userId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, userId_);
+          .computeInt64Size(2, userId_);
       }
       if (!getAuthMessageBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, authMessage_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, authMessage_);
       }
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, timestamp_);
+          .computeInt64Size(4, timestamp_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -31943,6 +31971,8 @@ public final class Control {
       }
       com.jiangfucheng.im.protobuf.Control.NotifyAddFriendRequest other = (com.jiangfucheng.im.protobuf.Control.NotifyAddFriendRequest) obj;
 
+      if (getFromId()
+          != other.getFromId()) return false;
       if (getUserId()
           != other.getUserId()) return false;
       if (!getAuthMessage()
@@ -31960,6 +31990,9 @@ public final class Control {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FROM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFromId());
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUserId());
@@ -32105,6 +32138,8 @@ public final class Control {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        fromId_ = 0L;
+
         userId_ = 0L;
 
         authMessage_ = "";
@@ -32137,6 +32172,7 @@ public final class Control {
       @java.lang.Override
       public com.jiangfucheng.im.protobuf.Control.NotifyAddFriendRequest buildPartial() {
         com.jiangfucheng.im.protobuf.Control.NotifyAddFriendRequest result = new com.jiangfucheng.im.protobuf.Control.NotifyAddFriendRequest(this);
+        result.fromId_ = fromId_;
         result.userId_ = userId_;
         result.authMessage_ = authMessage_;
         result.timestamp_ = timestamp_;
@@ -32188,6 +32224,9 @@ public final class Control {
 
       public Builder mergeFrom(com.jiangfucheng.im.protobuf.Control.NotifyAddFriendRequest other) {
         if (other == com.jiangfucheng.im.protobuf.Control.NotifyAddFriendRequest.getDefaultInstance()) return this;
+        if (other.getFromId() != 0L) {
+          setFromId(other.getFromId());
+        }
         if (other.getUserId() != 0L) {
           setUserId(other.getUserId());
         }
@@ -32227,13 +32266,43 @@ public final class Control {
         return this;
       }
 
+      private long fromId_ ;
+      /**
+       * <code>int64 from_id = 1;</code>
+       * @return The fromId.
+       */
+      public long getFromId() {
+        return fromId_;
+      }
+      /**
+       * <code>int64 from_id = 1;</code>
+       * @param value The fromId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFromId(long value) {
+        
+        fromId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 from_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFromId() {
+        
+        fromId_ = 0L;
+        onChanged();
+        return this;
+      }
+
       private long userId_ ;
       /**
        * <pre>
        *好友的id
        * </pre>
        *
-       * <code>int64 user_id = 1;</code>
+       * <code>int64 user_id = 2;</code>
        * @return The userId.
        */
       public long getUserId() {
@@ -32244,7 +32313,7 @@ public final class Control {
        *好友的id
        * </pre>
        *
-       * <code>int64 user_id = 1;</code>
+       * <code>int64 user_id = 2;</code>
        * @param value The userId to set.
        * @return This builder for chaining.
        */
@@ -32259,7 +32328,7 @@ public final class Control {
        *好友的id
        * </pre>
        *
-       * <code>int64 user_id = 1;</code>
+       * <code>int64 user_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearUserId() {
@@ -32275,7 +32344,7 @@ public final class Control {
        *验证消息
        * </pre>
        *
-       * <code>string auth_message = 2;</code>
+       * <code>string auth_message = 3;</code>
        * @return The authMessage.
        */
       public java.lang.String getAuthMessage() {
@@ -32295,7 +32364,7 @@ public final class Control {
        *验证消息
        * </pre>
        *
-       * <code>string auth_message = 2;</code>
+       * <code>string auth_message = 3;</code>
        * @return The bytes for authMessage.
        */
       public com.google.protobuf.ByteString
@@ -32316,7 +32385,7 @@ public final class Control {
        *验证消息
        * </pre>
        *
-       * <code>string auth_message = 2;</code>
+       * <code>string auth_message = 3;</code>
        * @param value The authMessage to set.
        * @return This builder for chaining.
        */
@@ -32335,7 +32404,7 @@ public final class Control {
        *验证消息
        * </pre>
        *
-       * <code>string auth_message = 2;</code>
+       * <code>string auth_message = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearAuthMessage() {
@@ -32349,7 +32418,7 @@ public final class Control {
        *验证消息
        * </pre>
        *
-       * <code>string auth_message = 2;</code>
+       * <code>string auth_message = 3;</code>
        * @param value The bytes for authMessage to set.
        * @return This builder for chaining.
        */
@@ -32367,14 +32436,14 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 3;</code>
+       * <code>int64 timestamp = 4;</code>
        * @return The timestamp.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 3;</code>
+       * <code>int64 timestamp = 4;</code>
        * @param value The timestamp to set.
        * @return This builder for chaining.
        */
@@ -32385,7 +32454,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 3;</code>
+       * <code>int64 timestamp = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -33412,16 +33481,10 @@ public final class Control {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string token = 1;</code>
-     * @return The token.
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
      */
-    java.lang.String getToken();
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    com.google.protobuf.ByteString
-        getTokenBytes();
+    long getFromId();
 
     /**
      * <code>int64 user_id = 2;</code>
@@ -33456,7 +33519,6 @@ public final class Control {
       super(builder);
     }
     private NotifyDeleteFriendRequest() {
-      token_ = "";
     }
 
     @java.lang.Override
@@ -33489,10 +33551,9 @@ public final class Control {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 8: {
 
-              token_ = s;
+              fromId_ = input.readInt64();
               break;
             }
             case 16: {
@@ -33537,40 +33598,14 @@ public final class Control {
               com.jiangfucheng.im.protobuf.Control.NotifyDeleteFriendRequest.class, com.jiangfucheng.im.protobuf.Control.NotifyDeleteFriendRequest.Builder.class);
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object token_;
+    public static final int FROM_ID_FIELD_NUMBER = 1;
+    private long fromId_;
     /**
-     * <code>string token = 1;</code>
-     * @return The token.
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
      */
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        token_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        token_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getFromId() {
+      return fromId_;
     }
 
     public static final int USER_ID_FIELD_NUMBER = 2;
@@ -33611,8 +33646,8 @@ public final class Control {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+      if (fromId_ != 0L) {
+        output.writeInt64(1, fromId_);
       }
       if (userId_ != 0L) {
         output.writeInt64(2, userId_);
@@ -33629,8 +33664,9 @@ public final class Control {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      if (fromId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, fromId_);
       }
       if (userId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -33655,8 +33691,8 @@ public final class Control {
       }
       com.jiangfucheng.im.protobuf.Control.NotifyDeleteFriendRequest other = (com.jiangfucheng.im.protobuf.Control.NotifyDeleteFriendRequest) obj;
 
-      if (!getToken()
-          .equals(other.getToken())) return false;
+      if (getFromId()
+          != other.getFromId()) return false;
       if (getUserId()
           != other.getUserId()) return false;
       if (getTimestamp()
@@ -33672,8 +33708,9 @@ public final class Control {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + FROM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFromId());
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUserId());
@@ -33817,7 +33854,7 @@ public final class Control {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        token_ = "";
+        fromId_ = 0L;
 
         userId_ = 0L;
 
@@ -33849,7 +33886,7 @@ public final class Control {
       @java.lang.Override
       public com.jiangfucheng.im.protobuf.Control.NotifyDeleteFriendRequest buildPartial() {
         com.jiangfucheng.im.protobuf.Control.NotifyDeleteFriendRequest result = new com.jiangfucheng.im.protobuf.Control.NotifyDeleteFriendRequest(this);
-        result.token_ = token_;
+        result.fromId_ = fromId_;
         result.userId_ = userId_;
         result.timestamp_ = timestamp_;
         onBuilt();
@@ -33900,9 +33937,8 @@ public final class Control {
 
       public Builder mergeFrom(com.jiangfucheng.im.protobuf.Control.NotifyDeleteFriendRequest other) {
         if (other == com.jiangfucheng.im.protobuf.Control.NotifyDeleteFriendRequest.getDefaultInstance()) return this;
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
-          onChanged();
+        if (other.getFromId() != 0L) {
+          setFromId(other.getFromId());
         }
         if (other.getUserId() != 0L) {
           setUserId(other.getUserId());
@@ -33939,78 +33975,32 @@ public final class Control {
         return this;
       }
 
-      private java.lang.Object token_ = "";
+      private long fromId_ ;
       /**
-       * <code>string token = 1;</code>
-       * @return The token.
+       * <code>int64 from_id = 1;</code>
+       * @return The fromId.
        */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          token_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getFromId() {
+        return fromId_;
       }
       /**
-       * <code>string token = 1;</code>
-       * @return The bytes for token.
-       */
-      public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          token_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The token to set.
+       * <code>int64 from_id = 1;</code>
+       * @param value The fromId to set.
        * @return This builder for chaining.
        */
-      public Builder setToken(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        token_ = value;
+      public Builder setFromId(long value) {
+        
+        fromId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 1;</code>
+       * <code>int64 from_id = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearToken() {
+      public Builder clearFromId() {
         
-        token_ = getDefaultInstance().getToken();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The bytes for token to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        token_ = value;
+        fromId_ = 0L;
         onChanged();
         return this;
       }
@@ -35104,16 +35094,10 @@ public final class Control {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string token = 1;</code>
-     * @return The token.
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
      */
-    java.lang.String getToken();
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    com.google.protobuf.ByteString
-        getTokenBytes();
+    long getFromId();
 
     /**
      * <code>int64 user_id = 2;</code>
@@ -35144,7 +35128,6 @@ public final class Control {
       super(builder);
     }
     private NotifyFriendOnlineRequest() {
-      token_ = "";
     }
 
     @java.lang.Override
@@ -35177,10 +35160,9 @@ public final class Control {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 8: {
 
-              token_ = s;
+              fromId_ = input.readInt64();
               break;
             }
             case 16: {
@@ -35225,40 +35207,14 @@ public final class Control {
               com.jiangfucheng.im.protobuf.Control.NotifyFriendOnlineRequest.class, com.jiangfucheng.im.protobuf.Control.NotifyFriendOnlineRequest.Builder.class);
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object token_;
+    public static final int FROM_ID_FIELD_NUMBER = 1;
+    private long fromId_;
     /**
-     * <code>string token = 1;</code>
-     * @return The token.
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
      */
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        token_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        token_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getFromId() {
+      return fromId_;
     }
 
     public static final int USER_ID_FIELD_NUMBER = 2;
@@ -35295,8 +35251,8 @@ public final class Control {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+      if (fromId_ != 0L) {
+        output.writeInt64(1, fromId_);
       }
       if (userId_ != 0L) {
         output.writeInt64(2, userId_);
@@ -35313,8 +35269,9 @@ public final class Control {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      if (fromId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, fromId_);
       }
       if (userId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -35339,8 +35296,8 @@ public final class Control {
       }
       com.jiangfucheng.im.protobuf.Control.NotifyFriendOnlineRequest other = (com.jiangfucheng.im.protobuf.Control.NotifyFriendOnlineRequest) obj;
 
-      if (!getToken()
-          .equals(other.getToken())) return false;
+      if (getFromId()
+          != other.getFromId()) return false;
       if (getUserId()
           != other.getUserId()) return false;
       if (getTimestamp()
@@ -35356,8 +35313,9 @@ public final class Control {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + FROM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFromId());
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUserId());
@@ -35501,7 +35459,7 @@ public final class Control {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        token_ = "";
+        fromId_ = 0L;
 
         userId_ = 0L;
 
@@ -35533,7 +35491,7 @@ public final class Control {
       @java.lang.Override
       public com.jiangfucheng.im.protobuf.Control.NotifyFriendOnlineRequest buildPartial() {
         com.jiangfucheng.im.protobuf.Control.NotifyFriendOnlineRequest result = new com.jiangfucheng.im.protobuf.Control.NotifyFriendOnlineRequest(this);
-        result.token_ = token_;
+        result.fromId_ = fromId_;
         result.userId_ = userId_;
         result.timestamp_ = timestamp_;
         onBuilt();
@@ -35584,9 +35542,8 @@ public final class Control {
 
       public Builder mergeFrom(com.jiangfucheng.im.protobuf.Control.NotifyFriendOnlineRequest other) {
         if (other == com.jiangfucheng.im.protobuf.Control.NotifyFriendOnlineRequest.getDefaultInstance()) return this;
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
-          onChanged();
+        if (other.getFromId() != 0L) {
+          setFromId(other.getFromId());
         }
         if (other.getUserId() != 0L) {
           setUserId(other.getUserId());
@@ -35623,78 +35580,32 @@ public final class Control {
         return this;
       }
 
-      private java.lang.Object token_ = "";
+      private long fromId_ ;
       /**
-       * <code>string token = 1;</code>
-       * @return The token.
+       * <code>int64 from_id = 1;</code>
+       * @return The fromId.
        */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          token_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getFromId() {
+        return fromId_;
       }
       /**
-       * <code>string token = 1;</code>
-       * @return The bytes for token.
-       */
-      public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          token_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The token to set.
+       * <code>int64 from_id = 1;</code>
+       * @param value The fromId to set.
        * @return This builder for chaining.
        */
-      public Builder setToken(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        token_ = value;
+      public Builder setFromId(long value) {
+        
+        fromId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 1;</code>
+       * <code>int64 from_id = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearToken() {
+      public Builder clearFromId() {
         
-        token_ = getDefaultInstance().getToken();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The bytes for token to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        token_ = value;
+        fromId_ = 0L;
         onChanged();
         return this;
       }
@@ -36776,16 +36687,10 @@ public final class Control {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string token = 1;</code>
-     * @return The token.
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
      */
-    java.lang.String getToken();
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    com.google.protobuf.ByteString
-        getTokenBytes();
+    long getFromId();
 
     /**
      * <code>int64 user_id = 2;</code>
@@ -36816,7 +36721,6 @@ public final class Control {
       super(builder);
     }
     private NotifyFriendOfflineRequest() {
-      token_ = "";
     }
 
     @java.lang.Override
@@ -36849,10 +36753,9 @@ public final class Control {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 8: {
 
-              token_ = s;
+              fromId_ = input.readInt64();
               break;
             }
             case 16: {
@@ -36897,40 +36800,14 @@ public final class Control {
               com.jiangfucheng.im.protobuf.Control.NotifyFriendOfflineRequest.class, com.jiangfucheng.im.protobuf.Control.NotifyFriendOfflineRequest.Builder.class);
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object token_;
+    public static final int FROM_ID_FIELD_NUMBER = 1;
+    private long fromId_;
     /**
-     * <code>string token = 1;</code>
-     * @return The token.
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
      */
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        token_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        token_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getFromId() {
+      return fromId_;
     }
 
     public static final int USER_ID_FIELD_NUMBER = 2;
@@ -36967,8 +36844,8 @@ public final class Control {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+      if (fromId_ != 0L) {
+        output.writeInt64(1, fromId_);
       }
       if (userId_ != 0L) {
         output.writeInt64(2, userId_);
@@ -36985,8 +36862,9 @@ public final class Control {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      if (fromId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, fromId_);
       }
       if (userId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -37011,8 +36889,8 @@ public final class Control {
       }
       com.jiangfucheng.im.protobuf.Control.NotifyFriendOfflineRequest other = (com.jiangfucheng.im.protobuf.Control.NotifyFriendOfflineRequest) obj;
 
-      if (!getToken()
-          .equals(other.getToken())) return false;
+      if (getFromId()
+          != other.getFromId()) return false;
       if (getUserId()
           != other.getUserId()) return false;
       if (getTimestamp()
@@ -37028,8 +36906,9 @@ public final class Control {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + FROM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFromId());
       hash = (37 * hash) + USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUserId());
@@ -37173,7 +37052,7 @@ public final class Control {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        token_ = "";
+        fromId_ = 0L;
 
         userId_ = 0L;
 
@@ -37205,7 +37084,7 @@ public final class Control {
       @java.lang.Override
       public com.jiangfucheng.im.protobuf.Control.NotifyFriendOfflineRequest buildPartial() {
         com.jiangfucheng.im.protobuf.Control.NotifyFriendOfflineRequest result = new com.jiangfucheng.im.protobuf.Control.NotifyFriendOfflineRequest(this);
-        result.token_ = token_;
+        result.fromId_ = fromId_;
         result.userId_ = userId_;
         result.timestamp_ = timestamp_;
         onBuilt();
@@ -37256,9 +37135,8 @@ public final class Control {
 
       public Builder mergeFrom(com.jiangfucheng.im.protobuf.Control.NotifyFriendOfflineRequest other) {
         if (other == com.jiangfucheng.im.protobuf.Control.NotifyFriendOfflineRequest.getDefaultInstance()) return this;
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
-          onChanged();
+        if (other.getFromId() != 0L) {
+          setFromId(other.getFromId());
         }
         if (other.getUserId() != 0L) {
           setUserId(other.getUserId());
@@ -37295,78 +37173,32 @@ public final class Control {
         return this;
       }
 
-      private java.lang.Object token_ = "";
+      private long fromId_ ;
       /**
-       * <code>string token = 1;</code>
-       * @return The token.
+       * <code>int64 from_id = 1;</code>
+       * @return The fromId.
        */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          token_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getFromId() {
+        return fromId_;
       }
       /**
-       * <code>string token = 1;</code>
-       * @return The bytes for token.
-       */
-      public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          token_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The token to set.
+       * <code>int64 from_id = 1;</code>
+       * @param value The fromId to set.
        * @return This builder for chaining.
        */
-      public Builder setToken(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        token_ = value;
+      public Builder setFromId(long value) {
+        
+        fromId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 1;</code>
+       * <code>int64 from_id = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearToken() {
+      public Builder clearFromId() {
         
-        token_ = getDefaultInstance().getToken();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The bytes for token to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        token_ = value;
+        fromId_ = 0L;
         onChanged();
         return this;
       }
@@ -38448,16 +38280,10 @@ public final class Control {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string token = 1;</code>
-     * @return The token.
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
      */
-    java.lang.String getToken();
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    com.google.protobuf.ByteString
-        getTokenBytes();
+    long getFromId();
 
     /**
      * <code>int64 group_id = 2;</code>
@@ -38498,7 +38324,6 @@ public final class Control {
       super(builder);
     }
     private NotifyInviteMemberToGroupRequest() {
-      token_ = "";
     }
 
     @java.lang.Override
@@ -38531,10 +38356,9 @@ public final class Control {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 8: {
 
-              token_ = s;
+              fromId_ = input.readInt64();
               break;
             }
             case 16: {
@@ -38584,40 +38408,14 @@ public final class Control {
               com.jiangfucheng.im.protobuf.Control.NotifyInviteMemberToGroupRequest.class, com.jiangfucheng.im.protobuf.Control.NotifyInviteMemberToGroupRequest.Builder.class);
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object token_;
+    public static final int FROM_ID_FIELD_NUMBER = 1;
+    private long fromId_;
     /**
-     * <code>string token = 1;</code>
-     * @return The token.
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
      */
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        token_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        token_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getFromId() {
+      return fromId_;
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 2;
@@ -38668,8 +38466,8 @@ public final class Control {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+      if (fromId_ != 0L) {
+        output.writeInt64(1, fromId_);
       }
       if (groupId_ != 0L) {
         output.writeInt64(2, groupId_);
@@ -38689,8 +38487,9 @@ public final class Control {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      if (fromId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, fromId_);
       }
       if (groupId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -38719,8 +38518,8 @@ public final class Control {
       }
       com.jiangfucheng.im.protobuf.Control.NotifyInviteMemberToGroupRequest other = (com.jiangfucheng.im.protobuf.Control.NotifyInviteMemberToGroupRequest) obj;
 
-      if (!getToken()
-          .equals(other.getToken())) return false;
+      if (getFromId()
+          != other.getFromId()) return false;
       if (getGroupId()
           != other.getGroupId()) return false;
       if (getInvitedUserId()
@@ -38738,8 +38537,9 @@ public final class Control {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + FROM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFromId());
       hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getGroupId());
@@ -38886,7 +38686,7 @@ public final class Control {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        token_ = "";
+        fromId_ = 0L;
 
         groupId_ = 0L;
 
@@ -38920,7 +38720,7 @@ public final class Control {
       @java.lang.Override
       public com.jiangfucheng.im.protobuf.Control.NotifyInviteMemberToGroupRequest buildPartial() {
         com.jiangfucheng.im.protobuf.Control.NotifyInviteMemberToGroupRequest result = new com.jiangfucheng.im.protobuf.Control.NotifyInviteMemberToGroupRequest(this);
-        result.token_ = token_;
+        result.fromId_ = fromId_;
         result.groupId_ = groupId_;
         result.invitedUserId_ = invitedUserId_;
         result.timestamp_ = timestamp_;
@@ -38972,9 +38772,8 @@ public final class Control {
 
       public Builder mergeFrom(com.jiangfucheng.im.protobuf.Control.NotifyInviteMemberToGroupRequest other) {
         if (other == com.jiangfucheng.im.protobuf.Control.NotifyInviteMemberToGroupRequest.getDefaultInstance()) return this;
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
-          onChanged();
+        if (other.getFromId() != 0L) {
+          setFromId(other.getFromId());
         }
         if (other.getGroupId() != 0L) {
           setGroupId(other.getGroupId());
@@ -39014,78 +38813,32 @@ public final class Control {
         return this;
       }
 
-      private java.lang.Object token_ = "";
+      private long fromId_ ;
       /**
-       * <code>string token = 1;</code>
-       * @return The token.
+       * <code>int64 from_id = 1;</code>
+       * @return The fromId.
        */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          token_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getFromId() {
+        return fromId_;
       }
       /**
-       * <code>string token = 1;</code>
-       * @return The bytes for token.
-       */
-      public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          token_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The token to set.
+       * <code>int64 from_id = 1;</code>
+       * @param value The fromId to set.
        * @return This builder for chaining.
        */
-      public Builder setToken(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        token_ = value;
+      public Builder setFromId(long value) {
+        
+        fromId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 1;</code>
+       * <code>int64 from_id = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearToken() {
+      public Builder clearFromId() {
         
-        token_ = getDefaultInstance().getToken();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The bytes for token to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        token_ = value;
+        fromId_ = 0L;
         onChanged();
         return this;
       }
@@ -40209,16 +39962,10 @@ public final class Control {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string token = 1;</code>
-     * @return The token.
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
      */
-    java.lang.String getToken();
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    com.google.protobuf.ByteString
-        getTokenBytes();
+    long getFromId();
 
     /**
      * <code>int64 group_id = 2;</code>
@@ -40259,7 +40006,6 @@ public final class Control {
       super(builder);
     }
     private NotifyDeletedGroupRequest() {
-      token_ = "";
     }
 
     @java.lang.Override
@@ -40292,10 +40038,9 @@ public final class Control {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 8: {
 
-              token_ = s;
+              fromId_ = input.readInt64();
               break;
             }
             case 16: {
@@ -40345,40 +40090,14 @@ public final class Control {
               com.jiangfucheng.im.protobuf.Control.NotifyDeletedGroupRequest.class, com.jiangfucheng.im.protobuf.Control.NotifyDeletedGroupRequest.Builder.class);
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object token_;
+    public static final int FROM_ID_FIELD_NUMBER = 1;
+    private long fromId_;
     /**
-     * <code>string token = 1;</code>
-     * @return The token.
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
      */
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        token_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        token_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getFromId() {
+      return fromId_;
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 2;
@@ -40429,8 +40148,8 @@ public final class Control {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+      if (fromId_ != 0L) {
+        output.writeInt64(1, fromId_);
       }
       if (groupId_ != 0L) {
         output.writeInt64(2, groupId_);
@@ -40450,8 +40169,9 @@ public final class Control {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      if (fromId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, fromId_);
       }
       if (groupId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -40480,8 +40200,8 @@ public final class Control {
       }
       com.jiangfucheng.im.protobuf.Control.NotifyDeletedGroupRequest other = (com.jiangfucheng.im.protobuf.Control.NotifyDeletedGroupRequest) obj;
 
-      if (!getToken()
-          .equals(other.getToken())) return false;
+      if (getFromId()
+          != other.getFromId()) return false;
       if (getGroupId()
           != other.getGroupId()) return false;
       if (getGroupOwnerId()
@@ -40499,8 +40219,9 @@ public final class Control {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + FROM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFromId());
       hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getGroupId());
@@ -40647,7 +40368,7 @@ public final class Control {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        token_ = "";
+        fromId_ = 0L;
 
         groupId_ = 0L;
 
@@ -40681,7 +40402,7 @@ public final class Control {
       @java.lang.Override
       public com.jiangfucheng.im.protobuf.Control.NotifyDeletedGroupRequest buildPartial() {
         com.jiangfucheng.im.protobuf.Control.NotifyDeletedGroupRequest result = new com.jiangfucheng.im.protobuf.Control.NotifyDeletedGroupRequest(this);
-        result.token_ = token_;
+        result.fromId_ = fromId_;
         result.groupId_ = groupId_;
         result.groupOwnerId_ = groupOwnerId_;
         result.timestamp_ = timestamp_;
@@ -40733,9 +40454,8 @@ public final class Control {
 
       public Builder mergeFrom(com.jiangfucheng.im.protobuf.Control.NotifyDeletedGroupRequest other) {
         if (other == com.jiangfucheng.im.protobuf.Control.NotifyDeletedGroupRequest.getDefaultInstance()) return this;
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
-          onChanged();
+        if (other.getFromId() != 0L) {
+          setFromId(other.getFromId());
         }
         if (other.getGroupId() != 0L) {
           setGroupId(other.getGroupId());
@@ -40775,78 +40495,32 @@ public final class Control {
         return this;
       }
 
-      private java.lang.Object token_ = "";
+      private long fromId_ ;
       /**
-       * <code>string token = 1;</code>
-       * @return The token.
+       * <code>int64 from_id = 1;</code>
+       * @return The fromId.
        */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          token_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getFromId() {
+        return fromId_;
       }
       /**
-       * <code>string token = 1;</code>
-       * @return The bytes for token.
-       */
-      public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          token_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The token to set.
+       * <code>int64 from_id = 1;</code>
+       * @param value The fromId to set.
        * @return This builder for chaining.
        */
-      public Builder setToken(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        token_ = value;
+      public Builder setFromId(long value) {
+        
+        fromId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 1;</code>
+       * <code>int64 from_id = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearToken() {
+      public Builder clearFromId() {
         
-        token_ = getDefaultInstance().getToken();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The bytes for token to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        token_ = value;
+        fromId_ = 0L;
         onChanged();
         return this;
       }
@@ -41970,16 +41644,10 @@ public final class Control {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string token = 1;</code>
-     * @return The token.
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
      */
-    java.lang.String getToken();
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    com.google.protobuf.ByteString
-        getTokenBytes();
+    long getFromId();
 
     /**
      * <code>int64 group_id = 2;</code>
@@ -42030,7 +41698,6 @@ public final class Control {
       super(builder);
     }
     private NotifyChangeGroupManagerAuthRequest() {
-      token_ = "";
     }
 
     @java.lang.Override
@@ -42063,10 +41730,9 @@ public final class Control {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 8: {
 
-              token_ = s;
+              fromId_ = input.readInt64();
               break;
             }
             case 16: {
@@ -42121,40 +41787,14 @@ public final class Control {
               com.jiangfucheng.im.protobuf.Control.NotifyChangeGroupManagerAuthRequest.class, com.jiangfucheng.im.protobuf.Control.NotifyChangeGroupManagerAuthRequest.Builder.class);
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object token_;
+    public static final int FROM_ID_FIELD_NUMBER = 1;
+    private long fromId_;
     /**
-     * <code>string token = 1;</code>
-     * @return The token.
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
      */
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        token_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        token_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getFromId() {
+      return fromId_;
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 2;
@@ -42219,8 +41859,8 @@ public final class Control {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+      if (fromId_ != 0L) {
+        output.writeInt64(1, fromId_);
       }
       if (groupId_ != 0L) {
         output.writeInt64(2, groupId_);
@@ -42243,8 +41883,9 @@ public final class Control {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      if (fromId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, fromId_);
       }
       if (groupId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -42277,8 +41918,8 @@ public final class Control {
       }
       com.jiangfucheng.im.protobuf.Control.NotifyChangeGroupManagerAuthRequest other = (com.jiangfucheng.im.protobuf.Control.NotifyChangeGroupManagerAuthRequest) obj;
 
-      if (!getToken()
-          .equals(other.getToken())) return false;
+      if (getFromId()
+          != other.getFromId()) return false;
       if (getGroupId()
           != other.getGroupId()) return false;
       if (getUserId()
@@ -42298,8 +41939,9 @@ public final class Control {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + FROM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFromId());
       hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getGroupId());
@@ -42448,7 +42090,7 @@ public final class Control {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        token_ = "";
+        fromId_ = 0L;
 
         groupId_ = 0L;
 
@@ -42484,7 +42126,7 @@ public final class Control {
       @java.lang.Override
       public com.jiangfucheng.im.protobuf.Control.NotifyChangeGroupManagerAuthRequest buildPartial() {
         com.jiangfucheng.im.protobuf.Control.NotifyChangeGroupManagerAuthRequest result = new com.jiangfucheng.im.protobuf.Control.NotifyChangeGroupManagerAuthRequest(this);
-        result.token_ = token_;
+        result.fromId_ = fromId_;
         result.groupId_ = groupId_;
         result.userId_ = userId_;
         result.type_ = type_;
@@ -42537,9 +42179,8 @@ public final class Control {
 
       public Builder mergeFrom(com.jiangfucheng.im.protobuf.Control.NotifyChangeGroupManagerAuthRequest other) {
         if (other == com.jiangfucheng.im.protobuf.Control.NotifyChangeGroupManagerAuthRequest.getDefaultInstance()) return this;
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
-          onChanged();
+        if (other.getFromId() != 0L) {
+          setFromId(other.getFromId());
         }
         if (other.getGroupId() != 0L) {
           setGroupId(other.getGroupId());
@@ -42582,78 +42223,32 @@ public final class Control {
         return this;
       }
 
-      private java.lang.Object token_ = "";
+      private long fromId_ ;
       /**
-       * <code>string token = 1;</code>
-       * @return The token.
+       * <code>int64 from_id = 1;</code>
+       * @return The fromId.
        */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          token_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getFromId() {
+        return fromId_;
       }
       /**
-       * <code>string token = 1;</code>
-       * @return The bytes for token.
-       */
-      public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          token_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The token to set.
+       * <code>int64 from_id = 1;</code>
+       * @param value The fromId to set.
        * @return This builder for chaining.
        */
-      public Builder setToken(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        token_ = value;
+      public Builder setFromId(long value) {
+        
+        fromId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 1;</code>
+       * <code>int64 from_id = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearToken() {
+      public Builder clearFromId() {
         
-        token_ = getDefaultInstance().getToken();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The bytes for token to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        token_ = value;
+        fromId_ = 0L;
         onChanged();
         return this;
       }
@@ -43819,16 +43414,10 @@ public final class Control {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string token = 1;</code>
-     * @return The token.
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
      */
-    java.lang.String getToken();
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    com.google.protobuf.ByteString
-        getTokenBytes();
+    long getFromId();
 
     /**
      * <pre>
@@ -43869,7 +43458,6 @@ public final class Control {
       super(builder);
     }
     private NotifyKickOutGroupRequest() {
-      token_ = "";
       timestamp_ = "";
     }
 
@@ -43903,10 +43491,9 @@ public final class Control {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 8: {
 
-              token_ = s;
+              fromId_ = input.readInt64();
               break;
             }
             case 16: {
@@ -43952,40 +43539,14 @@ public final class Control {
               com.jiangfucheng.im.protobuf.Control.NotifyKickOutGroupRequest.class, com.jiangfucheng.im.protobuf.Control.NotifyKickOutGroupRequest.Builder.class);
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object token_;
+    public static final int FROM_ID_FIELD_NUMBER = 1;
+    private long fromId_;
     /**
-     * <code>string token = 1;</code>
-     * @return The token.
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
      */
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        token_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        token_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getFromId() {
+      return fromId_;
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 2;
@@ -44052,8 +43613,8 @@ public final class Control {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+      if (fromId_ != 0L) {
+        output.writeInt64(1, fromId_);
       }
       if (groupId_ != 0L) {
         output.writeInt64(2, groupId_);
@@ -44070,8 +43631,9 @@ public final class Control {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      if (fromId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, fromId_);
       }
       if (groupId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -44095,8 +43657,8 @@ public final class Control {
       }
       com.jiangfucheng.im.protobuf.Control.NotifyKickOutGroupRequest other = (com.jiangfucheng.im.protobuf.Control.NotifyKickOutGroupRequest) obj;
 
-      if (!getToken()
-          .equals(other.getToken())) return false;
+      if (getFromId()
+          != other.getFromId()) return false;
       if (getGroupId()
           != other.getGroupId()) return false;
       if (!getTimestamp()
@@ -44112,8 +43674,9 @@ public final class Control {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + FROM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFromId());
       hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getGroupId());
@@ -44256,7 +43819,7 @@ public final class Control {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        token_ = "";
+        fromId_ = 0L;
 
         groupId_ = 0L;
 
@@ -44288,7 +43851,7 @@ public final class Control {
       @java.lang.Override
       public com.jiangfucheng.im.protobuf.Control.NotifyKickOutGroupRequest buildPartial() {
         com.jiangfucheng.im.protobuf.Control.NotifyKickOutGroupRequest result = new com.jiangfucheng.im.protobuf.Control.NotifyKickOutGroupRequest(this);
-        result.token_ = token_;
+        result.fromId_ = fromId_;
         result.groupId_ = groupId_;
         result.timestamp_ = timestamp_;
         onBuilt();
@@ -44339,9 +43902,8 @@ public final class Control {
 
       public Builder mergeFrom(com.jiangfucheng.im.protobuf.Control.NotifyKickOutGroupRequest other) {
         if (other == com.jiangfucheng.im.protobuf.Control.NotifyKickOutGroupRequest.getDefaultInstance()) return this;
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
-          onChanged();
+        if (other.getFromId() != 0L) {
+          setFromId(other.getFromId());
         }
         if (other.getGroupId() != 0L) {
           setGroupId(other.getGroupId());
@@ -44379,78 +43941,32 @@ public final class Control {
         return this;
       }
 
-      private java.lang.Object token_ = "";
+      private long fromId_ ;
       /**
-       * <code>string token = 1;</code>
-       * @return The token.
+       * <code>int64 from_id = 1;</code>
+       * @return The fromId.
        */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          token_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getFromId() {
+        return fromId_;
       }
       /**
-       * <code>string token = 1;</code>
-       * @return The bytes for token.
-       */
-      public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          token_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The token to set.
+       * <code>int64 from_id = 1;</code>
+       * @param value The fromId to set.
        * @return This builder for chaining.
        */
-      public Builder setToken(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        token_ = value;
+      public Builder setFromId(long value) {
+        
+        fromId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 1;</code>
+       * <code>int64 from_id = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearToken() {
+      public Builder clearFromId() {
         
-        token_ = getDefaultInstance().getToken();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The bytes for token to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        token_ = value;
+        fromId_ = 0L;
         onChanged();
         return this;
       }
@@ -45590,16 +45106,10 @@ public final class Control {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string token = 1;</code>
-     * @return The token.
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
      */
-    java.lang.String getToken();
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    com.google.protobuf.ByteString
-        getTokenBytes();
+    long getFromId();
 
     /**
      * <pre>
@@ -45670,7 +45180,6 @@ public final class Control {
       super(builder);
     }
     private NotifyKickOutRequest() {
-      token_ = "";
       ip_ = "";
       address_ = "";
       timestamp_ = "";
@@ -45706,10 +45215,9 @@ public final class Control {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 8: {
 
-              token_ = s;
+              fromId_ = input.readInt64();
               break;
             }
             case 18: {
@@ -45762,40 +45270,14 @@ public final class Control {
               com.jiangfucheng.im.protobuf.Control.NotifyKickOutRequest.class, com.jiangfucheng.im.protobuf.Control.NotifyKickOutRequest.Builder.class);
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object token_;
+    public static final int FROM_ID_FIELD_NUMBER = 1;
+    private long fromId_;
     /**
-     * <code>string token = 1;</code>
-     * @return The token.
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
      */
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        token_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        token_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getFromId() {
+      return fromId_;
     }
 
     public static final int IP_FIELD_NUMBER = 2;
@@ -45936,8 +45418,8 @@ public final class Control {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+      if (fromId_ != 0L) {
+        output.writeInt64(1, fromId_);
       }
       if (!getIpBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ip_);
@@ -45957,8 +45439,9 @@ public final class Control {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      if (fromId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, fromId_);
       }
       if (!getIpBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, ip_);
@@ -45984,8 +45467,8 @@ public final class Control {
       }
       com.jiangfucheng.im.protobuf.Control.NotifyKickOutRequest other = (com.jiangfucheng.im.protobuf.Control.NotifyKickOutRequest) obj;
 
-      if (!getToken()
-          .equals(other.getToken())) return false;
+      if (getFromId()
+          != other.getFromId()) return false;
       if (!getIp()
           .equals(other.getIp())) return false;
       if (!getAddress()
@@ -46003,8 +45486,9 @@ public final class Control {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + FROM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFromId());
       hash = (37 * hash) + IP_FIELD_NUMBER;
       hash = (53 * hash) + getIp().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
@@ -46148,7 +45632,7 @@ public final class Control {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        token_ = "";
+        fromId_ = 0L;
 
         ip_ = "";
 
@@ -46182,7 +45666,7 @@ public final class Control {
       @java.lang.Override
       public com.jiangfucheng.im.protobuf.Control.NotifyKickOutRequest buildPartial() {
         com.jiangfucheng.im.protobuf.Control.NotifyKickOutRequest result = new com.jiangfucheng.im.protobuf.Control.NotifyKickOutRequest(this);
-        result.token_ = token_;
+        result.fromId_ = fromId_;
         result.ip_ = ip_;
         result.address_ = address_;
         result.timestamp_ = timestamp_;
@@ -46234,9 +45718,8 @@ public final class Control {
 
       public Builder mergeFrom(com.jiangfucheng.im.protobuf.Control.NotifyKickOutRequest other) {
         if (other == com.jiangfucheng.im.protobuf.Control.NotifyKickOutRequest.getDefaultInstance()) return this;
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
-          onChanged();
+        if (other.getFromId() != 0L) {
+          setFromId(other.getFromId());
         }
         if (!other.getIp().isEmpty()) {
           ip_ = other.ip_;
@@ -46279,78 +45762,32 @@ public final class Control {
         return this;
       }
 
-      private java.lang.Object token_ = "";
+      private long fromId_ ;
       /**
-       * <code>string token = 1;</code>
-       * @return The token.
+       * <code>int64 from_id = 1;</code>
+       * @return The fromId.
        */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          token_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getFromId() {
+        return fromId_;
       }
       /**
-       * <code>string token = 1;</code>
-       * @return The bytes for token.
-       */
-      public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          token_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The token to set.
+       * <code>int64 from_id = 1;</code>
+       * @param value The fromId to set.
        * @return This builder for chaining.
        */
-      public Builder setToken(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        token_ = value;
+      public Builder setFromId(long value) {
+        
+        fromId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 1;</code>
+       * <code>int64 from_id = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearToken() {
+      public Builder clearFromId() {
         
-        token_ = getDefaultInstance().getToken();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The bytes for token to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        token_ = value;
+        fromId_ = 0L;
         onChanged();
         return this;
       }
@@ -47640,16 +47077,10 @@ public final class Control {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string token = 1;</code>
-     * @return The token.
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
      */
-    java.lang.String getToken();
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    com.google.protobuf.ByteString
-        getTokenBytes();
+    long getFromId();
 
     /**
      * <code>int64 group_id = 2;</code>
@@ -47710,7 +47141,6 @@ public final class Control {
       super(builder);
     }
     private NotifyAddGroupAnnouncementRequest() {
-      token_ = "";
       title_ = "";
       content_ = "";
       timestamp_ = "";
@@ -47746,10 +47176,9 @@ public final class Control {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 8: {
 
-              token_ = s;
+              fromId_ = input.readInt64();
               break;
             }
             case 16: {
@@ -47807,40 +47236,14 @@ public final class Control {
               com.jiangfucheng.im.protobuf.Control.NotifyAddGroupAnnouncementRequest.class, com.jiangfucheng.im.protobuf.Control.NotifyAddGroupAnnouncementRequest.Builder.class);
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object token_;
+    public static final int FROM_ID_FIELD_NUMBER = 1;
+    private long fromId_;
     /**
-     * <code>string token = 1;</code>
-     * @return The token.
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
      */
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        token_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string token = 1;</code>
-     * @return The bytes for token.
-     */
-    public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        token_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getFromId() {
+      return fromId_;
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 2;
@@ -47975,8 +47378,8 @@ public final class Control {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+      if (fromId_ != 0L) {
+        output.writeInt64(1, fromId_);
       }
       if (groupId_ != 0L) {
         output.writeInt64(2, groupId_);
@@ -47999,8 +47402,9 @@ public final class Control {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      if (fromId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, fromId_);
       }
       if (groupId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -48030,8 +47434,8 @@ public final class Control {
       }
       com.jiangfucheng.im.protobuf.Control.NotifyAddGroupAnnouncementRequest other = (com.jiangfucheng.im.protobuf.Control.NotifyAddGroupAnnouncementRequest) obj;
 
-      if (!getToken()
-          .equals(other.getToken())) return false;
+      if (getFromId()
+          != other.getFromId()) return false;
       if (getGroupId()
           != other.getGroupId()) return false;
       if (!getTitle()
@@ -48051,8 +47455,9 @@ public final class Control {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + FROM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFromId());
       hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getGroupId());
@@ -48199,7 +47604,7 @@ public final class Control {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        token_ = "";
+        fromId_ = 0L;
 
         groupId_ = 0L;
 
@@ -48235,7 +47640,7 @@ public final class Control {
       @java.lang.Override
       public com.jiangfucheng.im.protobuf.Control.NotifyAddGroupAnnouncementRequest buildPartial() {
         com.jiangfucheng.im.protobuf.Control.NotifyAddGroupAnnouncementRequest result = new com.jiangfucheng.im.protobuf.Control.NotifyAddGroupAnnouncementRequest(this);
-        result.token_ = token_;
+        result.fromId_ = fromId_;
         result.groupId_ = groupId_;
         result.title_ = title_;
         result.content_ = content_;
@@ -48288,9 +47693,8 @@ public final class Control {
 
       public Builder mergeFrom(com.jiangfucheng.im.protobuf.Control.NotifyAddGroupAnnouncementRequest other) {
         if (other == com.jiangfucheng.im.protobuf.Control.NotifyAddGroupAnnouncementRequest.getDefaultInstance()) return this;
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
-          onChanged();
+        if (other.getFromId() != 0L) {
+          setFromId(other.getFromId());
         }
         if (other.getGroupId() != 0L) {
           setGroupId(other.getGroupId());
@@ -48336,78 +47740,32 @@ public final class Control {
         return this;
       }
 
-      private java.lang.Object token_ = "";
+      private long fromId_ ;
       /**
-       * <code>string token = 1;</code>
-       * @return The token.
+       * <code>int64 from_id = 1;</code>
+       * @return The fromId.
        */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          token_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public long getFromId() {
+        return fromId_;
       }
       /**
-       * <code>string token = 1;</code>
-       * @return The bytes for token.
-       */
-      public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          token_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The token to set.
+       * <code>int64 from_id = 1;</code>
+       * @param value The fromId to set.
        * @return This builder for chaining.
        */
-      public Builder setToken(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        token_ = value;
+      public Builder setFromId(long value) {
+        
+        fromId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 1;</code>
+       * <code>int64 from_id = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearToken() {
+      public Builder clearFromId() {
         
-        token_ = getDefaultInstance().getToken();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 1;</code>
-       * @param value The bytes for token to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        token_ = value;
+        fromId_ = 0L;
         onChanged();
         return this;
       }
@@ -50057,61 +49415,62 @@ public final class Control {
       "goutRequest\022\r\n\005token\030\001 \001(\t\022\021\n\ttimestamp\030" +
       "\002 \001(\003\"b\n\016LogoutResponse\022\014\n\004code\030\001 \001(\005\022\013\n" +
       "\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp" +
-      "\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"R\n\026NotifyAddFr" +
-      "iendRequest\022\017\n\007user_id\030\001 \001(\003\022\024\n\014auth_mes" +
-      "sage\030\002 \001(\t\022\021\n\ttimestamp\030\003 \001(\003\"k\n\027NotifyA" +
-      "ddFriendResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 " +
-      "\001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022" +
-      "\021\n\ttarget_id\030\005 \001(\003\"N\n\031NotifyDeleteFriend" +
-      "Request\022\r\n\005token\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022" +
-      "\021\n\ttimestamp\030\003 \001(\003\"n\n\032NotifyDeleteFriend" +
-      "Response\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007e" +
-      "rr_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarge" +
-      "t_id\030\005 \001(\003\"N\n\031NotifyFriendOnlineRequest\022" +
-      "\r\n\005token\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022\021\n\ttimes" +
-      "tamp\030\003 \001(\003\"n\n\032NotifyFriendOnlineResponse" +
-      "\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003" +
-      " \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001" +
-      "(\003\"O\n\032NotifyFriendOfflineRequest\022\r\n\005toke" +
-      "n\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022\021\n\ttimestamp\030\003 " +
-      "\001(\003\"o\n\033NotifyFriendOfflineResponse\022\014\n\004co" +
-      "de\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021" +
-      "\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"o\n " +
-      "NotifyInviteMemberToGroupRequest\022\r\n\005toke" +
-      "n\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022\027\n\017invited_use" +
-      "r_id\030\003 \001(\003\022\021\n\ttimestamp\030\004 \001(\003\"u\n!NotifyI" +
-      "nviteMemberToGroupResponse\022\014\n\004code\030\001 \001(\005" +
-      "\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimest" +
-      "amp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"g\n\031NotifyDe" +
-      "letedGroupRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010grou" +
-      "p_id\030\002 \001(\003\022\026\n\016group_owner_id\030\003 \001(\003\022\021\n\tti" +
-      "mestamp\030\004 \001(\003\"n\n\032NotifyDeletedGroupRespo" +
-      "nse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_ms" +
-      "g\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030" +
-      "\005 \001(\003\"x\n#NotifyChangeGroupManagerAuthReq" +
-      "uest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022\017\n" +
-      "\007user_id\030\003 \001(\003\022\014\n\004type\030\004 \001(\005\022\021\n\ttimestam" +
-      "p\030\005 \001(\003\"x\n$NotifyChangeGroupManagerAuthR" +
-      "esponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007er" +
-      "r_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget" +
-      "_id\030\005 \001(\003\"O\n\031NotifyKickOutGroupRequest\022\r" +
-      "\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022\021\n\ttimes" +
-      "tamp\030\004 \001(\t\"n\n\032NotifyKickOutGroupResponse" +
-      "\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003" +
-      " \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001" +
-      "(\003\"U\n\024NotifyKickOutRequest\022\r\n\005token\030\001 \001(" +
-      "\t\022\n\n\002ip\030\002 \001(\t\022\017\n\007address\030\003 \001(\t\022\021\n\ttimest" +
-      "amp\030\004 \001(\t\"i\n\025NotifyKickOutResponse\022\014\n\004co" +
-      "de\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021" +
-      "\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"w\n!" +
-      "NotifyAddGroupAnnouncementRequest\022\r\n\005tok" +
-      "en\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022\r\n\005title\030\003 \001(" +
-      "\t\022\017\n\007content\030\004 \001(\t\022\021\n\ttimestamp\030\005 \001(\t\"v\n" +
-      "\"NotifyAddGroupAnnouncementResponse\022\014\n\004c" +
-      "ode\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022" +
-      "\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003B\'\n" +
-      "\034com.jiangfucheng.im.protobufB\007Controlb\006" +
-      "proto3"
+      "\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"c\n\026NotifyAddFr" +
+      "iendRequest\022\017\n\007from_id\030\001 \001(\003\022\017\n\007user_id\030" +
+      "\002 \001(\003\022\024\n\014auth_message\030\003 \001(\t\022\021\n\ttimestamp" +
+      "\030\004 \001(\003\"k\n\027NotifyAddFriendResponse\022\014\n\004cod" +
+      "e\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n" +
+      "\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"P\n\031N" +
+      "otifyDeleteFriendRequest\022\017\n\007from_id\030\001 \001(" +
+      "\003\022\017\n\007user_id\030\002 \001(\003\022\021\n\ttimestamp\030\003 \001(\003\"n\n" +
+      "\032NotifyDeleteFriendResponse\022\014\n\004code\030\001 \001(" +
+      "\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimes" +
+      "tamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"P\n\031NotifyF" +
+      "riendOnlineRequest\022\017\n\007from_id\030\001 \001(\003\022\017\n\007u" +
+      "ser_id\030\002 \001(\003\022\021\n\ttimestamp\030\003 \001(\003\"n\n\032Notif" +
+      "yFriendOnlineResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003m" +
+      "sg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004" +
+      " \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"Q\n\032NotifyFriendO" +
+      "fflineRequest\022\017\n\007from_id\030\001 \001(\003\022\017\n\007user_i" +
+      "d\030\002 \001(\003\022\021\n\ttimestamp\030\003 \001(\003\"o\n\033NotifyFrie" +
+      "ndOfflineResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002" +
+      " \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003" +
+      "\022\021\n\ttarget_id\030\005 \001(\003\"q\n NotifyInviteMembe" +
+      "rToGroupRequest\022\017\n\007from_id\030\001 \001(\003\022\020\n\010grou" +
+      "p_id\030\002 \001(\003\022\027\n\017invited_user_id\030\003 \001(\003\022\021\n\tt" +
+      "imestamp\030\004 \001(\003\"u\n!NotifyInviteMemberToGr" +
+      "oupResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017" +
+      "\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\tta" +
+      "rget_id\030\005 \001(\003\"i\n\031NotifyDeletedGroupReque" +
+      "st\022\017\n\007from_id\030\001 \001(\003\022\020\n\010group_id\030\002 \001(\003\022\026\n" +
+      "\016group_owner_id\030\003 \001(\003\022\021\n\ttimestamp\030\004 \001(\003" +
+      "\"n\n\032NotifyDeletedGroupResponse\022\014\n\004code\030\001" +
+      " \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\tti" +
+      "mestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"z\n#Noti" +
+      "fyChangeGroupManagerAuthRequest\022\017\n\007from_" +
+      "id\030\001 \001(\003\022\020\n\010group_id\030\002 \001(\003\022\017\n\007user_id\030\003 " +
+      "\001(\003\022\014\n\004type\030\004 \001(\005\022\021\n\ttimestamp\030\005 \001(\003\"x\n$" +
+      "NotifyChangeGroupManagerAuthResponse\022\014\n\004" +
+      "code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t" +
+      "\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"Q" +
+      "\n\031NotifyKickOutGroupRequest\022\017\n\007from_id\030\001" +
+      " \001(\003\022\020\n\010group_id\030\002 \001(\003\022\021\n\ttimestamp\030\004 \001(" +
+      "\t\"n\n\032NotifyKickOutGroupResponse\022\014\n\004code\030" +
+      "\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\tt" +
+      "imestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"W\n\024Not" +
+      "ifyKickOutRequest\022\017\n\007from_id\030\001 \001(\003\022\n\n\002ip" +
+      "\030\002 \001(\t\022\017\n\007address\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001" +
+      "(\t\"i\n\025NotifyKickOutResponse\022\014\n\004code\030\001 \001(" +
+      "\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimes" +
+      "tamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"y\n!NotifyA" +
+      "ddGroupAnnouncementRequest\022\017\n\007from_id\030\001 " +
+      "\001(\003\022\020\n\010group_id\030\002 \001(\003\022\r\n\005title\030\003 \001(\t\022\017\n\007" +
+      "content\030\004 \001(\t\022\021\n\ttimestamp\030\005 \001(\t\"v\n\"Noti" +
+      "fyAddGroupAnnouncementResponse\022\014\n\004code\030\001" +
+      " \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\tti" +
+      "mestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003B\'\n\034com." +
+      "jiangfucheng.im.protobufB\007Controlb\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -50338,7 +49697,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddFriendRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyAddFriendRequest_descriptor,
-        new java.lang.String[] { "UserId", "AuthMessage", "Timestamp", });
+        new java.lang.String[] { "FromId", "UserId", "AuthMessage", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddFriendResponse_descriptor =
       getDescriptor().getMessageTypes().get(35);
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddFriendResponse_fieldAccessorTable = new
@@ -50350,7 +49709,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeleteFriendRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyDeleteFriendRequest_descriptor,
-        new java.lang.String[] { "Token", "UserId", "Timestamp", });
+        new java.lang.String[] { "FromId", "UserId", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeleteFriendResponse_descriptor =
       getDescriptor().getMessageTypes().get(37);
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeleteFriendResponse_fieldAccessorTable = new
@@ -50362,7 +49721,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOnlineRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOnlineRequest_descriptor,
-        new java.lang.String[] { "Token", "UserId", "Timestamp", });
+        new java.lang.String[] { "FromId", "UserId", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOnlineResponse_descriptor =
       getDescriptor().getMessageTypes().get(39);
     internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOnlineResponse_fieldAccessorTable = new
@@ -50374,7 +49733,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOfflineRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOfflineRequest_descriptor,
-        new java.lang.String[] { "Token", "UserId", "Timestamp", });
+        new java.lang.String[] { "FromId", "UserId", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOfflineResponse_descriptor =
       getDescriptor().getMessageTypes().get(41);
     internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOfflineResponse_fieldAccessorTable = new
@@ -50386,7 +49745,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupRequest_descriptor,
-        new java.lang.String[] { "Token", "GroupId", "InvitedUserId", "Timestamp", });
+        new java.lang.String[] { "FromId", "GroupId", "InvitedUserId", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupResponse_descriptor =
       getDescriptor().getMessageTypes().get(43);
     internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupResponse_fieldAccessorTable = new
@@ -50398,7 +49757,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeletedGroupRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyDeletedGroupRequest_descriptor,
-        new java.lang.String[] { "Token", "GroupId", "GroupOwnerId", "Timestamp", });
+        new java.lang.String[] { "FromId", "GroupId", "GroupOwnerId", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeletedGroupResponse_descriptor =
       getDescriptor().getMessageTypes().get(45);
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeletedGroupResponse_fieldAccessorTable = new
@@ -50410,7 +49769,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_NotifyChangeGroupManagerAuthRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyChangeGroupManagerAuthRequest_descriptor,
-        new java.lang.String[] { "Token", "GroupId", "UserId", "Type", "Timestamp", });
+        new java.lang.String[] { "FromId", "GroupId", "UserId", "Type", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyChangeGroupManagerAuthResponse_descriptor =
       getDescriptor().getMessageTypes().get(47);
     internal_static_com_jiangfucheng_im_protobuf_NotifyChangeGroupManagerAuthResponse_fieldAccessorTable = new
@@ -50422,7 +49781,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutGroupRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutGroupRequest_descriptor,
-        new java.lang.String[] { "Token", "GroupId", "Timestamp", });
+        new java.lang.String[] { "FromId", "GroupId", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutGroupResponse_descriptor =
       getDescriptor().getMessageTypes().get(49);
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutGroupResponse_fieldAccessorTable = new
@@ -50434,7 +49793,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutRequest_descriptor,
-        new java.lang.String[] { "Token", "Ip", "Address", "Timestamp", });
+        new java.lang.String[] { "FromId", "Ip", "Address", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutResponse_descriptor =
       getDescriptor().getMessageTypes().get(51);
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutResponse_fieldAccessorTable = new
@@ -50446,7 +49805,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupAnnouncementRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupAnnouncementRequest_descriptor,
-        new java.lang.String[] { "Token", "GroupId", "Title", "Content", "Timestamp", });
+        new java.lang.String[] { "FromId", "GroupId", "Title", "Content", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupAnnouncementResponse_descriptor =
       getDescriptor().getMessageTypes().get(53);
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupAnnouncementResponse_fieldAccessorTable = new

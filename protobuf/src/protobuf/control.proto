@@ -272,12 +272,14 @@ message LogoutResponse {
 }
 
 //2.通知类
+//所有的request加一个from_id,表示由那个用户触发的该request的产生，便于回复response的时候填写目标用户id
 
 // 请求添加好友通知
 message NotifyAddFriendRequest {
-    int64 user_id = 1; //好友的id
-    string auth_message = 2; //验证消息
-    int64 timestamp = 3;
+    int64 from_id = 1;
+    int64 user_id = 2; //好友的id
+    string auth_message = 3; //验证消息
+    int64 timestamp = 4;
 }
 
 message NotifyAddFriendResponse {
@@ -290,7 +292,7 @@ message NotifyAddFriendResponse {
 
 // 被好友删除通知
 message NotifyDeleteFriendRequest {
-    string token = 1;
+    int64 from_id = 1;
     int64 user_id = 2;
     int64 timestamp = 3; //被删除的时间
 }
@@ -305,7 +307,7 @@ message NotifyDeleteFriendResponse {
 
 // 好友上线通知
 message NotifyFriendOnlineRequest {
-    string token = 1;
+    int64 from_id = 1;
     int64 user_id = 2;
     int64 timestamp = 3;
 }
@@ -320,7 +322,7 @@ message NotifyFriendOnlineResponse {
 
 // 好友下线通知
 message NotifyFriendOfflineRequest {
-    string token = 1;
+    int64 from_id = 1;
     int64 user_id = 2;
     int64 timestamp = 3;
 }
@@ -335,7 +337,7 @@ message NotifyFriendOfflineResponse {
 
 //被邀请加入群聊通知
 message NotifyInviteMemberToGroupRequest {
-    string token = 1;
+    int64 from_id = 1;
     int64 group_id = 2;
     int64 invited_user_id = 3; //邀请人id
     int64 timestamp = 4;
@@ -351,7 +353,7 @@ message NotifyInviteMemberToGroupResponse {
 
 //群被解散通知
 message NotifyDeletedGroupRequest {
-    string token = 1;
+    int64 from_id = 1;
     int64 group_id = 2;
     int64 group_owner_id = 3; //群主id
     int64 timestamp = 4;
@@ -367,7 +369,7 @@ message NotifyDeletedGroupResponse {
 
 //管理员权限被修改通知(1.被修改的是本人，2.本人是管理员，其他人权限被修改了)
 message NotifyChangeGroupManagerAuthRequest {
-    string token = 1;
+    int64 from_id = 1;
     int64 group_id = 2;
     int64 user_id = 3; //被操作的用户id(自己或者其他人)
     int32 type = 4; //0:被赋予管理员权限，-1:被撤销管理员权限
@@ -384,7 +386,7 @@ message NotifyChangeGroupManagerAuthResponse {
 
 // 被踢出群组通知
 message NotifyKickOutGroupRequest {
-    string token = 1;
+    int64 from_id = 1;
     int64 group_id = 2; //群id
     string timestamp = 4;
 }
@@ -399,7 +401,7 @@ message NotifyKickOutGroupResponse {
 
 //异地登陆被踢出通知
 message NotifyKickOutRequest {
-    string token = 1;
+    int64 from_id = 1;
     string ip = 2; //异地登陆的用户IP
     string address = 3; //异地登陆的地址(有余力可以根据IP查询一下生成地址)
     string timestamp = 4;
@@ -415,7 +417,7 @@ message NotifyKickOutResponse {
 
 //管理员添加了群公告通知
 message NotifyAddGroupAnnouncementRequest {
-    string token = 1;
+    int64 from_id = 1;
     int64 group_id = 2;
     string title = 3;
     string content = 4;
