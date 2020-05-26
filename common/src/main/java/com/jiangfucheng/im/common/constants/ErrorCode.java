@@ -21,7 +21,9 @@ public final class ErrorCode {
 	public static final Integer RUNTIME_ERROR = -4;
 	public static final Integer RPC_ERROR = -5;
 	public static final Integer USER_EXISTED = -6;
-	public static final Integer MESSAGE_SEND_ERROR = -6;
+	public static final Integer MESSAGE_SEND_ERROR = -7;
+	public static final Integer UNKNOWN_USER = -8;
+
 
 	private ErrorCode() {
 	}

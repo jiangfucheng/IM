@@ -107,6 +107,16 @@
             <artifactId>model</artifactId>
             <version>1.0.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.belerweb</groupId>
+            <artifactId>pinyin4j</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
