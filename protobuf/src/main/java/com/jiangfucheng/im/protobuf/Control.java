@@ -3481,6 +3481,18 @@ public final class Control {
      * @return The groupId.
      */
     long getGroupId();
+
+    /**
+     * <code>string verify_msg = 3;</code>
+     * @return The verifyMsg.
+     */
+    java.lang.String getVerifyMsg();
+    /**
+     * <code>string verify_msg = 3;</code>
+     * @return The bytes for verifyMsg.
+     */
+    com.google.protobuf.ByteString
+        getVerifyMsgBytes();
   }
   /**
    * <pre>
@@ -3500,6 +3512,7 @@ public final class Control {
     }
     private AddGroupRequest() {
       token_ = "";
+      verifyMsg_ = "";
     }
 
     @java.lang.Override
@@ -3541,6 +3554,12 @@ public final class Control {
             case 16: {
 
               groupId_ = input.readInt64();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              verifyMsg_ = s;
               break;
             }
             default: {
@@ -3621,6 +3640,42 @@ public final class Control {
       return groupId_;
     }
 
+    public static final int VERIFY_MSG_FIELD_NUMBER = 3;
+    private volatile java.lang.Object verifyMsg_;
+    /**
+     * <code>string verify_msg = 3;</code>
+     * @return The verifyMsg.
+     */
+    public java.lang.String getVerifyMsg() {
+      java.lang.Object ref = verifyMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        verifyMsg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string verify_msg = 3;</code>
+     * @return The bytes for verifyMsg.
+     */
+    public com.google.protobuf.ByteString
+        getVerifyMsgBytes() {
+      java.lang.Object ref = verifyMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        verifyMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3641,6 +3696,9 @@ public final class Control {
       if (groupId_ != 0L) {
         output.writeInt64(2, groupId_);
       }
+      if (!getVerifyMsgBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, verifyMsg_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3656,6 +3714,9 @@ public final class Control {
       if (groupId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(2, groupId_);
+      }
+      if (!getVerifyMsgBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, verifyMsg_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3676,6 +3737,8 @@ public final class Control {
           .equals(other.getToken())) return false;
       if (getGroupId()
           != other.getGroupId()) return false;
+      if (!getVerifyMsg()
+          .equals(other.getVerifyMsg())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3692,6 +3755,8 @@ public final class Control {
       hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getGroupId());
+      hash = (37 * hash) + VERIFY_MSG_FIELD_NUMBER;
+      hash = (53 * hash) + getVerifyMsg().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3833,6 +3898,8 @@ public final class Control {
 
         groupId_ = 0L;
 
+        verifyMsg_ = "";
+
         return this;
       }
 
@@ -3861,6 +3928,7 @@ public final class Control {
         com.jiangfucheng.im.protobuf.Control.AddGroupRequest result = new com.jiangfucheng.im.protobuf.Control.AddGroupRequest(this);
         result.token_ = token_;
         result.groupId_ = groupId_;
+        result.verifyMsg_ = verifyMsg_;
         onBuilt();
         return result;
       }
@@ -3915,6 +3983,10 @@ public final class Control {
         }
         if (other.getGroupId() != 0L) {
           setGroupId(other.getGroupId());
+        }
+        if (!other.getVerifyMsg().isEmpty()) {
+          verifyMsg_ = other.verifyMsg_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4047,6 +4119,82 @@ public final class Control {
       public Builder clearGroupId() {
         
         groupId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object verifyMsg_ = "";
+      /**
+       * <code>string verify_msg = 3;</code>
+       * @return The verifyMsg.
+       */
+      public java.lang.String getVerifyMsg() {
+        java.lang.Object ref = verifyMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          verifyMsg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string verify_msg = 3;</code>
+       * @return The bytes for verifyMsg.
+       */
+      public com.google.protobuf.ByteString
+          getVerifyMsgBytes() {
+        java.lang.Object ref = verifyMsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          verifyMsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string verify_msg = 3;</code>
+       * @param value The verifyMsg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVerifyMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        verifyMsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string verify_msg = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVerifyMsg() {
+        
+        verifyMsg_ = getDefaultInstance().getVerifyMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string verify_msg = 3;</code>
+       * @param value The bytes for verifyMsg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVerifyMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        verifyMsg_ = value;
         onChanged();
         return this;
       }
@@ -5119,6 +5267,26 @@ public final class Control {
      */
     com.google.protobuf.ByteString
         getIntroductionBytes();
+
+    /**
+     * <pre>
+     *群头像
+     * </pre>
+     *
+     * <code>string profile_photo = 5;</code>
+     * @return The profilePhoto.
+     */
+    java.lang.String getProfilePhoto();
+    /**
+     * <pre>
+     *群头像
+     * </pre>
+     *
+     * <code>string profile_photo = 5;</code>
+     * @return The bytes for profilePhoto.
+     */
+    com.google.protobuf.ByteString
+        getProfilePhotoBytes();
   }
   /**
    * <pre>
@@ -5141,6 +5309,7 @@ public final class Control {
       groupName_ = "";
       inviteUserId_ = emptyLongList();
       introduction_ = "";
+      profilePhoto_ = "";
     }
 
     @java.lang.Override
@@ -5211,6 +5380,12 @@ public final class Control {
               java.lang.String s = input.readStringRequireUtf8();
 
               introduction_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              profilePhoto_ = s;
               break;
             }
             default: {
@@ -5403,6 +5578,50 @@ public final class Control {
       }
     }
 
+    public static final int PROFILE_PHOTO_FIELD_NUMBER = 5;
+    private volatile java.lang.Object profilePhoto_;
+    /**
+     * <pre>
+     *群头像
+     * </pre>
+     *
+     * <code>string profile_photo = 5;</code>
+     * @return The profilePhoto.
+     */
+    public java.lang.String getProfilePhoto() {
+      java.lang.Object ref = profilePhoto_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        profilePhoto_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *群头像
+     * </pre>
+     *
+     * <code>string profile_photo = 5;</code>
+     * @return The bytes for profilePhoto.
+     */
+    public com.google.protobuf.ByteString
+        getProfilePhotoBytes() {
+      java.lang.Object ref = profilePhoto_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        profilePhoto_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5433,6 +5652,9 @@ public final class Control {
       }
       if (!getIntroductionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, introduction_);
+      }
+      if (!getProfilePhotoBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, profilePhoto_);
       }
       unknownFields.writeTo(output);
     }
@@ -5466,6 +5688,9 @@ public final class Control {
       if (!getIntroductionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, introduction_);
       }
+      if (!getProfilePhotoBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, profilePhoto_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5489,6 +5714,8 @@ public final class Control {
           .equals(other.getInviteUserIdList())) return false;
       if (!getIntroduction()
           .equals(other.getIntroduction())) return false;
+      if (!getProfilePhoto()
+          .equals(other.getProfilePhoto())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5510,6 +5737,8 @@ public final class Control {
       }
       hash = (37 * hash) + INTRODUCTION_FIELD_NUMBER;
       hash = (53 * hash) + getIntroduction().hashCode();
+      hash = (37 * hash) + PROFILE_PHOTO_FIELD_NUMBER;
+      hash = (53 * hash) + getProfilePhoto().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5655,6 +5884,8 @@ public final class Control {
         bitField0_ = (bitField0_ & ~0x00000001);
         introduction_ = "";
 
+        profilePhoto_ = "";
+
         return this;
       }
 
@@ -5690,6 +5921,7 @@ public final class Control {
         }
         result.inviteUserId_ = inviteUserId_;
         result.introduction_ = introduction_;
+        result.profilePhoto_ = profilePhoto_;
         onBuilt();
         return result;
       }
@@ -5758,6 +5990,10 @@ public final class Control {
         }
         if (!other.getIntroduction().isEmpty()) {
           introduction_ = other.introduction_;
+          onChanged();
+        }
+        if (!other.getProfilePhoto().isEmpty()) {
+          profilePhoto_ = other.profilePhoto_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -6141,6 +6377,102 @@ public final class Control {
   checkByteStringIsUtf8(value);
         
         introduction_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object profilePhoto_ = "";
+      /**
+       * <pre>
+       *群头像
+       * </pre>
+       *
+       * <code>string profile_photo = 5;</code>
+       * @return The profilePhoto.
+       */
+      public java.lang.String getProfilePhoto() {
+        java.lang.Object ref = profilePhoto_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          profilePhoto_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *群头像
+       * </pre>
+       *
+       * <code>string profile_photo = 5;</code>
+       * @return The bytes for profilePhoto.
+       */
+      public com.google.protobuf.ByteString
+          getProfilePhotoBytes() {
+        java.lang.Object ref = profilePhoto_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          profilePhoto_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *群头像
+       * </pre>
+       *
+       * <code>string profile_photo = 5;</code>
+       * @param value The profilePhoto to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProfilePhoto(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        profilePhoto_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *群头像
+       * </pre>
+       *
+       * <code>string profile_photo = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProfilePhoto() {
+        
+        profilePhoto_ = getDefaultInstance().getProfilePhoto();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *群头像
+       * </pre>
+       *
+       * <code>string profile_photo = 5;</code>
+       * @param value The bytes for profilePhoto to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProfilePhotoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        profilePhoto_ = value;
         onChanged();
         return this;
       }
@@ -38275,6 +38607,1767 @@ public final class Control {
 
   }
 
+  public interface NotifyAddGroupRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.jiangfucheng.im.protobuf.NotifyAddGroupRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
+     */
+    long getFromId();
+
+    /**
+     * <pre>
+     *申请入群的用户id
+     * </pre>
+     *
+     * <code>int64 user_id = 2;</code>
+     * @return The userId.
+     */
+    long getUserId();
+
+    /**
+     * <code>int64 group_id = 3;</code>
+     * @return The groupId.
+     */
+    long getGroupId();
+
+    /**
+     * <code>string verify_message = 4;</code>
+     * @return The verifyMessage.
+     */
+    java.lang.String getVerifyMessage();
+    /**
+     * <code>string verify_message = 4;</code>
+     * @return The bytes for verifyMessage.
+     */
+    com.google.protobuf.ByteString
+        getVerifyMessageBytes();
+  }
+  /**
+   * <pre>
+   *用户申请入群通知
+   * </pre>
+   *
+   * Protobuf type {@code com.jiangfucheng.im.protobuf.NotifyAddGroupRequest}
+   */
+  public  static final class NotifyAddGroupRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.jiangfucheng.im.protobuf.NotifyAddGroupRequest)
+      NotifyAddGroupRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use NotifyAddGroupRequest.newBuilder() to construct.
+    private NotifyAddGroupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private NotifyAddGroupRequest() {
+      verifyMessage_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new NotifyAddGroupRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private NotifyAddGroupRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              fromId_ = input.readInt64();
+              break;
+            }
+            case 16: {
+
+              userId_ = input.readInt64();
+              break;
+            }
+            case 24: {
+
+              groupId_ = input.readInt64();
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              verifyMessage_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.class, com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.Builder.class);
+    }
+
+    public static final int FROM_ID_FIELD_NUMBER = 1;
+    private long fromId_;
+    /**
+     * <code>int64 from_id = 1;</code>
+     * @return The fromId.
+     */
+    public long getFromId() {
+      return fromId_;
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 2;
+    private long userId_;
+    /**
+     * <pre>
+     *申请入群的用户id
+     * </pre>
+     *
+     * <code>int64 user_id = 2;</code>
+     * @return The userId.
+     */
+    public long getUserId() {
+      return userId_;
+    }
+
+    public static final int GROUP_ID_FIELD_NUMBER = 3;
+    private long groupId_;
+    /**
+     * <code>int64 group_id = 3;</code>
+     * @return The groupId.
+     */
+    public long getGroupId() {
+      return groupId_;
+    }
+
+    public static final int VERIFY_MESSAGE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object verifyMessage_;
+    /**
+     * <code>string verify_message = 4;</code>
+     * @return The verifyMessage.
+     */
+    public java.lang.String getVerifyMessage() {
+      java.lang.Object ref = verifyMessage_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        verifyMessage_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string verify_message = 4;</code>
+     * @return The bytes for verifyMessage.
+     */
+    public com.google.protobuf.ByteString
+        getVerifyMessageBytes() {
+      java.lang.Object ref = verifyMessage_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        verifyMessage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (fromId_ != 0L) {
+        output.writeInt64(1, fromId_);
+      }
+      if (userId_ != 0L) {
+        output.writeInt64(2, userId_);
+      }
+      if (groupId_ != 0L) {
+        output.writeInt64(3, groupId_);
+      }
+      if (!getVerifyMessageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, verifyMessage_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (fromId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, fromId_);
+      }
+      if (userId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, userId_);
+      }
+      if (groupId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, groupId_);
+      }
+      if (!getVerifyMessageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, verifyMessage_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest)) {
+        return super.equals(obj);
+      }
+      com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest other = (com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest) obj;
+
+      if (getFromId()
+          != other.getFromId()) return false;
+      if (getUserId()
+          != other.getUserId()) return false;
+      if (getGroupId()
+          != other.getGroupId()) return false;
+      if (!getVerifyMessage()
+          .equals(other.getVerifyMessage())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FROM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFromId());
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUserId());
+      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getGroupId());
+      hash = (37 * hash) + VERIFY_MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getVerifyMessage().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *用户申请入群通知
+     * </pre>
+     *
+     * Protobuf type {@code com.jiangfucheng.im.protobuf.NotifyAddGroupRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.jiangfucheng.im.protobuf.NotifyAddGroupRequest)
+        com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.class, com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.Builder.class);
+      }
+
+      // Construct using com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        fromId_ = 0L;
+
+        userId_ = 0L;
+
+        groupId_ = 0L;
+
+        verifyMessage_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest getDefaultInstanceForType() {
+        return com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest build() {
+        com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest buildPartial() {
+        com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest result = new com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest(this);
+        result.fromId_ = fromId_;
+        result.userId_ = userId_;
+        result.groupId_ = groupId_;
+        result.verifyMessage_ = verifyMessage_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest) {
+          return mergeFrom((com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest other) {
+        if (other == com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.getDefaultInstance()) return this;
+        if (other.getFromId() != 0L) {
+          setFromId(other.getFromId());
+        }
+        if (other.getUserId() != 0L) {
+          setUserId(other.getUserId());
+        }
+        if (other.getGroupId() != 0L) {
+          setGroupId(other.getGroupId());
+        }
+        if (!other.getVerifyMessage().isEmpty()) {
+          verifyMessage_ = other.verifyMessage_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long fromId_ ;
+      /**
+       * <code>int64 from_id = 1;</code>
+       * @return The fromId.
+       */
+      public long getFromId() {
+        return fromId_;
+      }
+      /**
+       * <code>int64 from_id = 1;</code>
+       * @param value The fromId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFromId(long value) {
+        
+        fromId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 from_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFromId() {
+        
+        fromId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long userId_ ;
+      /**
+       * <pre>
+       *申请入群的用户id
+       * </pre>
+       *
+       * <code>int64 user_id = 2;</code>
+       * @return The userId.
+       */
+      public long getUserId() {
+        return userId_;
+      }
+      /**
+       * <pre>
+       *申请入群的用户id
+       * </pre>
+       *
+       * <code>int64 user_id = 2;</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(long value) {
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *申请入群的用户id
+       * </pre>
+       *
+       * <code>int64 user_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long groupId_ ;
+      /**
+       * <code>int64 group_id = 3;</code>
+       * @return The groupId.
+       */
+      public long getGroupId() {
+        return groupId_;
+      }
+      /**
+       * <code>int64 group_id = 3;</code>
+       * @param value The groupId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupId(long value) {
+        
+        groupId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 group_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGroupId() {
+        
+        groupId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object verifyMessage_ = "";
+      /**
+       * <code>string verify_message = 4;</code>
+       * @return The verifyMessage.
+       */
+      public java.lang.String getVerifyMessage() {
+        java.lang.Object ref = verifyMessage_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          verifyMessage_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string verify_message = 4;</code>
+       * @return The bytes for verifyMessage.
+       */
+      public com.google.protobuf.ByteString
+          getVerifyMessageBytes() {
+        java.lang.Object ref = verifyMessage_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          verifyMessage_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string verify_message = 4;</code>
+       * @param value The verifyMessage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVerifyMessage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        verifyMessage_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string verify_message = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVerifyMessage() {
+        
+        verifyMessage_ = getDefaultInstance().getVerifyMessage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string verify_message = 4;</code>
+       * @param value The bytes for verifyMessage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVerifyMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        verifyMessage_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.jiangfucheng.im.protobuf.NotifyAddGroupRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.jiangfucheng.im.protobuf.NotifyAddGroupRequest)
+    private static final com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest();
+    }
+
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<NotifyAddGroupRequest>
+        PARSER = new com.google.protobuf.AbstractParser<NotifyAddGroupRequest>() {
+      @java.lang.Override
+      public NotifyAddGroupRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new NotifyAddGroupRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<NotifyAddGroupRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NotifyAddGroupRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface NotifyAddGroupResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.jiangfucheng.im.protobuf.NotifyAddGroupResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 0:ok,负数:err
+     * </pre>
+     *
+     * <code>int32 code = 1;</code>
+     * @return The code.
+     */
+    int getCode();
+
+    /**
+     * <code>string msg = 2;</code>
+     * @return The msg.
+     */
+    java.lang.String getMsg();
+    /**
+     * <code>string msg = 2;</code>
+     * @return The bytes for msg.
+     */
+    com.google.protobuf.ByteString
+        getMsgBytes();
+
+    /**
+     * <code>string err_msg = 3;</code>
+     * @return The errMsg.
+     */
+    java.lang.String getErrMsg();
+    /**
+     * <code>string err_msg = 3;</code>
+     * @return The bytes for errMsg.
+     */
+    com.google.protobuf.ByteString
+        getErrMsgBytes();
+
+    /**
+     * <code>int64 timestamp = 4;</code>
+     * @return The timestamp.
+     */
+    long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
+  }
+  /**
+   * Protobuf type {@code com.jiangfucheng.im.protobuf.NotifyAddGroupResponse}
+   */
+  public  static final class NotifyAddGroupResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.jiangfucheng.im.protobuf.NotifyAddGroupResponse)
+      NotifyAddGroupResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use NotifyAddGroupResponse.newBuilder() to construct.
+    private NotifyAddGroupResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private NotifyAddGroupResponse() {
+      msg_ = "";
+      errMsg_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new NotifyAddGroupResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private NotifyAddGroupResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              code_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              msg_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              errMsg_ = s;
+              break;
+            }
+            case 32: {
+
+              timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.class, com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.Builder.class);
+    }
+
+    public static final int CODE_FIELD_NUMBER = 1;
+    private int code_;
+    /**
+     * <pre>
+     * 0:ok,负数:err
+     * </pre>
+     *
+     * <code>int32 code = 1;</code>
+     * @return The code.
+     */
+    public int getCode() {
+      return code_;
+    }
+
+    public static final int MSG_FIELD_NUMBER = 2;
+    private volatile java.lang.Object msg_;
+    /**
+     * <code>string msg = 2;</code>
+     * @return The msg.
+     */
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        msg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string msg = 2;</code>
+     * @return The bytes for msg.
+     */
+    public com.google.protobuf.ByteString
+        getMsgBytes() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        msg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ERR_MSG_FIELD_NUMBER = 3;
+    private volatile java.lang.Object errMsg_;
+    /**
+     * <code>string err_msg = 3;</code>
+     * @return The errMsg.
+     */
+    public java.lang.String getErrMsg() {
+      java.lang.Object ref = errMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        errMsg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string err_msg = 3;</code>
+     * @return The bytes for errMsg.
+     */
+    public com.google.protobuf.ByteString
+        getErrMsgBytes() {
+      java.lang.Object ref = errMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        errMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TIMESTAMP_FIELD_NUMBER = 4;
+    private long timestamp_;
+    /**
+     * <code>int64 timestamp = 4;</code>
+     * @return The timestamp.
+     */
+    public long getTimestamp() {
+      return timestamp_;
+    }
+
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (code_ != 0) {
+        output.writeInt32(1, code_);
+      }
+      if (!getMsgBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, msg_);
+      }
+      if (!getErrMsgBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, errMsg_);
+      }
+      if (timestamp_ != 0L) {
+        output.writeInt64(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (code_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, code_);
+      }
+      if (!getMsgBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, msg_);
+      }
+      if (!getErrMsgBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, errMsg_);
+      }
+      if (timestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse)) {
+        return super.equals(obj);
+      }
+      com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse other = (com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse) obj;
+
+      if (getCode()
+          != other.getCode()) return false;
+      if (!getMsg()
+          .equals(other.getMsg())) return false;
+      if (!getErrMsg()
+          .equals(other.getErrMsg())) return false;
+      if (getTimestamp()
+          != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getCode();
+      hash = (37 * hash) + MSG_FIELD_NUMBER;
+      hash = (53 * hash) + getMsg().hashCode();
+      hash = (37 * hash) + ERR_MSG_FIELD_NUMBER;
+      hash = (53 * hash) + getErrMsg().hashCode();
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.jiangfucheng.im.protobuf.NotifyAddGroupResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.jiangfucheng.im.protobuf.NotifyAddGroupResponse)
+        com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.class, com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.Builder.class);
+      }
+
+      // Construct using com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        code_ = 0;
+
+        msg_ = "";
+
+        errMsg_ = "";
+
+        timestamp_ = 0L;
+
+        targetId_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse getDefaultInstanceForType() {
+        return com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse build() {
+        com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse buildPartial() {
+        com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse result = new com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse(this);
+        result.code_ = code_;
+        result.msg_ = msg_;
+        result.errMsg_ = errMsg_;
+        result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse) {
+          return mergeFrom((com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse other) {
+        if (other == com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.getDefaultInstance()) return this;
+        if (other.getCode() != 0) {
+          setCode(other.getCode());
+        }
+        if (!other.getMsg().isEmpty()) {
+          msg_ = other.msg_;
+          onChanged();
+        }
+        if (!other.getErrMsg().isEmpty()) {
+          errMsg_ = other.errMsg_;
+          onChanged();
+        }
+        if (other.getTimestamp() != 0L) {
+          setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int code_ ;
+      /**
+       * <pre>
+       * 0:ok,负数:err
+       * </pre>
+       *
+       * <code>int32 code = 1;</code>
+       * @return The code.
+       */
+      public int getCode() {
+        return code_;
+      }
+      /**
+       * <pre>
+       * 0:ok,负数:err
+       * </pre>
+       *
+       * <code>int32 code = 1;</code>
+       * @param value The code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCode(int value) {
+        
+        code_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 0:ok,负数:err
+       * </pre>
+       *
+       * <code>int32 code = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCode() {
+        
+        code_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object msg_ = "";
+      /**
+       * <code>string msg = 2;</code>
+       * @return The msg.
+       */
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          msg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string msg = 2;</code>
+       * @return The bytes for msg.
+       */
+      public com.google.protobuf.ByteString
+          getMsgBytes() {
+        java.lang.Object ref = msg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          msg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string msg = 2;</code>
+       * @param value The msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMsg() {
+        
+        msg_ = getDefaultInstance().getMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 2;</code>
+       * @param value The bytes for msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object errMsg_ = "";
+      /**
+       * <code>string err_msg = 3;</code>
+       * @return The errMsg.
+       */
+      public java.lang.String getErrMsg() {
+        java.lang.Object ref = errMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          errMsg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string err_msg = 3;</code>
+       * @return The bytes for errMsg.
+       */
+      public com.google.protobuf.ByteString
+          getErrMsgBytes() {
+        java.lang.Object ref = errMsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          errMsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string err_msg = 3;</code>
+       * @param value The errMsg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        errMsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string err_msg = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearErrMsg() {
+        
+        errMsg_ = getDefaultInstance().getErrMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string err_msg = 3;</code>
+       * @param value The bytes for errMsg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        errMsg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long timestamp_ ;
+      /**
+       * <code>int64 timestamp = 4;</code>
+       * @return The timestamp.
+       */
+      public long getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <code>int64 timestamp = 4;</code>
+       * @param value The timestamp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimestamp(long value) {
+        
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 timestamp = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTimestamp() {
+        
+        timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.jiangfucheng.im.protobuf.NotifyAddGroupResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.jiangfucheng.im.protobuf.NotifyAddGroupResponse)
+    private static final com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse();
+    }
+
+    public static com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<NotifyAddGroupResponse>
+        PARSER = new com.google.protobuf.AbstractParser<NotifyAddGroupResponse>() {
+      @java.lang.Override
+      public NotifyAddGroupResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new NotifyAddGroupResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<NotifyAddGroupResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NotifyAddGroupResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface NotifyInviteMemberToGroupRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.jiangfucheng.im.protobuf.NotifyInviteMemberToGroupRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -49261,6 +51354,16 @@ public final class Control {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOfflineResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -49338,139 +51441,145 @@ public final class Control {
       "Request\022\r\n\005token\030\001 \001(\t\022\021\n\tfriend_id\030\002 \001(" +
       "\003\"h\n\024DeleteFriendResponse\022\014\n\004code\030\001 \001(\005\022" +
       "\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimesta" +
-      "mp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"2\n\017AddGroupR" +
-      "equest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\"" +
-      "d\n\020AddGroupResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg" +
-      "\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001" +
-      "(\003\022\021\n\ttarget_id\030\005 \001(\003\"e\n\022CreateGroupRequ" +
-      "est\022\r\n\005token\030\001 \001(\t\022\022\n\ngroup_name\030\002 \001(\t\022\026" +
-      "\n\016invite_user_id\030\003 \003(\003\022\024\n\014introduction\030\004" +
-      " \001(\t\"y\n\023CreateGroupResponse\022\014\n\004code\030\001 \001(" +
-      "\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimes" +
-      "tamp\030\004 \001(\003\022\020\n\010group_id\030\005 \001(\003\022\021\n\ttarget_i" +
-      "d\030\006 \001(\003\"3\n\020ExitGroupRequest\022\r\n\005token\030\001 \001" +
-      "(\t\022\020\n\010group_id\030\002 \001(\003\"e\n\021ExitGroupRespons" +
-      "e\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030" +
-      "\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 " +
-      "\001(\003\"K\n\027ChangeGroupOwnerRequest\022\r\n\005token\030" +
-      "\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022\020\n\010group_id\030\003 \001(\003" +
-      "\"l\n\030ChangeGroupOwnerResponse\022\014\n\004code\030\001 \001" +
-      "(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttime" +
-      "stamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"5\n\022Delete" +
-      "GroupRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030" +
-      "\002 \001(\003\"g\n\023DeleteGroupResponse\022\014\n\004code\030\001 \001" +
-      "(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttime" +
-      "stamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"\322\001\n\035Chang" +
-      "eGroupManagerAuthRequest\022\r\n\005token\030\001 \001(\t\022" +
-      "\\\n\005datas\030\004 \003(\0132M.com.jiangfucheng.im.pro" +
-      "tobuf.ChangeGroupManagerAuthRequest.Chan" +
-      "geManagerData\022\020\n\010group_id\030\005 \001(\003\0322\n\021Chang" +
-      "eManagerData\022\017\n\007user_id\030\002 \001(\003\022\014\n\004type\030\003 " +
-      "\001(\005\"\373\001\n\036ChangeGroupManagerAuthResponse\022\014" +
-      "\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001" +
-      "(\t\022\021\n\ttimestamp\030\004 \001(\003\022Y\n\nresp_datas\030\007 \003(" +
-      "\0132E.com.jiangfucheng.im.protobuf.ChangeG" +
-      "roupManagerAuthResponse.RespData\022\021\n\ttarg" +
-      "et_id\030\010 \001(\003\032,\n\010RespData\022\017\n\007user_id\030\005 \001(\003" +
-      "\022\017\n\007success\030\006 \001(\005\"N\n\032InviteMemberToGroup" +
-      "Request\022\r\n\005token\030\001 \001(\t\022\017\n\007user_id\030\002 \003(\003\022" +
-      "\020\n\010group_id\030\003 \001(\003\"o\n\033InviteMemberToGroup" +
-      "Response\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007e" +
-      "rr_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarge" +
-      "t_id\030\005 \001(\003\"H\n\024KickOutMemberRequest\022\r\n\005to" +
-      "ken\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022\020\n\010group_id\030\003" +
-      " \001(\003\"i\n\025KickOutMemberResponse\022\014\n\004code\030\001 " +
-      "\001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttim" +
-      "estamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"^\n\033AddGr" +
-      "oupAnnouncementRequest\022\r\n\005token\030\001 \001(\t\022\r\n" +
-      "\005title\030\002 \001(\t\022\017\n\007content\030\003 \001(\t\022\020\n\010group_i" +
-      "d\030\004 \001(\003\"p\n\034AddGroupAnnouncementResponse\022" +
+      "mp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"F\n\017AddGroupR" +
+      "equest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022" +
+      "\022\n\nverify_msg\030\003 \001(\t\"d\n\020AddGroupResponse\022" +
       "\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 " +
       "\001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(" +
-      "\003\"U\n\031DeleteAnnouncementRequest\022\r\n\005token\030" +
-      "\001 \001(\t\022\027\n\017announcement_id\030\002 \001(\003\022\020\n\010group_" +
-      "id\030\004 \001(\003\"n\n\032DeleteAnnouncementResponse\022\014" +
-      "\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001" +
-      "(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003" +
-      "\"s\n\027EditAnnouncementRequest\022\r\n\005token\030\001 \001" +
-      "(\t\022\027\n\017announcement_id\030\002 \001(\003\022\r\n\005title\030\003 \001" +
-      "(\t\022\017\n\007content\030\004 \001(\t\022\020\n\010group_id\030\005 \001(\003\"l\n" +
-      "\030EditAnnouncementResponse\022\014\n\004code\030\001 \001(\005\022" +
-      "\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimesta" +
-      "mp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"K\n\027EditGroup" +
-      "RemarksRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_i" +
-      "d\030\002 \001(\003\022\017\n\007remarks\030\003 \001(\t\"l\n\030EditGroupRem" +
-      "arksResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022" +
-      "\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\tt" +
-      "arget_id\030\005 \001(\003\"V\n\034EditGroupProfilePhotoR" +
-      "equest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022" +
-      "\025\n\rprofile_photo\030\003 \001(\t\"\214\001\n\035EditGroupProf" +
-      "ilePhotoResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 " +
-      "\001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022" +
-      "\031\n\021profile_photo_url\030\005 \001(\t\022\021\n\ttarget_id\030" +
-      "\006 \001(\003\"0\n\014LoginRequest\022\r\n\005token\030\001 \001(\t\022\021\n\t" +
-      "timestamp\030\002 \001(\003\"a\n\rLoginResponse\022\014\n\004code" +
-      "\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\t" +
-      "timestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"1\n\rLo" +
-      "goutRequest\022\r\n\005token\030\001 \001(\t\022\021\n\ttimestamp\030" +
-      "\002 \001(\003\"b\n\016LogoutResponse\022\014\n\004code\030\001 \001(\005\022\013\n" +
-      "\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp" +
-      "\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"c\n\026NotifyAddFr" +
-      "iendRequest\022\017\n\007from_id\030\001 \001(\003\022\017\n\007user_id\030" +
-      "\002 \001(\003\022\024\n\014auth_message\030\003 \001(\t\022\021\n\ttimestamp" +
-      "\030\004 \001(\003\"k\n\027NotifyAddFriendResponse\022\014\n\004cod" +
-      "e\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n" +
-      "\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"P\n\031N" +
-      "otifyDeleteFriendRequest\022\017\n\007from_id\030\001 \001(" +
-      "\003\022\017\n\007user_id\030\002 \001(\003\022\021\n\ttimestamp\030\003 \001(\003\"n\n" +
-      "\032NotifyDeleteFriendResponse\022\014\n\004code\030\001 \001(" +
-      "\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimes" +
-      "tamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"P\n\031NotifyF" +
-      "riendOnlineRequest\022\017\n\007from_id\030\001 \001(\003\022\017\n\007u" +
-      "ser_id\030\002 \001(\003\022\021\n\ttimestamp\030\003 \001(\003\"n\n\032Notif" +
-      "yFriendOnlineResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003m" +
-      "sg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004" +
-      " \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"Q\n\032NotifyFriendO" +
-      "fflineRequest\022\017\n\007from_id\030\001 \001(\003\022\017\n\007user_i" +
-      "d\030\002 \001(\003\022\021\n\ttimestamp\030\003 \001(\003\"o\n\033NotifyFrie" +
-      "ndOfflineResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002" +
-      " \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003" +
-      "\022\021\n\ttarget_id\030\005 \001(\003\"q\n NotifyInviteMembe" +
-      "rToGroupRequest\022\017\n\007from_id\030\001 \001(\003\022\020\n\010grou" +
-      "p_id\030\002 \001(\003\022\027\n\017invited_user_id\030\003 \001(\003\022\021\n\tt" +
-      "imestamp\030\004 \001(\003\"u\n!NotifyInviteMemberToGr" +
+      "\003\"|\n\022CreateGroupRequest\022\r\n\005token\030\001 \001(\t\022\022" +
+      "\n\ngroup_name\030\002 \001(\t\022\026\n\016invite_user_id\030\003 \003" +
+      "(\003\022\024\n\014introduction\030\004 \001(\t\022\025\n\rprofile_phot" +
+      "o\030\005 \001(\t\"y\n\023CreateGroupResponse\022\014\n\004code\030\001" +
+      " \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\tti" +
+      "mestamp\030\004 \001(\003\022\020\n\010group_id\030\005 \001(\003\022\021\n\ttarge" +
+      "t_id\030\006 \001(\003\"3\n\020ExitGroupRequest\022\r\n\005token\030" +
+      "\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\"e\n\021ExitGroupResp" +
+      "onse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_m" +
+      "sg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id" +
+      "\030\005 \001(\003\"K\n\027ChangeGroupOwnerRequest\022\r\n\005tok" +
+      "en\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022\020\n\010group_id\030\003 " +
+      "\001(\003\"l\n\030ChangeGroupOwnerResponse\022\014\n\004code\030" +
+      "\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\tt" +
+      "imestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"5\n\022Del" +
+      "eteGroupRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_" +
+      "id\030\002 \001(\003\"g\n\023DeleteGroupResponse\022\014\n\004code\030" +
+      "\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\tt" +
+      "imestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"\322\001\n\035Ch" +
+      "angeGroupManagerAuthRequest\022\r\n\005token\030\001 \001" +
+      "(\t\022\\\n\005datas\030\004 \003(\0132M.com.jiangfucheng.im." +
+      "protobuf.ChangeGroupManagerAuthRequest.C" +
+      "hangeManagerData\022\020\n\010group_id\030\005 \001(\003\0322\n\021Ch" +
+      "angeManagerData\022\017\n\007user_id\030\002 \001(\003\022\014\n\004type" +
+      "\030\003 \001(\005\"\373\001\n\036ChangeGroupManagerAuthRespons" +
+      "e\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030" +
+      "\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022Y\n\nresp_datas\030\007" +
+      " \003(\0132E.com.jiangfucheng.im.protobuf.Chan" +
+      "geGroupManagerAuthResponse.RespData\022\021\n\tt" +
+      "arget_id\030\010 \001(\003\032,\n\010RespData\022\017\n\007user_id\030\005 " +
+      "\001(\003\022\017\n\007success\030\006 \001(\005\"N\n\032InviteMemberToGr" +
+      "oupRequest\022\r\n\005token\030\001 \001(\t\022\017\n\007user_id\030\002 \003" +
+      "(\003\022\020\n\010group_id\030\003 \001(\003\"o\n\033InviteMemberToGr" +
       "oupResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017" +
       "\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\tta" +
-      "rget_id\030\005 \001(\003\"i\n\031NotifyDeletedGroupReque" +
-      "st\022\017\n\007from_id\030\001 \001(\003\022\020\n\010group_id\030\002 \001(\003\022\026\n" +
-      "\016group_owner_id\030\003 \001(\003\022\021\n\ttimestamp\030\004 \001(\003" +
-      "\"n\n\032NotifyDeletedGroupResponse\022\014\n\004code\030\001" +
-      " \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\tti" +
-      "mestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"z\n#Noti" +
-      "fyChangeGroupManagerAuthRequest\022\017\n\007from_" +
-      "id\030\001 \001(\003\022\020\n\010group_id\030\002 \001(\003\022\017\n\007user_id\030\003 " +
-      "\001(\003\022\014\n\004type\030\004 \001(\005\022\021\n\ttimestamp\030\005 \001(\003\"x\n$" +
-      "NotifyChangeGroupManagerAuthResponse\022\014\n\004" +
+      "rget_id\030\005 \001(\003\"H\n\024KickOutMemberRequest\022\r\n" +
+      "\005token\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022\020\n\010group_i" +
+      "d\030\003 \001(\003\"i\n\025KickOutMemberResponse\022\014\n\004code" +
+      "\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\t" +
+      "timestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"^\n\033Ad" +
+      "dGroupAnnouncementRequest\022\r\n\005token\030\001 \001(\t" +
+      "\022\r\n\005title\030\002 \001(\t\022\017\n\007content\030\003 \001(\t\022\020\n\010grou" +
+      "p_id\030\004 \001(\003\"p\n\034AddGroupAnnouncementRespon" +
+      "se\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg" +
+      "\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005" +
+      " \001(\003\"U\n\031DeleteAnnouncementRequest\022\r\n\005tok" +
+      "en\030\001 \001(\t\022\027\n\017announcement_id\030\002 \001(\003\022\020\n\010gro" +
+      "up_id\030\004 \001(\003\"n\n\032DeleteAnnouncementRespons" +
+      "e\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030" +
+      "\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 " +
+      "\001(\003\"s\n\027EditAnnouncementRequest\022\r\n\005token\030" +
+      "\001 \001(\t\022\027\n\017announcement_id\030\002 \001(\003\022\r\n\005title\030" +
+      "\003 \001(\t\022\017\n\007content\030\004 \001(\t\022\020\n\010group_id\030\005 \001(\003" +
+      "\"l\n\030EditAnnouncementResponse\022\014\n\004code\030\001 \001" +
+      "(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttime" +
+      "stamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"K\n\027EditGr" +
+      "oupRemarksRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010grou" +
+      "p_id\030\002 \001(\003\022\017\n\007remarks\030\003 \001(\t\"l\n\030EditGroup" +
+      "RemarksResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001" +
+      "(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021" +
+      "\n\ttarget_id\030\005 \001(\003\"V\n\034EditGroupProfilePho" +
+      "toRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002 \001" +
+      "(\003\022\025\n\rprofile_photo\030\003 \001(\t\"\214\001\n\035EditGroupP" +
+      "rofilePhotoResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg" +
+      "\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001" +
+      "(\003\022\031\n\021profile_photo_url\030\005 \001(\t\022\021\n\ttarget_" +
+      "id\030\006 \001(\003\"0\n\014LoginRequest\022\r\n\005token\030\001 \001(\t\022" +
+      "\021\n\ttimestamp\030\002 \001(\003\"a\n\rLoginResponse\022\014\n\004c" +
+      "ode\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022" +
+      "\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"1\n" +
+      "\rLogoutRequest\022\r\n\005token\030\001 \001(\t\022\021\n\ttimesta" +
+      "mp\030\002 \001(\003\"b\n\016LogoutResponse\022\014\n\004code\030\001 \001(\005" +
+      "\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimest" +
+      "amp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"c\n\026NotifyAd" +
+      "dFriendRequest\022\017\n\007from_id\030\001 \001(\003\022\017\n\007user_" +
+      "id\030\002 \001(\003\022\024\n\014auth_message\030\003 \001(\t\022\021\n\ttimest" +
+      "amp\030\004 \001(\003\"k\n\027NotifyAddFriendResponse\022\014\n\004" +
       "code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t" +
-      "\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"Q" +
-      "\n\031NotifyKickOutGroupRequest\022\017\n\007from_id\030\001" +
-      " \001(\003\022\020\n\010group_id\030\002 \001(\003\022\021\n\ttimestamp\030\004 \001(" +
-      "\t\"n\n\032NotifyKickOutGroupResponse\022\014\n\004code\030" +
-      "\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\tt" +
-      "imestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"W\n\024Not" +
-      "ifyKickOutRequest\022\017\n\007from_id\030\001 \001(\003\022\n\n\002ip" +
-      "\030\002 \001(\t\022\017\n\007address\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001" +
-      "(\t\"i\n\025NotifyKickOutResponse\022\014\n\004code\030\001 \001(" +
-      "\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimes" +
-      "tamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"y\n!NotifyA" +
-      "ddGroupAnnouncementRequest\022\017\n\007from_id\030\001 " +
-      "\001(\003\022\020\n\010group_id\030\002 \001(\003\022\r\n\005title\030\003 \001(\t\022\017\n\007" +
-      "content\030\004 \001(\t\022\021\n\ttimestamp\030\005 \001(\t\"v\n\"Noti" +
-      "fyAddGroupAnnouncementResponse\022\014\n\004code\030\001" +
+      "\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"P" +
+      "\n\031NotifyDeleteFriendRequest\022\017\n\007from_id\030\001" +
+      " \001(\003\022\017\n\007user_id\030\002 \001(\003\022\021\n\ttimestamp\030\003 \001(\003" +
+      "\"n\n\032NotifyDeleteFriendResponse\022\014\n\004code\030\001" +
       " \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\tti" +
-      "mestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003B\'\n\034com." +
-      "jiangfucheng.im.protobufB\007Controlb\006proto" +
-      "3"
+      "mestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"P\n\031Noti" +
+      "fyFriendOnlineRequest\022\017\n\007from_id\030\001 \001(\003\022\017" +
+      "\n\007user_id\030\002 \001(\003\022\021\n\ttimestamp\030\003 \001(\003\"n\n\032No" +
+      "tifyFriendOnlineResponse\022\014\n\004code\030\001 \001(\005\022\013" +
+      "\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestam" +
+      "p\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"Q\n\032NotifyFrie" +
+      "ndOfflineRequest\022\017\n\007from_id\030\001 \001(\003\022\017\n\007use" +
+      "r_id\030\002 \001(\003\022\021\n\ttimestamp\030\003 \001(\003\"o\n\033NotifyF" +
+      "riendOfflineResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003ms" +
+      "g\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 " +
+      "\001(\003\022\021\n\ttarget_id\030\005 \001(\003\"c\n\025NotifyAddGroup" +
+      "Request\022\017\n\007from_id\030\001 \001(\003\022\017\n\007user_id\030\002 \001(" +
+      "\003\022\020\n\010group_id\030\003 \001(\003\022\026\n\016verify_message\030\004 " +
+      "\001(\t\"j\n\026NotifyAddGroupResponse\022\014\n\004code\030\001 " +
+      "\001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttim" +
+      "estamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"q\n Notif" +
+      "yInviteMemberToGroupRequest\022\017\n\007from_id\030\001" +
+      " \001(\003\022\020\n\010group_id\030\002 \001(\003\022\027\n\017invited_user_i" +
+      "d\030\003 \001(\003\022\021\n\ttimestamp\030\004 \001(\003\"u\n!NotifyInvi" +
+      "teMemberToGroupResponse\022\014\n\004code\030\001 \001(\005\022\013\n" +
+      "\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp" +
+      "\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"i\n\031NotifyDelet" +
+      "edGroupRequest\022\017\n\007from_id\030\001 \001(\003\022\020\n\010group" +
+      "_id\030\002 \001(\003\022\026\n\016group_owner_id\030\003 \001(\003\022\021\n\ttim" +
+      "estamp\030\004 \001(\003\"n\n\032NotifyDeletedGroupRespon" +
+      "se\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg" +
+      "\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005" +
+      " \001(\003\"z\n#NotifyChangeGroupManagerAuthRequ" +
+      "est\022\017\n\007from_id\030\001 \001(\003\022\020\n\010group_id\030\002 \001(\003\022\017" +
+      "\n\007user_id\030\003 \001(\003\022\014\n\004type\030\004 \001(\005\022\021\n\ttimesta" +
+      "mp\030\005 \001(\003\"x\n$NotifyChangeGroupManagerAuth" +
+      "Response\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007e" +
+      "rr_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarge" +
+      "t_id\030\005 \001(\003\"Q\n\031NotifyKickOutGroupRequest\022" +
+      "\017\n\007from_id\030\001 \001(\003\022\020\n\010group_id\030\002 \001(\003\022\021\n\tti" +
+      "mestamp\030\004 \001(\t\"n\n\032NotifyKickOutGroupRespo" +
+      "nse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_ms" +
+      "g\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030" +
+      "\005 \001(\003\"W\n\024NotifyKickOutRequest\022\017\n\007from_id" +
+      "\030\001 \001(\003\022\n\n\002ip\030\002 \001(\t\022\017\n\007address\030\003 \001(\t\022\021\n\tt" +
+      "imestamp\030\004 \001(\t\"i\n\025NotifyKickOutResponse\022" +
+      "\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 " +
+      "\001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(" +
+      "\003\"y\n!NotifyAddGroupAnnouncementRequest\022\017" +
+      "\n\007from_id\030\001 \001(\003\022\020\n\010group_id\030\002 \001(\003\022\r\n\005tit" +
+      "le\030\003 \001(\t\022\017\n\007content\030\004 \001(\t\022\021\n\ttimestamp\030\005" +
+      " \001(\t\"v\n\"NotifyAddGroupAnnouncementRespon" +
+      "se\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg" +
+      "\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005" +
+      " \001(\003B\'\n\034com.jiangfucheng.im.protobufB\007Co" +
+      "ntrolb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -49505,7 +51614,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_AddGroupRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_AddGroupRequest_descriptor,
-        new java.lang.String[] { "Token", "GroupId", });
+        new java.lang.String[] { "Token", "GroupId", "VerifyMsg", });
     internal_static_com_jiangfucheng_im_protobuf_AddGroupResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_com_jiangfucheng_im_protobuf_AddGroupResponse_fieldAccessorTable = new
@@ -49517,7 +51626,7 @@ public final class Control {
     internal_static_com_jiangfucheng_im_protobuf_CreateGroupRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_CreateGroupRequest_descriptor,
-        new java.lang.String[] { "Token", "GroupName", "InviteUserId", "Introduction", });
+        new java.lang.String[] { "Token", "GroupName", "InviteUserId", "Introduction", "ProfilePhoto", });
     internal_static_com_jiangfucheng_im_protobuf_CreateGroupResponse_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_com_jiangfucheng_im_protobuf_CreateGroupResponse_fieldAccessorTable = new
@@ -49740,74 +51849,86 @@ public final class Control {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOfflineResponse_descriptor,
         new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
-    internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupRequest_descriptor =
+    internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupRequest_descriptor =
       getDescriptor().getMessageTypes().get(42);
+    internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupRequest_descriptor,
+        new java.lang.String[] { "FromId", "UserId", "GroupId", "VerifyMessage", });
+    internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupResponse_descriptor =
+      getDescriptor().getMessageTypes().get(43);
+    internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupResponse_descriptor,
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
+    internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupRequest_descriptor =
+      getDescriptor().getMessageTypes().get(44);
     internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupRequest_descriptor,
         new java.lang.String[] { "FromId", "GroupId", "InvitedUserId", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupResponse_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupResponse_descriptor,
         new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeletedGroupRequest_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(46);
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeletedGroupRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyDeletedGroupRequest_descriptor,
         new java.lang.String[] { "FromId", "GroupId", "GroupOwnerId", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeletedGroupResponse_descriptor =
-      getDescriptor().getMessageTypes().get(45);
+      getDescriptor().getMessageTypes().get(47);
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeletedGroupResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyDeletedGroupResponse_descriptor,
         new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyChangeGroupManagerAuthRequest_descriptor =
-      getDescriptor().getMessageTypes().get(46);
+      getDescriptor().getMessageTypes().get(48);
     internal_static_com_jiangfucheng_im_protobuf_NotifyChangeGroupManagerAuthRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyChangeGroupManagerAuthRequest_descriptor,
         new java.lang.String[] { "FromId", "GroupId", "UserId", "Type", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyChangeGroupManagerAuthResponse_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(49);
     internal_static_com_jiangfucheng_im_protobuf_NotifyChangeGroupManagerAuthResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyChangeGroupManagerAuthResponse_descriptor,
         new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutGroupRequest_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(50);
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutGroupRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutGroupRequest_descriptor,
         new java.lang.String[] { "FromId", "GroupId", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutGroupResponse_descriptor =
-      getDescriptor().getMessageTypes().get(49);
+      getDescriptor().getMessageTypes().get(51);
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutGroupResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutGroupResponse_descriptor,
         new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutRequest_descriptor =
-      getDescriptor().getMessageTypes().get(50);
+      getDescriptor().getMessageTypes().get(52);
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutRequest_descriptor,
         new java.lang.String[] { "FromId", "Ip", "Address", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutResponse_descriptor =
-      getDescriptor().getMessageTypes().get(51);
+      getDescriptor().getMessageTypes().get(53);
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutResponse_descriptor,
         new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupAnnouncementRequest_descriptor =
-      getDescriptor().getMessageTypes().get(52);
+      getDescriptor().getMessageTypes().get(54);
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupAnnouncementRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupAnnouncementRequest_descriptor,
         new java.lang.String[] { "FromId", "GroupId", "Title", "Content", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupAnnouncementResponse_descriptor =
-      getDescriptor().getMessageTypes().get(53);
+      getDescriptor().getMessageTypes().get(55);
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupAnnouncementResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupAnnouncementResponse_descriptor,

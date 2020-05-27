@@ -42,6 +42,7 @@ message DeleteFriendResponse {
 message AddGroupRequest {
     string token = 1;
     int64 group_id = 2;
+    string verify_msg = 3;
 }
 
 message AddGroupResponse {
@@ -58,6 +59,7 @@ message CreateGroupRequest {
     string group_name = 2;
     repeated int64 invite_user_id = 3; //邀请进群的好友id
     string introduction = 4; //群简介(可选)
+    string profile_photo = 5; //群头像
 }
 
 message CreateGroupResponse {
@@ -328,6 +330,21 @@ message NotifyFriendOfflineRequest {
 }
 
 message NotifyFriendOfflineResponse {
+    int32 code = 1; // 0:ok,负数:err
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
+}
+//用户申请入群通知
+message NotifyAddGroupRequest {
+    int64 from_id = 1;
+    int64 user_id = 2; //申请入群的用户id
+    int64 group_id = 3;
+    string verify_message = 4;
+}
+
+message NotifyAddGroupResponse {
     int32 code = 1; // 0:ok,负数:err
     string msg = 2;
     string err_msg = 3;

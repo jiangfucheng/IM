@@ -492,6 +492,14 @@ public final class Base {
      * <code>LOGIN_RESPONSE = 61;</code>
      */
     LOGIN_RESPONSE(61),
+    /**
+     * <code>NOTIFY_ADD_GROUP_REQUEST = 62;</code>
+     */
+    NOTIFY_ADD_GROUP_REQUEST(62),
+    /**
+     * <code>NOTIFY_ADD_GROUP_RESPONSE = 63;</code>
+     */
+    NOTIFY_ADD_GROUP_RESPONSE(63),
     UNRECOGNIZED(-1),
     ;
 
@@ -739,6 +747,14 @@ public final class Base {
      * <code>LOGIN_RESPONSE = 61;</code>
      */
     public static final int LOGIN_RESPONSE_VALUE = 61;
+    /**
+     * <code>NOTIFY_ADD_GROUP_REQUEST = 62;</code>
+     */
+    public static final int NOTIFY_ADD_GROUP_REQUEST_VALUE = 62;
+    /**
+     * <code>NOTIFY_ADD_GROUP_RESPONSE = 63;</code>
+     */
+    public static final int NOTIFY_ADD_GROUP_RESPONSE_VALUE = 63;
 
 
     public final int getNumber() {
@@ -826,6 +842,8 @@ public final class Base {
         case 59: return NOTIFY_ADD_GROUP_ANNOUNCEMENT_RESPONSE;
         case 60: return LOGIN_REQUEST;
         case 61: return LOGIN_RESPONSE;
+        case 62: return NOTIFY_ADD_GROUP_REQUEST;
+        case 63: return NOTIFY_ADD_GROUP_RESPONSE;
         default: return null;
       }
     }
@@ -1835,6 +1853,36 @@ public final class Base {
      */
     com.jiangfucheng.im.protobuf.Control.LoginResponseOrBuilder getLoginResponseOrBuilder();
 
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupRequest notify_add_group_request = 63;</code>
+     * @return Whether the notifyAddGroupRequest field is set.
+     */
+    boolean hasNotifyAddGroupRequest();
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupRequest notify_add_group_request = 63;</code>
+     * @return The notifyAddGroupRequest.
+     */
+    com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest getNotifyAddGroupRequest();
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupRequest notify_add_group_request = 63;</code>
+     */
+    com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequestOrBuilder getNotifyAddGroupRequestOrBuilder();
+
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupResponse notify_add_group_response = 64;</code>
+     * @return Whether the notifyAddGroupResponse field is set.
+     */
+    boolean hasNotifyAddGroupResponse();
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupResponse notify_add_group_response = 64;</code>
+     * @return The notifyAddGroupResponse.
+     */
+    com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse getNotifyAddGroupResponse();
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupResponse notify_add_group_response = 64;</code>
+     */
+    com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponseOrBuilder getNotifyAddGroupResponseOrBuilder();
+
     public com.jiangfucheng.im.protobuf.Base.Message.DataCase getDataCase();
   }
   /**
@@ -2724,6 +2772,34 @@ public final class Base {
               dataCase_ = 62;
               break;
             }
+            case 506: {
+              com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.Builder subBuilder = null;
+              if (dataCase_ == 63) {
+                subBuilder = ((com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest) data_).toBuilder();
+              }
+              data_ =
+                  input.readMessage(com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest) data_);
+                data_ = subBuilder.buildPartial();
+              }
+              dataCase_ = 63;
+              break;
+            }
+            case 514: {
+              com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.Builder subBuilder = null;
+              if (dataCase_ == 64) {
+                subBuilder = ((com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse) data_).toBuilder();
+              }
+              data_ =
+                  input.readMessage(com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse) data_);
+                data_ = subBuilder.buildPartial();
+              }
+              dataCase_ = 64;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -2819,6 +2895,8 @@ public final class Base {
       NOTIFY_ADD_GROUP_ANNOUNCEMENT_RESPONSE(60),
       LOGIN_REQUEST(61),
       LOGIN_RESPONSE(62),
+      NOTIFY_ADD_GROUP_REQUEST(63),
+      NOTIFY_ADD_GROUP_RESPONSE(64),
       DATA_NOT_SET(0);
       private final int value;
       private DataCase(int value) {
@@ -2894,6 +2972,8 @@ public final class Base {
           case 60: return NOTIFY_ADD_GROUP_ANNOUNCEMENT_RESPONSE;
           case 61: return LOGIN_REQUEST;
           case 62: return LOGIN_RESPONSE;
+          case 63: return NOTIFY_ADD_GROUP_REQUEST;
+          case 64: return NOTIFY_ADD_GROUP_RESPONSE;
           case 0: return DATA_NOT_SET;
           default: return null;
         }
@@ -4644,6 +4724,62 @@ public final class Base {
       return com.jiangfucheng.im.protobuf.Control.LoginResponse.getDefaultInstance();
     }
 
+    public static final int NOTIFY_ADD_GROUP_REQUEST_FIELD_NUMBER = 63;
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupRequest notify_add_group_request = 63;</code>
+     * @return Whether the notifyAddGroupRequest field is set.
+     */
+    public boolean hasNotifyAddGroupRequest() {
+      return dataCase_ == 63;
+    }
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupRequest notify_add_group_request = 63;</code>
+     * @return The notifyAddGroupRequest.
+     */
+    public com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest getNotifyAddGroupRequest() {
+      if (dataCase_ == 63) {
+         return (com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest) data_;
+      }
+      return com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.getDefaultInstance();
+    }
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupRequest notify_add_group_request = 63;</code>
+     */
+    public com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequestOrBuilder getNotifyAddGroupRequestOrBuilder() {
+      if (dataCase_ == 63) {
+         return (com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest) data_;
+      }
+      return com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.getDefaultInstance();
+    }
+
+    public static final int NOTIFY_ADD_GROUP_RESPONSE_FIELD_NUMBER = 64;
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupResponse notify_add_group_response = 64;</code>
+     * @return Whether the notifyAddGroupResponse field is set.
+     */
+    public boolean hasNotifyAddGroupResponse() {
+      return dataCase_ == 64;
+    }
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupResponse notify_add_group_response = 64;</code>
+     * @return The notifyAddGroupResponse.
+     */
+    public com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse getNotifyAddGroupResponse() {
+      if (dataCase_ == 64) {
+         return (com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse) data_;
+      }
+      return com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.getDefaultInstance();
+    }
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupResponse notify_add_group_response = 64;</code>
+     */
+    public com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponseOrBuilder getNotifyAddGroupResponseOrBuilder() {
+      if (dataCase_ == 64) {
+         return (com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse) data_;
+      }
+      return com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4843,6 +4979,12 @@ public final class Base {
       }
       if (dataCase_ == 62) {
         output.writeMessage(62, (com.jiangfucheng.im.protobuf.Control.LoginResponse) data_);
+      }
+      if (dataCase_ == 63) {
+        output.writeMessage(63, (com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest) data_);
+      }
+      if (dataCase_ == 64) {
+        output.writeMessage(64, (com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse) data_);
       }
       unknownFields.writeTo(output);
     }
@@ -5101,6 +5243,14 @@ public final class Base {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(62, (com.jiangfucheng.im.protobuf.Control.LoginResponse) data_);
       }
+      if (dataCase_ == 63) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(63, (com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest) data_);
+      }
+      if (dataCase_ == 64) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(64, (com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse) data_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5354,6 +5504,14 @@ public final class Base {
         case 62:
           if (!getLoginResponse()
               .equals(other.getLoginResponse())) return false;
+          break;
+        case 63:
+          if (!getNotifyAddGroupRequest()
+              .equals(other.getNotifyAddGroupRequest())) return false;
+          break;
+        case 64:
+          if (!getNotifyAddGroupResponse()
+              .equals(other.getNotifyAddGroupResponse())) return false;
           break;
         case 0:
         default:
@@ -5610,6 +5768,14 @@ public final class Base {
         case 62:
           hash = (37 * hash) + LOGIN_RESPONSE_FIELD_NUMBER;
           hash = (53 * hash) + getLoginResponse().hashCode();
+          break;
+        case 63:
+          hash = (37 * hash) + NOTIFY_ADD_GROUP_REQUEST_FIELD_NUMBER;
+          hash = (53 * hash) + getNotifyAddGroupRequest().hashCode();
+          break;
+        case 64:
+          hash = (37 * hash) + NOTIFY_ADD_GROUP_RESPONSE_FIELD_NUMBER;
+          hash = (53 * hash) + getNotifyAddGroupResponse().hashCode();
           break;
         case 0:
         default:
@@ -6197,6 +6363,20 @@ public final class Base {
             result.data_ = loginResponseBuilder_.build();
           }
         }
+        if (dataCase_ == 63) {
+          if (notifyAddGroupRequestBuilder_ == null) {
+            result.data_ = data_;
+          } else {
+            result.data_ = notifyAddGroupRequestBuilder_.build();
+          }
+        }
+        if (dataCase_ == 64) {
+          if (notifyAddGroupResponseBuilder_ == null) {
+            result.data_ = data_;
+          } else {
+            result.data_ = notifyAddGroupResponseBuilder_.build();
+          }
+        }
         result.dataCase_ = dataCase_;
         onBuilt();
         return result;
@@ -6489,6 +6669,14 @@ public final class Base {
           }
           case LOGIN_RESPONSE: {
             mergeLoginResponse(other.getLoginResponse());
+            break;
+          }
+          case NOTIFY_ADD_GROUP_REQUEST: {
+            mergeNotifyAddGroupRequest(other.getNotifyAddGroupRequest());
+            break;
+          }
+          case NOTIFY_ADD_GROUP_RESPONSE: {
+            mergeNotifyAddGroupResponse(other.getNotifyAddGroupResponse());
             break;
           }
           case DATA_NOT_SET: {
@@ -14856,6 +15044,282 @@ public final class Base {
         onChanged();;
         return loginResponseBuilder_;
       }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest, com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.Builder, com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequestOrBuilder> notifyAddGroupRequestBuilder_;
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupRequest notify_add_group_request = 63;</code>
+       * @return Whether the notifyAddGroupRequest field is set.
+       */
+      public boolean hasNotifyAddGroupRequest() {
+        return dataCase_ == 63;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupRequest notify_add_group_request = 63;</code>
+       * @return The notifyAddGroupRequest.
+       */
+      public com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest getNotifyAddGroupRequest() {
+        if (notifyAddGroupRequestBuilder_ == null) {
+          if (dataCase_ == 63) {
+            return (com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest) data_;
+          }
+          return com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.getDefaultInstance();
+        } else {
+          if (dataCase_ == 63) {
+            return notifyAddGroupRequestBuilder_.getMessage();
+          }
+          return com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupRequest notify_add_group_request = 63;</code>
+       */
+      public Builder setNotifyAddGroupRequest(com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest value) {
+        if (notifyAddGroupRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          notifyAddGroupRequestBuilder_.setMessage(value);
+        }
+        dataCase_ = 63;
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupRequest notify_add_group_request = 63;</code>
+       */
+      public Builder setNotifyAddGroupRequest(
+          com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.Builder builderForValue) {
+        if (notifyAddGroupRequestBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          notifyAddGroupRequestBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 63;
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupRequest notify_add_group_request = 63;</code>
+       */
+      public Builder mergeNotifyAddGroupRequest(com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest value) {
+        if (notifyAddGroupRequestBuilder_ == null) {
+          if (dataCase_ == 63 &&
+              data_ != com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.getDefaultInstance()) {
+            data_ = com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.newBuilder((com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 63) {
+            notifyAddGroupRequestBuilder_.mergeFrom(value);
+          }
+          notifyAddGroupRequestBuilder_.setMessage(value);
+        }
+        dataCase_ = 63;
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupRequest notify_add_group_request = 63;</code>
+       */
+      public Builder clearNotifyAddGroupRequest() {
+        if (notifyAddGroupRequestBuilder_ == null) {
+          if (dataCase_ == 63) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 63) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          notifyAddGroupRequestBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupRequest notify_add_group_request = 63;</code>
+       */
+      public com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.Builder getNotifyAddGroupRequestBuilder() {
+        return getNotifyAddGroupRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupRequest notify_add_group_request = 63;</code>
+       */
+      public com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequestOrBuilder getNotifyAddGroupRequestOrBuilder() {
+        if ((dataCase_ == 63) && (notifyAddGroupRequestBuilder_ != null)) {
+          return notifyAddGroupRequestBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 63) {
+            return (com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest) data_;
+          }
+          return com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupRequest notify_add_group_request = 63;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest, com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.Builder, com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequestOrBuilder> 
+          getNotifyAddGroupRequestFieldBuilder() {
+        if (notifyAddGroupRequestBuilder_ == null) {
+          if (!(dataCase_ == 63)) {
+            data_ = com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.getDefaultInstance();
+          }
+          notifyAddGroupRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest, com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest.Builder, com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequestOrBuilder>(
+                  (com.jiangfucheng.im.protobuf.Control.NotifyAddGroupRequest) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 63;
+        onChanged();;
+        return notifyAddGroupRequestBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse, com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.Builder, com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponseOrBuilder> notifyAddGroupResponseBuilder_;
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupResponse notify_add_group_response = 64;</code>
+       * @return Whether the notifyAddGroupResponse field is set.
+       */
+      public boolean hasNotifyAddGroupResponse() {
+        return dataCase_ == 64;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupResponse notify_add_group_response = 64;</code>
+       * @return The notifyAddGroupResponse.
+       */
+      public com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse getNotifyAddGroupResponse() {
+        if (notifyAddGroupResponseBuilder_ == null) {
+          if (dataCase_ == 64) {
+            return (com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse) data_;
+          }
+          return com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.getDefaultInstance();
+        } else {
+          if (dataCase_ == 64) {
+            return notifyAddGroupResponseBuilder_.getMessage();
+          }
+          return com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupResponse notify_add_group_response = 64;</code>
+       */
+      public Builder setNotifyAddGroupResponse(com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse value) {
+        if (notifyAddGroupResponseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          notifyAddGroupResponseBuilder_.setMessage(value);
+        }
+        dataCase_ = 64;
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupResponse notify_add_group_response = 64;</code>
+       */
+      public Builder setNotifyAddGroupResponse(
+          com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.Builder builderForValue) {
+        if (notifyAddGroupResponseBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          notifyAddGroupResponseBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 64;
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupResponse notify_add_group_response = 64;</code>
+       */
+      public Builder mergeNotifyAddGroupResponse(com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse value) {
+        if (notifyAddGroupResponseBuilder_ == null) {
+          if (dataCase_ == 64 &&
+              data_ != com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.getDefaultInstance()) {
+            data_ = com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.newBuilder((com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 64) {
+            notifyAddGroupResponseBuilder_.mergeFrom(value);
+          }
+          notifyAddGroupResponseBuilder_.setMessage(value);
+        }
+        dataCase_ = 64;
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupResponse notify_add_group_response = 64;</code>
+       */
+      public Builder clearNotifyAddGroupResponse() {
+        if (notifyAddGroupResponseBuilder_ == null) {
+          if (dataCase_ == 64) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 64) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          notifyAddGroupResponseBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupResponse notify_add_group_response = 64;</code>
+       */
+      public com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.Builder getNotifyAddGroupResponseBuilder() {
+        return getNotifyAddGroupResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupResponse notify_add_group_response = 64;</code>
+       */
+      public com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponseOrBuilder getNotifyAddGroupResponseOrBuilder() {
+        if ((dataCase_ == 64) && (notifyAddGroupResponseBuilder_ != null)) {
+          return notifyAddGroupResponseBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 64) {
+            return (com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse) data_;
+          }
+          return com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.NotifyAddGroupResponse notify_add_group_response = 64;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse, com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.Builder, com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponseOrBuilder> 
+          getNotifyAddGroupResponseFieldBuilder() {
+        if (notifyAddGroupResponseBuilder_ == null) {
+          if (!(dataCase_ == 64)) {
+            data_ = com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.getDefaultInstance();
+          }
+          notifyAddGroupResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse, com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.Builder, com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponseOrBuilder>(
+                  (com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 64;
+        onChanged();;
+        return notifyAddGroupResponseBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -14925,7 +15389,7 @@ public final class Base {
     java.lang.String[] descriptorData = {
       "\n\nbase.proto\022\034com.jiangfucheng.im.protob" +
       "uf\032\021single_chat.proto\032\020group_chat.proto\032" +
-      "\rcontrol.proto\"\336+\n\007Message\022;\n\010msg_type\030\001" +
+      "\rcontrol.proto\"\222-\n\007Message\022;\n\010msg_type\030\001" +
       " \001(\0162).com.jiangfucheng.im.protobuf.Mess" +
       "ageType\022C\n\016message_status\030\002 \001(\0162+.com.ji" +
       "angfucheng.im.protobuf.MessageStatus\0229\n\t" +
@@ -15065,58 +15529,64 @@ public final class Base {
       "uest\030= \001(\0132*.com.jiangfucheng.im.protobu" +
       "f.LoginRequestH\000\022E\n\016login_response\030> \001(\013" +
       "2+.com.jiangfucheng.im.protobuf.LoginRes" +
-      "ponseH\000B\006\n\004Data*(\n\013MessageType\022\013\n\007REQUES" +
-      "T\020\000\022\014\n\010RESPONSE\020\001*-\n\rMessageStatus\022\007\n\003RE" +
-      "Q\020\000\022\007\n\003ACK\020\001\022\n\n\006NOTIFY\020\002*\373\016\n\010DataType\022\t\n" +
-      "\005EMPTY\020\000\022\026\n\022HEART_BEAT_REQUEST\020\001\022\027\n\023HEAR" +
-      "T_BEAT_RESPONSE\020\002\022\027\n\023SINGLE_CHAT_REQUEST" +
-      "\020\003\022\030\n\024SINGLE_CHAT_RESPONSE\020\004\022\026\n\022GROUP_CH" +
-      "AT_REQUEST\020\005\022\027\n\023GROUP_CHAT_RESPONSE\020\006\022\026\n" +
-      "\022ADD_FRIEND_REQUEST\020\007\022\027\n\023ADD_FRIEND_RESP" +
-      "ONSE\020\010\022\031\n\025DELETE_FRIEND_REQUEST\020\t\022\032\n\026DEL" +
-      "ETE_FRIEND_RESPONSE\020\n\022\025\n\021ADD_GROUP_REQUE" +
-      "ST\020\013\022\026\n\022ADD_GROUP_RESPONSE\020\014\022\030\n\024CREATE_G" +
-      "ROUP_REQUEST\020\r\022\031\n\025CREATE_GROUP_RESPONSE\020" +
-      "\016\022\026\n\022EXIT_GROUP_REQUEST\020\017\022\027\n\023EXIT_GROUP_" +
-      "RESPONSE\020\020\022\036\n\032CHANGE_GROUP_OWNER_REQUEST" +
-      "\020\021\022\037\n\033CHANGE_GROUP_OWNER_RESPONSE\020\022\022\030\n\024D" +
-      "ELETE_GROUP_REQUEST\020\023\022\031\n\025DELETE_GROUP_RE" +
-      "SPONSE\020\024\022%\n!CHANGE_GROUP_MANAGER_AUTH_RE" +
-      "QUEST\020\025\022&\n\"CHANGE_GROUP_MANAGER_AUTH_RES" +
-      "PONSE\020\026\022\"\n\036INVITE_MEMBER_TO_GROUP_REQUES" +
-      "T\020\027\022#\n\037INVITE_MEMBER_TO_GROUP_RESPONSE\020\030" +
-      "\022\033\n\027KICK_OUT_MEMBER_REQUEST\020\031\022\034\n\030KICK_OU" +
-      "T_MEMBER_RESPONSE\020\032\022\"\n\036ADD_GROUP_ANNOUNC" +
-      "EMENT_REQUEST\020\033\022#\n\037ADD_GROUP_ANNOUNCEMEN" +
-      "T_RESPONSE\020\034\022\037\n\033DELETE_ANNOUNCEMENT_REQU" +
-      "EST\020\035\022 \n\034DELETE_ANNOUNCEMENT_RESPONSE\020\036\022" +
-      "\035\n\031EDIT_ANNOUNCEMENT_REQUEST\020\037\022\036\n\032EDIT_A" +
-      "NNOUNCEMENT_RESPONSE\020 \022\036\n\032EDIT_GROUP_REM" +
-      "ARKS_REQUEST\020!\022\037\n\033EDIT_GROUP_REMARKS_RES" +
-      "PONSE\020\"\022$\n EDIT_GROUP_PROFILE_PHOTO_REQU" +
-      "EST\020#\022%\n!EDIT_GROUP_PROFILE_PHOTO_RESPON" +
-      "SE\020$\022\022\n\016LOGOUT_REQUEST\020%\022\023\n\017LOGOUT_RESPO" +
-      "NSE\020&\022\035\n\031NOTIFY_ADD_FRIEND_REQUEST\020(\022\036\n\032" +
-      "NOTIFY_ADD_FRIEND_RESPONSE\020)\022 \n\034NOTIFY_D" +
-      "ELETE_FRIEND_REQUEST\020*\022!\n\035NOTIFY_DELETE_" +
-      "FRIEND_RESPONSE\020+\022 \n\034NOTIFY_FRIEND_ONLIN" +
-      "E_REQUEST\020,\022!\n\035NOTIFY_FRIEND_ONLINE_RESP" +
-      "ONSE\020-\022!\n\035NOTIFY_FRIEND_OFFLINE_REQUEST\020" +
-      ".\022\"\n\036NOTIFY_FRIEND_OFFLINE_RESPONSE\020/\022)\n" +
-      "%NOTIFY_INVITE_MEMBER_TO_GROUP_REQUEST\0200" +
-      "\022*\n&NOTIFY_INVITE_MEMBER_TO_GROUP_RESPON" +
-      "SE\0201\022 \n\034NOTIFY_DELETED_GROUP_REQUEST\0202\022!" +
-      "\n\035NOTIFY_DELETED_GROUP_RESPONSE\0203\022,\n(NOT" +
-      "IFY_CHANGE_GROUP_MANAGER_AUTH_REQUEST\0204\022" +
-      "-\n)NOTIFY_CHANGE_GROUP_MANAGER_AUTH_RESP" +
-      "ONSE\0205\022!\n\035NOTIFY_KICK_OUT_GROUP_REQUEST\020" +
-      "6\022\"\n\036NOTIFY_KICK_OUT_GROUP_RESPONSE\0207\022\033\n" +
-      "\027NOTIFY_KICK_OUT_REQUEST\0208\022\034\n\030NOTIFY_KIC" +
-      "K_OUT_RESPONSE\0209\022)\n%NOTIFY_ADD_GROUP_ANN" +
-      "OUNCEMENT_REQUEST\020:\022*\n&NOTIFY_ADD_GROUP_" +
-      "ANNOUNCEMENT_RESPONSE\020;\022\021\n\rLOGIN_REQUEST" +
-      "\020<\022\022\n\016LOGIN_RESPONSE\020=B$\n\034com.jiangfuche" +
-      "ng.im.protobufB\004Baseb\006proto3"
+      "ponseH\000\022W\n\030notify_add_group_request\030? \001(" +
+      "\01323.com.jiangfucheng.im.protobuf.NotifyA" +
+      "ddGroupRequestH\000\022Y\n\031notify_add_group_res" +
+      "ponse\030@ \001(\01324.com.jiangfucheng.im.protob" +
+      "uf.NotifyAddGroupResponseH\000B\006\n\004Data*(\n\013M" +
+      "essageType\022\013\n\007REQUEST\020\000\022\014\n\010RESPONSE\020\001*-\n" +
+      "\rMessageStatus\022\007\n\003REQ\020\000\022\007\n\003ACK\020\001\022\n\n\006NOTI" +
+      "FY\020\002*\270\017\n\010DataType\022\t\n\005EMPTY\020\000\022\026\n\022HEART_BE" +
+      "AT_REQUEST\020\001\022\027\n\023HEART_BEAT_RESPONSE\020\002\022\027\n" +
+      "\023SINGLE_CHAT_REQUEST\020\003\022\030\n\024SINGLE_CHAT_RE" +
+      "SPONSE\020\004\022\026\n\022GROUP_CHAT_REQUEST\020\005\022\027\n\023GROU" +
+      "P_CHAT_RESPONSE\020\006\022\026\n\022ADD_FRIEND_REQUEST\020" +
+      "\007\022\027\n\023ADD_FRIEND_RESPONSE\020\010\022\031\n\025DELETE_FRI" +
+      "END_REQUEST\020\t\022\032\n\026DELETE_FRIEND_RESPONSE\020" +
+      "\n\022\025\n\021ADD_GROUP_REQUEST\020\013\022\026\n\022ADD_GROUP_RE" +
+      "SPONSE\020\014\022\030\n\024CREATE_GROUP_REQUEST\020\r\022\031\n\025CR" +
+      "EATE_GROUP_RESPONSE\020\016\022\026\n\022EXIT_GROUP_REQU" +
+      "EST\020\017\022\027\n\023EXIT_GROUP_RESPONSE\020\020\022\036\n\032CHANGE" +
+      "_GROUP_OWNER_REQUEST\020\021\022\037\n\033CHANGE_GROUP_O" +
+      "WNER_RESPONSE\020\022\022\030\n\024DELETE_GROUP_REQUEST\020" +
+      "\023\022\031\n\025DELETE_GROUP_RESPONSE\020\024\022%\n!CHANGE_G" +
+      "ROUP_MANAGER_AUTH_REQUEST\020\025\022&\n\"CHANGE_GR" +
+      "OUP_MANAGER_AUTH_RESPONSE\020\026\022\"\n\036INVITE_ME" +
+      "MBER_TO_GROUP_REQUEST\020\027\022#\n\037INVITE_MEMBER" +
+      "_TO_GROUP_RESPONSE\020\030\022\033\n\027KICK_OUT_MEMBER_" +
+      "REQUEST\020\031\022\034\n\030KICK_OUT_MEMBER_RESPONSE\020\032\022" +
+      "\"\n\036ADD_GROUP_ANNOUNCEMENT_REQUEST\020\033\022#\n\037A" +
+      "DD_GROUP_ANNOUNCEMENT_RESPONSE\020\034\022\037\n\033DELE" +
+      "TE_ANNOUNCEMENT_REQUEST\020\035\022 \n\034DELETE_ANNO" +
+      "UNCEMENT_RESPONSE\020\036\022\035\n\031EDIT_ANNOUNCEMENT" +
+      "_REQUEST\020\037\022\036\n\032EDIT_ANNOUNCEMENT_RESPONSE" +
+      "\020 \022\036\n\032EDIT_GROUP_REMARKS_REQUEST\020!\022\037\n\033ED" +
+      "IT_GROUP_REMARKS_RESPONSE\020\"\022$\n EDIT_GROU" +
+      "P_PROFILE_PHOTO_REQUEST\020#\022%\n!EDIT_GROUP_" +
+      "PROFILE_PHOTO_RESPONSE\020$\022\022\n\016LOGOUT_REQUE" +
+      "ST\020%\022\023\n\017LOGOUT_RESPONSE\020&\022\035\n\031NOTIFY_ADD_" +
+      "FRIEND_REQUEST\020(\022\036\n\032NOTIFY_ADD_FRIEND_RE" +
+      "SPONSE\020)\022 \n\034NOTIFY_DELETE_FRIEND_REQUEST" +
+      "\020*\022!\n\035NOTIFY_DELETE_FRIEND_RESPONSE\020+\022 \n" +
+      "\034NOTIFY_FRIEND_ONLINE_REQUEST\020,\022!\n\035NOTIF" +
+      "Y_FRIEND_ONLINE_RESPONSE\020-\022!\n\035NOTIFY_FRI" +
+      "END_OFFLINE_REQUEST\020.\022\"\n\036NOTIFY_FRIEND_O" +
+      "FFLINE_RESPONSE\020/\022)\n%NOTIFY_INVITE_MEMBE" +
+      "R_TO_GROUP_REQUEST\0200\022*\n&NOTIFY_INVITE_ME" +
+      "MBER_TO_GROUP_RESPONSE\0201\022 \n\034NOTIFY_DELET" +
+      "ED_GROUP_REQUEST\0202\022!\n\035NOTIFY_DELETED_GRO" +
+      "UP_RESPONSE\0203\022,\n(NOTIFY_CHANGE_GROUP_MAN" +
+      "AGER_AUTH_REQUEST\0204\022-\n)NOTIFY_CHANGE_GRO" +
+      "UP_MANAGER_AUTH_RESPONSE\0205\022!\n\035NOTIFY_KIC" +
+      "K_OUT_GROUP_REQUEST\0206\022\"\n\036NOTIFY_KICK_OUT" +
+      "_GROUP_RESPONSE\0207\022\033\n\027NOTIFY_KICK_OUT_REQ" +
+      "UEST\0208\022\034\n\030NOTIFY_KICK_OUT_RESPONSE\0209\022)\n%" +
+      "NOTIFY_ADD_GROUP_ANNOUNCEMENT_REQUEST\020:\022" +
+      "*\n&NOTIFY_ADD_GROUP_ANNOUNCEMENT_RESPONS" +
+      "E\020;\022\021\n\rLOGIN_REQUEST\020<\022\022\n\016LOGIN_RESPONSE" +
+      "\020=\022\034\n\030NOTIFY_ADD_GROUP_REQUEST\020>\022\035\n\031NOTI" +
+      "FY_ADD_GROUP_RESPONSE\020?B$\n\034com.jiangfuch" +
+      "eng.im.protobufB\004Baseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -15130,7 +15600,7 @@ public final class Base {
     internal_static_com_jiangfucheng_im_protobuf_Message_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_Message_descriptor,
-        new java.lang.String[] { "MsgType", "MessageStatus", "DataType", "Id", "SingleChatRequest", "SingleChatResponse", "GroupChatRequest", "GroupChatResponse", "AddFriendRequest", "AddFriendResponse", "DeleteFriendRequest", "DeleteFriendResponse", "AddGroupRequest", "AddGroupResponse", "CreateGroupRequest", "CreateGroupResponse", "ExitGroupRequest", "ExitGroupResponse", "ChangeGroupOwnerRequest", "ChangeGroupOwnerResponse", "DeleteGroupRequest", "DeleteGroupResponse", "ChangeGroupManagerAuthRequest", "ChangeGroupManagerAuthResponse", "InviteMemberToGroupRequest", "InviteMemberToGroupResponse", "KickOutMemberRequest", "KickOutMemberResponse", "AddGroupAnnouncementRequest", "AddGroupAnnouncementResponse", "DeleteAnnouncementRequest", "DeleteAnnouncementResponse", "EditAnnouncementRequest", "EditAnnouncementResponse", "EditGroupRemarksRequest", "EditGroupRemarksResponse", "EditGroupProfilePhotoRequest", "EditGroupProfilePhotoResponse", "LogoutRequest", "LogoutResponse", "NotifyAddFriendRequest", "NotifyAddFriendResponse", "NotifyDeleteFriendRequest", "NotifyDeleteFriendResponse", "NotifyFriendOnlineRequest", "NotifyFriendOnlineResponse", "NotifyFriendOfflineRequest", "NotifyFriendOfflineResponse", "NotifyInviteMemberToGroupRequest", "NotifyInviteMemberToGroupResponse", "NotifyDeleteGroupRequest", "NotifyDeleteGroupResponse", "NotifyChangeGroupManagerAuthRequest", "NotifyChangeGroupManagerAuthResponse", "NotifyKickOutGroupRequest", "NotifyKickOutGroupResponse", "NotifyKickOutRequest", "NotifyKickOutResponse", "NotifyAddGroupAnnouncementRequest", "NotifyAddGroupAnnouncementResponse", "LoginRequest", "LoginResponse", "Data", });
+        new java.lang.String[] { "MsgType", "MessageStatus", "DataType", "Id", "SingleChatRequest", "SingleChatResponse", "GroupChatRequest", "GroupChatResponse", "AddFriendRequest", "AddFriendResponse", "DeleteFriendRequest", "DeleteFriendResponse", "AddGroupRequest", "AddGroupResponse", "CreateGroupRequest", "CreateGroupResponse", "ExitGroupRequest", "ExitGroupResponse", "ChangeGroupOwnerRequest", "ChangeGroupOwnerResponse", "DeleteGroupRequest", "DeleteGroupResponse", "ChangeGroupManagerAuthRequest", "ChangeGroupManagerAuthResponse", "InviteMemberToGroupRequest", "InviteMemberToGroupResponse", "KickOutMemberRequest", "KickOutMemberResponse", "AddGroupAnnouncementRequest", "AddGroupAnnouncementResponse", "DeleteAnnouncementRequest", "DeleteAnnouncementResponse", "EditAnnouncementRequest", "EditAnnouncementResponse", "EditGroupRemarksRequest", "EditGroupRemarksResponse", "EditGroupProfilePhotoRequest", "EditGroupProfilePhotoResponse", "LogoutRequest", "LogoutResponse", "NotifyAddFriendRequest", "NotifyAddFriendResponse", "NotifyDeleteFriendRequest", "NotifyDeleteFriendResponse", "NotifyFriendOnlineRequest", "NotifyFriendOnlineResponse", "NotifyFriendOfflineRequest", "NotifyFriendOfflineResponse", "NotifyInviteMemberToGroupRequest", "NotifyInviteMemberToGroupResponse", "NotifyDeleteGroupRequest", "NotifyDeleteGroupResponse", "NotifyChangeGroupManagerAuthRequest", "NotifyChangeGroupManagerAuthResponse", "NotifyKickOutGroupRequest", "NotifyKickOutGroupResponse", "NotifyKickOutRequest", "NotifyKickOutResponse", "NotifyAddGroupAnnouncementRequest", "NotifyAddGroupAnnouncementResponse", "LoginRequest", "LoginResponse", "NotifyAddGroupRequest", "NotifyAddGroupResponse", "Data", });
     com.jiangfucheng.im.protobuf.SingleChat.getDescriptor();
     com.jiangfucheng.im.protobuf.GroupChat.getDescriptor();
     com.jiangfucheng.im.protobuf.Control.getDescriptor();

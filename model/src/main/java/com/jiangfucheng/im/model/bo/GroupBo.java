@@ -1,7 +1,7 @@
 package com.jiangfucheng.im.model.bo;
 
-import com.jiangfucheng.im.model.utils.BeanUtil;
 import com.jiangfucheng.im.model.enums.AccountType;
+import com.jiangfucheng.im.model.utils.BeanUtil;
 import com.jiangfucheng.im.model.vo.AccountVo;
 import com.jiangfucheng.im.model.vo.GroupInfoVo;
 import com.jiangfucheng.im.model.vo.GroupListElementVo;

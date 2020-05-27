@@ -79,6 +79,8 @@ message Message {
         //附加
         LoginRequest login_request = 61;
         LoginResponse login_response = 62;
+        NotifyAddGroupRequest notify_add_group_request = 63;
+        NotifyAddGroupResponse notify_add_group_response = 64;
 
     }
 }
@@ -159,5 +161,7 @@ enum DataType {
     NOTIFY_ADD_GROUP_ANNOUNCEMENT_RESPONSE = 59;
     LOGIN_REQUEST = 60;
     LOGIN_RESPONSE = 61;
+    NOTIFY_ADD_GROUP_REQUEST = 62;
+    NOTIFY_ADD_GROUP_RESPONSE = 63;
 
 }

@@ -3,7 +3,9 @@ package com.jiangfucheng.im.model.po;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.jiangfucheng.im.model.bo.GroupMemberBo;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
@@ -15,6 +17,8 @@ import java.util.Date;
  * @author jiangfucheng
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @TableName("im_group_user")
 public class GroupUserPo {
 	@TableId
