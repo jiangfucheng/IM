@@ -13,6 +13,7 @@ import lombok.Data;
 public class MessageVo {
 	private Long id;
 	private Long fromId;
+	private Long toId;
 	private String profilePhoto;
 	private String nickName;
 	private String remarks;

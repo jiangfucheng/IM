@@ -23,13 +23,24 @@ import org.apache.rocketmq.remoting.exception.RemotingException;
 public class RocketMQUtil {
 	public static void sendMessage(MQProducer producer, String topic, String tag, Object data) {
 		Message message = new Message(topic, tag, JSON.toJSONBytes(data));
+		send(producer, topic, tag, message);
+	}
+
+	public static void sendMessage(MQProducer producer, String topic, String tag, byte[] data) {
+		Message message = new Message(topic, tag, data);
+		send(producer, topic, tag, message);
+	}
+
+	private static void send(MQProducer producer, String topic, String tag, Message message) {
 		try {
 			producer.send(message, new SendCallback() {
 				@Override
 				public void onSuccess(SendResult sendResult) {
 					SendStatus sendStatus = sendResult.getSendStatus();
 					if (sendStatus == SendStatus.SEND_OK) {
-						log.debug("发送消息到rocketMq: topic: {}, tag: {}, data: {}", topic, tag, data.toString());
+						log.debug("发送消息到rocketMq: topic: {}, tag: {}", topic, tag);
+					}else {
+						log.error("发送消息失败");
 					}
 				}
 

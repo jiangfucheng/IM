@@ -1,5 +1,6 @@
 package com.jiangfucheng.im.httpserver;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -11,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author jiangfucheng
  */
 @SpringBootApplication
-//@MapperScan("com.jiangfucheng.im.httpserver.mapper")
+@MapperScan("com.jiangfucheng.im.httpserver.mapper")
 public class HttpServerApplication {
 
 	public static void main(String[] args) {

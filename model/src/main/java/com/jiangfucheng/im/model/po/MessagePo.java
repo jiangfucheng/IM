@@ -1,6 +1,8 @@
 package com.jiangfucheng.im.model.po;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.jiangfucheng.im.model.bo.MessageBo;
+import com.jiangfucheng.im.model.utils.BeanUtil;
 import lombok.Data;
 
 import java.util.Date;
@@ -22,4 +24,10 @@ public class MessagePo {
 	private String content;
 	private Integer delivered;
 	private Date createTime;
+
+	public MessageBo convertToMessageBo(){
+		MessageBo messageBo = new MessageBo();
+		BeanUtil.copyProperties(messageBo,this);
+		return messageBo;
+	}
 }

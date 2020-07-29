@@ -46,6 +46,16 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	public UserBo getUserByAccount(Long curId, String account) {
+		UserBo userBo = userMapper.selectOne(new QueryWrapper<UserPo>()
+				.eq("account", account))
+				.convertToUserBo();
+		RelationPo relationPo = relationMapper.getRelationByUserIdAndFriendId(curId, userBo.getId());
+		userBo.setIsFriend(relationPo == null ? 0 : 1);
+		return userBo;
+	}
+
+	@Override
 	public UserBo getUserByAccount(String account) {
 		UserPo userPo = userMapper.selectOne(new QueryWrapper<UserPo>()
 				.eq("account", account));

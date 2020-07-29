@@ -32,6 +32,14 @@ public class UserController {
 		return Response.ok(userbo.convertToUserVo());
 	}
 
+	@GetMapping("/user/account/{account}")
+	public Response queryUserDetailByAccount(UserTokenPayloadBo userInfo, @PathVariable("account") String account) {
+		ParamValidator.notNull(account, "账号不能为空");
+		UserBo userbo = userService.getUserByAccount(userInfo.getUserId(), account);
+		return Response.ok(userbo.convertToUserVo());
+	}
+
+
 	@PostMapping("/user")
 	public Response register(@RequestBody UserVo userVo) {
 		Long userId = userService.createUser(userVo.convertToUserBo());

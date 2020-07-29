@@ -1,13 +1,13 @@
 package com.jiangfucheng.im.httpserver.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.jiangfucheng.im.httpserver.mapper.*;
+import com.jiangfucheng.im.httpserver.service.MessageService;
 import com.jiangfucheng.im.model.bo.MessageBo;
 import com.jiangfucheng.im.model.bo.NotifyBo;
 import com.jiangfucheng.im.model.bo.OneMessageListBo;
 import com.jiangfucheng.im.model.bo.QueryHistoryMsgBo;
-import com.jiangfucheng.im.httpserver.mapper.*;
 import com.jiangfucheng.im.model.po.*;
-import com.jiangfucheng.im.httpserver.service.MessageService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -119,8 +119,16 @@ public class MessageServiceImpl implements MessageService {
 
 	@Override
 	public List<MessageBo> queryHistoryMessage(QueryHistoryMsgBo queryHistoryMsgBo) {
+		List<MessagePo> messagePoList = messageMapper.selectHistoryMessages(
+				queryHistoryMsgBo.getUserId(),
+				queryHistoryMsgBo.getTargetId(),
+				queryHistoryMsgBo.getLastMsgId(),
+				queryHistoryMsgBo.getNumber());
 
-		return null;
+		return messagePoList
+				.stream()
+				.map(MessagePo::convertToMessageBo)
+				.collect(Collectors.toList());
 	}
 
 	@Override

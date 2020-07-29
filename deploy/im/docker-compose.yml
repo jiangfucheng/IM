@@ -28,15 +28,18 @@ services:
     image: foxiswho/rocketmq:broker-4.4.0
     container_name: im_rocketmq_broker
     restart: always
+    depends_on:
+      - namesrv-m
+      - namesrv-s
     ports:
       - 10909:10909
       - 10911:10911
     volumes:
       - "/im/rocketmq/broker/a-m/logs:/opt/logs"
       - "/im/rocketmq/broker/a-m/store:/opt/store"
-      #- "/rocketmq/broker/a-m/conf/broker-a.conf:/etc/rocketmq/broker.conf"
+      - "./rocketMQ/broker-a.properties:/etc/rocketmq/broker.conf"
       - /etc/localtime:/etc/localtime:ro
-    #command: mqbroker -c /etc/rocketmq/broker.conf
+    command: mqbroker -c /etc/rocketmq/broker.conf autoCreateTopicEnable=true
     links:
       - namesrv-m:namesrv-m
       - namesrv-s:namesrv-s
@@ -44,12 +47,15 @@ services:
       JAVA_OPTS: " -Duser.home=/opt"
       #见rocketmq jvm内存默认配置 (jvm重复参数：后面生效，会覆盖)
       JAVA_OPT_EXT: "-server -Xms300m -Xmx300m -Xmn150m"
+      NAMESRV_ADDR: namesrv-m:9876
   console:
     image: styletang/rocketmq-console-ng:latest
     container_name: im_rocketmq_console
     restart: always
     ports:
       - 9990:8080
+    depends_on:
+      - broker-a-m
     volumes:
       - /etc/localtime:/etc/localtime:ro
     links:
@@ -74,7 +80,7 @@ services:
     image: redis:5.0.9
     container_name: im_redis
     ports: 
-      - 6379:6379
+      - 6380:6379
     volumes: 
       - /im/redis/data:/data
       - ./redis/redis.conf:/usr/local/etc/redis/redis.conf

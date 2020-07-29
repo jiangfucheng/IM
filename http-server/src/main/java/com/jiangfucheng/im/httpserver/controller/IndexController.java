@@ -31,17 +31,17 @@ public class IndexController {
 	}
 
 	@PostMapping("/session")
-	public Response login(@RequestBody LoginRequestVo loginRequestVo) {
+	public Response<LoginResponseVo> login(@RequestBody LoginRequestVo loginRequestVo) {
 		boolean hasUser = userService.hasUser(loginRequestVo.convertToLoginRequestBo());
 		if (!hasUser) {
 			return Response.error(ErrorCode.UNAUTHENTICATED, "账号或密码错误");
 		}
 		UserInfoBo userInfo = userService.getUserInfoByAccount(loginRequestVo.getAccount());
 		String token = JwtUtil.generateToken(new UserTokenPayloadBo(userInfo.getId(), userInfo.getAccount(), userInfo.getNickName()));
-		//String chatServerUrl = chatServerService.getChatServer(userInfo.getId());
+		String chatServerUrl = chatServerService.getChatServer(userInfo.getId());
 		LoginResponseVo loginVo = new LoginResponseVo();
 		loginVo.setId(userInfo.getId());
-		//loginVo.setChatServer(chatServerUrl);
+		loginVo.setChatServer(chatServerUrl);
 		loginVo.setToken(token);
 		return Response.ok(loginVo);
 	}

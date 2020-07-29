@@ -37,7 +37,7 @@ public class MessageController {
 		return Response.ok(messageListVo);
 	}
 
-	@GetMapping("offline_messages/{target_id}")
+	@GetMapping("/history_messages/{target_id}")
 	public Response getHistoryMessage(UserTokenPayloadBo userInfo,
 									  @PathVariable("target_id") Long targetId) {
 		QueryHistoryMsgBo queryHistoryMsgBo = new QueryHistoryMsgBo();
@@ -45,6 +45,7 @@ public class MessageController {
 		queryHistoryMsgBo.setTargetId(targetId);
 		List<MessageBo> messageBos = messageService.queryHistoryMessage(queryHistoryMsgBo);
 		List<MessageVo> messageVos = messageBos.stream().map(MessageBo::convertToMessageVo).collect(Collectors.toList());
+		//todo 实现群历史消息查询
 		return Response.ok(messageVos);
 	}
 

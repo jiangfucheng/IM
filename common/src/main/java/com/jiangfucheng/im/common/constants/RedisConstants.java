@@ -22,7 +22,7 @@ public class RedisConstants {
 	public static final String CHAT_SERVER_CONNECTED_NUMBER = "CHAT_SERVER_CONNECTED_NUMBER_%s";
 
 	/**
-	 * 用户连接在那一台聊天服务器上
+	 * 用户连接在哪一台聊天服务器上
 	 * %s: userId
 	 */
 	public static final String USER_CONNECTED_CHAT_SERVER = "USER_CONNECTED_CONNECTED_CHAT_SERVER_%s";

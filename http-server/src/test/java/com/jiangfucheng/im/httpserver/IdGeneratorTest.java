@@ -1,5 +1,6 @@
 package com.jiangfucheng.im.httpserver;
 
+import com.jiangfucheng.im.common.utils.SnowFlakeIdGenerator;
 import org.junit.Test;
 
 /**
@@ -13,6 +14,8 @@ public class IdGeneratorTest {
 
 	@Test
 	public void test(){
-		System.out.println(System.currentTimeMillis());
+		SnowFlakeIdGenerator idGenerator = new SnowFlakeIdGenerator(4,4);
+		System.out.println(idGenerator.nextId());
+		System.out.println(idGenerator.nextId());
 	}
 }

@@ -40,7 +40,7 @@ public class ZookeeperConfig {
 		return zooKeeper;
 	}
 
-	//@Bean
+	@Bean
 	public ZkClient zkClient() {
 		return new ZkClient(address, timeout);
 	}
