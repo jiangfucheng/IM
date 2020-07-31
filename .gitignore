@@ -1,6 +1,5 @@
 <<<<<<< HEAD
 HELP.md
-http-server/target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
 !**/src/test/**
@@ -56,23 +55,3 @@ build/
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 >>>>>>> 83558d5ca9487a04d76ea765cc6e3b497517b82a
-auth/src/main/java/com/jiangfucheng/im/auth/config/
-auth/src/main/java/com/jiangfucheng/im/auth/utils/
-auth/src/main/resources/
-auth/src/test/
-auth/target/generated-sources/
-auth/target/maven-status/
-chat-server/src/
-chat-server/target/
-client/src/
-common/src/main/resources/
-common/src/test/
-common/target/generated-sources/
-common/target/generated-test-sources/
-common/target/maven-archiver/
-common/target/maven-status/
-common/target/test-classes/
-http-server/src/main/resources/static/
-http-server/src/main/resources/templates/
-protobuf/src/main/resources/
-protobuf/src/test/
