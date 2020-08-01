@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
  * @author jiangfucheng
  */
 @Slf4j
-public abstract class BaseController {
+public class BaseController {
 
 	private ChatClientContext context;
 	private MessageMonitor messageMonitor;
@@ -32,18 +32,17 @@ public abstract class BaseController {
 				log.debug("the message is received ack before arrived, messageId: {}", msg.getId());
 				return;
 			}
-			log.debug("receive ack for msg singleChatRequest with id: {}", msg.getId());
+			log.debug("receive ack for requestMessage with id: {}", msg.getId());
 
 			Base.Message newMessage = resolveRequestAck(ctx, msg);
 
 			context.removeAckMessage(msg.getId());
 			context.putUnCompletedMsg(newMessage);
 			messageMonitor.watchMessage(msg.getId(), MessageMonitor.Type.UN_COMPLETE);
-			log.debug("watch response for request message for id : {}", msg.getId());
+			log.debug("watch response for requestMessage for id : {}", msg.getId());
 		} else {
 			//notify
 			Base.Message responseMessage = resolveRequestNotify(ctx, msg);
-
 			//不需要watch response的ACK
 			ctx.writeAndFlush(responseMessage);
 			log.debug("send response with id: {}", responseMessage.getId());
@@ -53,31 +52,32 @@ public abstract class BaseController {
 	protected void handleResponse(ChannelHandlerContext ctx, Base.Message msg) {
 		boolean isAck = msg.getMessageStatus() == Base.MessageStatus.ACK;
 		if (isAck) {
-			//其实response消息不需要服务端回复ACK的
-			log.debug("receive ack for response  with id: {}", msg.getId());
+			//response消息不需要服务端回复ACK的
+			log.debug("receive ack for responseMessage  with id: {}", msg.getId());
 		} else {
 			//notify
 			if (MessageUtils.isCompleteMessage(context, msg.getId())) {
 				return;
 			}
-
 			resolveResponseNotify(ctx, msg);
 			//标记这个消息id的链路为已经完成
 			context.removeCompletedMsg(msg.getId());
-			log.debug("receive response for response with id : {}", msg.getId());
+			log.debug("receive response for responseMessage with id : {}", msg.getId());
 		}
 	}
 
 	/**
 	 * 客户端收到Request ACK添加服务器传回的某些信息并返回(eg: 服务器会给单聊、群聊消息添加消息id)
-	 *
+	 * 由子类扩展
 	 * @return 服务器修改后的内容，用于保存到本地
 	 */
-	protected abstract Base.Message resolveRequestAck(ChannelHandlerContext ctx, Base.Message requestMessage);
+	protected Base.Message resolveRequestAck(ChannelHandlerContext ctx, Base.Message requestMessage) {
+		return requestMessage;
+	}
 
 	/**
 	 * 处理收到Request Notify的内容，如打印到本地，或其他操作
-	 *
+	 * 由子类扩展
 	 * @return 需要返回的Response
 	 */
 	protected Base.Message resolveRequestNotify(ChannelHandlerContext ctx, Base.Message requestMessage) {
@@ -85,8 +85,11 @@ public abstract class BaseController {
 	}
 
 	/**
-	 * 一条消息链路完成后需要的操作
+	 *  一条消息链路完成后需要的操作
+	 *  由子类扩展
 	 */
-	protected abstract void resolveResponseNotify(ChannelHandlerContext ctx, Base.Message responseMessage);
+	protected void resolveResponseNotify(ChannelHandlerContext ctx, Base.Message responseMessage) {
+
+	}
 
 }

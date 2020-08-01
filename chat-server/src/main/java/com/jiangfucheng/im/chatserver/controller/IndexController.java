@@ -52,7 +52,11 @@ public class IndexController {
 
 	@ChatMessageMapping(messageType = Base.DataType.LOGIN_REQUEST)
 	public void handleLoginRequest(ChannelHandlerContext ctx, Base.Message msg) {
-		commonMessageSender.sendAck(ctx, msg, true);
+		Base.Message ackMessage = msg.toBuilder()
+				.setMessageStatus(Base.MessageStatus.ACK)
+				.build();
+		commonMessageSender.sendAck(ctx, ackMessage, true);
+
 		Control.LoginRequest loginRequest = msg.getLoginRequest();
 		String token = loginRequest.getToken();
 		Control.LoginResponse loginResponse;
@@ -105,7 +109,8 @@ public class IndexController {
 
 	@ChatMessageMapping(messageType = Base.DataType.LOGOUT_REQUEST)
 	public void handleLogoutRequest(ChannelHandlerContext ctx, Base.Message msg) {
-		commonMessageSender.sendAck(ctx, msg, true);
+		Base.Message ackMessage = msg.toBuilder().setMessageStatus(Base.MessageStatus.ACK).build();
+		commonMessageSender.sendAck(ctx, ackMessage, true);
 		String token = msg.getLogoutRequest().getToken();
 		UserTokenPayloadBo userInfo = JwtUtil.getTokenBody(token);
 		removeRedisMsg(userInfo.getUserId());

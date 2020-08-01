@@ -35,13 +35,4 @@ public class HeartBeatController extends BaseController {
 		handleResponse(ctx, msg);
 	}
 
-	@Override
-	protected Base.Message resolveRequestAck(ChannelHandlerContext ctx, Base.Message requestMessage) {
-		return requestMessage;
-	}
-
-	@Override
-	protected void resolveResponseNotify(ChannelHandlerContext ctx, Base.Message responseMessage) {
-
-	}
 }

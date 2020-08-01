@@ -2,12 +2,14 @@ package com.jiangfucheng.im.client.context;
 
 import com.jiangfucheng.im.client.bo.CurrentUser;
 import com.jiangfucheng.im.client.bo.User;
+import com.jiangfucheng.im.client.feign.CommonFeignClient;
 import com.jiangfucheng.im.client.utils.CommonUtils;
 import com.jiangfucheng.im.protobuf.Base;
 import com.jiangfucheng.im.protobuf.GroupChat;
 import com.jiangfucheng.im.protobuf.SingleChat;
 import io.netty.channel.Channel;
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -44,19 +46,19 @@ public class ChatClientContext {
 	/**
 	 * 存储未收到ack的消息
 	 */
-	public volatile ConcurrentHashMap<Long, Base.Message> unReceiveAckMessages = new ConcurrentHashMap<>();
+	public volatile ConcurrentHashMap<Long, Base.Message> unReceiveAckMessages;
 	/**
 	 * 未收到ack后重发的次数
 	 */
-	public volatile ConcurrentHashMap<Long, Integer> unAckRetryTimes = new ConcurrentHashMap<>();
+	public volatile ConcurrentHashMap<Long, Integer> unAckRetryTimes;
 	/**
 	 * 存储未收到response的消息,key: messageId,value: 消息内容(用于重发)
 	 */
-	public volatile ConcurrentHashMap<Long, Base.Message> unCompletedMessages = new ConcurrentHashMap<>();
+	public volatile ConcurrentHashMap<Long, Base.Message> unCompletedMessages;
 	/**
 	 * 未收到response后重发的次数
 	 */
-	public volatile ConcurrentHashMap<Long, Integer> unCompleteRetryTimes = new ConcurrentHashMap<>();
+	public volatile ConcurrentHashMap<Long, Integer> unCompleteRetryTimes;
 
 	//TODO 每个客户端都需要维护以下信息
 	//	1.好友列表(用于实时监听好友上下线，避免不必要的流量)
@@ -66,27 +68,40 @@ public class ChatClientContext {
 	 * 好友列表
 	 * todo 实时更新好友状态
 	 */
-	public CopyOnWriteArrayList<User> friendList = new CopyOnWriteArrayList<>();
+	public CopyOnWriteArrayList<User> friendList;
 
 	/**
 	 * 本地维护 id->用户(好友或者非好友<群里的用户>) 的缓存
 	 * todo 什么时候操作这个缓存
 	 */
-	public ConcurrentHashMap<Long, User> userCache = new ConcurrentHashMap<>();
+	public ConcurrentHashMap<Long, User> userCache;
 
 	/**
 	 * 单聊消息
 	 * key: 好友id
 	 * value: 历史消息内容
 	 */
-	public ConcurrentHashMap<Long, List<SingleChat.SingleChatRequest>> singleChatMessages = new ConcurrentHashMap<>();
+	public ConcurrentHashMap<Long, List<SingleChat.SingleChatRequest>> singleChatMessages;
 
 	/**
 	 * 群聊消息
 	 * key: 群id
 	 * value: 历史消息内容
 	 */
-	public ConcurrentHashMap<Long, List<GroupChat.GroupChatRequest>> groupChatMessages = new ConcurrentHashMap<>();
+	public ConcurrentHashMap<Long, List<GroupChat.GroupChatRequest>> groupChatMessages;
+
+	@Autowired
+	public ChatClientContext(CommonFeignClient commonFeignClient) {
+		this.commonFeignClient = commonFeignClient;
+		unReceiveAckMessages = new ConcurrentHashMap<>();
+		unAckRetryTimes = new ConcurrentHashMap<>();
+		unCompletedMessages = new ConcurrentHashMap<>();
+		unCompleteRetryTimes = new ConcurrentHashMap<>();
+		friendList = new CopyOnWriteArrayList<>();
+		userCache = new ConcurrentHashMap<>();
+		singleChatMessages = new ConcurrentHashMap<>();
+		groupChatMessages = new ConcurrentHashMap<>();
+	}
 
 	/**
 	 * 把单聊消息添加到本地缓存，需要按顺序添加
@@ -118,10 +133,9 @@ public class ChatClientContext {
 		unCompletedMessages.put(msg.getId(), msg);
 	}
 
-	public Base.Message removeCompletedMsg(Long messageId) {
+	public void removeCompletedMsg(Long messageId) {
 		Base.Message message = unCompletedMessages.remove(messageId);
 		unCompleteRetryTimes.remove(messageId);
-		return message;
 	}
 
 	public void putUnAckMessage(Base.Message message) {
@@ -133,11 +147,13 @@ public class ChatClientContext {
 		unAckRetryTimes.remove(messageId);
 	}
 
+	private final CommonFeignClient commonFeignClient;
+
 	/**
 	 * 向服务端请求一个消息id
 	 */
 	public Long generateId() {
-		return 0L;
+		return commonFeignClient.generateId().getData();
 	}
 
 }

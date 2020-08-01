@@ -2,6 +2,7 @@ package com.jiangfucheng.im.client.config;
 
 import com.jiangfucheng.im.client.chat.HeartBeatSender;
 import com.jiangfucheng.im.client.chat.MessageMonitor;
+import com.jiangfucheng.im.client.chat.SendHeartBeatTask;
 import com.jiangfucheng.im.client.config.properties.HeartBeatProperties;
 import com.jiangfucheng.im.client.config.properties.MessageProperties;
 import com.jiangfucheng.im.client.context.ChatClientContext;
@@ -35,8 +36,15 @@ public class TaskConfig {
 	}
 
 	@Bean
+	public SendHeartBeatTask sendHeartBeatTask(ChatClientContext context,
+											   MessageMonitor messageMonitor) {
+		return new SendHeartBeatTask(context, messageMonitor);
+	}
+
+	@Bean
 	public HeartBeatSender heartBeatSender(ScheduledExecutorService executorService,
-										   HeartBeatProperties heartBeatProperties) {
-		return new HeartBeatSender(executorService, heartBeatProperties);
+										   HeartBeatProperties heartBeatProperties,
+										   SendHeartBeatTask task) {
+		return new HeartBeatSender(executorService, heartBeatProperties, task);
 	}
 }

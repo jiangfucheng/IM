@@ -1,10 +1,10 @@
 package com.jiangfucheng.im.client.chat;
 
 import com.jiangfucheng.im.client.context.ChatClientContext;
+import com.jiangfucheng.im.client.utils.MessageUtils;
 import com.jiangfucheng.im.protobuf.Base;
 import io.netty.channel.Channel;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 
 
 /**
@@ -15,7 +15,6 @@ import org.springframework.stereotype.Component;
  *
  * @author jiangfucheng
  */
-@Component
 @Slf4j
 public class SendHeartBeatTask implements Runnable {
 	private ChatClientContext context;
@@ -31,9 +30,8 @@ public class SendHeartBeatTask implements Runnable {
 	public void run() {
 		Base.Message heartBeatMessage = buildHeartBeatMessage();
 		Channel channel = context.getChannel();
-		channel.writeAndFlush(heartBeatMessage);
-		context.putUnAckMessage(heartBeatMessage);
-		messageMonitor.watchMessage(heartBeatMessage.getId(), MessageMonitor.Type.UN_ACK);
+		MessageUtils.writeRequestReqMessage(channel, context, messageMonitor, heartBeatMessage);
+		log.debug("send heart beat message to chat server");
 	}
 
 	private Base.Message buildHeartBeatMessage() {

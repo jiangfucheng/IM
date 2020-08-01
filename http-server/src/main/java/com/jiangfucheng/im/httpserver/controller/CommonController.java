@@ -18,6 +18,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class CommonController {
 	private SnowFlakeIdGenerator idGenerator;
 
+	public CommonController(SnowFlakeIdGenerator idGenerator) {
+		this.idGenerator = idGenerator;
+	}
+
 	@RequestMapping("/401")
 	public Response<Object> handle401() {
 		return Response.error(ErrorCode.UNAUTHENTICATED, ErrorCode.UNAUTHENTICATED_MSG);
