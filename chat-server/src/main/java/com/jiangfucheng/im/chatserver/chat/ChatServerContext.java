@@ -36,6 +36,10 @@ public class ChatServerContext {
 	}
 
 	public void register(Long userId, ChannelHandlerContext ctx) {
+		if (channelsMap.containsKey(userId)) {
+			ChannelHandlerContext origCtx = channelsMap.remove(userId);
+			channelsRevertMap.remove(origCtx);
+		}
 		channelsMap.put(userId, ctx);
 		log.debug("{} register in chat server with ctx : {}", userId, ctx);
 		log.debug("{} ========> {}", userId, channelsMap.get(userId));
@@ -58,6 +62,13 @@ public class ChatServerContext {
 
 	public Long getUserId(ChannelHandlerContext ctx) {
 		return channelsRevertMap.get(ctx);
+	}
+
+	/**
+	 * 清除无效连接
+	 */
+	public void clearInvalidChannel() {
+
 	}
 
 	/**

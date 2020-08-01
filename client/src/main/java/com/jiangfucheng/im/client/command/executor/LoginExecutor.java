@@ -2,6 +2,7 @@ package com.jiangfucheng.im.client.command.executor;
 
 import com.jiangfucheng.im.client.bo.CurrentUser;
 import com.jiangfucheng.im.client.context.ChatClientContext;
+import com.jiangfucheng.im.client.enums.UserStatus;
 import com.jiangfucheng.im.client.feign.IndexFeignClient;
 import com.jiangfucheng.im.client.feign.UserFeignClient;
 import com.jiangfucheng.im.common.resp.Response;
@@ -52,6 +53,7 @@ public class LoginExecutor extends CommandExecutor {
 			UserTokenPayloadBo tokenBody = JwtUtil.getTokenBody(context.getAuthToken());
 			currentUser.setId(tokenBody.getUserId());
 			currentUser.setNickName(tokenBody.getNickName());
+			currentUser.setStatus(UserStatus.ONLINE);
 			context.setCurrentUser(currentUser);
 			context.setChatServerUrl(responseVo.getData().getChatServer());
 		}

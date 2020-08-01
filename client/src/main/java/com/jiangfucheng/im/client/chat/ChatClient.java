@@ -3,6 +3,7 @@ package com.jiangfucheng.im.client.chat;
 import com.jiangfucheng.im.client.command.CommandParser;
 import com.jiangfucheng.im.client.command.executor.CommandExecutor;
 import com.jiangfucheng.im.client.context.ChatClientContext;
+import com.jiangfucheng.im.client.enums.UserStatus;
 import com.jiangfucheng.im.client.exception.CommandParseException;
 import com.jiangfucheng.im.client.handler.ChatClientHandler;
 import com.jiangfucheng.im.protobuf.Base;
@@ -23,7 +24,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by IntelliJ IDEA.
@@ -35,21 +35,33 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class ChatClient {
 	private EventLoopGroup eventLoopGroup;
-	private ChatClientHandler chatClientHandler;
-	Channel channel;
-
+	private Channel channel;
 	private ChatClientContext context;
+	@Autowired
+	private ChatClientHandler chatClientHandler;
 
-	public ChatClient(ChatClientHandler chatClientHandler, ChatClientContext context) {
+	public ChatClient(ChatClientContext context) {
 		this.context = context;
 		this.eventLoopGroup = new NioEventLoopGroup();
-		this.chatClientHandler = chatClientHandler;
 
 	}
 
 	public ChannelFuture start() {
+		Bootstrap bootstrap = newBootStrap();
+		resolveCommand();
+		//等待用户登陆
+		while (context.getCurrentUser().getStatus() != UserStatus.ONLINE) {
+
+		}
+		String[] chatServerAddress = context.getChatServerUrl().split(":");
+		ChannelFuture channelFuture = doConnect(bootstrap, chatServerAddress[0], Integer.valueOf(chatServerAddress[1]));
+		channel = channelFuture.channel();
+		context.setChannel(channel);
+		return channelFuture;
+	}
+
+	private Bootstrap newBootStrap() {
 		Bootstrap bootstrap = new Bootstrap();
-		ChannelFuture channelFuture = null;
 		bootstrap.group(eventLoopGroup)
 				.channel(NioSocketChannel.class)
 				.handler(new LoggingHandler(LogLevel.DEBUG))
@@ -64,27 +76,37 @@ public class ChatClient {
 						pipeline.addLast(chatClientHandler);
 					}
 				});
-		resolveCommand();
-		//等待用户登陆
-		while (context.getChatServerUrl() == null || "".equals(context.getChatServerUrl())) {
-			try {
-				TimeUnit.SECONDS.sleep(1);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-		String[] chatServerAddress = context.getChatServerUrl().split(":");
-		channelFuture = bootstrap.connect(chatServerAddress[0], Integer.valueOf(chatServerAddress[1]))
+		return bootstrap;
+	}
+
+	private ChannelFuture doConnect(Bootstrap bootstrap, String serverUrl, Integer serverPort) {
+		ChannelFuture channelFuture = bootstrap.connect(serverUrl, serverPort)
 				.addListener((ChannelFutureListener) future -> {
 					if (future.isSuccess()) {
-						log.info("client connect to server success");
+						log.info("client reConnect to server success");
 					} else {
-						log.error("client connect to server failed");
+						log.error("client reConnect to server failed");
 					}
 				});
 		channel = channelFuture.channel();
 		context.setChannel(channel);
 		return channelFuture;
+	}
+
+	public void reConnect() throws InterruptedException {
+		Bootstrap bootstrap = newBootStrap();
+		ChannelFuture channelFuture;
+		//if (isOrigServer) {
+		String[] serverUri = context.getChatServerUrl().split(":");
+		channelFuture = doConnect(bootstrap, serverUri[0], Integer.valueOf(serverUri[1]));
+		//}
+		channelFuture.channel().closeFuture().sync();
+	}
+
+	public void startAndSync() throws InterruptedException {
+		ChannelFuture channelFuture = start();
+		Runtime.getRuntime().addShutdownHook(new Thread(this::stop));
+		channelFuture.channel().closeFuture().sync();
 	}
 
 	@Autowired

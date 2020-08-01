@@ -3,7 +3,7 @@ package com.jiangfucheng.im.chatserver.config;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Value;
+import com.jiangfucheng.im.chatserver.config.properties.RedisProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -24,21 +24,20 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  */
 @Configuration
 public class RedisConfig {
-	@Value("${redis.host}")
-	private String host;
+	private static final Integer DEFAULT_REDIS_DATABASE = 0;
 
-	@Value("${redis.port}")
-	private Integer port;
+	private RedisProperties redisProperties;
 
-	@Value("${redis.password}")
-	private String password;
+	public RedisConfig(RedisProperties redisProperties) {
+		this.redisProperties = redisProperties;
+	}
 
 	@Bean
 	public JedisConnectionFactory redisConnectionFactory() {
 		RedisStandaloneConfiguration config = new RedisStandaloneConfiguration();
-		config.setHostName(host);
-		config.setDatabase(0);
-		config.setPort(port);
+		config.setHostName(redisProperties.getHost());
+		config.setDatabase(DEFAULT_REDIS_DATABASE);
+		config.setPort(redisProperties.getPort());
 		return new JedisConnectionFactory(config);
 	}
 

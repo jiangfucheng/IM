@@ -1,5 +1,6 @@
 package com.jiangfucheng.im.chatserver.chat;
 
+import com.jiangfucheng.im.chatserver.config.properties.HeartBeatProperties;
 import com.jiangfucheng.im.chatserver.handler.ChatServerHandler;
 import com.jiangfucheng.im.chatserver.utils.CommonUtils;
 import com.jiangfucheng.im.common.constants.ZookeeperConstants;
@@ -15,6 +16,7 @@ import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder;
 import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
+import io.netty.handler.timeout.IdleStateHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.I0Itec.zkclient.ZkClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +43,8 @@ public class ChatServer {
 
 	@Autowired
 	private ZkClient zkClient;
-
+	@Autowired
+	private HeartBeatProperties heartBeatProperties;
 
 	public ChatServer(ChatServerHandler chatServerHandler, int port, ZkClient zkClient) {
 		this.zkClient = zkClient;
@@ -73,7 +76,7 @@ public class ChatServer {
 					pipeline.addLast(new ProtobufDecoder(Base.Message.getDefaultInstance()));
 					pipeline.addLast(new ProtobufVarint32LengthFieldPrepender());
 					pipeline.addLast(new ProtobufEncoder());
-					//pipeline.addLast(new IdleStateHandler(10, 10, 10));
+					pipeline.addLast(new IdleStateHandler(heartBeatProperties.getPeriod(), heartBeatProperties.getPeriod() + 10000, heartBeatProperties.getPeriod() + 10000));
 					pipeline.addLast(chatServerHandler);
 				}
 			});

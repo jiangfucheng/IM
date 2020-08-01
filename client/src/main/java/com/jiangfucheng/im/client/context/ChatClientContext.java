@@ -92,15 +92,16 @@ public class ChatClientContext {
 
 	@Autowired
 	public ChatClientContext(CommonFeignClient commonFeignClient) {
+		this.currentUser = new CurrentUser();
 		this.commonFeignClient = commonFeignClient;
-		unReceiveAckMessages = new ConcurrentHashMap<>();
-		unAckRetryTimes = new ConcurrentHashMap<>();
-		unCompletedMessages = new ConcurrentHashMap<>();
-		unCompleteRetryTimes = new ConcurrentHashMap<>();
-		friendList = new CopyOnWriteArrayList<>();
-		userCache = new ConcurrentHashMap<>();
-		singleChatMessages = new ConcurrentHashMap<>();
-		groupChatMessages = new ConcurrentHashMap<>();
+		this.unReceiveAckMessages = new ConcurrentHashMap<>();
+		this.unAckRetryTimes = new ConcurrentHashMap<>();
+		this.unCompletedMessages = new ConcurrentHashMap<>();
+		this.unCompleteRetryTimes = new ConcurrentHashMap<>();
+		this.friendList = new CopyOnWriteArrayList<>();
+		this.userCache = new ConcurrentHashMap<>();
+		this.singleChatMessages = new ConcurrentHashMap<>();
+		this.groupChatMessages = new ConcurrentHashMap<>();
 	}
 
 	/**

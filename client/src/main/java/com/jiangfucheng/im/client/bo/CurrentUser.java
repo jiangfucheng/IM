@@ -31,5 +31,5 @@ public class CurrentUser {
 	/**
 	 * 在线状态
 	 */
-	private UserStatus status;
+	private volatile UserStatus status = UserStatus.OFFLINE;
 }

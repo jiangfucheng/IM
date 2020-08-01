@@ -44,7 +44,7 @@ public class FriendListExecutor extends CommandExecutor {
 								friend.setAccount(friendVo.getAccount());
 								friend.setNickName(friendVo.getNickName());
 								friend.setRemark(friendVo.getRemarks());
-								friend.setStatus(friendVo.getStatus() == 1 ? UserStatus.ONELINE : UserStatus.OFFLIINE);
+								friend.setStatus(friendVo.getStatus() == 1 ? UserStatus.ONLINE : UserStatus.OFFLINE);
 								return friend;
 							})
 							.collect(Collectors.toList())));
@@ -53,6 +53,6 @@ public class FriendListExecutor extends CommandExecutor {
 				friend.getAccount(),
 				friend.getNickName(),
 				friend.getRemark(),
-				friend.getStatus() == UserStatus.ONELINE ? "在线" : "离线"));
+				friend.getStatus() == UserStatus.ONLINE ? "在线" : "离线"));
 	}
 }

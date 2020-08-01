@@ -1,9 +1,9 @@
 package com.jiangfucheng.im.chatserver.config;
 
+import com.jiangfucheng.im.chatserver.config.properties.ZookeeperProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.I0Itec.zkclient.ZkClient;
 import org.apache.zookeeper.ZooKeeper;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -21,17 +21,17 @@ import java.io.IOException;
 @PropertySource("classpath:zookeeper/zookeeper-${spring.profiles.active}.yml")
 @Slf4j
 public class ZookeeperConfig {
-	@Value("${zookeeper.address}")
-	private String address;
+	private ZookeeperProperties zookeeperProperties;
 
-	@Value("${zookeeper.timeout}")
-	private Integer timeout;
+	public ZookeeperConfig(ZookeeperProperties zookeeperProperties) {
+		this.zookeeperProperties = zookeeperProperties;
+	}
 
 	@Bean
 	public ZooKeeper zooKeeper() {
 		ZooKeeper zooKeeper = null;
 		try {
-			zooKeeper = new ZooKeeper(address, timeout, event -> log.info("zookeeper connected!"));
+			zooKeeper = new ZooKeeper(zookeeperProperties.getAddress(), zookeeperProperties.getTimeout(), event -> log.info("zookeeper connected!"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -40,6 +40,6 @@ public class ZookeeperConfig {
 
 	@Bean
 	public ZkClient zkClient() {
-		return new ZkClient(address, timeout);
+		return new ZkClient(zookeeperProperties.getAddress(), zookeeperProperties.getTimeout());
 	}
 }

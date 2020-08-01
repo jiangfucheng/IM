@@ -33,5 +33,6 @@ public class HeartBeatSender {
 				heartBeatProperties.getPeriod(),
 				TimeUnit.MILLISECONDS);
 		log.info("heart beat sender started");
+		//TODO 在客户端没有和服务器通信后的一个周期再发送心跳包，减少流量浪费
 	}
 }

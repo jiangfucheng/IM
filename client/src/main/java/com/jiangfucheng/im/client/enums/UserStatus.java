@@ -11,9 +11,9 @@ public enum UserStatus {
 	/**
 	 * 在线
 	 */
-	ONELINE,
+	ONLINE,
 	/**
 	 * 离线
 	 */
-	OFFLIINE
+	OFFLINE
 }

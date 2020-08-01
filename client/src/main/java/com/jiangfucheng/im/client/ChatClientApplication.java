@@ -1,7 +1,6 @@
 package com.jiangfucheng.im.client;
 
 import com.jiangfucheng.im.client.chat.ChatClient;
-import io.netty.channel.ChannelFuture;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -32,8 +31,6 @@ public class ChatClientApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		ChannelFuture channelFuture = chatClient.start();
-		Runtime.getRuntime().addShutdownHook(new Thread(chatClient::stop));
-		channelFuture.channel().closeFuture().sync();
+		chatClient.startAndSync();
 	}
 }

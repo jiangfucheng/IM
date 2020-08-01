@@ -24,15 +24,15 @@ public class ChatConfig {
 	public ChatClientHandler chatClientHandler(ChatMessageDispatcher messageDispatcher,
 											   ChatClientContext context,
 											   SnowFlakeIdGenerator snowFlakeIdGenerator) {
-		return new ChatClientHandler(messageDispatcher, context,snowFlakeIdGenerator);
+		return new ChatClientHandler(messageDispatcher, context, snowFlakeIdGenerator);
 	}
 
 	/**
 	 * 客户端
 	 */
 	@Bean
-	public ChatClient chatClient(ChatClientHandler chatClientHandler, ChatClientContext context) {
-		return new ChatClient(chatClientHandler, context);
+	public ChatClient chatClient(ChatClientContext context) {
+		return new ChatClient(context);
 	}
 
 	/**
