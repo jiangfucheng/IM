@@ -4,6 +4,7 @@ import com.jiangfucheng.im.client.chat.MessageMonitor;
 import com.jiangfucheng.im.client.context.ChatClientContext;
 import com.jiangfucheng.im.client.feign.MessageFeignClient;
 import com.jiangfucheng.im.client.feign.UserFeignClient;
+import com.jiangfucheng.im.client.utils.MessageUtils;
 import com.jiangfucheng.im.common.enums.MessageType;
 import com.jiangfucheng.im.common.resp.Response;
 import com.jiangfucheng.im.common.utils.SnowFlakeIdGenerator;
@@ -86,9 +87,7 @@ public class SingleChatExecutor extends CommandExecutor {
 		System.err.println(context.getCurrentUser().getNickName() + " " + currentDate);
 		Channel channel = context.getChannel();
 		Base.Message message = buildMessageRequest(command);
-		context.putUnAckMessage(message);
-		messageMonitor.watchMessage(message.getId(), MessageMonitor.Type.UN_ACK);
-		channel.writeAndFlush(message);
+		MessageUtils.writeRequestReqMessage(channel,context,messageMonitor,message);
 		System.out.println(command);
 	}
 

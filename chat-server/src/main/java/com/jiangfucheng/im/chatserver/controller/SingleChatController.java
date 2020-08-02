@@ -74,6 +74,13 @@ public class SingleChatController {
 			//用户不在线,把消息存入离线消息库，伪造response给client，这里的server一定是有ctx的，
 			//在第一台服务器上就直接判断是否在线，所以直接回复给客户端response就好了
 			msgId = messageService.saveOfflineMessage(requestImMsg);
+			Base.Message ackMessage = message.toBuilder()
+					.setMessageStatus(Base.MessageStatus.ACK)
+					.setSingleChatRequest(requestImMsg.toBuilder()
+							.setMsgId(msgId).build())
+					.build();
+			commonMessageSender.sendAck(ctx, ackMessage, true);
+
 			SingleChat.SingleChatResponse singleChatResponse = SingleChat.SingleChatResponse.newBuilder()
 					.setToId(requestImMsg.getFromId())
 					.setFromId(requestImMsg.getToId())
