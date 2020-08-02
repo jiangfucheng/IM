@@ -41,6 +41,7 @@ public class MessageMonitor {
 	}
 
 	public void watchMessage(Long messageId, Type type) {
+		if (1 == 1) return;
 		Runnable task;
 		if (type == Type.UN_ACK) {
 			ConcurrentHashMap<Long, Integer> unAckRetryTimes = context.getUnAckRetryTimes();

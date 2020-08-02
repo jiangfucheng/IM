@@ -2,6 +2,7 @@ package com.jiangfucheng.im.client.handler;
 
 import com.jiangfucheng.im.client.chat.ChatClient;
 import com.jiangfucheng.im.client.context.ChatClientContext;
+import com.jiangfucheng.im.client.utils.MessageUtils;
 import com.jiangfucheng.im.common.chat.ChatMessageDispatcher;
 import com.jiangfucheng.im.common.utils.SnowFlakeIdGenerator;
 import com.jiangfucheng.im.protobuf.Base;
@@ -57,8 +58,7 @@ public class ChatClientHandler extends SimpleChannelInboundHandler<Base.Message>
 				.setDataType(Base.DataType.LOGIN_REQUEST)
 				.setMessageStatus(Base.MessageStatus.REQ)
 				.build();
-		ctx.writeAndFlush(requestMsg);
-		context.putUnCompletedMsg(requestMsg);
+		MessageUtils.writeRequestReqMessage(ctx, context, null, requestMsg);
 	}
 
 	@Override

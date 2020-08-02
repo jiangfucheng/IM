@@ -9,7 +9,7 @@ chat:
   mq:
     name-server-addr: 192.168.5.134:9876,192.168.5.134:9877
   heart-beat:
-    period: 6
+    period: 3600
 spring:
   datasource:
     url: jdbc:mysql://192.168.5.134:3306/im?useSSL=false&serverTimezone=UTC&charset=utf-8

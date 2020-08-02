@@ -1,6 +1,7 @@
 package com.jiangfucheng.im.client.command.executor;
 
 import com.jiangfucheng.im.client.context.ChatClientContext;
+import com.jiangfucheng.im.client.utils.MessageUtils;
 import com.jiangfucheng.im.common.utils.SnowFlakeIdGenerator;
 import com.jiangfucheng.im.protobuf.Base;
 import com.jiangfucheng.im.protobuf.Control;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Component;
  * Date: 2020/7/25
  * Time: 13:24
  * 退出登陆执行器
+ *
  * @author jiangfucheng
  */
 @Component
@@ -38,6 +40,6 @@ public class LogoutExecutor extends CommandExecutor {
 				.setMessageStatus(Base.MessageStatus.REQ)
 				.setLogoutRequest(logoutRequest)
 				.build();
-		channel.writeAndFlush(message);
+		MessageUtils.writeRequestReqMessage(channel, context, null, message);
 	}
 }

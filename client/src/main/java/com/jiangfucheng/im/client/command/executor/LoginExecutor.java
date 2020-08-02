@@ -47,6 +47,7 @@ public class LoginExecutor extends CommandExecutor {
 		if (responseVo.getCode() == 0) {
 			System.out.println("登陆成功");
 			context.setAuthToken(responseVo.getData().getToken());
+			context.setChatServerUrl(responseVo.getData().getChatServer());
 			CurrentUser currentUser = new CurrentUser();
 			currentUser.setAccount(this.account);
 			currentUser.setPassword(this.password);
@@ -55,7 +56,6 @@ public class LoginExecutor extends CommandExecutor {
 			currentUser.setNickName(tokenBody.getNickName());
 			currentUser.setStatus(UserStatus.ONLINE);
 			context.setCurrentUser(currentUser);
-			context.setChatServerUrl(responseVo.getData().getChatServer());
 		}
 	}
 }

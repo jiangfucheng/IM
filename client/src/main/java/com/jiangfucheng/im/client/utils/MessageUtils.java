@@ -36,7 +36,11 @@ public class MessageUtils {
 
 	public static void writeRequestReqMessage(Channel channel, ChatClientContext context, MessageMonitor monitor, Base.Message message) {
 		context.putUnAckMessage(message);
-		monitor.watchMessage(message.getId(), MessageMonitor.Type.UN_ACK);
+		if (monitor != null) {
+			//不需要监控
+			//后续优化掉
+			monitor.watchMessage(message.getId(), MessageMonitor.Type.UN_ACK);
+		}
 		channel.writeAndFlush(message);
 		log.debug("send request req message with id : {}", message.getId());
 	}

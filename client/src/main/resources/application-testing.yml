@@ -5,7 +5,7 @@ chat:
     failed: 3
     failed-delay-time: 1000
   heart-beat:
-    period: 15000
+    period: 3600000
 
 http-server:
   ip: localhost

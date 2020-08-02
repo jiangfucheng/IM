@@ -46,7 +46,7 @@ public class ChatClient {
 
 	}
 
-	public ChannelFuture start() {
+	private ChannelFuture start() {
 		Bootstrap bootstrap = newBootStrap();
 		resolveCommand();
 		//等待用户登陆
@@ -83,9 +83,9 @@ public class ChatClient {
 		ChannelFuture channelFuture = bootstrap.connect(serverUrl, serverPort)
 				.addListener((ChannelFutureListener) future -> {
 					if (future.isSuccess()) {
-						log.info("client reConnect to server success");
+						log.info("client connect to server success");
 					} else {
-						log.error("client reConnect to server failed");
+						log.error("client connect to server failed");
 					}
 				});
 		channel = channelFuture.channel();
