@@ -32,7 +32,6 @@ public class FriendListExecutor extends CommandExecutor {
 
 	@Override
 	public void execute() {
-
 		if (context.friendList.size() == 0) {
 			List<FriendWithIndexVo> friendListVo = friendFeignClient.getFriendList().getData();
 			friendListVo.forEach(friendWithIndexVo -> context.friendList.addAll(

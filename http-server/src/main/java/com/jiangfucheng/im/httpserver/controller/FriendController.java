@@ -44,6 +44,16 @@ public class FriendController {
 		return Response.ok(resVo);
 	}
 
+	@GetMapping("/friends/id")
+	public Response getFriendIdList(UserTokenPayloadBo userInfo) {
+		List<Long> friendIdList = friendRelationService.getFriendsWithUser(userInfo.getUserId())
+				.stream()
+				.map(FriendBo::convertToFriendVo)
+				.map(FriendVo::getId)
+				.collect(Collectors.toList());
+		return Response.ok(friendIdList);
+	}
+
 	@GetMapping("/friends")
 	public Response getFriendList(UserTokenPayloadBo userInfo) {
 		List<FriendBo> friendBos = friendRelationService.getFriendsWithUser(userInfo.getUserId());

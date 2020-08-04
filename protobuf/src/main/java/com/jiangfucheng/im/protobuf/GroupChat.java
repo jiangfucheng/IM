@@ -1014,8 +1014,8 @@ public final class GroupChat {
     long getMsgId();
 
     /**
-     * <code>int64 timestamp = 2;</code>
-     * @return The timestamp.
+     * <code>int64 time = 2;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -1141,8 +1141,8 @@ public final class GroupChat {
     public static final int TIMESTAMP_FIELD_NUMBER = 2;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 2;</code>
-     * @return The timestamp.
+     * <code>int64 time = 2;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -1557,15 +1557,15 @@ public final class GroupChat {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 2;</code>
-       * @return The timestamp.
+       * <code>int64 time = 2;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 2;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 2;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -1575,7 +1575,7 @@ public final class GroupChat {
         return this;
       }
       /**
-       * <code>int64 timestamp = 2;</code>
+       * <code>int64 time = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -1721,7 +1721,7 @@ public final class GroupChat {
       "\006msg_id\030\001 \001(\003\022\020\n\010group_id\030\002 \001(\003\022\017\n\007from_" +
       "id\030\003 \001(\003\022\014\n\004type\030\004 \001(\005\022\017\n\007content\030\005 \001(\t\022" +
       "\r\n\005token\030\006 \001(\t\"Y\n\021GroupChatResponse\022\016\n\006m" +
-      "sg_id\030\001 \001(\003\022\021\n\ttimestamp\030\002 \001(\003\022\017\n\007from_i" +
+      "sg_id\030\001 \001(\003\022\021\n\ttime\030\002 \001(\003\022\017\n\007from_i" +
       "d\030\003 \001(\003\022\020\n\010group_id\030\004 \001(\003B)\n\034com.jiangfu" +
       "cheng.im.protobufB\tGroupChatb\006proto3"
     };

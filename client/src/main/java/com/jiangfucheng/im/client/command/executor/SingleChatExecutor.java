@@ -1,14 +1,14 @@
 package com.jiangfucheng.im.client.command.executor;
 
+import com.jiangfucheng.im.client.bo.SingleMessageBo;
 import com.jiangfucheng.im.client.chat.MessageMonitor;
 import com.jiangfucheng.im.client.context.ChatClientContext;
 import com.jiangfucheng.im.client.feign.MessageFeignClient;
 import com.jiangfucheng.im.client.feign.UserFeignClient;
 import com.jiangfucheng.im.client.utils.MessageUtils;
 import com.jiangfucheng.im.common.enums.MessageType;
-import com.jiangfucheng.im.common.resp.Response;
 import com.jiangfucheng.im.common.utils.SnowFlakeIdGenerator;
-import com.jiangfucheng.im.model.vo.MessageVo;
+import com.jiangfucheng.im.model.vo.UserVo;
 import com.jiangfucheng.im.protobuf.Base;
 import com.jiangfucheng.im.protobuf.SingleChat;
 import io.netty.channel.Channel;
@@ -60,7 +60,7 @@ public class SingleChatExecutor extends CommandExecutor {
 
 	@Override
 	public void execute() {
-		//listHistoryMessage(DEFAULT_HISTORY_MESSAGE_NUMBER);
+		listOfflineMessage();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		while (true) {
 			try {
@@ -77,9 +77,28 @@ public class SingleChatExecutor extends CommandExecutor {
 		}
 	}
 
-	private void listHistoryMessage(int msgNumber) {
-		Response<List<MessageVo>> historyMessageList = messageFeignClient.getHistoryMessageList(this.targetId);
-		//todo 打印历史消息
+	private void listOfflineMessage() {
+//		Response<List<MessageVo>> historyMessageList = messageFeignClient.getHistoryMessageList(this.targetId);
+		//todo socket拉取未送达的在线消息
+		// http拉取已送达的在线消息
+		if(!context.singleChatMessages.containsKey(targetId))
+			return;
+		List<SingleMessageBo> messageBos = context.singleChatMessages.get(targetId);
+		UserVo friendVo = userFeignClient.queryUserById(targetId).getData();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		messageBos.forEach(message -> {
+			if (message.getFromId().equals(targetId)) {
+				//朋友发的
+				System.out.println(friendVo.getNickName() + " " + simpleDateFormat.format(message.getTime()));
+			} else {
+				System.err.println(context.getCurrentUser().getNickName() + " " + simpleDateFormat.format(message.getTime()));
+			}
+			if (message.getMessageType() == MessageType.TEXT) {
+				System.out.println(message.getContent());
+			} else {
+				System.out.println("不支持的消息类型");
+			}
+		});
 	}
 
 	private void sendMessage(String command) {
@@ -87,7 +106,7 @@ public class SingleChatExecutor extends CommandExecutor {
 		System.err.println(context.getCurrentUser().getNickName() + " " + currentDate);
 		Channel channel = context.getChannel();
 		Base.Message message = buildMessageRequest(command);
-		MessageUtils.writeRequestReqMessage(channel,context,messageMonitor,message);
+		MessageUtils.writeRequestReqMessage(channel, context, messageMonitor, message);
 		System.out.println(command);
 	}
 

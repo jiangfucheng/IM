@@ -19,4 +19,7 @@ import java.util.List;
 public interface FriendFeignClient {
 	@GetMapping(value = "/friends", consumes = "application/json")
 	Response<List<FriendWithIndexVo>> getFriendList();
+
+	@GetMapping("/friends/id")
+	Response<List<Long>> getFriendIdList();
 }

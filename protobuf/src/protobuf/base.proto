@@ -81,7 +81,10 @@ message Message {
         LoginResponse login_response = 62;
         NotifyAddGroupRequest notify_add_group_request = 63;
         NotifyAddGroupResponse notify_add_group_response = 64;
-
+        PullOfflineMessageRequest pull_offline_message_request = 65;
+        PullOfflineMessageResponse pull_offline_message_response = 66;
+        ReceivedOfflineMessageRequest received_offline_message_request = 67;
+        ReceivedOfflineMessageResponse received_offline_message_response = 68;
     }
 }
 
@@ -163,5 +166,8 @@ enum DataType {
     LOGIN_RESPONSE = 61;
     NOTIFY_ADD_GROUP_REQUEST = 62;
     NOTIFY_ADD_GROUP_RESPONSE = 63;
-
+    PULL_OFFLINE_MESSAGE_REQUEST = 64;
+    PULL_OFFLINE_MESSAGE_RESPONSE = 65;
+    RECEIVED_OFFLINE_MESSAGE_REQUEST = 66;
+    RECEIVED_OFFLINE_MESSAGE_RESPONSE = 67;
 }

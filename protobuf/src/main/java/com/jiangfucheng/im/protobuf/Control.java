@@ -936,8 +936,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -1146,8 +1146,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -1735,15 +1735,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -1753,7 +1753,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -2539,8 +2539,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -2749,8 +2749,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -3338,15 +3338,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -3356,7 +3356,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -4290,8 +4290,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -4496,8 +4496,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -5081,15 +5081,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -5099,7 +5099,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -6568,8 +6568,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -6789,8 +6789,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -7406,15 +7406,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -7424,7 +7424,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -8240,8 +8240,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -8450,8 +8450,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -9039,15 +9039,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -9057,7 +9057,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -9932,8 +9932,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -10142,8 +10142,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -10731,15 +10731,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -10749,7 +10749,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -11535,8 +11535,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -11745,8 +11745,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -12334,15 +12334,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -12352,7 +12352,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -14083,8 +14083,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -14906,8 +14906,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -15587,15 +15587,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -15605,7 +15605,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -16879,8 +16879,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -17089,8 +17089,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -17678,15 +17678,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -17696,7 +17696,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -18571,8 +18571,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -18781,8 +18781,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -19370,15 +19370,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -19388,7 +19388,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -20542,8 +20542,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -20752,8 +20752,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -21341,15 +21341,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -21359,7 +21359,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -22214,8 +22214,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -22424,8 +22424,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -23013,15 +23013,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -23031,7 +23031,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -24182,8 +24182,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -24392,8 +24392,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -24981,15 +24981,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -24999,7 +24999,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -25969,8 +25969,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -26179,8 +26179,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -26768,15 +26768,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -26786,7 +26786,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -27756,8 +27756,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -27993,8 +27993,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -28643,15 +28643,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -28661,7 +28661,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -28878,8 +28878,8 @@ public final class Control {
         getTokenBytes();
 
     /**
-     * <code>int64 timestamp = 2;</code>
-     * @return The timestamp.
+     * <code>int64 time = 2;</code>
+     * @return The time.
      */
     long getTimestamp();
   }
@@ -29011,8 +29011,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 2;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 2;</code>
-     * @return The timestamp.
+     * <code>int64 time = 2;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -29416,15 +29416,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 2;</code>
-       * @return The timestamp.
+       * <code>int64 time = 2;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 2;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 2;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -29434,7 +29434,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 2;</code>
+       * <code>int64 time = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -29531,8 +29531,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -29737,8 +29737,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -30314,15 +30314,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -30332,7 +30332,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -30453,8 +30453,8 @@ public final class Control {
         getTokenBytes();
 
     /**
-     * <code>int64 timestamp = 2;</code>
-     * @return The timestamp.
+     * <code>int64 time = 2;</code>
+     * @return The time.
      */
     long getTimestamp();
   }
@@ -30586,8 +30586,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 2;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 2;</code>
-     * @return The timestamp.
+     * <code>int64 time = 2;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -30991,15 +30991,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 2;</code>
-       * @return The timestamp.
+       * <code>int64 time = 2;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 2;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 2;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -31009,7 +31009,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 2;</code>
+       * <code>int64 time = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -31106,8 +31106,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -31312,8 +31312,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -31889,15 +31889,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -31907,7 +31907,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -32011,6 +32011,3608 @@ public final class Control {
 
   }
 
+  public interface PullOfflineMessageRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.jiangfucheng.im.protobuf.PullOfflineMessageRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string token = 1;</code>
+     * @return The token.
+     */
+    java.lang.String getToken();
+    /**
+     * <code>string token = 1;</code>
+     * @return The bytes for token.
+     */
+    com.google.protobuf.ByteString
+        getTokenBytes();
+
+    /**
+     * <code>int64 user_id = 2;</code>
+     * @return The userId.
+     */
+    long getUserId();
+
+    /**
+     * <pre>
+     *拉取id大于这个值的消息，如果为-1，则表示拉取所有离线消息
+     * </pre>
+     *
+     * <code>int64 begin_msg_id = 3;</code>
+     * @return The beginMsgId.
+     */
+    long getBeginMsgId();
+
+    /**
+     * <code>int64 time = 4;</code>
+     * @return The time.
+     */
+    long getTimestamp();
+  }
+  /**
+   * <pre>
+   *拉取离线消息
+   * </pre>
+   *
+   * Protobuf type {@code com.jiangfucheng.im.protobuf.PullOfflineMessageRequest}
+   */
+  public  static final class PullOfflineMessageRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.jiangfucheng.im.protobuf.PullOfflineMessageRequest)
+      PullOfflineMessageRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PullOfflineMessageRequest.newBuilder() to construct.
+    private PullOfflineMessageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PullOfflineMessageRequest() {
+      token_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PullOfflineMessageRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PullOfflineMessageRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              token_ = s;
+              break;
+            }
+            case 16: {
+
+              userId_ = input.readInt64();
+              break;
+            }
+            case 24: {
+
+              beginMsgId_ = input.readInt64();
+              break;
+            }
+            case 32: {
+
+              timestamp_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_PullOfflineMessageRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_PullOfflineMessageRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.class, com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.Builder.class);
+    }
+
+    public static final int TOKEN_FIELD_NUMBER = 1;
+    private volatile java.lang.Object token_;
+    /**
+     * <code>string token = 1;</code>
+     * @return The token.
+     */
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        token_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string token = 1;</code>
+     * @return The bytes for token.
+     */
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 2;
+    private long userId_;
+    /**
+     * <code>int64 user_id = 2;</code>
+     * @return The userId.
+     */
+    public long getUserId() {
+      return userId_;
+    }
+
+    public static final int BEGIN_MSG_ID_FIELD_NUMBER = 3;
+    private long beginMsgId_;
+    /**
+     * <pre>
+     *拉取id大于这个值的消息，如果为-1，则表示拉取所有离线消息
+     * </pre>
+     *
+     * <code>int64 begin_msg_id = 3;</code>
+     * @return The beginMsgId.
+     */
+    public long getBeginMsgId() {
+      return beginMsgId_;
+    }
+
+    public static final int TIMESTAMP_FIELD_NUMBER = 4;
+    private long timestamp_;
+    /**
+     * <code>int64 time = 4;</code>
+     * @return The time.
+     */
+    public long getTimestamp() {
+      return timestamp_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+      }
+      if (userId_ != 0L) {
+        output.writeInt64(2, userId_);
+      }
+      if (beginMsgId_ != 0L) {
+        output.writeInt64(3, beginMsgId_);
+      }
+      if (timestamp_ != 0L) {
+        output.writeInt64(4, timestamp_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      }
+      if (userId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, userId_);
+      }
+      if (beginMsgId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, beginMsgId_);
+      }
+      if (timestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, timestamp_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest)) {
+        return super.equals(obj);
+      }
+      com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest other = (com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest) obj;
+
+      if (!getToken()
+          .equals(other.getToken())) return false;
+      if (getUserId()
+          != other.getUserId()) return false;
+      if (getBeginMsgId()
+          != other.getBeginMsgId()) return false;
+      if (getTimestamp()
+          != other.getTimestamp()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUserId());
+      hash = (37 * hash) + BEGIN_MSG_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBeginMsgId());
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTimestamp());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *拉取离线消息
+     * </pre>
+     *
+     * Protobuf type {@code com.jiangfucheng.im.protobuf.PullOfflineMessageRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.jiangfucheng.im.protobuf.PullOfflineMessageRequest)
+        com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_PullOfflineMessageRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_PullOfflineMessageRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.class, com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.Builder.class);
+      }
+
+      // Construct using com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        token_ = "";
+
+        userId_ = 0L;
+
+        beginMsgId_ = 0L;
+
+        timestamp_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_PullOfflineMessageRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest getDefaultInstanceForType() {
+        return com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest build() {
+        com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest buildPartial() {
+        com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest result = new com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest(this);
+        result.token_ = token_;
+        result.userId_ = userId_;
+        result.beginMsgId_ = beginMsgId_;
+        result.timestamp_ = timestamp_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest) {
+          return mergeFrom((com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest other) {
+        if (other == com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.getDefaultInstance()) return this;
+        if (!other.getToken().isEmpty()) {
+          token_ = other.token_;
+          onChanged();
+        }
+        if (other.getUserId() != 0L) {
+          setUserId(other.getUserId());
+        }
+        if (other.getBeginMsgId() != 0L) {
+          setBeginMsgId(other.getBeginMsgId());
+        }
+        if (other.getTimestamp() != 0L) {
+          setTimestamp(other.getTimestamp());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object token_ = "";
+      /**
+       * <code>string token = 1;</code>
+       * @return The token.
+       */
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          token_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string token = 1;</code>
+       * @return The bytes for token.
+       */
+      public com.google.protobuf.ByteString
+          getTokenBytes() {
+        java.lang.Object ref = token_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          token_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string token = 1;</code>
+       * @param value The token to set.
+       * @return This builder for chaining.
+       */
+      public Builder setToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        token_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearToken() {
+        
+        token_ = getDefaultInstance().getToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 1;</code>
+       * @param value The bytes for token to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        token_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long userId_ ;
+      /**
+       * <code>int64 user_id = 2;</code>
+       * @return The userId.
+       */
+      public long getUserId() {
+        return userId_;
+      }
+      /**
+       * <code>int64 user_id = 2;</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(long value) {
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 user_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long beginMsgId_ ;
+      /**
+       * <pre>
+       *拉取id大于这个值的消息，如果为-1，则表示拉取所有离线消息
+       * </pre>
+       *
+       * <code>int64 begin_msg_id = 3;</code>
+       * @return The beginMsgId.
+       */
+      public long getBeginMsgId() {
+        return beginMsgId_;
+      }
+      /**
+       * <pre>
+       *拉取id大于这个值的消息，如果为-1，则表示拉取所有离线消息
+       * </pre>
+       *
+       * <code>int64 begin_msg_id = 3;</code>
+       * @param value The beginMsgId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBeginMsgId(long value) {
+        
+        beginMsgId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *拉取id大于这个值的消息，如果为-1，则表示拉取所有离线消息
+       * </pre>
+       *
+       * <code>int64 begin_msg_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBeginMsgId() {
+        
+        beginMsgId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long timestamp_ ;
+      /**
+       * <code>int64 time = 4;</code>
+       * @return The time.
+       */
+      public long getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimestamp(long value) {
+        
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 time = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTimestamp() {
+        
+        timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.jiangfucheng.im.protobuf.PullOfflineMessageRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.jiangfucheng.im.protobuf.PullOfflineMessageRequest)
+    private static final com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest();
+    }
+
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PullOfflineMessageRequest>
+        PARSER = new com.google.protobuf.AbstractParser<PullOfflineMessageRequest>() {
+      @java.lang.Override
+      public PullOfflineMessageRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PullOfflineMessageRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PullOfflineMessageRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PullOfflineMessageRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PullOfflineMessageResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.jiangfucheng.im.protobuf.PullOfflineMessageResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 code = 1;</code>
+     * @return The code.
+     */
+    int getCode();
+
+    /**
+     * <code>string msg = 2;</code>
+     * @return The msg.
+     */
+    java.lang.String getMsg();
+    /**
+     * <code>string msg = 2;</code>
+     * @return The bytes for msg.
+     */
+    com.google.protobuf.ByteString
+        getMsgBytes();
+
+    /**
+     * <code>string err_msg = 3;</code>
+     * @return The errMsg.
+     */
+    java.lang.String getErrMsg();
+    /**
+     * <code>string err_msg = 3;</code>
+     * @return The bytes for errMsg.
+     */
+    com.google.protobuf.ByteString
+        getErrMsgBytes();
+
+    /**
+     * <code>string message = 4;</code>
+     * @return The message.
+     */
+    java.lang.String getMessage();
+    /**
+     * <code>string message = 4;</code>
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
+
+    /**
+     * <code>int64 time = 5;</code>
+     * @return The time.
+     */
+    long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 6;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
+  }
+  /**
+   * Protobuf type {@code com.jiangfucheng.im.protobuf.PullOfflineMessageResponse}
+   */
+  public  static final class PullOfflineMessageResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.jiangfucheng.im.protobuf.PullOfflineMessageResponse)
+      PullOfflineMessageResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PullOfflineMessageResponse.newBuilder() to construct.
+    private PullOfflineMessageResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PullOfflineMessageResponse() {
+      msg_ = "";
+      errMsg_ = "";
+      message_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PullOfflineMessageResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PullOfflineMessageResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              code_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              msg_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              errMsg_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              message_ = s;
+              break;
+            }
+            case 40: {
+
+              timestamp_ = input.readInt64();
+              break;
+            }
+            case 48: {
+
+              targetId_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_PullOfflineMessageResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_PullOfflineMessageResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.class, com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.Builder.class);
+    }
+
+    public static final int CODE_FIELD_NUMBER = 1;
+    private int code_;
+    /**
+     * <code>int32 code = 1;</code>
+     * @return The code.
+     */
+    public int getCode() {
+      return code_;
+    }
+
+    public static final int MSG_FIELD_NUMBER = 2;
+    private volatile java.lang.Object msg_;
+    /**
+     * <code>string msg = 2;</code>
+     * @return The msg.
+     */
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        msg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string msg = 2;</code>
+     * @return The bytes for msg.
+     */
+    public com.google.protobuf.ByteString
+        getMsgBytes() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        msg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ERR_MSG_FIELD_NUMBER = 3;
+    private volatile java.lang.Object errMsg_;
+    /**
+     * <code>string err_msg = 3;</code>
+     * @return The errMsg.
+     */
+    public java.lang.String getErrMsg() {
+      java.lang.Object ref = errMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        errMsg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string err_msg = 3;</code>
+     * @return The bytes for errMsg.
+     */
+    public com.google.protobuf.ByteString
+        getErrMsgBytes() {
+      java.lang.Object ref = errMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        errMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object message_;
+    /**
+     * <code>string message = 4;</code>
+     * @return The message.
+     */
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string message = 4;</code>
+     * @return The bytes for message.
+     */
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TIMESTAMP_FIELD_NUMBER = 5;
+    private long timestamp_;
+    /**
+     * <code>int64 time = 5;</code>
+     * @return The time.
+     */
+    public long getTimestamp() {
+      return timestamp_;
+    }
+
+    public static final int TARGET_ID_FIELD_NUMBER = 6;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 6;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (code_ != 0) {
+        output.writeInt32(1, code_);
+      }
+      if (!getMsgBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, msg_);
+      }
+      if (!getErrMsgBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, errMsg_);
+      }
+      if (!getMessageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, message_);
+      }
+      if (timestamp_ != 0L) {
+        output.writeInt64(5, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        output.writeInt64(6, targetId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (code_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, code_);
+      }
+      if (!getMsgBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, msg_);
+      }
+      if (!getErrMsgBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, errMsg_);
+      }
+      if (!getMessageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, message_);
+      }
+      if (timestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, targetId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse)) {
+        return super.equals(obj);
+      }
+      com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse other = (com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse) obj;
+
+      if (getCode()
+          != other.getCode()) return false;
+      if (!getMsg()
+          .equals(other.getMsg())) return false;
+      if (!getErrMsg()
+          .equals(other.getErrMsg())) return false;
+      if (!getMessage()
+          .equals(other.getMessage())) return false;
+      if (getTimestamp()
+          != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getCode();
+      hash = (37 * hash) + MSG_FIELD_NUMBER;
+      hash = (53 * hash) + getMsg().hashCode();
+      hash = (37 * hash) + ERR_MSG_FIELD_NUMBER;
+      hash = (53 * hash) + getErrMsg().hashCode();
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.jiangfucheng.im.protobuf.PullOfflineMessageResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.jiangfucheng.im.protobuf.PullOfflineMessageResponse)
+        com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_PullOfflineMessageResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_PullOfflineMessageResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.class, com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.Builder.class);
+      }
+
+      // Construct using com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        code_ = 0;
+
+        msg_ = "";
+
+        errMsg_ = "";
+
+        message_ = "";
+
+        timestamp_ = 0L;
+
+        targetId_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_PullOfflineMessageResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse getDefaultInstanceForType() {
+        return com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse build() {
+        com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse buildPartial() {
+        com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse result = new com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse(this);
+        result.code_ = code_;
+        result.msg_ = msg_;
+        result.errMsg_ = errMsg_;
+        result.message_ = message_;
+        result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse) {
+          return mergeFrom((com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse other) {
+        if (other == com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.getDefaultInstance()) return this;
+        if (other.getCode() != 0) {
+          setCode(other.getCode());
+        }
+        if (!other.getMsg().isEmpty()) {
+          msg_ = other.msg_;
+          onChanged();
+        }
+        if (!other.getErrMsg().isEmpty()) {
+          errMsg_ = other.errMsg_;
+          onChanged();
+        }
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          onChanged();
+        }
+        if (other.getTimestamp() != 0L) {
+          setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int code_ ;
+      /**
+       * <code>int32 code = 1;</code>
+       * @return The code.
+       */
+      public int getCode() {
+        return code_;
+      }
+      /**
+       * <code>int32 code = 1;</code>
+       * @param value The code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCode(int value) {
+        
+        code_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 code = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCode() {
+        
+        code_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object msg_ = "";
+      /**
+       * <code>string msg = 2;</code>
+       * @return The msg.
+       */
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          msg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string msg = 2;</code>
+       * @return The bytes for msg.
+       */
+      public com.google.protobuf.ByteString
+          getMsgBytes() {
+        java.lang.Object ref = msg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          msg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string msg = 2;</code>
+       * @param value The msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMsg() {
+        
+        msg_ = getDefaultInstance().getMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 2;</code>
+       * @param value The bytes for msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object errMsg_ = "";
+      /**
+       * <code>string err_msg = 3;</code>
+       * @return The errMsg.
+       */
+      public java.lang.String getErrMsg() {
+        java.lang.Object ref = errMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          errMsg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string err_msg = 3;</code>
+       * @return The bytes for errMsg.
+       */
+      public com.google.protobuf.ByteString
+          getErrMsgBytes() {
+        java.lang.Object ref = errMsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          errMsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string err_msg = 3;</code>
+       * @param value The errMsg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        errMsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string err_msg = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearErrMsg() {
+        
+        errMsg_ = getDefaultInstance().getErrMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string err_msg = 3;</code>
+       * @param value The bytes for errMsg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        errMsg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object message_ = "";
+      /**
+       * <code>string message = 4;</code>
+       * @return The message.
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string message = 4;</code>
+       * @return The bytes for message.
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string message = 4;</code>
+       * @param value The message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        message_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMessage() {
+        
+        message_ = getDefaultInstance().getMessage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 4;</code>
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        message_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long timestamp_ ;
+      /**
+       * <code>int64 time = 5;</code>
+       * @return The time.
+       */
+      public long getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <code>int64 time = 5;</code>
+       * @param value The time to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimestamp(long value) {
+        
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 time = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTimestamp() {
+        
+        timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 6;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 6;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.jiangfucheng.im.protobuf.PullOfflineMessageResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.jiangfucheng.im.protobuf.PullOfflineMessageResponse)
+    private static final com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse();
+    }
+
+    public static com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PullOfflineMessageResponse>
+        PARSER = new com.google.protobuf.AbstractParser<PullOfflineMessageResponse>() {
+      @java.lang.Override
+      public PullOfflineMessageResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PullOfflineMessageResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PullOfflineMessageResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PullOfflineMessageResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ReceivedOfflineMessageRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string token = 1;</code>
+     * @return The token.
+     */
+    java.lang.String getToken();
+    /**
+     * <code>string token = 1;</code>
+     * @return The bytes for token.
+     */
+    com.google.protobuf.ByteString
+        getTokenBytes();
+
+    /**
+     * <code>int64 friend_id = 2;</code>
+     * @return The friendId.
+     */
+    long getFriendId();
+
+    /**
+     * <code>int64 received_message_id = 3;</code>
+     * @return The receivedMessageId.
+     */
+    long getReceivedMessageId();
+
+    /**
+     * <code>int64 time = 4;</code>
+     * @return The time.
+     */
+    long getTimestamp();
+  }
+  /**
+   * Protobuf type {@code com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest}
+   */
+  public  static final class ReceivedOfflineMessageRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest)
+      ReceivedOfflineMessageRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ReceivedOfflineMessageRequest.newBuilder() to construct.
+    private ReceivedOfflineMessageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ReceivedOfflineMessageRequest() {
+      token_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ReceivedOfflineMessageRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ReceivedOfflineMessageRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              token_ = s;
+              break;
+            }
+            case 16: {
+
+              friendId_ = input.readInt64();
+              break;
+            }
+            case 24: {
+
+              receivedMessageId_ = input.readInt64();
+              break;
+            }
+            case 32: {
+
+              timestamp_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_ReceivedOfflineMessageRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_ReceivedOfflineMessageRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.class, com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.Builder.class);
+    }
+
+    public static final int TOKEN_FIELD_NUMBER = 1;
+    private volatile java.lang.Object token_;
+    /**
+     * <code>string token = 1;</code>
+     * @return The token.
+     */
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        token_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string token = 1;</code>
+     * @return The bytes for token.
+     */
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FRIEND_ID_FIELD_NUMBER = 2;
+    private long friendId_;
+    /**
+     * <code>int64 friend_id = 2;</code>
+     * @return The friendId.
+     */
+    public long getFriendId() {
+      return friendId_;
+    }
+
+    public static final int RECEIVED_MESSAGE_ID_FIELD_NUMBER = 3;
+    private long receivedMessageId_;
+    /**
+     * <code>int64 received_message_id = 3;</code>
+     * @return The receivedMessageId.
+     */
+    public long getReceivedMessageId() {
+      return receivedMessageId_;
+    }
+
+    public static final int TIMESTAMP_FIELD_NUMBER = 4;
+    private long timestamp_;
+    /**
+     * <code>int64 time = 4;</code>
+     * @return The time.
+     */
+    public long getTimestamp() {
+      return timestamp_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+      }
+      if (friendId_ != 0L) {
+        output.writeInt64(2, friendId_);
+      }
+      if (receivedMessageId_ != 0L) {
+        output.writeInt64(3, receivedMessageId_);
+      }
+      if (timestamp_ != 0L) {
+        output.writeInt64(4, timestamp_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      }
+      if (friendId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, friendId_);
+      }
+      if (receivedMessageId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, receivedMessageId_);
+      }
+      if (timestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, timestamp_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest)) {
+        return super.equals(obj);
+      }
+      com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest other = (com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest) obj;
+
+      if (!getToken()
+          .equals(other.getToken())) return false;
+      if (getFriendId()
+          != other.getFriendId()) return false;
+      if (getReceivedMessageId()
+          != other.getReceivedMessageId()) return false;
+      if (getTimestamp()
+          != other.getTimestamp()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + FRIEND_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getFriendId());
+      hash = (37 * hash) + RECEIVED_MESSAGE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getReceivedMessageId());
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTimestamp());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest)
+        com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_ReceivedOfflineMessageRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_ReceivedOfflineMessageRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.class, com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.Builder.class);
+      }
+
+      // Construct using com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        token_ = "";
+
+        friendId_ = 0L;
+
+        receivedMessageId_ = 0L;
+
+        timestamp_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_ReceivedOfflineMessageRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest getDefaultInstanceForType() {
+        return com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest build() {
+        com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest buildPartial() {
+        com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest result = new com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest(this);
+        result.token_ = token_;
+        result.friendId_ = friendId_;
+        result.receivedMessageId_ = receivedMessageId_;
+        result.timestamp_ = timestamp_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest) {
+          return mergeFrom((com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest other) {
+        if (other == com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.getDefaultInstance()) return this;
+        if (!other.getToken().isEmpty()) {
+          token_ = other.token_;
+          onChanged();
+        }
+        if (other.getFriendId() != 0L) {
+          setFriendId(other.getFriendId());
+        }
+        if (other.getReceivedMessageId() != 0L) {
+          setReceivedMessageId(other.getReceivedMessageId());
+        }
+        if (other.getTimestamp() != 0L) {
+          setTimestamp(other.getTimestamp());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object token_ = "";
+      /**
+       * <code>string token = 1;</code>
+       * @return The token.
+       */
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          token_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string token = 1;</code>
+       * @return The bytes for token.
+       */
+      public com.google.protobuf.ByteString
+          getTokenBytes() {
+        java.lang.Object ref = token_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          token_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string token = 1;</code>
+       * @param value The token to set.
+       * @return This builder for chaining.
+       */
+      public Builder setToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        token_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearToken() {
+        
+        token_ = getDefaultInstance().getToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 1;</code>
+       * @param value The bytes for token to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        token_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long friendId_ ;
+      /**
+       * <code>int64 friend_id = 2;</code>
+       * @return The friendId.
+       */
+      public long getFriendId() {
+        return friendId_;
+      }
+      /**
+       * <code>int64 friend_id = 2;</code>
+       * @param value The friendId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFriendId(long value) {
+        
+        friendId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 friend_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFriendId() {
+        
+        friendId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long receivedMessageId_ ;
+      /**
+       * <code>int64 received_message_id = 3;</code>
+       * @return The receivedMessageId.
+       */
+      public long getReceivedMessageId() {
+        return receivedMessageId_;
+      }
+      /**
+       * <code>int64 received_message_id = 3;</code>
+       * @param value The receivedMessageId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReceivedMessageId(long value) {
+        
+        receivedMessageId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 received_message_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReceivedMessageId() {
+        
+        receivedMessageId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long timestamp_ ;
+      /**
+       * <code>int64 time = 4;</code>
+       * @return The time.
+       */
+      public long getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimestamp(long value) {
+        
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 time = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTimestamp() {
+        
+        timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest)
+    private static final com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest();
+    }
+
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReceivedOfflineMessageRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ReceivedOfflineMessageRequest>() {
+      @java.lang.Override
+      public ReceivedOfflineMessageRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ReceivedOfflineMessageRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ReceivedOfflineMessageRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReceivedOfflineMessageRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ReceivedOfflineMessageResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 code = 1;</code>
+     * @return The code.
+     */
+    int getCode();
+
+    /**
+     * <code>string msg = 2;</code>
+     * @return The msg.
+     */
+    java.lang.String getMsg();
+    /**
+     * <code>string msg = 2;</code>
+     * @return The bytes for msg.
+     */
+    com.google.protobuf.ByteString
+        getMsgBytes();
+
+    /**
+     * <code>string err_msg = 3;</code>
+     * @return The errMsg.
+     */
+    java.lang.String getErrMsg();
+    /**
+     * <code>string err_msg = 3;</code>
+     * @return The bytes for errMsg.
+     */
+    com.google.protobuf.ByteString
+        getErrMsgBytes();
+
+    /**
+     * <code>int64 time = 4;</code>
+     * @return The time.
+     */
+    long getTimestamp();
+
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    long getTargetId();
+  }
+  /**
+   * Protobuf type {@code com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse}
+   */
+  public  static final class ReceivedOfflineMessageResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse)
+      ReceivedOfflineMessageResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ReceivedOfflineMessageResponse.newBuilder() to construct.
+    private ReceivedOfflineMessageResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ReceivedOfflineMessageResponse() {
+      msg_ = "";
+      errMsg_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ReceivedOfflineMessageResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ReceivedOfflineMessageResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              code_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              msg_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              errMsg_ = s;
+              break;
+            }
+            case 32: {
+
+              timestamp_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              targetId_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_ReceivedOfflineMessageResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_ReceivedOfflineMessageResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.class, com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.Builder.class);
+    }
+
+    public static final int CODE_FIELD_NUMBER = 1;
+    private int code_;
+    /**
+     * <code>int32 code = 1;</code>
+     * @return The code.
+     */
+    public int getCode() {
+      return code_;
+    }
+
+    public static final int MSG_FIELD_NUMBER = 2;
+    private volatile java.lang.Object msg_;
+    /**
+     * <code>string msg = 2;</code>
+     * @return The msg.
+     */
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        msg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string msg = 2;</code>
+     * @return The bytes for msg.
+     */
+    public com.google.protobuf.ByteString
+        getMsgBytes() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        msg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ERR_MSG_FIELD_NUMBER = 3;
+    private volatile java.lang.Object errMsg_;
+    /**
+     * <code>string err_msg = 3;</code>
+     * @return The errMsg.
+     */
+    public java.lang.String getErrMsg() {
+      java.lang.Object ref = errMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        errMsg_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string err_msg = 3;</code>
+     * @return The bytes for errMsg.
+     */
+    public com.google.protobuf.ByteString
+        getErrMsgBytes() {
+      java.lang.Object ref = errMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        errMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TIMESTAMP_FIELD_NUMBER = 4;
+    private long timestamp_;
+    /**
+     * <code>int64 time = 4;</code>
+     * @return The time.
+     */
+    public long getTimestamp() {
+      return timestamp_;
+    }
+
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private long targetId_;
+    /**
+     * <pre>
+     *目标用户id(要把消息发给谁)
+     * </pre>
+     *
+     * <code>int64 target_id = 5;</code>
+     * @return The targetId.
+     */
+    public long getTargetId() {
+      return targetId_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (code_ != 0) {
+        output.writeInt32(1, code_);
+      }
+      if (!getMsgBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, msg_);
+      }
+      if (!getErrMsgBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, errMsg_);
+      }
+      if (timestamp_ != 0L) {
+        output.writeInt64(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        output.writeInt64(5, targetId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (code_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, code_);
+      }
+      if (!getMsgBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, msg_);
+      }
+      if (!getErrMsgBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, errMsg_);
+      }
+      if (timestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, timestamp_);
+      }
+      if (targetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, targetId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse)) {
+        return super.equals(obj);
+      }
+      com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse other = (com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse) obj;
+
+      if (getCode()
+          != other.getCode()) return false;
+      if (!getMsg()
+          .equals(other.getMsg())) return false;
+      if (!getErrMsg()
+          .equals(other.getErrMsg())) return false;
+      if (getTimestamp()
+          != other.getTimestamp()) return false;
+      if (getTargetId()
+          != other.getTargetId()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getCode();
+      hash = (37 * hash) + MSG_FIELD_NUMBER;
+      hash = (53 * hash) + getMsg().hashCode();
+      hash = (37 * hash) + ERR_MSG_FIELD_NUMBER;
+      hash = (53 * hash) + getErrMsg().hashCode();
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTimestamp());
+      hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTargetId());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse)
+        com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_ReceivedOfflineMessageResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_ReceivedOfflineMessageResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.class, com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.Builder.class);
+      }
+
+      // Construct using com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        code_ = 0;
+
+        msg_ = "";
+
+        errMsg_ = "";
+
+        timestamp_ = 0L;
+
+        targetId_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.jiangfucheng.im.protobuf.Control.internal_static_com_jiangfucheng_im_protobuf_ReceivedOfflineMessageResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse getDefaultInstanceForType() {
+        return com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse build() {
+        com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse buildPartial() {
+        com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse result = new com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse(this);
+        result.code_ = code_;
+        result.msg_ = msg_;
+        result.errMsg_ = errMsg_;
+        result.timestamp_ = timestamp_;
+        result.targetId_ = targetId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse) {
+          return mergeFrom((com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse other) {
+        if (other == com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.getDefaultInstance()) return this;
+        if (other.getCode() != 0) {
+          setCode(other.getCode());
+        }
+        if (!other.getMsg().isEmpty()) {
+          msg_ = other.msg_;
+          onChanged();
+        }
+        if (!other.getErrMsg().isEmpty()) {
+          errMsg_ = other.errMsg_;
+          onChanged();
+        }
+        if (other.getTimestamp() != 0L) {
+          setTimestamp(other.getTimestamp());
+        }
+        if (other.getTargetId() != 0L) {
+          setTargetId(other.getTargetId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int code_ ;
+      /**
+       * <code>int32 code = 1;</code>
+       * @return The code.
+       */
+      public int getCode() {
+        return code_;
+      }
+      /**
+       * <code>int32 code = 1;</code>
+       * @param value The code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCode(int value) {
+        
+        code_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 code = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCode() {
+        
+        code_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object msg_ = "";
+      /**
+       * <code>string msg = 2;</code>
+       * @return The msg.
+       */
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          msg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string msg = 2;</code>
+       * @return The bytes for msg.
+       */
+      public com.google.protobuf.ByteString
+          getMsgBytes() {
+        java.lang.Object ref = msg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          msg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string msg = 2;</code>
+       * @param value The msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMsg() {
+        
+        msg_ = getDefaultInstance().getMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string msg = 2;</code>
+       * @param value The bytes for msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object errMsg_ = "";
+      /**
+       * <code>string err_msg = 3;</code>
+       * @return The errMsg.
+       */
+      public java.lang.String getErrMsg() {
+        java.lang.Object ref = errMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          errMsg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string err_msg = 3;</code>
+       * @return The bytes for errMsg.
+       */
+      public com.google.protobuf.ByteString
+          getErrMsgBytes() {
+        java.lang.Object ref = errMsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          errMsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string err_msg = 3;</code>
+       * @param value The errMsg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        errMsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string err_msg = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearErrMsg() {
+        
+        errMsg_ = getDefaultInstance().getErrMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string err_msg = 3;</code>
+       * @param value The bytes for errMsg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        errMsg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long timestamp_ ;
+      /**
+       * <code>int64 time = 4;</code>
+       * @return The time.
+       */
+      public long getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimestamp(long value) {
+        
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 time = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTimestamp() {
+        
+        timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long targetId_ ;
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return The targetId.
+       */
+      public long getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(long value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *目标用户id(要把消息发给谁)
+       * </pre>
+       *
+       * <code>int64 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse)
+    private static final com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse();
+    }
+
+    public static com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReceivedOfflineMessageResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ReceivedOfflineMessageResponse>() {
+      @java.lang.Override
+      public ReceivedOfflineMessageResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ReceivedOfflineMessageResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ReceivedOfflineMessageResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReceivedOfflineMessageResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface NotifyAddFriendRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.jiangfucheng.im.protobuf.NotifyAddFriendRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -32052,8 +35654,8 @@ public final class Control {
         getAuthMessageBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
   }
@@ -32231,8 +35833,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -32768,15 +36370,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -32786,7 +36388,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -32887,8 +36489,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -33097,8 +36699,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -33686,15 +37288,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -33704,7 +37306,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -33829,8 +37431,8 @@ public final class Control {
      *被删除的时间
      * </pre>
      *
-     * <code>int64 timestamp = 3;</code>
-     * @return The timestamp.
+     * <code>int64 time = 3;</code>
+     * @return The time.
      */
     long getTimestamp();
   }
@@ -33957,8 +37559,8 @@ public final class Control {
      *被删除的时间
      * </pre>
      *
-     * <code>int64 timestamp = 3;</code>
-     * @return The timestamp.
+     * <code>int64 time = 3;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -34373,8 +37975,8 @@ public final class Control {
        *被删除的时间
        * </pre>
        *
-       * <code>int64 timestamp = 3;</code>
-       * @return The timestamp.
+       * <code>int64 time = 3;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
@@ -34384,8 +37986,8 @@ public final class Control {
        *被删除的时间
        * </pre>
        *
-       * <code>int64 timestamp = 3;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 3;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -34399,7 +38001,7 @@ public final class Control {
        *被删除的时间
        * </pre>
        *
-       * <code>int64 timestamp = 3;</code>
+       * <code>int64 time = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -34500,8 +38102,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -34710,8 +38312,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -35299,15 +38901,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -35317,7 +38919,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -35438,8 +39040,8 @@ public final class Control {
     long getUserId();
 
     /**
-     * <code>int64 timestamp = 3;</code>
-     * @return The timestamp.
+     * <code>int64 time = 3;</code>
+     * @return The time.
      */
     long getTimestamp();
   }
@@ -35562,8 +39164,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 3;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 3;</code>
-     * @return The timestamp.
+     * <code>int64 time = 3;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -35974,15 +39576,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 3;</code>
-       * @return The timestamp.
+       * <code>int64 time = 3;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 3;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 3;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -35992,7 +39594,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 3;</code>
+       * <code>int64 time = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -36093,8 +39695,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -36303,8 +39905,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -36892,15 +40494,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -36910,7 +40512,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -37031,8 +40633,8 @@ public final class Control {
     long getUserId();
 
     /**
-     * <code>int64 timestamp = 3;</code>
-     * @return The timestamp.
+     * <code>int64 time = 3;</code>
+     * @return The time.
      */
     long getTimestamp();
   }
@@ -37155,8 +40757,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 3;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 3;</code>
-     * @return The timestamp.
+     * <code>int64 time = 3;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -37567,15 +41169,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 3;</code>
-       * @return The timestamp.
+       * <code>int64 time = 3;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 3;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 3;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -37585,7 +41187,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 3;</code>
+       * <code>int64 time = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -37686,8 +41288,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -37896,8 +41498,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -38485,15 +42087,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -38503,7 +42105,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -39447,8 +43049,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -39657,8 +43259,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -40246,15 +43848,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -40264,7 +43866,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -40395,8 +43997,8 @@ public final class Control {
     long getInvitedUserId();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
   }
@@ -40538,8 +44140,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -41010,15 +44612,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -41028,7 +44630,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -41129,8 +44731,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -41339,8 +44941,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -41928,15 +45530,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -41946,7 +45548,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -42077,8 +45679,8 @@ public final class Control {
     long getGroupOwnerId();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
   }
@@ -42220,8 +45822,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -42692,15 +46294,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -42710,7 +46312,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -42811,8 +46413,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -43021,8 +46623,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -43610,15 +47212,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -43628,7 +47230,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -43769,8 +47371,8 @@ public final class Control {
     int getType();
 
     /**
-     * <code>int64 timestamp = 5;</code>
-     * @return The timestamp.
+     * <code>int64 time = 5;</code>
+     * @return The time.
      */
     long getTimestamp();
   }
@@ -43931,8 +47533,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 5;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 5;</code>
-     * @return The timestamp.
+     * <code>int64 time = 5;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -44462,15 +48064,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 5;</code>
-       * @return The timestamp.
+       * <code>int64 time = 5;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 5;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 5;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -44480,7 +48082,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 5;</code>
+       * <code>int64 time = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -44581,8 +48183,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -44791,8 +48393,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -45380,15 +48982,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -45398,7 +49000,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -45523,13 +49125,13 @@ public final class Control {
     long getGroupId();
 
     /**
-     * <code>string timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>string time = 4;</code>
+     * @return The time.
      */
     java.lang.String getTimestamp();
     /**
-     * <code>string timestamp = 4;</code>
-     * @return The bytes for timestamp.
+     * <code>string time = 4;</code>
+     * @return The bytes for time.
      */
     com.google.protobuf.ByteString
         getTimestampBytes();
@@ -45659,8 +49261,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private volatile java.lang.Object timestamp_;
     /**
-     * <code>string timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>string time = 4;</code>
+     * @return The time.
      */
     public java.lang.String getTimestamp() {
       java.lang.Object ref = timestamp_;
@@ -45675,8 +49277,8 @@ public final class Control {
       }
     }
     /**
-     * <code>string timestamp = 4;</code>
-     * @return The bytes for timestamp.
+     * <code>string time = 4;</code>
+     * @return The bytes for time.
      */
     public com.google.protobuf.ByteString
         getTimestampBytes() {
@@ -46108,8 +49710,8 @@ public final class Control {
 
       private java.lang.Object timestamp_ = "";
       /**
-       * <code>string timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>string time = 4;</code>
+       * @return The time.
        */
       public java.lang.String getTimestamp() {
         java.lang.Object ref = timestamp_;
@@ -46124,8 +49726,8 @@ public final class Control {
         }
       }
       /**
-       * <code>string timestamp = 4;</code>
-       * @return The bytes for timestamp.
+       * <code>string time = 4;</code>
+       * @return The bytes for time.
        */
       public com.google.protobuf.ByteString
           getTimestampBytes() {
@@ -46141,8 +49743,8 @@ public final class Control {
         }
       }
       /**
-       * <code>string timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>string time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(
@@ -46156,7 +49758,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>string timestamp = 4;</code>
+       * <code>string time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -46166,8 +49768,8 @@ public final class Control {
         return this;
       }
       /**
-       * <code>string timestamp = 4;</code>
-       * @param value The bytes for timestamp to set.
+       * <code>string time = 4;</code>
+       * @param value The bytes for time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestampBytes(
@@ -46273,8 +49875,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -46483,8 +50085,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -47072,15 +50674,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -47090,7 +50692,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -47245,13 +50847,13 @@ public final class Control {
         getAddressBytes();
 
     /**
-     * <code>string timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>string time = 4;</code>
+     * @return The time.
      */
     java.lang.String getTimestamp();
     /**
-     * <code>string timestamp = 4;</code>
-     * @return The bytes for timestamp.
+     * <code>string time = 4;</code>
+     * @return The bytes for time.
      */
     com.google.protobuf.ByteString
         getTimestampBytes();
@@ -47464,8 +51066,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private volatile java.lang.Object timestamp_;
     /**
-     * <code>string timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>string time = 4;</code>
+     * @return The time.
      */
     public java.lang.String getTimestamp() {
       java.lang.Object ref = timestamp_;
@@ -47480,8 +51082,8 @@ public final class Control {
       }
     }
     /**
-     * <code>string timestamp = 4;</code>
-     * @return The bytes for timestamp.
+     * <code>string time = 4;</code>
+     * @return The bytes for time.
      */
     public com.google.protobuf.ByteString
         getTimestampBytes() {
@@ -48079,8 +51681,8 @@ public final class Control {
 
       private java.lang.Object timestamp_ = "";
       /**
-       * <code>string timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>string time = 4;</code>
+       * @return The time.
        */
       public java.lang.String getTimestamp() {
         java.lang.Object ref = timestamp_;
@@ -48095,8 +51697,8 @@ public final class Control {
         }
       }
       /**
-       * <code>string timestamp = 4;</code>
-       * @return The bytes for timestamp.
+       * <code>string time = 4;</code>
+       * @return The bytes for time.
        */
       public com.google.protobuf.ByteString
           getTimestampBytes() {
@@ -48112,8 +51714,8 @@ public final class Control {
         }
       }
       /**
-       * <code>string timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>string time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(
@@ -48127,7 +51729,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>string timestamp = 4;</code>
+       * <code>string time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -48137,8 +51739,8 @@ public final class Control {
         return this;
       }
       /**
-       * <code>string timestamp = 4;</code>
-       * @param value The bytes for timestamp to set.
+       * <code>string time = 4;</code>
+       * @param value The bytes for time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestampBytes(
@@ -48244,8 +51846,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -48454,8 +52056,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -49043,15 +52645,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -49061,7 +52663,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -49206,13 +52808,13 @@ public final class Control {
         getContentBytes();
 
     /**
-     * <code>string timestamp = 5;</code>
-     * @return The timestamp.
+     * <code>string time = 5;</code>
+     * @return The time.
      */
     java.lang.String getTimestamp();
     /**
-     * <code>string timestamp = 5;</code>
-     * @return The bytes for timestamp.
+     * <code>string time = 5;</code>
+     * @return The bytes for time.
      */
     com.google.protobuf.ByteString
         getTimestampBytes();
@@ -49424,8 +53026,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 5;
     private volatile java.lang.Object timestamp_;
     /**
-     * <code>string timestamp = 5;</code>
-     * @return The timestamp.
+     * <code>string time = 5;</code>
+     * @return The time.
      */
     public java.lang.String getTimestamp() {
       java.lang.Object ref = timestamp_;
@@ -49440,8 +53042,8 @@ public final class Control {
       }
     }
     /**
-     * <code>string timestamp = 5;</code>
-     * @return The bytes for timestamp.
+     * <code>string time = 5;</code>
+     * @return The bytes for time.
      */
     public com.google.protobuf.ByteString
         getTimestampBytes() {
@@ -50047,8 +53649,8 @@ public final class Control {
 
       private java.lang.Object timestamp_ = "";
       /**
-       * <code>string timestamp = 5;</code>
-       * @return The timestamp.
+       * <code>string time = 5;</code>
+       * @return The time.
        */
       public java.lang.String getTimestamp() {
         java.lang.Object ref = timestamp_;
@@ -50063,8 +53665,8 @@ public final class Control {
         }
       }
       /**
-       * <code>string timestamp = 5;</code>
-       * @return The bytes for timestamp.
+       * <code>string time = 5;</code>
+       * @return The bytes for time.
        */
       public com.google.protobuf.ByteString
           getTimestampBytes() {
@@ -50080,8 +53682,8 @@ public final class Control {
         }
       }
       /**
-       * <code>string timestamp = 5;</code>
-       * @param value The timestamp to set.
+       * <code>string time = 5;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(
@@ -50095,7 +53697,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>string timestamp = 5;</code>
+       * <code>string time = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -50105,8 +53707,8 @@ public final class Control {
         return this;
       }
       /**
-       * <code>string timestamp = 5;</code>
-       * @param value The bytes for timestamp to set.
+       * <code>string time = 5;</code>
+       * @param value The bytes for time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestampBytes(
@@ -50212,8 +53814,8 @@ public final class Control {
         getErrMsgBytes();
 
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -50422,8 +54024,8 @@ public final class Control {
     public static final int TIMESTAMP_FIELD_NUMBER = 4;
     private long timestamp_;
     /**
-     * <code>int64 timestamp = 4;</code>
-     * @return The timestamp.
+     * <code>int64 time = 4;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -51011,15 +54613,15 @@ public final class Control {
 
       private long timestamp_ ;
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @return The timestamp.
+       * <code>int64 time = 4;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 4;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -51029,7 +54631,7 @@ public final class Control {
         return this;
       }
       /**
-       * <code>int64 timestamp = 4;</code>
+       * <code>int64 time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -51314,6 +54916,26 @@ public final class Control {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_jiangfucheng_im_protobuf_LogoutResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_jiangfucheng_im_protobuf_PullOfflineMessageRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_jiangfucheng_im_protobuf_PullOfflineMessageRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_jiangfucheng_im_protobuf_PullOfflineMessageResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_jiangfucheng_im_protobuf_PullOfflineMessageResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_jiangfucheng_im_protobuf_ReceivedOfflineMessageRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_jiangfucheng_im_protobuf_ReceivedOfflineMessageRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_jiangfucheng_im_protobuf_ReceivedOfflineMessageResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_jiangfucheng_im_protobuf_ReceivedOfflineMessageResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddFriendRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -51436,7 +55058,7 @@ public final class Control {
       "tobuf\"J\n\020AddFriendRequest\022\r\n\005token\030\001 \001(\t" +
       "\022\021\n\ttarget_id\030\002 \001(\003\022\024\n\014auth_message\030\003 \001(" +
       "\t\"e\n\021AddFriendResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003" +
-      "msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030" +
+      "msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttime\030" +
       "\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"7\n\023DeleteFriend" +
       "Request\022\r\n\005token\030\001 \001(\t\022\021\n\tfriend_id\030\002 \001(" +
       "\003\"h\n\024DeleteFriendResponse\022\014\n\004code\030\001 \001(\005\022" +
@@ -51445,7 +55067,7 @@ public final class Control {
       "equest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\022" +
       "\022\n\nverify_msg\030\003 \001(\t\"d\n\020AddGroupResponse\022" +
       "\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 " +
-      "\001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(" +
+      "\001(\t\022\021\n\ttime\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(" +
       "\003\"|\n\022CreateGroupRequest\022\r\n\005token\030\001 \001(\t\022\022" +
       "\n\ngroup_name\030\002 \001(\t\022\026\n\016invite_user_id\030\003 \003" +
       "(\003\022\024\n\014introduction\030\004 \001(\t\022\025\n\rprofile_phot" +
@@ -51455,7 +55077,7 @@ public final class Control {
       "t_id\030\006 \001(\003\"3\n\020ExitGroupRequest\022\r\n\005token\030" +
       "\001 \001(\t\022\020\n\010group_id\030\002 \001(\003\"e\n\021ExitGroupResp" +
       "onse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_m" +
-      "sg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id" +
+      "sg\030\003 \001(\t\022\021\n\ttime\030\004 \001(\003\022\021\n\ttarget_id" +
       "\030\005 \001(\003\"K\n\027ChangeGroupOwnerRequest\022\r\n\005tok" +
       "en\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022\020\n\010group_id\030\003 " +
       "\001(\003\"l\n\030ChangeGroupOwnerResponse\022\014\n\004code\030" +
@@ -51472,7 +55094,7 @@ public final class Control {
       "angeManagerData\022\017\n\007user_id\030\002 \001(\003\022\014\n\004type" +
       "\030\003 \001(\005\"\373\001\n\036ChangeGroupManagerAuthRespons" +
       "e\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030" +
-      "\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022Y\n\nresp_datas\030\007" +
+      "\003 \001(\t\022\021\n\ttime\030\004 \001(\003\022Y\n\nresp_datas\030\007" +
       " \003(\0132E.com.jiangfucheng.im.protobuf.Chan" +
       "geGroupManagerAuthResponse.RespData\022\021\n\tt" +
       "arget_id\030\010 \001(\003\032,\n\010RespData\022\017\n\007user_id\030\005 " +
@@ -51480,22 +55102,22 @@ public final class Control {
       "oupRequest\022\r\n\005token\030\001 \001(\t\022\017\n\007user_id\030\002 \003" +
       "(\003\022\020\n\010group_id\030\003 \001(\003\"o\n\033InviteMemberToGr" +
       "oupResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017" +
-      "\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\tta" +
+      "\n\007err_msg\030\003 \001(\t\022\021\n\ttime\030\004 \001(\003\022\021\n\tta" +
       "rget_id\030\005 \001(\003\"H\n\024KickOutMemberRequest\022\r\n" +
       "\005token\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\003\022\020\n\010group_i" +
       "d\030\003 \001(\003\"i\n\025KickOutMemberResponse\022\014\n\004code" +
       "\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\t" +
-      "timestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"^\n\033Ad" +
+      "time\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"^\n\033Ad" +
       "dGroupAnnouncementRequest\022\r\n\005token\030\001 \001(\t" +
       "\022\r\n\005title\030\002 \001(\t\022\017\n\007content\030\003 \001(\t\022\020\n\010grou" +
       "p_id\030\004 \001(\003\"p\n\034AddGroupAnnouncementRespon" +
       "se\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg" +
-      "\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005" +
+      "\030\003 \001(\t\022\021\n\ttime\030\004 \001(\003\022\021\n\ttarget_id\030\005" +
       " \001(\003\"U\n\031DeleteAnnouncementRequest\022\r\n\005tok" +
       "en\030\001 \001(\t\022\027\n\017announcement_id\030\002 \001(\003\022\020\n\010gro" +
       "up_id\030\004 \001(\003\"n\n\032DeleteAnnouncementRespons" +
       "e\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030" +
-      "\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 " +
+      "\003 \001(\t\022\021\n\ttime\030\004 \001(\003\022\021\n\ttarget_id\030\005 " +
       "\001(\003\"s\n\027EditAnnouncementRequest\022\r\n\005token\030" +
       "\001 \001(\t\022\027\n\017announcement_id\030\002 \001(\003\022\r\n\005title\030" +
       "\003 \001(\t\022\017\n\007content\030\004 \001(\t\022\020\n\010group_id\030\005 \001(\003" +
@@ -51505,81 +55127,92 @@ public final class Control {
       "oupRemarksRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010grou" +
       "p_id\030\002 \001(\003\022\017\n\007remarks\030\003 \001(\t\"l\n\030EditGroup" +
       "RemarksResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001" +
-      "(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021" +
+      "(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttime\030\004 \001(\003\022\021" +
       "\n\ttarget_id\030\005 \001(\003\"V\n\034EditGroupProfilePho" +
       "toRequest\022\r\n\005token\030\001 \001(\t\022\020\n\010group_id\030\002 \001" +
       "(\003\022\025\n\rprofile_photo\030\003 \001(\t\"\214\001\n\035EditGroupP" +
       "rofilePhotoResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg" +
-      "\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001" +
+      "\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttime\030\004 \001" +
       "(\003\022\031\n\021profile_photo_url\030\005 \001(\t\022\021\n\ttarget_" +
       "id\030\006 \001(\003\"0\n\014LoginRequest\022\r\n\005token\030\001 \001(\t\022" +
-      "\021\n\ttimestamp\030\002 \001(\003\"a\n\rLoginResponse\022\014\n\004c" +
+      "\021\n\ttime\030\002 \001(\003\"a\n\rLoginResponse\022\014\n\004c" +
       "ode\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022" +
-      "\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"1\n" +
+      "\021\n\ttime\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"1\n" +
       "\rLogoutRequest\022\r\n\005token\030\001 \001(\t\022\021\n\ttimesta" +
       "mp\030\002 \001(\003\"b\n\016LogoutResponse\022\014\n\004code\030\001 \001(\005" +
       "\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimest" +
-      "amp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"c\n\026NotifyAd" +
-      "dFriendRequest\022\017\n\007from_id\030\001 \001(\003\022\017\n\007user_" +
-      "id\030\002 \001(\003\022\024\n\014auth_message\030\003 \001(\t\022\021\n\ttimest" +
-      "amp\030\004 \001(\003\"k\n\027NotifyAddFriendResponse\022\014\n\004" +
-      "code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t" +
-      "\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"P" +
-      "\n\031NotifyDeleteFriendRequest\022\017\n\007from_id\030\001" +
-      " \001(\003\022\017\n\007user_id\030\002 \001(\003\022\021\n\ttimestamp\030\003 \001(\003" +
-      "\"n\n\032NotifyDeleteFriendResponse\022\014\n\004code\030\001" +
-      " \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\tti" +
-      "mestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"P\n\031Noti" +
-      "fyFriendOnlineRequest\022\017\n\007from_id\030\001 \001(\003\022\017" +
-      "\n\007user_id\030\002 \001(\003\022\021\n\ttimestamp\030\003 \001(\003\"n\n\032No" +
-      "tifyFriendOnlineResponse\022\014\n\004code\030\001 \001(\005\022\013" +
-      "\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestam" +
-      "p\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"Q\n\032NotifyFrie" +
-      "ndOfflineRequest\022\017\n\007from_id\030\001 \001(\003\022\017\n\007use" +
-      "r_id\030\002 \001(\003\022\021\n\ttimestamp\030\003 \001(\003\"o\n\033NotifyF" +
-      "riendOfflineResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003ms" +
-      "g\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 " +
-      "\001(\003\022\021\n\ttarget_id\030\005 \001(\003\"c\n\025NotifyAddGroup" +
-      "Request\022\017\n\007from_id\030\001 \001(\003\022\017\n\007user_id\030\002 \001(" +
-      "\003\022\020\n\010group_id\030\003 \001(\003\022\026\n\016verify_message\030\004 " +
-      "\001(\t\"j\n\026NotifyAddGroupResponse\022\014\n\004code\030\001 " +
-      "\001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttim" +
-      "estamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"q\n Notif" +
-      "yInviteMemberToGroupRequest\022\017\n\007from_id\030\001" +
-      " \001(\003\022\020\n\010group_id\030\002 \001(\003\022\027\n\017invited_user_i" +
-      "d\030\003 \001(\003\022\021\n\ttimestamp\030\004 \001(\003\"u\n!NotifyInvi" +
-      "teMemberToGroupResponse\022\014\n\004code\030\001 \001(\005\022\013\n" +
-      "\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestamp" +
-      "\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"i\n\031NotifyDelet" +
-      "edGroupRequest\022\017\n\007from_id\030\001 \001(\003\022\020\n\010group" +
-      "_id\030\002 \001(\003\022\026\n\016group_owner_id\030\003 \001(\003\022\021\n\ttim" +
-      "estamp\030\004 \001(\003\"n\n\032NotifyDeletedGroupRespon" +
-      "se\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg" +
-      "\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005" +
-      " \001(\003\"z\n#NotifyChangeGroupManagerAuthRequ" +
-      "est\022\017\n\007from_id\030\001 \001(\003\022\020\n\010group_id\030\002 \001(\003\022\017" +
-      "\n\007user_id\030\003 \001(\003\022\014\n\004type\030\004 \001(\005\022\021\n\ttimesta" +
-      "mp\030\005 \001(\003\"x\n$NotifyChangeGroupManagerAuth" +
+      "amp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"d\n\031PullOffl" +
+      "ineMessageRequest\022\r\n\005token\030\001 \001(\t\022\017\n\007user" +
+      "_id\030\002 \001(\003\022\024\n\014begin_msg_id\030\003 \001(\003\022\021\n\ttimes" +
+      "tamp\030\004 \001(\003\"\177\n\032PullOfflineMessageResponse" +
+      "\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003" +
+      " \001(\t\022\017\n\007message\030\004 \001(\t\022\021\n\ttime\030\005 \001(\003" +
+      "\022\021\n\ttarget_id\030\006 \001(\003\"q\n\035ReceivedOfflineMe" +
+      "ssageRequest\022\r\n\005token\030\001 \001(\t\022\021\n\tfriend_id" +
+      "\030\002 \001(\003\022\033\n\023received_message_id\030\003 \001(\003\022\021\n\tt" +
+      "imestamp\030\004 \001(\003\"r\n\036ReceivedOfflineMessage" +
       "Response\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007e" +
-      "rr_msg\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarge" +
-      "t_id\030\005 \001(\003\"Q\n\031NotifyKickOutGroupRequest\022" +
-      "\017\n\007from_id\030\001 \001(\003\022\020\n\010group_id\030\002 \001(\003\022\021\n\tti" +
-      "mestamp\030\004 \001(\t\"n\n\032NotifyKickOutGroupRespo" +
-      "nse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_ms" +
-      "g\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030" +
-      "\005 \001(\003\"W\n\024NotifyKickOutRequest\022\017\n\007from_id" +
-      "\030\001 \001(\003\022\n\n\002ip\030\002 \001(\t\022\017\n\007address\030\003 \001(\t\022\021\n\tt" +
-      "imestamp\030\004 \001(\t\"i\n\025NotifyKickOutResponse\022" +
-      "\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 " +
-      "\001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(" +
-      "\003\"y\n!NotifyAddGroupAnnouncementRequest\022\017" +
-      "\n\007from_id\030\001 \001(\003\022\020\n\010group_id\030\002 \001(\003\022\r\n\005tit" +
-      "le\030\003 \001(\t\022\017\n\007content\030\004 \001(\t\022\021\n\ttimestamp\030\005" +
-      " \001(\t\"v\n\"NotifyAddGroupAnnouncementRespon" +
+      "rr_msg\030\003 \001(\t\022\021\n\ttime\030\004 \001(\003\022\021\n\ttarge" +
+      "t_id\030\005 \001(\003\"c\n\026NotifyAddFriendRequest\022\017\n\007" +
+      "from_id\030\001 \001(\003\022\017\n\007user_id\030\002 \001(\003\022\024\n\014auth_m" +
+      "essage\030\003 \001(\t\022\021\n\ttime\030\004 \001(\003\"k\n\027Notif" +
+      "yAddFriendResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030" +
+      "\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttime\030\004 \001(" +
+      "\003\022\021\n\ttarget_id\030\005 \001(\003\"P\n\031NotifyDeleteFrie" +
+      "ndRequest\022\017\n\007from_id\030\001 \001(\003\022\017\n\007user_id\030\002 " +
+      "\001(\003\022\021\n\ttime\030\003 \001(\003\"n\n\032NotifyDeleteFr" +
+      "iendResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022" +
+      "\017\n\007err_msg\030\003 \001(\t\022\021\n\ttime\030\004 \001(\003\022\021\n\tt" +
+      "arget_id\030\005 \001(\003\"P\n\031NotifyFriendOnlineRequ" +
+      "est\022\017\n\007from_id\030\001 \001(\003\022\017\n\007user_id\030\002 \001(\003\022\021\n" +
+      "\ttime\030\003 \001(\003\"n\n\032NotifyFriendOnlineRe" +
+      "sponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err" +
+      "_msg\030\003 \001(\t\022\021\n\ttime\030\004 \001(\003\022\021\n\ttarget_" +
+      "id\030\005 \001(\003\"Q\n\032NotifyFriendOfflineRequest\022\017" +
+      "\n\007from_id\030\001 \001(\003\022\017\n\007user_id\030\002 \001(\003\022\021\n\ttime" +
+      "stamp\030\003 \001(\003\"o\n\033NotifyFriendOfflineRespon" +
       "se\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg" +
-      "\030\003 \001(\t\022\021\n\ttimestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005" +
-      " \001(\003B\'\n\034com.jiangfucheng.im.protobufB\007Co" +
-      "ntrolb\006proto3"
+      "\030\003 \001(\t\022\021\n\ttime\030\004 \001(\003\022\021\n\ttarget_id\030\005" +
+      " \001(\003\"c\n\025NotifyAddGroupRequest\022\017\n\007from_id" +
+      "\030\001 \001(\003\022\017\n\007user_id\030\002 \001(\003\022\020\n\010group_id\030\003 \001(" +
+      "\003\022\026\n\016verify_message\030\004 \001(\t\"j\n\026NotifyAddGr" +
+      "oupResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017" +
+      "\n\007err_msg\030\003 \001(\t\022\021\n\ttime\030\004 \001(\003\022\021\n\tta" +
+      "rget_id\030\005 \001(\003\"q\n NotifyInviteMemberToGro" +
+      "upRequest\022\017\n\007from_id\030\001 \001(\003\022\020\n\010group_id\030\002" +
+      " \001(\003\022\027\n\017invited_user_id\030\003 \001(\003\022\021\n\ttimesta" +
+      "mp\030\004 \001(\003\"u\n!NotifyInviteMemberToGroupRes" +
+      "ponse\022\014\n\004code\030\001 \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_" +
+      "msg\030\003 \001(\t\022\021\n\ttime\030\004 \001(\003\022\021\n\ttarget_i" +
+      "d\030\005 \001(\003\"i\n\031NotifyDeletedGroupRequest\022\017\n\007" +
+      "from_id\030\001 \001(\003\022\020\n\010group_id\030\002 \001(\003\022\026\n\016group" +
+      "_owner_id\030\003 \001(\003\022\021\n\ttime\030\004 \001(\003\"n\n\032No" +
+      "tifyDeletedGroupResponse\022\014\n\004code\030\001 \001(\005\022\013" +
+      "\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestam" +
+      "p\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"z\n#NotifyChan" +
+      "geGroupManagerAuthRequest\022\017\n\007from_id\030\001 \001" +
+      "(\003\022\020\n\010group_id\030\002 \001(\003\022\017\n\007user_id\030\003 \001(\003\022\014\n" +
+      "\004type\030\004 \001(\005\022\021\n\ttime\030\005 \001(\003\"x\n$Notify" +
+      "ChangeGroupManagerAuthResponse\022\014\n\004code\030\001" +
+      " \001(\005\022\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\tti" +
+      "mestamp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"Q\n\031Noti" +
+      "fyKickOutGroupRequest\022\017\n\007from_id\030\001 \001(\003\022\020" +
+      "\n\010group_id\030\002 \001(\003\022\021\n\ttime\030\004 \001(\t\"n\n\032N" +
+      "otifyKickOutGroupResponse\022\014\n\004code\030\001 \001(\005\022" +
+      "\013\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimesta" +
+      "mp\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"W\n\024NotifyKic" +
+      "kOutRequest\022\017\n\007from_id\030\001 \001(\003\022\n\n\002ip\030\002 \001(\t" +
+      "\022\017\n\007address\030\003 \001(\t\022\021\n\ttime\030\004 \001(\t\"i\n\025" +
+      "NotifyKickOutResponse\022\014\n\004code\030\001 \001(\005\022\013\n\003m" +
+      "sg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttime\030\004" +
+      " \001(\003\022\021\n\ttarget_id\030\005 \001(\003\"y\n!NotifyAddGrou" +
+      "pAnnouncementRequest\022\017\n\007from_id\030\001 \001(\003\022\020\n" +
+      "\010group_id\030\002 \001(\003\022\r\n\005title\030\003 \001(\t\022\017\n\007conten" +
+      "t\030\004 \001(\t\022\021\n\ttime\030\005 \001(\t\"v\n\"NotifyAddG" +
+      "roupAnnouncementResponse\022\014\n\004code\030\001 \001(\005\022\013" +
+      "\n\003msg\030\002 \001(\t\022\017\n\007err_msg\030\003 \001(\t\022\021\n\ttimestam" +
+      "p\030\004 \001(\003\022\021\n\ttarget_id\030\005 \001(\003B\'\n\034com.jiangf" +
+      "ucheng.im.protobufB\007Controlb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -51801,134 +55434,158 @@ public final class Control {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_LogoutResponse_descriptor,
         new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
-    internal_static_com_jiangfucheng_im_protobuf_NotifyAddFriendRequest_descriptor =
+    internal_static_com_jiangfucheng_im_protobuf_PullOfflineMessageRequest_descriptor =
       getDescriptor().getMessageTypes().get(34);
+    internal_static_com_jiangfucheng_im_protobuf_PullOfflineMessageRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_jiangfucheng_im_protobuf_PullOfflineMessageRequest_descriptor,
+        new java.lang.String[] { "Token", "UserId", "BeginMsgId", "Timestamp", });
+    internal_static_com_jiangfucheng_im_protobuf_PullOfflineMessageResponse_descriptor =
+      getDescriptor().getMessageTypes().get(35);
+    internal_static_com_jiangfucheng_im_protobuf_PullOfflineMessageResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_jiangfucheng_im_protobuf_PullOfflineMessageResponse_descriptor,
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Message", "Timestamp", "TargetId", });
+    internal_static_com_jiangfucheng_im_protobuf_ReceivedOfflineMessageRequest_descriptor =
+      getDescriptor().getMessageTypes().get(36);
+    internal_static_com_jiangfucheng_im_protobuf_ReceivedOfflineMessageRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_jiangfucheng_im_protobuf_ReceivedOfflineMessageRequest_descriptor,
+        new java.lang.String[] { "Token", "FriendId", "ReceivedMessageId", "Timestamp", });
+    internal_static_com_jiangfucheng_im_protobuf_ReceivedOfflineMessageResponse_descriptor =
+      getDescriptor().getMessageTypes().get(37);
+    internal_static_com_jiangfucheng_im_protobuf_ReceivedOfflineMessageResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_jiangfucheng_im_protobuf_ReceivedOfflineMessageResponse_descriptor,
+        new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
+    internal_static_com_jiangfucheng_im_protobuf_NotifyAddFriendRequest_descriptor =
+      getDescriptor().getMessageTypes().get(38);
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddFriendRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyAddFriendRequest_descriptor,
         new java.lang.String[] { "FromId", "UserId", "AuthMessage", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddFriendResponse_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddFriendResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyAddFriendResponse_descriptor,
         new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeleteFriendRequest_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeleteFriendRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyDeleteFriendRequest_descriptor,
         new java.lang.String[] { "FromId", "UserId", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeleteFriendResponse_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeleteFriendResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyDeleteFriendResponse_descriptor,
         new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOnlineRequest_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOnlineRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOnlineRequest_descriptor,
         new java.lang.String[] { "FromId", "UserId", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOnlineResponse_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOnlineResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOnlineResponse_descriptor,
         new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOfflineRequest_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOfflineRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOfflineRequest_descriptor,
         new java.lang.String[] { "FromId", "UserId", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOfflineResponse_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOfflineResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyFriendOfflineResponse_descriptor,
         new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupRequest_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(46);
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupRequest_descriptor,
         new java.lang.String[] { "FromId", "UserId", "GroupId", "VerifyMessage", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupResponse_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(47);
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupResponse_descriptor,
         new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupRequest_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(48);
     internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupRequest_descriptor,
         new java.lang.String[] { "FromId", "GroupId", "InvitedUserId", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupResponse_descriptor =
-      getDescriptor().getMessageTypes().get(45);
+      getDescriptor().getMessageTypes().get(49);
     internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyInviteMemberToGroupResponse_descriptor,
         new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeletedGroupRequest_descriptor =
-      getDescriptor().getMessageTypes().get(46);
+      getDescriptor().getMessageTypes().get(50);
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeletedGroupRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyDeletedGroupRequest_descriptor,
         new java.lang.String[] { "FromId", "GroupId", "GroupOwnerId", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeletedGroupResponse_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(51);
     internal_static_com_jiangfucheng_im_protobuf_NotifyDeletedGroupResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyDeletedGroupResponse_descriptor,
         new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyChangeGroupManagerAuthRequest_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(52);
     internal_static_com_jiangfucheng_im_protobuf_NotifyChangeGroupManagerAuthRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyChangeGroupManagerAuthRequest_descriptor,
         new java.lang.String[] { "FromId", "GroupId", "UserId", "Type", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyChangeGroupManagerAuthResponse_descriptor =
-      getDescriptor().getMessageTypes().get(49);
+      getDescriptor().getMessageTypes().get(53);
     internal_static_com_jiangfucheng_im_protobuf_NotifyChangeGroupManagerAuthResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyChangeGroupManagerAuthResponse_descriptor,
         new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutGroupRequest_descriptor =
-      getDescriptor().getMessageTypes().get(50);
+      getDescriptor().getMessageTypes().get(54);
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutGroupRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutGroupRequest_descriptor,
         new java.lang.String[] { "FromId", "GroupId", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutGroupResponse_descriptor =
-      getDescriptor().getMessageTypes().get(51);
+      getDescriptor().getMessageTypes().get(55);
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutGroupResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutGroupResponse_descriptor,
         new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutRequest_descriptor =
-      getDescriptor().getMessageTypes().get(52);
+      getDescriptor().getMessageTypes().get(56);
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutRequest_descriptor,
         new java.lang.String[] { "FromId", "Ip", "Address", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutResponse_descriptor =
-      getDescriptor().getMessageTypes().get(53);
+      getDescriptor().getMessageTypes().get(57);
     internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyKickOutResponse_descriptor,
         new java.lang.String[] { "Code", "Msg", "ErrMsg", "Timestamp", "TargetId", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupAnnouncementRequest_descriptor =
-      getDescriptor().getMessageTypes().get(54);
+      getDescriptor().getMessageTypes().get(58);
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupAnnouncementRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupAnnouncementRequest_descriptor,
         new java.lang.String[] { "FromId", "GroupId", "Title", "Content", "Timestamp", });
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupAnnouncementResponse_descriptor =
-      getDescriptor().getMessageTypes().get(55);
+      getDescriptor().getMessageTypes().get(59);
     internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupAnnouncementResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_NotifyAddGroupAnnouncementResponse_descriptor,

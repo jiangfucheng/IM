@@ -17,8 +17,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class BaseController {
 
-	private ChatClientContext context;
-	private MessageMonitor messageMonitor;
+	protected ChatClientContext context;
+	protected MessageMonitor messageMonitor;
 
 	protected BaseController(ChatClientContext context, MessageMonitor messageMonitor) {
 		this.context = context;

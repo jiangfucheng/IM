@@ -273,6 +273,38 @@ message LogoutResponse {
     int64 target_id = 5; //目标用户id(要把消息发给谁)
 }
 
+//拉取离线消息
+message PullOfflineMessageRequest {
+    string token = 1;
+    int64 user_id = 2;
+    int64 begin_msg_id = 3; //拉取id大于这个值的消息，如果为-1，则表示拉取所有离线消息
+    int64 timestamp = 4;
+}
+
+message PullOfflineMessageResponse {
+    int32 code = 1;
+    string msg = 2;
+    string err_msg = 3;
+    string message = 4;
+    int64 timestamp = 5;
+    int64 target_id = 6; //目标用户id(要把消息发给谁)
+}
+
+message ReceivedOfflineMessageRequest {
+    string token = 1;
+    int64 friend_id = 2;
+    int64 received_message_id = 3;
+    int64 timestamp = 4;
+}
+
+message ReceivedOfflineMessageResponse {
+    int32 code = 1;
+    string msg = 2;
+    string err_msg = 3;
+    int64 timestamp = 4;
+    int64 target_id = 5; //目标用户id(要把消息发给谁)
+}
+
 //2.通知类
 //所有的request加一个from_id,表示由那个用户触发的该request的产生，便于回复response的时候填写目标用户id
 

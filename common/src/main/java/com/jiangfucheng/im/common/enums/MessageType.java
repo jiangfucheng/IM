@@ -11,7 +11,7 @@ public enum MessageType {
 	TEXT(0),
 	IMAGE(1),
 	AUDIO(2),
-	VEDIO(3),
+	VIDEO(3),
 	FILE(4);
 	private int value;
 
@@ -21,5 +21,22 @@ public enum MessageType {
 
 	public int value() {
 		return this.value;
+	}
+
+	public static MessageType valueOf(int value) {
+		switch (value) {
+			case 0:
+				return TEXT;
+			case 1:
+				return IMAGE;
+			case 2:
+				return AUDIO;
+			case 3:
+				return VIDEO;
+			case 4:
+				return FILE;
+			default:
+				throw new IllegalArgumentException("非法的类型");
+		}
 	}
 }

@@ -500,6 +500,22 @@ public final class Base {
      * <code>NOTIFY_ADD_GROUP_RESPONSE = 63;</code>
      */
     NOTIFY_ADD_GROUP_RESPONSE(63),
+    /**
+     * <code>PULL_OFFLINE_MESSAGE_REQUEST = 64;</code>
+     */
+    PULL_OFFLINE_MESSAGE_REQUEST(64),
+    /**
+     * <code>PULL_OFFLINE_MESSAGE_RESPONSE = 65;</code>
+     */
+    PULL_OFFLINE_MESSAGE_RESPONSE(65),
+    /**
+     * <code>RECEIVED_OFFLINE_MESSAGE_REQUEST = 66;</code>
+     */
+    RECEIVED_OFFLINE_MESSAGE_REQUEST(66),
+    /**
+     * <code>RECEIVED_OFFLINE_MESSAGE_RESPONSE = 67;</code>
+     */
+    RECEIVED_OFFLINE_MESSAGE_RESPONSE(67),
     UNRECOGNIZED(-1),
     ;
 
@@ -755,6 +771,22 @@ public final class Base {
      * <code>NOTIFY_ADD_GROUP_RESPONSE = 63;</code>
      */
     public static final int NOTIFY_ADD_GROUP_RESPONSE_VALUE = 63;
+    /**
+     * <code>PULL_OFFLINE_MESSAGE_REQUEST = 64;</code>
+     */
+    public static final int PULL_OFFLINE_MESSAGE_REQUEST_VALUE = 64;
+    /**
+     * <code>PULL_OFFLINE_MESSAGE_RESPONSE = 65;</code>
+     */
+    public static final int PULL_OFFLINE_MESSAGE_RESPONSE_VALUE = 65;
+    /**
+     * <code>RECEIVED_OFFLINE_MESSAGE_REQUEST = 66;</code>
+     */
+    public static final int RECEIVED_OFFLINE_MESSAGE_REQUEST_VALUE = 66;
+    /**
+     * <code>RECEIVED_OFFLINE_MESSAGE_RESPONSE = 67;</code>
+     */
+    public static final int RECEIVED_OFFLINE_MESSAGE_RESPONSE_VALUE = 67;
 
 
     public final int getNumber() {
@@ -844,6 +876,10 @@ public final class Base {
         case 61: return LOGIN_RESPONSE;
         case 62: return NOTIFY_ADD_GROUP_REQUEST;
         case 63: return NOTIFY_ADD_GROUP_RESPONSE;
+        case 64: return PULL_OFFLINE_MESSAGE_REQUEST;
+        case 65: return PULL_OFFLINE_MESSAGE_RESPONSE;
+        case 66: return RECEIVED_OFFLINE_MESSAGE_REQUEST;
+        case 67: return RECEIVED_OFFLINE_MESSAGE_RESPONSE;
         default: return null;
       }
     }
@@ -1883,6 +1919,66 @@ public final class Base {
      */
     com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponseOrBuilder getNotifyAddGroupResponseOrBuilder();
 
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageRequest pull_offline_message_request = 65;</code>
+     * @return Whether the pullOfflineMessageRequest field is set.
+     */
+    boolean hasPullOfflineMessageRequest();
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageRequest pull_offline_message_request = 65;</code>
+     * @return The pullOfflineMessageRequest.
+     */
+    com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest getPullOfflineMessageRequest();
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageRequest pull_offline_message_request = 65;</code>
+     */
+    com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequestOrBuilder getPullOfflineMessageRequestOrBuilder();
+
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageResponse pull_offline_message_response = 66;</code>
+     * @return Whether the pullOfflineMessageResponse field is set.
+     */
+    boolean hasPullOfflineMessageResponse();
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageResponse pull_offline_message_response = 66;</code>
+     * @return The pullOfflineMessageResponse.
+     */
+    com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse getPullOfflineMessageResponse();
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageResponse pull_offline_message_response = 66;</code>
+     */
+    com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponseOrBuilder getPullOfflineMessageResponseOrBuilder();
+
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest received_offline_message_request = 67;</code>
+     * @return Whether the receivedOfflineMessageRequest field is set.
+     */
+    boolean hasReceivedOfflineMessageRequest();
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest received_offline_message_request = 67;</code>
+     * @return The receivedOfflineMessageRequest.
+     */
+    com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest getReceivedOfflineMessageRequest();
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest received_offline_message_request = 67;</code>
+     */
+    com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequestOrBuilder getReceivedOfflineMessageRequestOrBuilder();
+
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse received_offline_message_response = 68;</code>
+     * @return Whether the receivedOfflineMessageResponse field is set.
+     */
+    boolean hasReceivedOfflineMessageResponse();
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse received_offline_message_response = 68;</code>
+     * @return The receivedOfflineMessageResponse.
+     */
+    com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse getReceivedOfflineMessageResponse();
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse received_offline_message_response = 68;</code>
+     */
+    com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponseOrBuilder getReceivedOfflineMessageResponseOrBuilder();
+
     public com.jiangfucheng.im.protobuf.Base.Message.DataCase getDataCase();
   }
   /**
@@ -2800,6 +2896,62 @@ public final class Base {
               dataCase_ = 64;
               break;
             }
+            case 522: {
+              com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.Builder subBuilder = null;
+              if (dataCase_ == 65) {
+                subBuilder = ((com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest) data_).toBuilder();
+              }
+              data_ =
+                  input.readMessage(com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest) data_);
+                data_ = subBuilder.buildPartial();
+              }
+              dataCase_ = 65;
+              break;
+            }
+            case 530: {
+              com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.Builder subBuilder = null;
+              if (dataCase_ == 66) {
+                subBuilder = ((com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse) data_).toBuilder();
+              }
+              data_ =
+                  input.readMessage(com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse) data_);
+                data_ = subBuilder.buildPartial();
+              }
+              dataCase_ = 66;
+              break;
+            }
+            case 538: {
+              com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.Builder subBuilder = null;
+              if (dataCase_ == 67) {
+                subBuilder = ((com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest) data_).toBuilder();
+              }
+              data_ =
+                  input.readMessage(com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest) data_);
+                data_ = subBuilder.buildPartial();
+              }
+              dataCase_ = 67;
+              break;
+            }
+            case 546: {
+              com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.Builder subBuilder = null;
+              if (dataCase_ == 68) {
+                subBuilder = ((com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse) data_).toBuilder();
+              }
+              data_ =
+                  input.readMessage(com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse) data_);
+                data_ = subBuilder.buildPartial();
+              }
+              dataCase_ = 68;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -2897,6 +3049,10 @@ public final class Base {
       LOGIN_RESPONSE(62),
       NOTIFY_ADD_GROUP_REQUEST(63),
       NOTIFY_ADD_GROUP_RESPONSE(64),
+      PULL_OFFLINE_MESSAGE_REQUEST(65),
+      PULL_OFFLINE_MESSAGE_RESPONSE(66),
+      RECEIVED_OFFLINE_MESSAGE_REQUEST(67),
+      RECEIVED_OFFLINE_MESSAGE_RESPONSE(68),
       DATA_NOT_SET(0);
       private final int value;
       private DataCase(int value) {
@@ -2974,6 +3130,10 @@ public final class Base {
           case 62: return LOGIN_RESPONSE;
           case 63: return NOTIFY_ADD_GROUP_REQUEST;
           case 64: return NOTIFY_ADD_GROUP_RESPONSE;
+          case 65: return PULL_OFFLINE_MESSAGE_REQUEST;
+          case 66: return PULL_OFFLINE_MESSAGE_RESPONSE;
+          case 67: return RECEIVED_OFFLINE_MESSAGE_REQUEST;
+          case 68: return RECEIVED_OFFLINE_MESSAGE_RESPONSE;
           case 0: return DATA_NOT_SET;
           default: return null;
         }
@@ -4780,6 +4940,118 @@ public final class Base {
       return com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse.getDefaultInstance();
     }
 
+    public static final int PULL_OFFLINE_MESSAGE_REQUEST_FIELD_NUMBER = 65;
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageRequest pull_offline_message_request = 65;</code>
+     * @return Whether the pullOfflineMessageRequest field is set.
+     */
+    public boolean hasPullOfflineMessageRequest() {
+      return dataCase_ == 65;
+    }
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageRequest pull_offline_message_request = 65;</code>
+     * @return The pullOfflineMessageRequest.
+     */
+    public com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest getPullOfflineMessageRequest() {
+      if (dataCase_ == 65) {
+         return (com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest) data_;
+      }
+      return com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.getDefaultInstance();
+    }
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageRequest pull_offline_message_request = 65;</code>
+     */
+    public com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequestOrBuilder getPullOfflineMessageRequestOrBuilder() {
+      if (dataCase_ == 65) {
+         return (com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest) data_;
+      }
+      return com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.getDefaultInstance();
+    }
+
+    public static final int PULL_OFFLINE_MESSAGE_RESPONSE_FIELD_NUMBER = 66;
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageResponse pull_offline_message_response = 66;</code>
+     * @return Whether the pullOfflineMessageResponse field is set.
+     */
+    public boolean hasPullOfflineMessageResponse() {
+      return dataCase_ == 66;
+    }
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageResponse pull_offline_message_response = 66;</code>
+     * @return The pullOfflineMessageResponse.
+     */
+    public com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse getPullOfflineMessageResponse() {
+      if (dataCase_ == 66) {
+         return (com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse) data_;
+      }
+      return com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.getDefaultInstance();
+    }
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageResponse pull_offline_message_response = 66;</code>
+     */
+    public com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponseOrBuilder getPullOfflineMessageResponseOrBuilder() {
+      if (dataCase_ == 66) {
+         return (com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse) data_;
+      }
+      return com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.getDefaultInstance();
+    }
+
+    public static final int RECEIVED_OFFLINE_MESSAGE_REQUEST_FIELD_NUMBER = 67;
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest received_offline_message_request = 67;</code>
+     * @return Whether the receivedOfflineMessageRequest field is set.
+     */
+    public boolean hasReceivedOfflineMessageRequest() {
+      return dataCase_ == 67;
+    }
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest received_offline_message_request = 67;</code>
+     * @return The receivedOfflineMessageRequest.
+     */
+    public com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest getReceivedOfflineMessageRequest() {
+      if (dataCase_ == 67) {
+         return (com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest) data_;
+      }
+      return com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.getDefaultInstance();
+    }
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest received_offline_message_request = 67;</code>
+     */
+    public com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequestOrBuilder getReceivedOfflineMessageRequestOrBuilder() {
+      if (dataCase_ == 67) {
+         return (com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest) data_;
+      }
+      return com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.getDefaultInstance();
+    }
+
+    public static final int RECEIVED_OFFLINE_MESSAGE_RESPONSE_FIELD_NUMBER = 68;
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse received_offline_message_response = 68;</code>
+     * @return Whether the receivedOfflineMessageResponse field is set.
+     */
+    public boolean hasReceivedOfflineMessageResponse() {
+      return dataCase_ == 68;
+    }
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse received_offline_message_response = 68;</code>
+     * @return The receivedOfflineMessageResponse.
+     */
+    public com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse getReceivedOfflineMessageResponse() {
+      if (dataCase_ == 68) {
+         return (com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse) data_;
+      }
+      return com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.getDefaultInstance();
+    }
+    /**
+     * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse received_offline_message_response = 68;</code>
+     */
+    public com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponseOrBuilder getReceivedOfflineMessageResponseOrBuilder() {
+      if (dataCase_ == 68) {
+         return (com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse) data_;
+      }
+      return com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4985,6 +5257,18 @@ public final class Base {
       }
       if (dataCase_ == 64) {
         output.writeMessage(64, (com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse) data_);
+      }
+      if (dataCase_ == 65) {
+        output.writeMessage(65, (com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest) data_);
+      }
+      if (dataCase_ == 66) {
+        output.writeMessage(66, (com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse) data_);
+      }
+      if (dataCase_ == 67) {
+        output.writeMessage(67, (com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest) data_);
+      }
+      if (dataCase_ == 68) {
+        output.writeMessage(68, (com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse) data_);
       }
       unknownFields.writeTo(output);
     }
@@ -5251,6 +5535,22 @@ public final class Base {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(64, (com.jiangfucheng.im.protobuf.Control.NotifyAddGroupResponse) data_);
       }
+      if (dataCase_ == 65) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(65, (com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest) data_);
+      }
+      if (dataCase_ == 66) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(66, (com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse) data_);
+      }
+      if (dataCase_ == 67) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(67, (com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest) data_);
+      }
+      if (dataCase_ == 68) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(68, (com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse) data_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5512,6 +5812,22 @@ public final class Base {
         case 64:
           if (!getNotifyAddGroupResponse()
               .equals(other.getNotifyAddGroupResponse())) return false;
+          break;
+        case 65:
+          if (!getPullOfflineMessageRequest()
+              .equals(other.getPullOfflineMessageRequest())) return false;
+          break;
+        case 66:
+          if (!getPullOfflineMessageResponse()
+              .equals(other.getPullOfflineMessageResponse())) return false;
+          break;
+        case 67:
+          if (!getReceivedOfflineMessageRequest()
+              .equals(other.getReceivedOfflineMessageRequest())) return false;
+          break;
+        case 68:
+          if (!getReceivedOfflineMessageResponse()
+              .equals(other.getReceivedOfflineMessageResponse())) return false;
           break;
         case 0:
         default:
@@ -5776,6 +6092,22 @@ public final class Base {
         case 64:
           hash = (37 * hash) + NOTIFY_ADD_GROUP_RESPONSE_FIELD_NUMBER;
           hash = (53 * hash) + getNotifyAddGroupResponse().hashCode();
+          break;
+        case 65:
+          hash = (37 * hash) + PULL_OFFLINE_MESSAGE_REQUEST_FIELD_NUMBER;
+          hash = (53 * hash) + getPullOfflineMessageRequest().hashCode();
+          break;
+        case 66:
+          hash = (37 * hash) + PULL_OFFLINE_MESSAGE_RESPONSE_FIELD_NUMBER;
+          hash = (53 * hash) + getPullOfflineMessageResponse().hashCode();
+          break;
+        case 67:
+          hash = (37 * hash) + RECEIVED_OFFLINE_MESSAGE_REQUEST_FIELD_NUMBER;
+          hash = (53 * hash) + getReceivedOfflineMessageRequest().hashCode();
+          break;
+        case 68:
+          hash = (37 * hash) + RECEIVED_OFFLINE_MESSAGE_RESPONSE_FIELD_NUMBER;
+          hash = (53 * hash) + getReceivedOfflineMessageResponse().hashCode();
           break;
         case 0:
         default:
@@ -6377,6 +6709,34 @@ public final class Base {
             result.data_ = notifyAddGroupResponseBuilder_.build();
           }
         }
+        if (dataCase_ == 65) {
+          if (pullOfflineMessageRequestBuilder_ == null) {
+            result.data_ = data_;
+          } else {
+            result.data_ = pullOfflineMessageRequestBuilder_.build();
+          }
+        }
+        if (dataCase_ == 66) {
+          if (pullOfflineMessageResponseBuilder_ == null) {
+            result.data_ = data_;
+          } else {
+            result.data_ = pullOfflineMessageResponseBuilder_.build();
+          }
+        }
+        if (dataCase_ == 67) {
+          if (receivedOfflineMessageRequestBuilder_ == null) {
+            result.data_ = data_;
+          } else {
+            result.data_ = receivedOfflineMessageRequestBuilder_.build();
+          }
+        }
+        if (dataCase_ == 68) {
+          if (receivedOfflineMessageResponseBuilder_ == null) {
+            result.data_ = data_;
+          } else {
+            result.data_ = receivedOfflineMessageResponseBuilder_.build();
+          }
+        }
         result.dataCase_ = dataCase_;
         onBuilt();
         return result;
@@ -6677,6 +7037,22 @@ public final class Base {
           }
           case NOTIFY_ADD_GROUP_RESPONSE: {
             mergeNotifyAddGroupResponse(other.getNotifyAddGroupResponse());
+            break;
+          }
+          case PULL_OFFLINE_MESSAGE_REQUEST: {
+            mergePullOfflineMessageRequest(other.getPullOfflineMessageRequest());
+            break;
+          }
+          case PULL_OFFLINE_MESSAGE_RESPONSE: {
+            mergePullOfflineMessageResponse(other.getPullOfflineMessageResponse());
+            break;
+          }
+          case RECEIVED_OFFLINE_MESSAGE_REQUEST: {
+            mergeReceivedOfflineMessageRequest(other.getReceivedOfflineMessageRequest());
+            break;
+          }
+          case RECEIVED_OFFLINE_MESSAGE_RESPONSE: {
+            mergeReceivedOfflineMessageResponse(other.getReceivedOfflineMessageResponse());
             break;
           }
           case DATA_NOT_SET: {
@@ -15320,6 +15696,558 @@ public final class Base {
         onChanged();;
         return notifyAddGroupResponseBuilder_;
       }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest, com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.Builder, com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequestOrBuilder> pullOfflineMessageRequestBuilder_;
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageRequest pull_offline_message_request = 65;</code>
+       * @return Whether the pullOfflineMessageRequest field is set.
+       */
+      public boolean hasPullOfflineMessageRequest() {
+        return dataCase_ == 65;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageRequest pull_offline_message_request = 65;</code>
+       * @return The pullOfflineMessageRequest.
+       */
+      public com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest getPullOfflineMessageRequest() {
+        if (pullOfflineMessageRequestBuilder_ == null) {
+          if (dataCase_ == 65) {
+            return (com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest) data_;
+          }
+          return com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.getDefaultInstance();
+        } else {
+          if (dataCase_ == 65) {
+            return pullOfflineMessageRequestBuilder_.getMessage();
+          }
+          return com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageRequest pull_offline_message_request = 65;</code>
+       */
+      public Builder setPullOfflineMessageRequest(com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest value) {
+        if (pullOfflineMessageRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          pullOfflineMessageRequestBuilder_.setMessage(value);
+        }
+        dataCase_ = 65;
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageRequest pull_offline_message_request = 65;</code>
+       */
+      public Builder setPullOfflineMessageRequest(
+          com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.Builder builderForValue) {
+        if (pullOfflineMessageRequestBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          pullOfflineMessageRequestBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 65;
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageRequest pull_offline_message_request = 65;</code>
+       */
+      public Builder mergePullOfflineMessageRequest(com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest value) {
+        if (pullOfflineMessageRequestBuilder_ == null) {
+          if (dataCase_ == 65 &&
+              data_ != com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.getDefaultInstance()) {
+            data_ = com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.newBuilder((com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 65) {
+            pullOfflineMessageRequestBuilder_.mergeFrom(value);
+          }
+          pullOfflineMessageRequestBuilder_.setMessage(value);
+        }
+        dataCase_ = 65;
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageRequest pull_offline_message_request = 65;</code>
+       */
+      public Builder clearPullOfflineMessageRequest() {
+        if (pullOfflineMessageRequestBuilder_ == null) {
+          if (dataCase_ == 65) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 65) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          pullOfflineMessageRequestBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageRequest pull_offline_message_request = 65;</code>
+       */
+      public com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.Builder getPullOfflineMessageRequestBuilder() {
+        return getPullOfflineMessageRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageRequest pull_offline_message_request = 65;</code>
+       */
+      public com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequestOrBuilder getPullOfflineMessageRequestOrBuilder() {
+        if ((dataCase_ == 65) && (pullOfflineMessageRequestBuilder_ != null)) {
+          return pullOfflineMessageRequestBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 65) {
+            return (com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest) data_;
+          }
+          return com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageRequest pull_offline_message_request = 65;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest, com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.Builder, com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequestOrBuilder> 
+          getPullOfflineMessageRequestFieldBuilder() {
+        if (pullOfflineMessageRequestBuilder_ == null) {
+          if (!(dataCase_ == 65)) {
+            data_ = com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.getDefaultInstance();
+          }
+          pullOfflineMessageRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest, com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest.Builder, com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequestOrBuilder>(
+                  (com.jiangfucheng.im.protobuf.Control.PullOfflineMessageRequest) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 65;
+        onChanged();;
+        return pullOfflineMessageRequestBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse, com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.Builder, com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponseOrBuilder> pullOfflineMessageResponseBuilder_;
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageResponse pull_offline_message_response = 66;</code>
+       * @return Whether the pullOfflineMessageResponse field is set.
+       */
+      public boolean hasPullOfflineMessageResponse() {
+        return dataCase_ == 66;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageResponse pull_offline_message_response = 66;</code>
+       * @return The pullOfflineMessageResponse.
+       */
+      public com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse getPullOfflineMessageResponse() {
+        if (pullOfflineMessageResponseBuilder_ == null) {
+          if (dataCase_ == 66) {
+            return (com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse) data_;
+          }
+          return com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.getDefaultInstance();
+        } else {
+          if (dataCase_ == 66) {
+            return pullOfflineMessageResponseBuilder_.getMessage();
+          }
+          return com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageResponse pull_offline_message_response = 66;</code>
+       */
+      public Builder setPullOfflineMessageResponse(com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse value) {
+        if (pullOfflineMessageResponseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          pullOfflineMessageResponseBuilder_.setMessage(value);
+        }
+        dataCase_ = 66;
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageResponse pull_offline_message_response = 66;</code>
+       */
+      public Builder setPullOfflineMessageResponse(
+          com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.Builder builderForValue) {
+        if (pullOfflineMessageResponseBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          pullOfflineMessageResponseBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 66;
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageResponse pull_offline_message_response = 66;</code>
+       */
+      public Builder mergePullOfflineMessageResponse(com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse value) {
+        if (pullOfflineMessageResponseBuilder_ == null) {
+          if (dataCase_ == 66 &&
+              data_ != com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.getDefaultInstance()) {
+            data_ = com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.newBuilder((com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 66) {
+            pullOfflineMessageResponseBuilder_.mergeFrom(value);
+          }
+          pullOfflineMessageResponseBuilder_.setMessage(value);
+        }
+        dataCase_ = 66;
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageResponse pull_offline_message_response = 66;</code>
+       */
+      public Builder clearPullOfflineMessageResponse() {
+        if (pullOfflineMessageResponseBuilder_ == null) {
+          if (dataCase_ == 66) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 66) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          pullOfflineMessageResponseBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageResponse pull_offline_message_response = 66;</code>
+       */
+      public com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.Builder getPullOfflineMessageResponseBuilder() {
+        return getPullOfflineMessageResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageResponse pull_offline_message_response = 66;</code>
+       */
+      public com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponseOrBuilder getPullOfflineMessageResponseOrBuilder() {
+        if ((dataCase_ == 66) && (pullOfflineMessageResponseBuilder_ != null)) {
+          return pullOfflineMessageResponseBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 66) {
+            return (com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse) data_;
+          }
+          return com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.PullOfflineMessageResponse pull_offline_message_response = 66;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse, com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.Builder, com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponseOrBuilder> 
+          getPullOfflineMessageResponseFieldBuilder() {
+        if (pullOfflineMessageResponseBuilder_ == null) {
+          if (!(dataCase_ == 66)) {
+            data_ = com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.getDefaultInstance();
+          }
+          pullOfflineMessageResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse, com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse.Builder, com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponseOrBuilder>(
+                  (com.jiangfucheng.im.protobuf.Control.PullOfflineMessageResponse) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 66;
+        onChanged();;
+        return pullOfflineMessageResponseBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest, com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.Builder, com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequestOrBuilder> receivedOfflineMessageRequestBuilder_;
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest received_offline_message_request = 67;</code>
+       * @return Whether the receivedOfflineMessageRequest field is set.
+       */
+      public boolean hasReceivedOfflineMessageRequest() {
+        return dataCase_ == 67;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest received_offline_message_request = 67;</code>
+       * @return The receivedOfflineMessageRequest.
+       */
+      public com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest getReceivedOfflineMessageRequest() {
+        if (receivedOfflineMessageRequestBuilder_ == null) {
+          if (dataCase_ == 67) {
+            return (com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest) data_;
+          }
+          return com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.getDefaultInstance();
+        } else {
+          if (dataCase_ == 67) {
+            return receivedOfflineMessageRequestBuilder_.getMessage();
+          }
+          return com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest received_offline_message_request = 67;</code>
+       */
+      public Builder setReceivedOfflineMessageRequest(com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest value) {
+        if (receivedOfflineMessageRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          receivedOfflineMessageRequestBuilder_.setMessage(value);
+        }
+        dataCase_ = 67;
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest received_offline_message_request = 67;</code>
+       */
+      public Builder setReceivedOfflineMessageRequest(
+          com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.Builder builderForValue) {
+        if (receivedOfflineMessageRequestBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          receivedOfflineMessageRequestBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 67;
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest received_offline_message_request = 67;</code>
+       */
+      public Builder mergeReceivedOfflineMessageRequest(com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest value) {
+        if (receivedOfflineMessageRequestBuilder_ == null) {
+          if (dataCase_ == 67 &&
+              data_ != com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.getDefaultInstance()) {
+            data_ = com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.newBuilder((com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 67) {
+            receivedOfflineMessageRequestBuilder_.mergeFrom(value);
+          }
+          receivedOfflineMessageRequestBuilder_.setMessage(value);
+        }
+        dataCase_ = 67;
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest received_offline_message_request = 67;</code>
+       */
+      public Builder clearReceivedOfflineMessageRequest() {
+        if (receivedOfflineMessageRequestBuilder_ == null) {
+          if (dataCase_ == 67) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 67) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          receivedOfflineMessageRequestBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest received_offline_message_request = 67;</code>
+       */
+      public com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.Builder getReceivedOfflineMessageRequestBuilder() {
+        return getReceivedOfflineMessageRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest received_offline_message_request = 67;</code>
+       */
+      public com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequestOrBuilder getReceivedOfflineMessageRequestOrBuilder() {
+        if ((dataCase_ == 67) && (receivedOfflineMessageRequestBuilder_ != null)) {
+          return receivedOfflineMessageRequestBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 67) {
+            return (com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest) data_;
+          }
+          return com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageRequest received_offline_message_request = 67;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest, com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.Builder, com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequestOrBuilder> 
+          getReceivedOfflineMessageRequestFieldBuilder() {
+        if (receivedOfflineMessageRequestBuilder_ == null) {
+          if (!(dataCase_ == 67)) {
+            data_ = com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.getDefaultInstance();
+          }
+          receivedOfflineMessageRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest, com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest.Builder, com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequestOrBuilder>(
+                  (com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageRequest) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 67;
+        onChanged();;
+        return receivedOfflineMessageRequestBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse, com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.Builder, com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponseOrBuilder> receivedOfflineMessageResponseBuilder_;
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse received_offline_message_response = 68;</code>
+       * @return Whether the receivedOfflineMessageResponse field is set.
+       */
+      public boolean hasReceivedOfflineMessageResponse() {
+        return dataCase_ == 68;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse received_offline_message_response = 68;</code>
+       * @return The receivedOfflineMessageResponse.
+       */
+      public com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse getReceivedOfflineMessageResponse() {
+        if (receivedOfflineMessageResponseBuilder_ == null) {
+          if (dataCase_ == 68) {
+            return (com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse) data_;
+          }
+          return com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.getDefaultInstance();
+        } else {
+          if (dataCase_ == 68) {
+            return receivedOfflineMessageResponseBuilder_.getMessage();
+          }
+          return com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse received_offline_message_response = 68;</code>
+       */
+      public Builder setReceivedOfflineMessageResponse(com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse value) {
+        if (receivedOfflineMessageResponseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+          onChanged();
+        } else {
+          receivedOfflineMessageResponseBuilder_.setMessage(value);
+        }
+        dataCase_ = 68;
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse received_offline_message_response = 68;</code>
+       */
+      public Builder setReceivedOfflineMessageResponse(
+          com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.Builder builderForValue) {
+        if (receivedOfflineMessageResponseBuilder_ == null) {
+          data_ = builderForValue.build();
+          onChanged();
+        } else {
+          receivedOfflineMessageResponseBuilder_.setMessage(builderForValue.build());
+        }
+        dataCase_ = 68;
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse received_offline_message_response = 68;</code>
+       */
+      public Builder mergeReceivedOfflineMessageResponse(com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse value) {
+        if (receivedOfflineMessageResponseBuilder_ == null) {
+          if (dataCase_ == 68 &&
+              data_ != com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.getDefaultInstance()) {
+            data_ = com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.newBuilder((com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse) data_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            data_ = value;
+          }
+          onChanged();
+        } else {
+          if (dataCase_ == 68) {
+            receivedOfflineMessageResponseBuilder_.mergeFrom(value);
+          }
+          receivedOfflineMessageResponseBuilder_.setMessage(value);
+        }
+        dataCase_ = 68;
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse received_offline_message_response = 68;</code>
+       */
+      public Builder clearReceivedOfflineMessageResponse() {
+        if (receivedOfflineMessageResponseBuilder_ == null) {
+          if (dataCase_ == 68) {
+            dataCase_ = 0;
+            data_ = null;
+            onChanged();
+          }
+        } else {
+          if (dataCase_ == 68) {
+            dataCase_ = 0;
+            data_ = null;
+          }
+          receivedOfflineMessageResponseBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse received_offline_message_response = 68;</code>
+       */
+      public com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.Builder getReceivedOfflineMessageResponseBuilder() {
+        return getReceivedOfflineMessageResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse received_offline_message_response = 68;</code>
+       */
+      public com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponseOrBuilder getReceivedOfflineMessageResponseOrBuilder() {
+        if ((dataCase_ == 68) && (receivedOfflineMessageResponseBuilder_ != null)) {
+          return receivedOfflineMessageResponseBuilder_.getMessageOrBuilder();
+        } else {
+          if (dataCase_ == 68) {
+            return (com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse) data_;
+          }
+          return com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.com.jiangfucheng.im.protobuf.ReceivedOfflineMessageResponse received_offline_message_response = 68;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse, com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.Builder, com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponseOrBuilder> 
+          getReceivedOfflineMessageResponseFieldBuilder() {
+        if (receivedOfflineMessageResponseBuilder_ == null) {
+          if (!(dataCase_ == 68)) {
+            data_ = com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.getDefaultInstance();
+          }
+          receivedOfflineMessageResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse, com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse.Builder, com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponseOrBuilder>(
+                  (com.jiangfucheng.im.protobuf.Control.ReceivedOfflineMessageResponse) data_,
+                  getParentForChildren(),
+                  isClean());
+          data_ = null;
+        }
+        dataCase_ = 68;
+        onChanged();;
+        return receivedOfflineMessageResponseBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -15389,7 +16317,7 @@ public final class Base {
     java.lang.String[] descriptorData = {
       "\n\nbase.proto\022\034com.jiangfucheng.im.protob" +
       "uf\032\021single_chat.proto\032\020group_chat.proto\032" +
-      "\rcontrol.proto\"\222-\n\007Message\022;\n\010msg_type\030\001" +
+      "\rcontrol.proto\"\2520\n\007Message\022;\n\010msg_type\030\001" +
       " \001(\0162).com.jiangfucheng.im.protobuf.Mess" +
       "ageType\022C\n\016message_status\030\002 \001(\0162+.com.ji" +
       "angfucheng.im.protobuf.MessageStatus\0229\n\t" +
@@ -15533,60 +16461,74 @@ public final class Base {
       "\01323.com.jiangfucheng.im.protobuf.NotifyA" +
       "ddGroupRequestH\000\022Y\n\031notify_add_group_res" +
       "ponse\030@ \001(\01324.com.jiangfucheng.im.protob" +
-      "uf.NotifyAddGroupResponseH\000B\006\n\004Data*(\n\013M" +
-      "essageType\022\013\n\007REQUEST\020\000\022\014\n\010RESPONSE\020\001*-\n" +
-      "\rMessageStatus\022\007\n\003REQ\020\000\022\007\n\003ACK\020\001\022\n\n\006NOTI" +
-      "FY\020\002*\270\017\n\010DataType\022\t\n\005EMPTY\020\000\022\026\n\022HEART_BE" +
-      "AT_REQUEST\020\001\022\027\n\023HEART_BEAT_RESPONSE\020\002\022\027\n" +
-      "\023SINGLE_CHAT_REQUEST\020\003\022\030\n\024SINGLE_CHAT_RE" +
-      "SPONSE\020\004\022\026\n\022GROUP_CHAT_REQUEST\020\005\022\027\n\023GROU" +
-      "P_CHAT_RESPONSE\020\006\022\026\n\022ADD_FRIEND_REQUEST\020" +
-      "\007\022\027\n\023ADD_FRIEND_RESPONSE\020\010\022\031\n\025DELETE_FRI" +
-      "END_REQUEST\020\t\022\032\n\026DELETE_FRIEND_RESPONSE\020" +
-      "\n\022\025\n\021ADD_GROUP_REQUEST\020\013\022\026\n\022ADD_GROUP_RE" +
-      "SPONSE\020\014\022\030\n\024CREATE_GROUP_REQUEST\020\r\022\031\n\025CR" +
-      "EATE_GROUP_RESPONSE\020\016\022\026\n\022EXIT_GROUP_REQU" +
-      "EST\020\017\022\027\n\023EXIT_GROUP_RESPONSE\020\020\022\036\n\032CHANGE" +
-      "_GROUP_OWNER_REQUEST\020\021\022\037\n\033CHANGE_GROUP_O" +
-      "WNER_RESPONSE\020\022\022\030\n\024DELETE_GROUP_REQUEST\020" +
-      "\023\022\031\n\025DELETE_GROUP_RESPONSE\020\024\022%\n!CHANGE_G" +
-      "ROUP_MANAGER_AUTH_REQUEST\020\025\022&\n\"CHANGE_GR" +
-      "OUP_MANAGER_AUTH_RESPONSE\020\026\022\"\n\036INVITE_ME" +
-      "MBER_TO_GROUP_REQUEST\020\027\022#\n\037INVITE_MEMBER" +
-      "_TO_GROUP_RESPONSE\020\030\022\033\n\027KICK_OUT_MEMBER_" +
-      "REQUEST\020\031\022\034\n\030KICK_OUT_MEMBER_RESPONSE\020\032\022" +
-      "\"\n\036ADD_GROUP_ANNOUNCEMENT_REQUEST\020\033\022#\n\037A" +
-      "DD_GROUP_ANNOUNCEMENT_RESPONSE\020\034\022\037\n\033DELE" +
-      "TE_ANNOUNCEMENT_REQUEST\020\035\022 \n\034DELETE_ANNO" +
-      "UNCEMENT_RESPONSE\020\036\022\035\n\031EDIT_ANNOUNCEMENT" +
-      "_REQUEST\020\037\022\036\n\032EDIT_ANNOUNCEMENT_RESPONSE" +
-      "\020 \022\036\n\032EDIT_GROUP_REMARKS_REQUEST\020!\022\037\n\033ED" +
-      "IT_GROUP_REMARKS_RESPONSE\020\"\022$\n EDIT_GROU" +
-      "P_PROFILE_PHOTO_REQUEST\020#\022%\n!EDIT_GROUP_" +
-      "PROFILE_PHOTO_RESPONSE\020$\022\022\n\016LOGOUT_REQUE" +
-      "ST\020%\022\023\n\017LOGOUT_RESPONSE\020&\022\035\n\031NOTIFY_ADD_" +
-      "FRIEND_REQUEST\020(\022\036\n\032NOTIFY_ADD_FRIEND_RE" +
-      "SPONSE\020)\022 \n\034NOTIFY_DELETE_FRIEND_REQUEST" +
-      "\020*\022!\n\035NOTIFY_DELETE_FRIEND_RESPONSE\020+\022 \n" +
-      "\034NOTIFY_FRIEND_ONLINE_REQUEST\020,\022!\n\035NOTIF" +
-      "Y_FRIEND_ONLINE_RESPONSE\020-\022!\n\035NOTIFY_FRI" +
-      "END_OFFLINE_REQUEST\020.\022\"\n\036NOTIFY_FRIEND_O" +
-      "FFLINE_RESPONSE\020/\022)\n%NOTIFY_INVITE_MEMBE" +
-      "R_TO_GROUP_REQUEST\0200\022*\n&NOTIFY_INVITE_ME" +
-      "MBER_TO_GROUP_RESPONSE\0201\022 \n\034NOTIFY_DELET" +
-      "ED_GROUP_REQUEST\0202\022!\n\035NOTIFY_DELETED_GRO" +
-      "UP_RESPONSE\0203\022,\n(NOTIFY_CHANGE_GROUP_MAN" +
-      "AGER_AUTH_REQUEST\0204\022-\n)NOTIFY_CHANGE_GRO" +
-      "UP_MANAGER_AUTH_RESPONSE\0205\022!\n\035NOTIFY_KIC" +
-      "K_OUT_GROUP_REQUEST\0206\022\"\n\036NOTIFY_KICK_OUT" +
-      "_GROUP_RESPONSE\0207\022\033\n\027NOTIFY_KICK_OUT_REQ" +
-      "UEST\0208\022\034\n\030NOTIFY_KICK_OUT_RESPONSE\0209\022)\n%" +
-      "NOTIFY_ADD_GROUP_ANNOUNCEMENT_REQUEST\020:\022" +
-      "*\n&NOTIFY_ADD_GROUP_ANNOUNCEMENT_RESPONS" +
-      "E\020;\022\021\n\rLOGIN_REQUEST\020<\022\022\n\016LOGIN_RESPONSE" +
-      "\020=\022\034\n\030NOTIFY_ADD_GROUP_REQUEST\020>\022\035\n\031NOTI" +
-      "FY_ADD_GROUP_RESPONSE\020?B$\n\034com.jiangfuch" +
-      "eng.im.protobufB\004Baseb\006proto3"
+      "uf.NotifyAddGroupResponseH\000\022_\n\034pull_offl" +
+      "ine_message_request\030A \001(\01327.com.jiangfuc" +
+      "heng.im.protobuf.PullOfflineMessageReque" +
+      "stH\000\022a\n\035pull_offline_message_response\030B " +
+      "\001(\01328.com.jiangfucheng.im.protobuf.PullO" +
+      "fflineMessageResponseH\000\022g\n received_offl" +
+      "ine_message_request\030C \001(\0132;.com.jiangfuc" +
+      "heng.im.protobuf.ReceivedOfflineMessageR" +
+      "equestH\000\022i\n!received_offline_message_res" +
+      "ponse\030D \001(\0132<.com.jiangfucheng.im.protob" +
+      "uf.ReceivedOfflineMessageResponseH\000B\006\n\004D" +
+      "ata*(\n\013MessageType\022\013\n\007REQUEST\020\000\022\014\n\010RESPO" +
+      "NSE\020\001*-\n\rMessageStatus\022\007\n\003REQ\020\000\022\007\n\003ACK\020\001" +
+      "\022\n\n\006NOTIFY\020\002*\312\020\n\010DataType\022\t\n\005EMPTY\020\000\022\026\n\022" +
+      "HEART_BEAT_REQUEST\020\001\022\027\n\023HEART_BEAT_RESPO" +
+      "NSE\020\002\022\027\n\023SINGLE_CHAT_REQUEST\020\003\022\030\n\024SINGLE" +
+      "_CHAT_RESPONSE\020\004\022\026\n\022GROUP_CHAT_REQUEST\020\005" +
+      "\022\027\n\023GROUP_CHAT_RESPONSE\020\006\022\026\n\022ADD_FRIEND_" +
+      "REQUEST\020\007\022\027\n\023ADD_FRIEND_RESPONSE\020\010\022\031\n\025DE" +
+      "LETE_FRIEND_REQUEST\020\t\022\032\n\026DELETE_FRIEND_R" +
+      "ESPONSE\020\n\022\025\n\021ADD_GROUP_REQUEST\020\013\022\026\n\022ADD_" +
+      "GROUP_RESPONSE\020\014\022\030\n\024CREATE_GROUP_REQUEST" +
+      "\020\r\022\031\n\025CREATE_GROUP_RESPONSE\020\016\022\026\n\022EXIT_GR" +
+      "OUP_REQUEST\020\017\022\027\n\023EXIT_GROUP_RESPONSE\020\020\022\036" +
+      "\n\032CHANGE_GROUP_OWNER_REQUEST\020\021\022\037\n\033CHANGE" +
+      "_GROUP_OWNER_RESPONSE\020\022\022\030\n\024DELETE_GROUP_" +
+      "REQUEST\020\023\022\031\n\025DELETE_GROUP_RESPONSE\020\024\022%\n!" +
+      "CHANGE_GROUP_MANAGER_AUTH_REQUEST\020\025\022&\n\"C" +
+      "HANGE_GROUP_MANAGER_AUTH_RESPONSE\020\026\022\"\n\036I" +
+      "NVITE_MEMBER_TO_GROUP_REQUEST\020\027\022#\n\037INVIT" +
+      "E_MEMBER_TO_GROUP_RESPONSE\020\030\022\033\n\027KICK_OUT" +
+      "_MEMBER_REQUEST\020\031\022\034\n\030KICK_OUT_MEMBER_RES" +
+      "PONSE\020\032\022\"\n\036ADD_GROUP_ANNOUNCEMENT_REQUES" +
+      "T\020\033\022#\n\037ADD_GROUP_ANNOUNCEMENT_RESPONSE\020\034" +
+      "\022\037\n\033DELETE_ANNOUNCEMENT_REQUEST\020\035\022 \n\034DEL" +
+      "ETE_ANNOUNCEMENT_RESPONSE\020\036\022\035\n\031EDIT_ANNO" +
+      "UNCEMENT_REQUEST\020\037\022\036\n\032EDIT_ANNOUNCEMENT_" +
+      "RESPONSE\020 \022\036\n\032EDIT_GROUP_REMARKS_REQUEST" +
+      "\020!\022\037\n\033EDIT_GROUP_REMARKS_RESPONSE\020\"\022$\n E" +
+      "DIT_GROUP_PROFILE_PHOTO_REQUEST\020#\022%\n!EDI" +
+      "T_GROUP_PROFILE_PHOTO_RESPONSE\020$\022\022\n\016LOGO" +
+      "UT_REQUEST\020%\022\023\n\017LOGOUT_RESPONSE\020&\022\035\n\031NOT" +
+      "IFY_ADD_FRIEND_REQUEST\020(\022\036\n\032NOTIFY_ADD_F" +
+      "RIEND_RESPONSE\020)\022 \n\034NOTIFY_DELETE_FRIEND" +
+      "_REQUEST\020*\022!\n\035NOTIFY_DELETE_FRIEND_RESPO" +
+      "NSE\020+\022 \n\034NOTIFY_FRIEND_ONLINE_REQUEST\020,\022" +
+      "!\n\035NOTIFY_FRIEND_ONLINE_RESPONSE\020-\022!\n\035NO" +
+      "TIFY_FRIEND_OFFLINE_REQUEST\020.\022\"\n\036NOTIFY_" +
+      "FRIEND_OFFLINE_RESPONSE\020/\022)\n%NOTIFY_INVI" +
+      "TE_MEMBER_TO_GROUP_REQUEST\0200\022*\n&NOTIFY_I" +
+      "NVITE_MEMBER_TO_GROUP_RESPONSE\0201\022 \n\034NOTI" +
+      "FY_DELETED_GROUP_REQUEST\0202\022!\n\035NOTIFY_DEL" +
+      "ETED_GROUP_RESPONSE\0203\022,\n(NOTIFY_CHANGE_G" +
+      "ROUP_MANAGER_AUTH_REQUEST\0204\022-\n)NOTIFY_CH" +
+      "ANGE_GROUP_MANAGER_AUTH_RESPONSE\0205\022!\n\035NO" +
+      "TIFY_KICK_OUT_GROUP_REQUEST\0206\022\"\n\036NOTIFY_" +
+      "KICK_OUT_GROUP_RESPONSE\0207\022\033\n\027NOTIFY_KICK" +
+      "_OUT_REQUEST\0208\022\034\n\030NOTIFY_KICK_OUT_RESPON" +
+      "SE\0209\022)\n%NOTIFY_ADD_GROUP_ANNOUNCEMENT_RE" +
+      "QUEST\020:\022*\n&NOTIFY_ADD_GROUP_ANNOUNCEMENT" +
+      "_RESPONSE\020;\022\021\n\rLOGIN_REQUEST\020<\022\022\n\016LOGIN_" +
+      "RESPONSE\020=\022\034\n\030NOTIFY_ADD_GROUP_REQUEST\020>" +
+      "\022\035\n\031NOTIFY_ADD_GROUP_RESPONSE\020?\022 \n\034PULL_" +
+      "OFFLINE_MESSAGE_REQUEST\020@\022!\n\035PULL_OFFLIN" +
+      "E_MESSAGE_RESPONSE\020A\022$\n RECEIVED_OFFLINE" +
+      "_MESSAGE_REQUEST\020B\022%\n!RECEIVED_OFFLINE_M" +
+      "ESSAGE_RESPONSE\020CB$\n\034com.jiangfucheng.im" +
+      ".protobufB\004Baseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -15600,7 +16542,7 @@ public final class Base {
     internal_static_com_jiangfucheng_im_protobuf_Message_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_jiangfucheng_im_protobuf_Message_descriptor,
-        new java.lang.String[] { "MsgType", "MessageStatus", "DataType", "Id", "SingleChatRequest", "SingleChatResponse", "GroupChatRequest", "GroupChatResponse", "AddFriendRequest", "AddFriendResponse", "DeleteFriendRequest", "DeleteFriendResponse", "AddGroupRequest", "AddGroupResponse", "CreateGroupRequest", "CreateGroupResponse", "ExitGroupRequest", "ExitGroupResponse", "ChangeGroupOwnerRequest", "ChangeGroupOwnerResponse", "DeleteGroupRequest", "DeleteGroupResponse", "ChangeGroupManagerAuthRequest", "ChangeGroupManagerAuthResponse", "InviteMemberToGroupRequest", "InviteMemberToGroupResponse", "KickOutMemberRequest", "KickOutMemberResponse", "AddGroupAnnouncementRequest", "AddGroupAnnouncementResponse", "DeleteAnnouncementRequest", "DeleteAnnouncementResponse", "EditAnnouncementRequest", "EditAnnouncementResponse", "EditGroupRemarksRequest", "EditGroupRemarksResponse", "EditGroupProfilePhotoRequest", "EditGroupProfilePhotoResponse", "LogoutRequest", "LogoutResponse", "NotifyAddFriendRequest", "NotifyAddFriendResponse", "NotifyDeleteFriendRequest", "NotifyDeleteFriendResponse", "NotifyFriendOnlineRequest", "NotifyFriendOnlineResponse", "NotifyFriendOfflineRequest", "NotifyFriendOfflineResponse", "NotifyInviteMemberToGroupRequest", "NotifyInviteMemberToGroupResponse", "NotifyDeleteGroupRequest", "NotifyDeleteGroupResponse", "NotifyChangeGroupManagerAuthRequest", "NotifyChangeGroupManagerAuthResponse", "NotifyKickOutGroupRequest", "NotifyKickOutGroupResponse", "NotifyKickOutRequest", "NotifyKickOutResponse", "NotifyAddGroupAnnouncementRequest", "NotifyAddGroupAnnouncementResponse", "LoginRequest", "LoginResponse", "NotifyAddGroupRequest", "NotifyAddGroupResponse", "Data", });
+        new java.lang.String[] { "MsgType", "MessageStatus", "DataType", "Id", "SingleChatRequest", "SingleChatResponse", "GroupChatRequest", "GroupChatResponse", "AddFriendRequest", "AddFriendResponse", "DeleteFriendRequest", "DeleteFriendResponse", "AddGroupRequest", "AddGroupResponse", "CreateGroupRequest", "CreateGroupResponse", "ExitGroupRequest", "ExitGroupResponse", "ChangeGroupOwnerRequest", "ChangeGroupOwnerResponse", "DeleteGroupRequest", "DeleteGroupResponse", "ChangeGroupManagerAuthRequest", "ChangeGroupManagerAuthResponse", "InviteMemberToGroupRequest", "InviteMemberToGroupResponse", "KickOutMemberRequest", "KickOutMemberResponse", "AddGroupAnnouncementRequest", "AddGroupAnnouncementResponse", "DeleteAnnouncementRequest", "DeleteAnnouncementResponse", "EditAnnouncementRequest", "EditAnnouncementResponse", "EditGroupRemarksRequest", "EditGroupRemarksResponse", "EditGroupProfilePhotoRequest", "EditGroupProfilePhotoResponse", "LogoutRequest", "LogoutResponse", "NotifyAddFriendRequest", "NotifyAddFriendResponse", "NotifyDeleteFriendRequest", "NotifyDeleteFriendResponse", "NotifyFriendOnlineRequest", "NotifyFriendOnlineResponse", "NotifyFriendOfflineRequest", "NotifyFriendOfflineResponse", "NotifyInviteMemberToGroupRequest", "NotifyInviteMemberToGroupResponse", "NotifyDeleteGroupRequest", "NotifyDeleteGroupResponse", "NotifyChangeGroupManagerAuthRequest", "NotifyChangeGroupManagerAuthResponse", "NotifyKickOutGroupRequest", "NotifyKickOutGroupResponse", "NotifyKickOutRequest", "NotifyKickOutResponse", "NotifyAddGroupAnnouncementRequest", "NotifyAddGroupAnnouncementResponse", "LoginRequest", "LoginResponse", "NotifyAddGroupRequest", "NotifyAddGroupResponse", "PullOfflineMessageRequest", "PullOfflineMessageResponse", "ReceivedOfflineMessageRequest", "ReceivedOfflineMessageResponse", "Data", });
     com.jiangfucheng.im.protobuf.SingleChat.getDescriptor();
     com.jiangfucheng.im.protobuf.GroupChat.getDescriptor();
     com.jiangfucheng.im.protobuf.Control.getDescriptor();

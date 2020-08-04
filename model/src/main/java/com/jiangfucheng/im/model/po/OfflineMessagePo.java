@@ -1,6 +1,8 @@
 package com.jiangfucheng.im.model.po;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.jiangfucheng.im.model.bo.OfflineMessageBo;
+import com.jiangfucheng.im.model.utils.BeanUtil;
 import lombok.Data;
 
 import java.util.Date;
@@ -21,4 +23,10 @@ public class OfflineMessagePo {
 	private Integer msgType;
 	private String content;
 	private Date createTime;
+
+	public OfflineMessageBo convertToOfflineMessageBo() {
+		OfflineMessageBo bo = new OfflineMessageBo();
+		BeanUtil.copyProperties(bo, this);
+		return bo;
+	}
 }

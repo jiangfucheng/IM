@@ -1022,8 +1022,8 @@ public final class SingleChat {
      *服务器收到消息的时间
      * </pre>
      *
-     * <code>int64 timestamp = 2;</code>
-     * @return The timestamp.
+     * <code>int64 time = 2;</code>
+     * @return The time.
      */
     long getTimestamp();
 
@@ -1157,8 +1157,8 @@ public final class SingleChat {
      *服务器收到消息的时间
      * </pre>
      *
-     * <code>int64 timestamp = 2;</code>
-     * @return The timestamp.
+     * <code>int64 time = 2;</code>
+     * @return The time.
      */
     public long getTimestamp() {
       return timestamp_;
@@ -1589,8 +1589,8 @@ public final class SingleChat {
        *服务器收到消息的时间
        * </pre>
        *
-       * <code>int64 timestamp = 2;</code>
-       * @return The timestamp.
+       * <code>int64 time = 2;</code>
+       * @return The time.
        */
       public long getTimestamp() {
         return timestamp_;
@@ -1600,8 +1600,8 @@ public final class SingleChat {
        *服务器收到消息的时间
        * </pre>
        *
-       * <code>int64 timestamp = 2;</code>
-       * @param value The timestamp to set.
+       * <code>int64 time = 2;</code>
+       * @param value The time to set.
        * @return This builder for chaining.
        */
       public Builder setTimestamp(long value) {
@@ -1615,7 +1615,7 @@ public final class SingleChat {
        *服务器收到消息的时间
        * </pre>
        *
-       * <code>int64 timestamp = 2;</code>
+       * <code>int64 time = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
@@ -1761,7 +1761,7 @@ public final class SingleChat {
       "\030\001 \001(\003\022\017\n\007from_id\030\002 \001(\003\022\r\n\005to_id\030\003 \001(\003\022\014" +
       "\n\004type\030\004 \001(\005\022\017\n\007content\030\005 \001(\t\022\r\n\005token\030\006" +
       " \001(\t\"W\n\022SingleChatResponse\022\016\n\006msg_id\030\001 \001" +
-      "(\003\022\021\n\ttimestamp\030\002 \001(\003\022\017\n\007from_id\030\003 \001(\003\022\r" +
+      "(\003\022\021\n\ttime\030\002 \001(\003\022\017\n\007from_id\030\003 \001(\003\022\r" +
       "\n\005to_id\030\004 \001(\003B*\n\034com.jiangfucheng.im.pro" +
       "tobufB\nSingleChatb\006proto3"
     };

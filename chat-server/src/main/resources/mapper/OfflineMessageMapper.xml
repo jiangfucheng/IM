@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jiangfucheng.im.chatserver.mapper.OfflineMessageMapper">
+    <select id="selectOfflineMessage" resultType="OfflineMessagePo">
+        select id, from_id, to_id, msg_type, content, create_time
+        from im_offline_msg
+        where (from_id = #{friendId} and to_id = #{userId})
+        <if test="lastMsgId > 0">
+            and id &lt;= #{lastMsgId}
+        </if>
+        order by create_time desc
+    </select>
+
+    <delete id="removeReceivedOfflineMessage">
+        delete
+        from im_offline_msg
+        where (from_id = #{friendId} and to_id = #{userId})
+        <if test="id > 0">
+            and id &lt;= #{id}
+        </if>
+        order by create_time desc
+    </delete>
+</mapper>

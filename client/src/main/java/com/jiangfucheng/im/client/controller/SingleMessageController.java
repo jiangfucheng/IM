@@ -1,9 +1,11 @@
 package com.jiangfucheng.im.client.controller;
 
+import com.jiangfucheng.im.client.bo.SingleMessageBo;
 import com.jiangfucheng.im.client.chat.MessageMonitor;
 import com.jiangfucheng.im.client.context.ChatClientContext;
 import com.jiangfucheng.im.client.controller.base.BaseController;
 import com.jiangfucheng.im.client.feign.UserFeignClient;
+import com.jiangfucheng.im.client.utils.MessageUtils;
 import com.jiangfucheng.im.common.chat.ChatMessageController;
 import com.jiangfucheng.im.common.chat.ChatMessageMapping;
 import com.jiangfucheng.im.common.enums.MessageType;
@@ -79,7 +81,7 @@ public class SingleMessageController extends BaseController {
 		}
 		Base.Message responseMessage = buildResponse(requestMessage.getId(), singleChatRequest.getMsgId(), friendId);
 		//把消息存到本地缓存中
-		context.putSingleChatMessage(friendId, singleChatRequest);
+		context.putSingleChatMessage(friendId, MessageUtils.convertSingleChatRequestToSingleMessageBo(singleChatRequest));
 		return responseMessage;
 	}
 
@@ -101,7 +103,11 @@ public class SingleMessageController extends BaseController {
 	@Override
 	protected void resolveResponseNotify(ChannelHandlerContext ctx, Base.Message responseMessage) {
 		Base.Message completedMessage = context.unCompletedMessages.get(responseMessage.getId());
+		SingleChat.SingleChatResponse response = responseMessage.getSingleChatResponse();
+		SingleMessageBo singleMessageBo = MessageUtils
+				.convertSingleChatRequestToSingleMessageBo(completedMessage.getSingleChatRequest());
+		singleMessageBo.setTime(new Date(response.getTimestamp()));
 		//把消息加入到本地消息缓存中
-		context.putSingleChatMessage(responseMessage.getSingleChatResponse().getFromId(), completedMessage.getSingleChatRequest());
+		context.putSingleChatMessage(response.getFromId(), singleMessageBo);
 	}
 }

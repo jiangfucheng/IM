@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.jiangfucheng.im.chatserver.chat.CommonMessageSender;
 import com.jiangfucheng.im.chatserver.mapper.*;
 import com.jiangfucheng.im.common.utils.SnowFlakeIdGenerator;
+import com.jiangfucheng.im.model.bo.OfflineMessageBo;
 import com.jiangfucheng.im.model.dto.LastReceivedMessageBo;
 import com.jiangfucheng.im.model.po.GroupMessagePo;
 import com.jiangfucheng.im.model.po.GroupUserPo;
@@ -14,6 +15,7 @@ import com.jiangfucheng.im.protobuf.GroupChat;
 import com.jiangfucheng.im.protobuf.SingleChat;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -85,6 +87,38 @@ public class MessageService {
 		messageMapper.markMessageDelivered(msgId);
 		log.debug("mark msg {} is delivered", msgId);
 	}
+
+	/**
+	 * 处理已经收到的离线消息
+	 * 1.把消息转存到在线消息库
+	 * 2.删除离线消息
+	 */
+	@Transactional
+	public void markOfflineMessageIsDelivered(long userId, long friendId, long lastReceivedMessageId) {
+		List<OfflineMessagePo> offlineMessagePos = offlineMessageMapper.selectOfflineMessage(userId, friendId, lastReceivedMessageId);
+		List<MessagePo> onlineMessageList = offlineMessagePos.stream()
+				.map(offlineMessagePo -> {
+					MessagePo messagePo = new MessagePo();
+					messagePo.setId(offlineMessagePo.getId());
+					messagePo.setFromId(offlineMessagePo.getFromId());
+					messagePo.setToId(offlineMessagePo.getToId());
+					messagePo.setMsgType(offlineMessagePo.getMsgType());
+					messagePo.setContent(offlineMessagePo.getContent());
+					messagePo.setDelivered(1);
+					messagePo.setCreateTime(offlineMessagePo.getCreateTime());
+					return messagePo;
+				}).collect(Collectors.toList());
+		onlineMessageList.forEach(messageMapper::insert);
+		offlineMessageMapper.removeReceivedOfflineMessage(userId, friendId, lastReceivedMessageId);
+	}
+
+	public List<OfflineMessageBo> selectOfflineMessages(long userId, long friendId, long lastMsg) {
+		return offlineMessageMapper.selectOfflineMessage(userId, friendId, lastMsg)
+				.stream()
+				.map(OfflineMessagePo::convertToOfflineMessageBo)
+				.collect(Collectors.toList());
+	}
+
 
 	public void updateLastReceivedMsg(GroupChat.GroupChatResponse groupChatResponse) {
 		LastReceivedMessageBo bo = new LastReceivedMessageBo();

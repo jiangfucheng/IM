@@ -1,12 +1,12 @@
 package com.jiangfucheng.im.client.context;
 
 import com.jiangfucheng.im.client.bo.CurrentUser;
+import com.jiangfucheng.im.client.bo.GroupMessageBo;
+import com.jiangfucheng.im.client.bo.SingleMessageBo;
 import com.jiangfucheng.im.client.bo.User;
 import com.jiangfucheng.im.client.feign.CommonFeignClient;
 import com.jiangfucheng.im.client.utils.CommonUtils;
 import com.jiangfucheng.im.protobuf.Base;
-import com.jiangfucheng.im.protobuf.GroupChat;
-import com.jiangfucheng.im.protobuf.SingleChat;
 import io.netty.channel.Channel;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,14 +81,14 @@ public class ChatClientContext {
 	 * key: 好友id
 	 * value: 历史消息内容
 	 */
-	public ConcurrentHashMap<Long, List<SingleChat.SingleChatRequest>> singleChatMessages;
+	public ConcurrentHashMap<Long, List<SingleMessageBo>> singleChatMessages;
 
 	/**
 	 * 群聊消息
 	 * key: 群id
 	 * value: 历史消息内容
 	 */
-	public ConcurrentHashMap<Long, List<GroupChat.GroupChatRequest>> groupChatMessages;
+	public ConcurrentHashMap<Long, List<GroupMessageBo>> groupChatMessages;
 
 	@Autowired
 	public ChatClientContext(CommonFeignClient commonFeignClient) {
@@ -107,25 +107,25 @@ public class ChatClientContext {
 	/**
 	 * 把单聊消息添加到本地缓存，需要按顺序添加
 	 */
-	public void putSingleChatMessage(Long friendId, SingleChat.SingleChatRequest message) {
-		List<SingleChat.SingleChatRequest> singleChatMessages = this.singleChatMessages
+	public void putSingleChatMessage(Long friendId, SingleMessageBo message) {
+		List<SingleMessageBo> singleMessageBos = this.singleChatMessages
 				.computeIfAbsent(friendId, k -> new ArrayList<>());
-		int insertIndex = CommonUtils.searchInsertIndex(singleChatMessages, message, (m1, m2) -> (int) ((m1.getMsgId() - m2.getMsgId()) % Integer.MAX_VALUE));
-		if (insertIndex == singleChatMessages.size()) {
-			singleChatMessages.add(message);
+		int insertIndex = CommonUtils.searchInsertIndex(singleMessageBos, message, (m1, m2) -> (int) ((m1.getMsgId() - m2.getMsgId()) % Integer.MAX_VALUE));
+		if (insertIndex == singleMessageBos.size()) {
+			singleMessageBos.add(message);
 		} else {
-			singleChatMessages.set(insertIndex, message);
+			singleMessageBos.add(insertIndex, message);
 		}
 	}
 
-	public void putGroupChatMessage(Long groupId, GroupChat.GroupChatRequest message) {
-		List<GroupChat.GroupChatRequest> groupChatMessages = this.groupChatMessages
+	public void putGroupChatMessage(Long groupId, GroupMessageBo message) {
+		List<GroupMessageBo> groupMessages = this.groupChatMessages
 				.computeIfAbsent(groupId, k -> new ArrayList<>());
-		int insertIndex = CommonUtils.searchInsertIndex(groupChatMessages, message, (m1, m2) -> (int) ((m1.getMsgId() - m2.getMsgId()) % Integer.MAX_VALUE));
-		if (insertIndex == groupChatMessages.size()) {
-			groupChatMessages.add(message);
+		int insertIndex = CommonUtils.searchInsertIndex(groupMessages, message, (m1, m2) -> (int) ((m1.getMsgId() - m2.getMsgId()) % Integer.MAX_VALUE));
+		if (insertIndex == groupMessages.size()) {
+			groupMessages.add(message);
 		} else {
-			groupChatMessages.set(insertIndex, message);
+			groupMessages.set(insertIndex, message);
 		}
 	}
 
