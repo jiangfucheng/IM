@@ -2,8 +2,11 @@ package com.jiangfucheng.im.chatserver.chat;
 
 import io.netty.channel.ChannelHandlerContext;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -20,7 +23,9 @@ public class ChatServerContext {
 	//绑定user和user与服务器建立的channel
 	private ConcurrentHashMap<Long, ChannelHandlerContext> channelsMap;
 	private ConcurrentHashMap<ChannelHandlerContext, Long> channelsRevertMap;
-
+	private String localIp;
+	@Value("${chat.chat-server.port}")
+	private Integer port;
 	/*
 		等待接收response的队列,只有服务端主动推送的通知消息才需要维护这个队列
 		这个队里也可以用来绑定控制类消息的两端，使得客户端回复控制类消息的response中不需要带上目标userId
@@ -33,6 +38,11 @@ public class ChatServerContext {
 		channelsMap = new ConcurrentHashMap<>();
 		channelsRevertMap = new ConcurrentHashMap<>();
 		receiveMessageResponseSet = new ConcurrentHashMap<>();
+		try {
+			this.localIp = InetAddress.getLocalHost().getHostAddress();
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void register(Long userId, ChannelHandlerContext ctx) {
@@ -92,5 +102,13 @@ public class ChatServerContext {
 
 	public long getBindedUserId(Long messageId) {
 		return receiveMessageResponseSet.get(messageId);
+	}
+
+	public String getLocalIp() {
+		return this.localIp;
+	}
+
+	public Integer getPort() {
+		return this.port;
 	}
 }

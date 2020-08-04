@@ -28,10 +28,10 @@ public class ChatServiceImpl implements ChatServerService {
 	}
 
 	@Override
-	public String getChatServer(Long userId) {
+	public String getChatServer() {
 		List<String> chatServerAddress = zkClient.getChildren(ZookeeperConstants.CHAT_SERVER_HOST_PATH);
 		if (chatServerAddress == null || chatServerAddress.isEmpty()) {
-			return "localhost";
+			return "";
 		}
 		//初步算法：返回连接数最少的机器，如果相同就返回最后一台
 		int min = Integer.MAX_VALUE;

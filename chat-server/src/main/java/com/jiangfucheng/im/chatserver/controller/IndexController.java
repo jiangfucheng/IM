@@ -2,12 +2,11 @@ package com.jiangfucheng.im.chatserver.controller;
 
 import com.jiangfucheng.im.chatserver.chat.ChatServerContext;
 import com.jiangfucheng.im.chatserver.chat.CommonMessageSender;
+import com.jiangfucheng.im.chatserver.service.UserService;
 import com.jiangfucheng.im.common.chat.ChatMessageController;
 import com.jiangfucheng.im.common.chat.ChatMessageMapping;
 import com.jiangfucheng.im.common.constants.ErrorCode;
-import com.jiangfucheng.im.common.constants.RedisConstants;
 import com.jiangfucheng.im.common.utils.JwtUtil;
-import com.jiangfucheng.im.model.bo.UserStatusBo;
 import com.jiangfucheng.im.model.bo.UserTokenPayloadBo;
 import com.jiangfucheng.im.protobuf.Base;
 import com.jiangfucheng.im.protobuf.Control;
@@ -36,13 +35,16 @@ public class IndexController {
 	@Value("${chat.chat-server.port}")
 	private Integer port;
 	private ChatServerContext context;
+	private UserService userService;
 
 	public IndexController(RedisTemplate<String, Object> redisTemplate,
 						   CommonMessageSender commonMessageSender,
-						   ChatServerContext context) {
+						   ChatServerContext context,
+						   UserService userService) {
 		this.redisTemplate = redisTemplate;
 		this.commonMessageSender = commonMessageSender;
 		this.context = context;
+		this.userService = userService;
 		try {
 			this.localIp = InetAddress.getLocalHost().getHostAddress();
 		} catch (UnknownHostException e) {
@@ -75,7 +77,7 @@ public class IndexController {
 					.setMsg(ErrorCode.OK_MSG)
 					.setErrMsg(ErrorCode.OK_MSG)
 					.build();
-			updateRedisMsg(userInfo.getUserId(), userInfo.getAccount());
+			userService.addUserLoginMessage(userInfo.getUserId(), userInfo.getAccount());
 			log.info(userInfo.getNickName() + " login success on this server");
 		}
 
@@ -88,32 +90,13 @@ public class IndexController {
 		ctx.writeAndFlush(responseMsg);
 	}
 
-	private void updateRedisMsg(long userId, String account) {
-		//添加用户状态
-		String userStatusKey = String.format(RedisConstants.USER_STATUS_KEY, userId);
-		UserStatusBo userStatusBo = new UserStatusBo(userId, account);
-		redisTemplate.opsForValue().set(userStatusKey, userStatusBo);
-
-		String url = localIp + ":" + port;
-		//添加用户连接的服务器地址
-		String userConnectedServerKey = String.format(RedisConstants.USER_CONNECTED_CHAT_SERVER, userId);
-		redisTemplate.opsForValue().set(userConnectedServerKey, url);
-		//增加chat-server连接数
-		String chatServerConnectedNumberKey = String.format(RedisConstants.CHAT_SERVER_CONNECTED_NUMBER, url);
-		if (redisTemplate.hasKey(chatServerConnectedNumberKey)) {
-			redisTemplate.opsForValue().increment(chatServerConnectedNumberKey);
-		} else {
-			redisTemplate.opsForValue().set(chatServerConnectedNumberKey, 1);
-		}
-	}
-
 	@ChatMessageMapping(messageType = Base.DataType.LOGOUT_REQUEST)
 	public void handleLogoutRequest(ChannelHandlerContext ctx, Base.Message msg) {
 		Base.Message ackMessage = msg.toBuilder().setMessageStatus(Base.MessageStatus.ACK).build();
 		commonMessageSender.sendAck(ctx, ackMessage, true);
 		String token = msg.getLogoutRequest().getToken();
 		UserTokenPayloadBo userInfo = JwtUtil.getTokenBody(token);
-		removeRedisMsg(userInfo.getUserId());
+		userService.removeUserLoginMessage(userInfo.getUserId());
 		Control.LogoutResponse response = Control.LogoutResponse.newBuilder()
 				.setCode(ErrorCode.OK)
 				.setMsg(ErrorCode.OK_MSG)
@@ -132,19 +115,5 @@ public class IndexController {
 	private void clearChannel(Long userId) {
 		context.removeChannel(userId);
 	}
-
-	private void removeRedisMsg(long userId) {
-		//删除用户状态
-		String userStatusKey = String.format(RedisConstants.USER_STATUS_KEY, userId);
-		redisTemplate.delete(String.valueOf(userStatusKey));
-		//删除用户登陆的服务器
-		String userConnectedServerKey = String.format(RedisConstants.USER_CONNECTED_CHAT_SERVER, userId);
-		redisTemplate.delete(userConnectedServerKey);
-		//更新chat-server连接数
-		String url = localIp + ":" + port;
-		String redisKey = String.format(RedisConstants.CHAT_SERVER_CONNECTED_NUMBER, url);
-		redisTemplate.opsForValue().decrement(redisKey);
-	}
-
 
 }

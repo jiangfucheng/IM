@@ -1,6 +1,7 @@
 package com.jiangfucheng.im.client.handler;
 
 import com.jiangfucheng.im.client.chat.ChatClient;
+import com.jiangfucheng.im.client.chat.MessageMonitor;
 import com.jiangfucheng.im.client.context.ChatClientContext;
 import com.jiangfucheng.im.client.utils.MessageUtils;
 import com.jiangfucheng.im.common.chat.ChatMessageDispatcher;
@@ -29,14 +30,16 @@ public class ChatClientHandler extends SimpleChannelInboundHandler<Base.Message>
 	private SnowFlakeIdGenerator snowFlakeIdGenerator;
 	@Autowired
 	private ChatClient chatClient;
+	private MessageMonitor messageMonitor;
 
 	public ChatClientHandler(ChatMessageDispatcher messageDispatcher,
 							 ChatClientContext context,
-							 SnowFlakeIdGenerator snowFlakeIdGenerator
-	) {
+							 SnowFlakeIdGenerator snowFlakeIdGenerator,
+							 MessageMonitor messageMonitor) {
 		this.messageDispatcher = messageDispatcher;
 		this.context = context;
 		this.snowFlakeIdGenerator = snowFlakeIdGenerator;
+		this.messageMonitor = messageMonitor;
 	}
 
 	@Override
@@ -58,7 +61,8 @@ public class ChatClientHandler extends SimpleChannelInboundHandler<Base.Message>
 				.setDataType(Base.DataType.LOGIN_REQUEST)
 				.setMessageStatus(Base.MessageStatus.REQ)
 				.build();
-		MessageUtils.writeRequestReqMessage(ctx, context, null, requestMsg);
+		MessageUtils.writeRequestReqMessage(ctx, context, messageMonitor, requestMsg);
+		log.debug("发送登陆请求");
 	}
 
 	@Override

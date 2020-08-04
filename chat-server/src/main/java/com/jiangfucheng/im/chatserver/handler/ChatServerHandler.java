@@ -1,6 +1,7 @@
 package com.jiangfucheng.im.chatserver.handler;
 
 import com.jiangfucheng.im.chatserver.chat.ChatServerContext;
+import com.jiangfucheng.im.chatserver.service.UserService;
 import com.jiangfucheng.im.common.chat.ChatMessageDispatcher;
 import com.jiangfucheng.im.protobuf.Base;
 import io.netty.channel.ChannelHandler;
@@ -22,11 +23,14 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<Base.Message>
 
 	private ChatMessageDispatcher messageDispatcher;
 	private ChatServerContext context;
+	private UserService userService;
 
-
-	public ChatServerHandler(ChatMessageDispatcher messageDispatcher, ChatServerContext context) {
+	public ChatServerHandler(ChatMessageDispatcher messageDispatcher,
+							 ChatServerContext context,
+							 UserService userService) {
 		this.messageDispatcher = messageDispatcher;
 		this.context = context;
+		this.userService = userService;
 	}
 
 	@Override
@@ -61,6 +65,8 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<Base.Message>
 		 */
 		ctx.close().addListener(future -> {
 			log.info("客户端{}无响应，强制踢出客户端", ctx);
+			Long userId = context.getUserId(ctx);
+			userService.removeUserLoginMessage(userId);
 			context.removeChannel(ctx);
 			context.clearInvalidChannel();
 		});

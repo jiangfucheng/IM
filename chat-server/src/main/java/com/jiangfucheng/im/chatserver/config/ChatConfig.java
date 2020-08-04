@@ -5,6 +5,7 @@ import com.jiangfucheng.im.chatserver.chat.ChatServerContext;
 import com.jiangfucheng.im.chatserver.chat.CommonMessageSender;
 import com.jiangfucheng.im.chatserver.config.properties.ChatServerProperties;
 import com.jiangfucheng.im.chatserver.handler.ChatServerHandler;
+import com.jiangfucheng.im.chatserver.service.UserService;
 import com.jiangfucheng.im.common.chat.ChatMessageDispatcher;
 import com.jiangfucheng.im.common.chat.OnlineMessageConsumer;
 import org.I0Itec.zkclient.ZkClient;
@@ -37,8 +38,9 @@ public class ChatConfig {
 
 	@Bean
 	public ChatServerHandler chatServerHandler(ChatMessageDispatcher messageDispatcher,
-											   ChatServerContext context) {
-		return new ChatServerHandler(messageDispatcher, context);
+											   ChatServerContext context,
+											   UserService userService) {
+		return new ChatServerHandler(messageDispatcher, context, userService);
 	}
 
 	@Bean

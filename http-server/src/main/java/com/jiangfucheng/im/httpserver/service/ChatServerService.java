@@ -9,6 +9,6 @@ package com.jiangfucheng.im.httpserver.service;
  */
 public interface ChatServerService {
 
-	String getChatServer(Long userId);
+	String getChatServer();
 
 }

@@ -38,7 +38,7 @@ public class IndexController {
 		}
 		UserInfoBo userInfo = userService.getUserInfoByAccount(loginRequestVo.getAccount());
 		String token = JwtUtil.generateToken(new UserTokenPayloadBo(userInfo.getId(), userInfo.getAccount(), userInfo.getNickName()));
-		String chatServerUrl = chatServerService.getChatServer(userInfo.getId());
+		String chatServerUrl = chatServerService.getChatServer();
 		LoginResponseVo loginVo = new LoginResponseVo();
 		loginVo.setId(userInfo.getId());
 		loginVo.setChatServer(chatServerUrl);
